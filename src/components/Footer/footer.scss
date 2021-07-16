@@ -1,0 +1,44 @@
+.footer {
+  border-top: 2px double #000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 1em;
+  padding: 1em;
+
+  &__logo{
+    max-width: 10em;
+  }
+
+  &__link{
+    text-align: center;
+
+    &-text{
+      font-size: .8em;
+      padding: 2em;
+    }
+    &-text:hover{
+    color:#3f6372;
+    text-decoration: underline;
+    }
+  }
+
+  &__copy{
+    text-align: center;
+    font-size: .7em;
+  }
+
+  
+  @media screen and (min-width:767px) {
+    .footer{
+      &__link{
+        &-group{
+        display: flex;
+        flex-direction: row;
+        }
+      }
+    }
+    
+  }
+}
