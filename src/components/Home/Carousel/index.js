@@ -1,0 +1,104 @@
+import React from 'react';
+
+import './carousel.scss';
+
+const Carousel = () => (
+<div class="carousel slider-container">
+  <div class="slider-content">
+
+      <div class="slider-single">
+          <img class="slider-single-image" src="https://picsum.photos/id/973/200/300" alt="1" />
+          <h1 class="slider-single-title">Through the Mountains</h1>
+          <a class="slider-single-likes" href="javascript:void(0);">
+              <i class="fa fa-heart"></i>
+              <p>1,247</p>
+          </a>
+      </div>
+
+      <div class="slider-single">
+          <img class="slider-single-image" src="https://picsum.photos/id/974/200/300" alt="2" />
+          <h1 class="slider-single-title">Through the Mountains</h1>
+          <a class="slider-single-likes" href="javascript:void(0);">
+              <i class="fa fa-heart"></i>
+              <p>1,247</p>
+          </a>
+      </div>
+
+      <div class="slider-single">
+          <img class="slider-single-image" src="https://picsum.photos/id/975/200/300" alt="3" />
+          <h1 class="slider-single-title">Through the Mountains</h1>
+          <a class="slider-single-likes" href="javascript:void(0);">
+              <i class="fa fa-heart"></i>
+              <p>1,247</p>
+          </a>
+      </div>
+
+
+      <div class="slider-single">
+          <img class="slider-single-image" src="https://picsum.photos/id/976/200/300" alt="4" />
+          <h1 class="slider-single-title">Through the Mountains</h1>
+          <a class="slider-single-likes" href="javascript:void(0);">
+              <i class="fa fa-heart"></i>
+              <p>1,247</p>
+          </a>
+      </div>
+
+
+      <div class="slider-single">
+          <img class="slider-single-image" src="https://picsum.photos/id/977/200/300" alt="5" />
+          <h1 class="slider-single-title">Through the Mountains</h1>
+          <a class="slider-single-likes" href="javascript:void(0);">
+              <i class="fa fa-heart"></i>
+              <p>1,247</p>
+          </a>
+      </div>
+
+      <div class="slider-single">
+          <img class="slider-single-image" src="https://picsum.photos/id/978/200/300" alt="6" />
+          <h1 class="slider-single-title">Through the Mountains</h1>
+          <a class="slider-single-likes" href="javascript:void(0);">
+              <i class="fa fa-heart"></i>
+              <p>1,247</p>
+          </a>
+      </div>
+
+      <div class="slider-single">
+          <img class="slider-single-image" src="https://picsum.photos/id/978/200/300" alt="7" />
+          <h1 class="slider-single-title">Through the Mountains</h1>
+          <a class="slider-single-likes" href="javascript:void(0);">
+              <i class="fa fa-heart"></i>
+              <p>1,247</p>
+          </a>
+      </div>
+
+      <div class="slider-single">
+          <img class="slider-single-image" src="https://picsum.photos/id/978/200/300" alt="8" />
+          <h1 class="slider-single-title">Through the Mountains</h1>
+          <a class="slider-single-likes" href="javascript:void(0);">
+              <i class="fa fa-heart"></i>
+              <p>1,247</p>
+          </a>
+      </div>
+
+      <div class="slider-single">
+          <img class="slider-single-image" src="https://picsum.photos/id/978/200/300" alt="9" />
+          <h1 class="slider-single-title">Through the Mountains</h1>
+          <a class="slider-single-likes" href="javascript:void(0);">
+              <i class="fa fa-heart"></i>
+              <p>1,247</p>
+          </a>
+      </div>
+
+      <div class="slider-single">
+          <img class="slider-single-image" src="https://picsum.photos/id/978/200/300" alt="10" />
+          <h1 class="slider-single-title">Through the Mountains</h1>
+          <a class="slider-single-likes" href="javascript:void(0);">
+              <i class="fa fa-heart"></i>
+              <p>1,247</p>
+          </a>
+      </div>
+  </div>
+</div>
+);
+
+export default Carousel;
