@@ -1,0 +1,66 @@
+.nav{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  
+  &__button{
+    border: 0;
+    background-color: #3f6372;
+    color: #fff;
+    padding: .5em;
+    border-radius: .2em;
+    margin: 0.1em;
+  }
+
+  &__button:hover{
+    background-color: #2C3A49;
+  }
+
+  &__label{
+    border: 1px solid #3f6372;
+    border-radius: .2em;
+  }
+
+  &__select{
+    display: none;
+  }
+
+  &__search{
+    max-width: 10em;
+    padding: .35em;
+    border: none;
+  
+    &-button{
+      padding: .35em;
+      border: none;
+      background-color: white;
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+  .nav{
+    &__button{
+      display: none;
+    }
+
+    &__select{
+      display:block;
+      padding: .35em;
+      margin-right: 1em;
+      border-radius: .2em;
+      background-color: #fff;
+    }
+
+    &__select-option:hover{
+      background-color: none;
+    }
+  }
+  
+}
+
+.bi-search{
+  color: #3f6372
+}

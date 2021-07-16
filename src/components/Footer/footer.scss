@@ -1,5 +1,9 @@
+.block{
+  background-color: rgba(209, 209, 209, 0.5);
+}
+
 .footer {
-  border-top: 2px double #000;
+  border-top: 2px dotted rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -27,6 +31,7 @@
   &__copy{
     text-align: center;
     font-size: .7em;
+    padding-bottom: 1em;
   }
 
   

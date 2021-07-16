@@ -5,10 +5,10 @@ import Link from './Link'
 import Logo from '../../assets/logo_footer.png';
 
 const Footer = () => (
-  <div>
+  <div className="block">
     <div className="footer">
         <div>
-          <img src={Logo} alt="" className="footer__logo"/>
+          <img src={Logo} alt="Logo Nala" className="footer__logo"/>
         </div>
         <Link />
     </div>
