@@ -1,22 +1,28 @@
 .carousel{
   position:relative;
   &-nav{
-    &-left{
+    &-left, &-right{
       position: absolute;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      background: #ffffffe0;
+    }
+    &-left{
       left:0;
-      top: calc(50% - 8px);
     }
     &-right{
-      position: absolute;
       right:0;
-      top: calc(50% - 8px);
     }
   }
 
   &-sliders{
+    overflow:auto;
     display:flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-evenly;
+    margin:0 1rem;
   }
 
 }

@@ -20,9 +20,6 @@ const Carousel = () => (
       <Card/>
       <Card/>
     </div>
-    <div className="carousel-bullets">
-
-    </div>
   </div>
 
 );
