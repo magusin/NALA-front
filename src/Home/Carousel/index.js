@@ -18,7 +18,6 @@ const Carousel = () => (
       <Card/>
       <Card/>
       <Card/>
-      <Card/>
     </div>
   </div>
 
