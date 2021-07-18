@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { MenuItems } from './MenuItems';
 import './Dropdown.scss';
 import { Link } from 'react-router-dom';
 
