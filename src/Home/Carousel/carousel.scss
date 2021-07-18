@@ -18,9 +18,8 @@
   }
 
   &-sliders{
-    overflow:auto;
     display:flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-evenly;
     margin:0 1rem;
   }
