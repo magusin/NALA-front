@@ -1,5 +1,4 @@
 .nav{
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,6 +11,7 @@
     padding: .5em;
     border-radius: .2em;
     margin: 0.1em;
+    font-family: 'Voltaire';
   }
 
   &__button:hover{
@@ -29,13 +29,14 @@
 
   &__search{
     max-width: 10em;
-    padding: .35em;
+    padding: .45em;
     border: none;
   
     &-button{
       padding: .35em;
       border: none;
       background-color: white;
+      
     }
   }
 }
