@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Import components
-import Home from 'src/Home';
+import Home from 'src/components/Home';
 
 // == Import
 import './app.scss';
