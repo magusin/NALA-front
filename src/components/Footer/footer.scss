@@ -1,22 +1,22 @@
 .block{
-  background-color: rgba(209, 209, 209, 0.5);
+  background-color: #3f6372;
 }
 
 .footer {
-  border-top: 1.5px dotted rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  margin-top: 1em;
   padding: 1em;
 
   &__logo{
-    max-width: 10em;
+    max-width: 12.5em;
   }
 
   &__link{
     text-align: center;
+    color: #fff;
+    font-size: 1.5em;
 
     &-text{
       font-size: .8em;
@@ -30,8 +30,9 @@
 
   &__copy{
     text-align: center;
-    font-size: .7em;
+    font-size: 1em;
     padding-bottom: 1em;
+    color: #fff;
   }
 
   
@@ -41,6 +42,7 @@
         &-group{
         display: flex;
         flex-direction: row;
+        color : #fff;
         }
       }
     }

@@ -1,3 +1,4 @@
+
 .nav{
   display: flex;
   justify-content: center;
@@ -5,13 +6,15 @@
   margin-top: 1em;
   
   &__button{
+    width: 7em;
     border: 0;
     background-color: #3f6372;
     color: #fff;
-    padding: .5em;
+    padding: .7em;
     border-radius: .2em;
     margin: 0.1em;
     font-family: 'Voltaire';
+    font-size: 1em;
   }
 
   &__button:hover{
@@ -27,17 +30,25 @@
     display: none;
   }
 
+  &__search::placeholder{
+    color: #3f6372;
+  }
+
   &__search{
-    max-width: 10em;
-    padding: .45em;
+    max-width: 12.5em;
+    padding: 0.9em;
     border: none;
+    font-family: 'Voltaire';
+    
   
     &-button{
-      padding: .35em;
+      padding: .7em;
       border: none;
       background-color: white;
       
     }
+    
+  
   }
 }
 
@@ -49,10 +60,19 @@
 
     &__select{
       display:block;
-      padding: .35em;
+      padding: .9em;
       margin-right: 1em;
       border-radius: .2em;
       background-color: #fff;
+      border: none;
+      border: 1px solid #3f6372 ;
+      color: #3f6372;
+
+
+      &-option{
+        border-color: #3f6372 1px solid;
+        color : #3f6372
+      }
     }
 
     &__select-option:hover{
