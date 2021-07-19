@@ -13,6 +13,7 @@ import Home from 'src/components/Home';
 function App() {
   return (
     <Router>
+     
       <Navbar />
       <center><img src={lanaLogo} alt="lana logo" /></center>
       <Switch>
@@ -22,6 +23,7 @@ function App() {
         <Route path='/' component={Home} />
       </Switch>
     </Router>
+    
   );
 }
 
