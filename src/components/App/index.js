@@ -5,7 +5,7 @@ import React from 'react';
 import './app.scss';
 import Nav from '../Nav'
 import Footer from '../Footer';
-import Contact from '../Footer/Links/Contact'
+import Contact from 'src/containers/Contact';
 import CGU from '../Footer/Links/CGU';
 import LegaleMentions from '../Footer/Links/LegalesMentions';
 import AnimalDefense from '../Footer/Links/AnimalDefense';

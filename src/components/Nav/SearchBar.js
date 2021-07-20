@@ -3,12 +3,7 @@ import PropTypes from 'prop-types';
 
 import './nav.scss';
 
-const SearchBar = ({ newSearch, setNewSearch }) => {
-
-
-    console.log(newSearch)
-
-  return(
+const SearchBar = ({ newSearch, setNewSearch }) => (
     <>
       <form
         className="nav__form"
@@ -32,8 +27,7 @@ const SearchBar = ({ newSearch, setNewSearch }) => {
         </label>
       </form>
       </>
-    )
-};
+);
 
 SearchBar.propTypes = {
   // manageSubmit: PropTypes.func.isRequired,
