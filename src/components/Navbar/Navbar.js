@@ -12,7 +12,7 @@ function Navbar() {
   const closeMobileMenu = () => setClick(false);
 
   const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
+    if (window.innerWidth < 767) {
       setDropdown(false);
     } else {
       setDropdown(true);
@@ -20,7 +20,7 @@ function Navbar() {
   };
 
   const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
+    if (window.innerWidth < 767) {
       setDropdown(false);
     } else {
       setDropdown(false);
@@ -43,7 +43,10 @@ function Navbar() {
               Profil
             </Link>
           </li>
-          <li className='nav-item'>
+          <li className='nav-item'
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          >
             <Link
               to='/notifications'
               className='nav-links'
@@ -51,6 +54,7 @@ function Navbar() {
             >
               Notification
             </Link>
+            {dropdown && <Dropdown />}
           </li>
           <li className='nav-item'>
             <Link

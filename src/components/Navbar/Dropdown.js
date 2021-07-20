@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { MenuNotifications } from './MenuNotifications';
 import './Dropdown.scss';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +14,7 @@ function Dropdown() {
         onClick={handleClick}
         className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}
       >
-        {MenuItems.map((item, index) => {
+        {MenuNotifications.map((item, index) => {
           return (
             <li key={index}>
               <Link
