@@ -73,16 +73,15 @@
   }
 
   .nav-menu {
-    display: flex;
+    transition: all 0.5s ease;
+    display: none;
     flex-direction: column;
     width: 110%;
-    height: 32vh;
+    height: 55vh;
     position: absolute;
     top: 3rem;
     right: -115%;
-    left: auto;
     opacity: 1;
-    transition: all 0.5s ease;
   }
 
   .nav-menu.active {
@@ -90,6 +89,7 @@
     right: -8%;
     opacity: 1;
     transition: all 0.5s ease;
+    display: flex;
     z-index: 1;
   }
 
@@ -146,7 +146,7 @@
     transition: 250ms;
   }
 
-  button {
+  .btn {
     display: none;
   }
 }

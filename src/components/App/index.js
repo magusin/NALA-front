@@ -9,11 +9,11 @@ import Notification from 'src/components/Notification';
 import Aime from 'src/components/Aime';
 import Home from 'src/components/Home';
 
+
 // == Composant
 function App() {
   return (
     <Router>
-     
       <Navbar />
       <center><img src={lanaLogo} alt="lana logo" /></center>
       <Switch>
@@ -23,7 +23,6 @@ function App() {
         <Route path='/' component={Home} />
       </Switch>
     </Router>
-    
   );
 }
 
