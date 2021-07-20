@@ -17,9 +17,9 @@ const App = () => (
     <Router>
       <Nav />
       <Switch>
-        <Route path='/defense-animale' component={AnimalDefense} />
+        <Route path='/protection-animale' component={AnimalDefense} />
         <Route path='/contact' component={Contact} />
-        <Route path='/mentionslegales' component={LegaleMentions} />
+        <Route path='/mentions-legales' component={LegaleMentions} />
         <Route path='/cgu' component={CGU} />
       </Switch>
       <Footer />

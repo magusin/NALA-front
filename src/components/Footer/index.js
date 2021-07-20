@@ -11,9 +11,9 @@ const Footer = () => (
       </div>
       <div className="footer__link">
       <ul className="footer__link-group">
-        <li className="footer__link-text"> <Link to="/defense-animale">Défense des animaux</Link> </li>
+        <li className="footer__link-text"> <Link to="/protection-animale">Défense des animaux</Link> </li>
         <li className="footer__link-text"> <Link to="/contact">Nous contacter </Link></li>
-        <li className="footer__link-text"> <Link to="/mentionslegales">Mentions Légales</Link></li>
+        <li className="footer__link-text"> <Link to="/mentions-legales">Mentions Légales</Link></li>
         <li className="footer__link-text"> <Link to="/cgu">CGU</Link></li>
       </ul>
   </div>
