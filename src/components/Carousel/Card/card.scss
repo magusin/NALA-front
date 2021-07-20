@@ -8,20 +8,33 @@
   }
 }
 
-@keyframes right{
-	to { 
-    transform: translate(0);
-    display: block;
+@keyframes seeCard{
+  0%{
+    display:block
+  }
+  100%{
+    transform: translate(0%);
   }
 }
 
-@keyframes left{
-	to { 
-    transform: translate(0);
-    display: block;
+@keyframes nextCard{
+  0%{
+    
+  }
+  100%{
+    transform: translate(250%);
+    display:none;
   }
 }
-
+@keyframes previousCard{
+  0%{
+    
+  }
+  100%{
+    transform: translate(-250%);
+    display:none;
+  }
+}
   //Initial Elements position
 
 .carousel-card{
@@ -33,8 +46,18 @@
   text-align: center;
   width: 23%;
   margin: 1rem;
-  transform: translate(250%);
-  display:none;
+
+  &.next{   
+    animation: nextCard 1s;
+    animation-fill-mode: forwards;
+  }
+  &.previous{
+    animation: previousCard 1s;
+    animation-fill-mode: forwards;
+  }
+  &.selected{
+    animation: seeCard 1s;
+  }
 
   &-img{
     height: 100%;
@@ -92,9 +115,4 @@
       transform: none;
     }
   }
-}
-
-.carousel-card.selected{
-  animation: left 1s;
-  animation-fill-mode: forwards;
 }

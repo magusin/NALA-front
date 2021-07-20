@@ -1,6 +1,7 @@
 import { CAROUSEL_NEXT, CAROUSEL_PREVIOUS } from "../actions";
 
 const initialState = {
+  carouselButton: '',
   carousel:[
     {
       category:'top-love',
@@ -46,7 +47,8 @@ const reducer = (state = initialState, action = {}) => {
           ... state,
           carousel : [
             ...state.carousel
-          ]
+          ],
+          carouselButton:'previous',
         }
 
     case CAROUSEL_NEXT :
@@ -56,7 +58,8 @@ const reducer = (state = initialState, action = {}) => {
         ... state,
         carousel : [
           ...state.carousel
-        ]
+        ],
+        carouselButton:'next',
       }
     default:
       return state;

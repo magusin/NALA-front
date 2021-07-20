@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 import './card.scss';
 
 const Card = ({
@@ -7,10 +7,23 @@ const Card = ({
   picture,
   title,
   page,
+  buttonEffect,
 }) => {
-console.log('id', cardId,'/page', page)
+
+  let cardEffect = (page, cardId) =>{
+    if(page == cardId){
+          return 'carousel-card selected'
+    }else{
+      if(page < cardId){
+        return 'carousel-card next';
+      }else if(page > cardId){
+        return 'carousel-card previous';
+      }
+    }
+  }
+
 return(
-  <div className={page == cardId ? 'carousel-card selected' : 'carousel-card' }>
+  <div className={cardEffect(page, cardId, buttonEffect)}>
     <div className="carousel-card-img" 
          style={{backgroundImage:'url('+picture+')'}}>
       <div className="carousel-card-img-effect"></div>
@@ -30,6 +43,9 @@ Card.protoTypes = {
   title: PropTypes.string.isRequired,
   cardId: PropTypes.number.isRequired,
   page: PropTypes.number.isRequired,
+  buttonEffect: PropTypes.string.isRequired,
 };
 
 export default Card;
+
+
