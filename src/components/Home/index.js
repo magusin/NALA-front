@@ -10,12 +10,15 @@ const Home = (
   {carousel}
 ) => (
   <div className="home">
-    {carousel.map((carousel) =>(
+    {carousel.map((carousel) =>{
+      
+      return(
       <div key={carousel.category}>
-        <h2>{carousel.name}</h2>
-        <Carousel number={carousel.number}/>
+        <h2>{carousel.name} :</h2>
+        <Carousel category={carousel.category} number={carousel.page}/>
       </div>
-    ))}
+      )
+    })}
   </div>
 );
 
@@ -24,7 +27,7 @@ Home.protoTypes = {
     PropTypes.shape({
       category: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      number: PropTypes.number.isRequired
+      page: PropTypes.number.isRequired
     }).isRequired,
   ).isRequired,
   category: PropTypes.number.isRequired,
