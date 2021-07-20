@@ -26,22 +26,25 @@ const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case CAROUSEL_PREVIOUS :
       //doit enlever un page du action.category défini
-      console.log('toto',action)
-      let car = state.carousel.find(type => type.category === action.category )
-      console.log(car)
-
-      state.carousel
+      let previous = state.carousel.find(type => type.category === action.category );
+      previous.page--;
         return {
           ... state,
+          carousel : [
+            ...state.carousel
+          ]
         }
 
     case CAROUSEL_NEXT :
       //doit ajouter un page du action.category défini
-       return {
-          ... state,
-
-       };
-
+      let next = state.carousel.find(type => type.category === action.category );
+      next.page++;
+      return {
+        ... state,
+        carousel : [
+          ...state.carousel
+        ]
+      }
     default:
       return state;
   }

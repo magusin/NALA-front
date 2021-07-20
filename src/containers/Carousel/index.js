@@ -12,10 +12,10 @@ const mapStateToProps = (state, ownProps) => ({
 
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  handlePrevious: function () {
+  handlePrevious: function (category) {
     dispatch(carouselPrevious(category))
   },
-  handleNext: function () {
+  handleNext: function (category) {
     dispatch(carouselNext(category))
   },
 });
