@@ -3,7 +3,7 @@ import React from 'react';
 import './nav.scss';
 import Buttons from './Buttons'
 import Select from './Select'
-import SearchBar from './SearchBar'
+import SearchBar from 'src/containers/SearchBar'
 
 
 

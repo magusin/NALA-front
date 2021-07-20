@@ -20,6 +20,7 @@
       input{
       border: none;
       border-bottom : 1px solid #3f6372 ;
+      border-bottom-right-radius: .5em;
       padding: 1em;
       width: 70%;
       font-family: 'Voltaire';
@@ -28,6 +29,10 @@
       input::placeholder{
         color: #3f6372;
         font-size: 1em;
+      }
+
+      input:focus-within{
+        outline : 1px solid #3f6372;
       }
 
       textarea{
@@ -45,6 +50,10 @@
       textarea::placeholder{
         color: #3f6372;
         font-size: 1em;
+      }
+
+      textarea:focus-within{
+        outline : none;
       }
     }
     &-container{

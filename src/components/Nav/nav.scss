@@ -21,22 +21,18 @@
     background-color: #2C3A49;
   }
 
-  &__label{
-    border: 1px solid #3f6372;
-    border-radius: .2em;
-  }
-
   &__select{
     display: none;
   }
 
   &__search::placeholder{
     color: #3f6372;
+
   }
 
   &__search{
     max-width: 12.5em;
-    padding: 0.9em;
+    padding: 1em;
     border: none;
     font-family: 'Voltaire';
     
@@ -47,8 +43,12 @@
       background-color: white;
       
     }
-    
-  
+  }
+
+  &__form{
+    border: none;
+    border-bottom : 1px solid #3f6372 ;
+    border-radius: .5em;
   }
 }
 

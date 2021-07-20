@@ -7,26 +7,64 @@ const Contact = () => (
     <div className="contact__left">
       <h1 className="contact__title">Nous contacter</h1>
       <div className="contact__form">
-        <form action="get" className="contact_form">
-          <div className="contact__form-items">
-            <label htmlFor="firstname"></label>
-            <input type="text" name="firstname" id="firstanme" placeholder="Prénom" required/>
+      {/* CONTACT FORM */}
+        <form 
+          action="get" 
+          className="contact_form">
+          <div 
+            className="contact__form-items">
+            <label 
+              htmlFor="firstname"></label>
+            <input 
+              type="text" 
+              name="firstname"
+              id="firstanme"
+              placeholder="Prénom" 
+              required  
+            />
           </div>
-          <div  className="contact__form-items">
-            <input type="mail" name="mail" id="mail" placeholder="E-mail" required />
+          <div
+            className="contact__form-items">
+            <input
+              type="mail" 
+              name="mail"
+              id="mail"
+              placeholder="E-mail" 
+              required
+            />
           </div>
-          <div  className="contact__form-items">
-            <input type="subject" name="subject" id="subject" placeholder="Sujet" required/>
+          <div
+            className="contact__form-items">
+            <input
+              type="subject"
+              name="subject"
+              id="subject"
+              placeholder="Sujet"
+              required
+            />
           </div>
-          <div  className="contact__form-items">
-            <textarea name="message" id="message" placeholder="Votre message" cols="30" rows="5" required></textarea>
+          <div 
+            className="contact__form-items">
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Votre message"
+              cols="30" rows="5"
+              required>
+            </textarea>
           </div>
           <div className="contact__form-container">
-            <button type="button" className="contact__form-button">Envoyer</button>
+      {/* SUBMIT BUTTON */}
+            <button
+              type="button"
+              className="contact__form-button">
+              Envoyer
+            </button>
           </div>
         </form>
       </div>
     </div>
+      {/* TEAM CARD */}
       <div className="contact__right">
         <h3 className="contact__title">L'équipe</h3>
           <div className="contact__team">
