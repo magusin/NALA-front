@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
   carousel: state.carousel,
   category: ownProps.category,
   number: ownProps.number,  
+  list: state.list,
 });
 
 

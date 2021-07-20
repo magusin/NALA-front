@@ -1,19 +1,35 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './card.scss';
 
-const Card = () => (
-  <div className="carousel-card" data-category="category" data-order="indexOfTable">
+const Card = ({
+  cardId,
+  picture,
+  title,
+  page,
+}) => {
+console.log('id', cardId,'/page', page)
+return(
+  <div className={page == cardId ? 'carousel-card selected' : 'carousel-card' }>
     <div className="carousel-card-img" 
-         style={{backgroundImage:'url(https://www.ladn.eu/wp-content/uploads/2016/08/6356938644488566691013182599_grumpy-cat-1140x480.jpg?v=17)'}}>
+         style={{backgroundImage:'url('+picture+')'}}>
       <div className="carousel-card-img-effect"></div>
     </div>
     <div className="carousel-card-title">
-      <span>Mon chat est trop beau !</span>
+      <span>{title}</span>
     </div>
     <div className="carousel-card-links">
         <div className="carousel-card-links--like unselected"><i className="bi bi-heart-fill"></i></div>
         <div className="carousel-card-links--comment selected"><i className="bi bi-chat-left-text-fill"></i></div>
     </div>
   </div>
-);
+)};
+
+Card.protoTypes = {
+  picture: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  cardId: PropTypes.number.isRequired,
+  page: PropTypes.number.isRequired,
+};
+
 export default Card;

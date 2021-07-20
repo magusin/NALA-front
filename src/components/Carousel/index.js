@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 // import components
-import Card from './Card'
+import Card from 'src/containers/Carousel/Card'
 import './carousel.scss';
 
 const Carousel = (
@@ -10,10 +10,9 @@ const Carousel = (
     number,
     handleNext,
     handlePrevious,
-    cardId
+    list,
   }
 ) =>{
-  console.log('carousel', category)
 return(
   <div className="carousel">
     <div className="carousel-nav">
@@ -36,12 +35,12 @@ return(
       </button>
 
     </div>
-    <div className="carousel-sliders">
-      <Card number={number}/>
-      <Card number={number}/>
-      <Card number={number}/>
-      <Card number={number}/>
-      <Card number={number}/>
+    <div className="carousel-sliders">     
+        {list.map((card) =>{
+        return(
+          <Card cardId={card.id} key={card.id} picture={card.url} title={card.title} page={number}/>
+        )
+      })}
     </div>
   </div>
 
@@ -52,11 +51,13 @@ Carousel.protoTypes = {
   number: PropTypes.number.isRequired,
   handlePrevious: PropTypes.func.isRequired,
   handleNext: PropTypes.func.isRequired,
-  cardId: PropTypes.number.isRequired,
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired
+    }).isRequired,
+  ).isRequired,
 };
-
-Carousel.defaultProps = {
-  cardId: 3,
-}
 
 export default Carousel;

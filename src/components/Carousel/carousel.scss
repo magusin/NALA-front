@@ -15,6 +15,8 @@
 
 .carousel{
   position:relative;
+  height: max-content;
+  min-height: 232px;
   &-nav{
     &-left, &-right{
       font-size: 3rem;
