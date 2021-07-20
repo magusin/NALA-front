@@ -1,16 +1,33 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // components
-import Carousel from './Carousel';
+import Carousel from 'src/containers/Carousel';
 
 import './home.scss';
 
-const Home = () => (
+const Home = (
+  {carousel}
+) => (
   <div className="home">
-    <h2>Top-Love :</h2>
-    <Carousel/>
-    <h2>Dernières publications :</h2>
-    <Carousel/>
+    {carousel.map((carousel) =>(
+      <div key={carousel.category}>
+        <h2>{carousel.name}</h2>
+        <Carousel number={carousel.number}/>
+      </div>
+    ))}
   </div>
 );
+
+Home.protoTypes = {
+  carousel: PropTypes.arrayOf(
+    PropTypes.shape({
+      category: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.number.isRequired
+    }).isRequired,
+  ).isRequired,
+  category: PropTypes.number.isRequired,
+};
+
 export default Home;

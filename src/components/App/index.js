@@ -1,8 +1,8 @@
 // == Import npm
 import React from 'react';
 
-// Import components
-import Home from 'src/components/Home';
+// Import
+import Home from 'src/containers/Home';
 
 // == Import
 import './app.scss';
