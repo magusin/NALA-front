@@ -4,9 +4,9 @@ import './nav.scss';
 
 const Buttons = () => (
   <>
-    <button type="button" class="nav__button">Accueil</button>
-    <button type="button" class="nav__button">Catégories</button>
-    <button type="button" class="nav__button">Top-Love</button>
+    <button type="button" className="nav__button">Accueil</button>
+    <button type="button" className="nav__button">Catégories</button>
+    <button type="button" className="nav__button">Top-Love</button>
   </>
 );
 
