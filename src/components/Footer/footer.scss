@@ -31,12 +31,15 @@
     text-decoration: underline;
     }
   }
-
-  &__copy{
-    text-align: center;
-    font-size: 1em;
-    padding-bottom: 1em;
-    color: #fff;
+  &__box{
+    padding: .5em 0;
+    display: flex;
+    justify-content: center;
+    border-top: dotted 1px #fff;
+    &-copy{
+      font-size: .8em;
+      color: #fff;
+    }
   }
 
   

@@ -18,6 +18,7 @@ const Footer = () => (
       </ul>
     </div>
   </div>
+  <div className="footer__box"><p className="footer__box-copy">NALA - 2021 &copy;</p></div>
     
   </div>
 );
