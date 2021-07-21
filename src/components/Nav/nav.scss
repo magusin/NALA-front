@@ -69,13 +69,10 @@
       color: #3f6372;
 
       &-option{
+        padding: 2em;
         border-color: #3f6372 1px solid;
-        color : #3f6372
+        color : #3f6372;
       }
-    }
-
-    &__select-option:hover{
-      background-color: none;
     }
   }
   

@@ -1,0 +1,22 @@
+.error{
+  margin-top: 2em;
+  &__title{
+    padding: .5em;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    background-color: #3f6372;
+    color: #fff;
+  }
+
+  &__case{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 2em 0;
+
+    &-img{
+      width: 60vh;
+    }
+  }
+}
