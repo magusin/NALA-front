@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Voltaire&display=swap');
 
-.home{
+.page{
   h2{
     display:inline-block;
     font-family: 'Voltaire', sans-serif;
@@ -10,10 +10,5 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-  }
-
-  a.title:hover{
-    letter-spacing: 0.5px;
-    transition: .5s;
   }
 }
