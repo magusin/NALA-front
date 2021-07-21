@@ -46,7 +46,7 @@
 
   &-sliders{
     display:flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-evenly;
     margin:0 3rem;
   }

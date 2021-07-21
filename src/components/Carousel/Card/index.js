@@ -10,20 +10,31 @@ const Card = ({
   buttonEffect,
 }) => {
 
-  let cardEffect = (page, cardId) =>{
-    if(page == cardId){
-          return 'carousel-card selected'
-    }else{
+  let cardNextPrevious = (page, cardId, buttonEffect) =>{
       if(page < cardId){
         return 'carousel-card next';
       }else if(page > cardId){
         return 'carousel-card previous';
+      }else if(buttonEffect == "next"){
+        return 'carousel-card next';
+      }else if(buttonEffect == "previous"){
+        return 'carousel-card previous';
+      }else{
+        return 'carousel-card';
       }
+  }
+
+  let cardSelected = (page, cardId) =>{
+    if(page == cardId){
+          return 'selected'
+    }
+    else{
+      return '';
     }
   }
 
 return(
-  <div className={cardEffect(page, cardId, buttonEffect)}>
+  <div className={cardNextPrevious(page, cardId, buttonEffect) + ' ' + cardSelected(page, cardId)}>
     <div className="carousel-card-img" 
          style={{backgroundImage:'url('+picture+')'}}>
       <div className="carousel-card-img-effect"></div>

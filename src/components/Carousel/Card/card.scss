@@ -9,30 +9,22 @@
 }
 
 @keyframes seeCard{
-  0%{
-    display:block
-  }
-  100%{
+  to{
     transform: translate(0%);
+    opacity:1;
   }
 }
 
 @keyframes nextCard{
-  0%{
-    
-  }
-  100%{
+  to{
     transform: translate(250%);
-    display:none;
+    opacity:0;
   }
 }
 @keyframes previousCard{
-  0%{
-    
-  }
-  100%{
+  to{
     transform: translate(-250%);
-    display:none;
+    opacity:0;
   }
 }
   //Initial Elements position
@@ -42,21 +34,22 @@
   height: 200px;
   min-width: 300px;
   overflow: hidden;
-  position: relative;
   text-align: center;
   width: 23%;
   margin: 1rem;
+  position:absolute;
 
-  &.next{   
-    animation: nextCard 1s;
-    animation-fill-mode: forwards;
+  &.next{  
+    opacity: 0;
+    transform: translate(250%);
   }
   &.previous{
-    animation: previousCard 1s;
-    animation-fill-mode: forwards;
+    opacity:0;
+    transform: translate(-250%);   
   }
   &.selected{
     animation: seeCard 1s;
+    animation-fill-mode: both; 
   }
 
   &-img{
