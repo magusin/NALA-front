@@ -10,13 +10,13 @@ import  {
   setNewSubject,
   newMessage,
   setNewMessage,
-  } from '../../actions';
+  } from '../../actions/contactform';
 
 const mapStateToProps = (state, ownProps) => ({
-  newFirstName: state.newFirstName,
-  newEmail: state.newEmail,
-  newSubject: state.newSubject,
-  newMessage: state.newMessage,
+  newFirstName: state.contactform.newFirstName,
+  newEmail: state.contactform.newEmail,
+  newSubject: state.contactform.newSubject,
+  newMessage: state.contactform.newMessage,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

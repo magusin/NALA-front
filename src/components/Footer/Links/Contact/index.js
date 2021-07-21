@@ -28,9 +28,10 @@ const Contact = ({
               <label 
                 htmlFor="firstname"></label>
               <input 
+                className="contact__form-input"
                 type="text" 
                 name="firstname"
-                id="firstanme"
+                id="firstname"
                 placeholder="Prénom"
                 value={newFirstName}
                 onChange={(evt) => setNewFirstName(evt.target.value)} 
@@ -40,6 +41,7 @@ const Contact = ({
             <div
               className="contact__form-items">
               <input
+                className="contact__form-input"
                 type="mail" 
                 name="mail"
                 id="mail"
@@ -52,6 +54,7 @@ const Contact = ({
             <div
               className="contact__form-items">
               <input
+                className="contact__form-input"
                 type="subject"
                 name="subject"
                 id="subject"
@@ -64,6 +67,7 @@ const Contact = ({
             <div 
               className="contact__form-items">
               <textarea
+                className="contact__form-textarea"
                 name="message"
                 id="message"
                 placeholder="Votre message"
@@ -90,29 +94,29 @@ const Contact = ({
             <div className="contact__team">
               <div className="contact__team-items">
                 <i className="bi bi-person-circle"></i>
-                <h4>Carmen</h4>
-                <p>Product Owner & Git Master</p>
+                <h4 className="contact__team-name">Carmen</h4>
+                <p className="contact__team-text">Product Owner & Git Master</p>
               </div>
               <div className="contact__team-items">
                 <i className="bi bi-person-circle"></i>
-                <h4>Emmanuel</h4>
-                <p>Lead-Dev Back</p>
+                <h4 className="contact__team-name">Emmanuel</h4>
+                <p className="contact__team-text">Lead-Dev Back</p>
               </div>
           
               <div className="contact__team-items">
                 <i className="bi bi-person-circle" ></i>
-                <h4>Mélissa</h4>
-                <p>Git Master</p>
+                <h4 className="contact__team-name">Mélissa</h4>
+                <p className="contact__team-text">Git Master</p>
               </div>
               <div className="contact__team-items">
                 <i className="bi bi-person-circle"></i>
-                <h4>Quentin</h4>
-                <p>Lead-Dev Front</p>
+                <h4 className="contact__team-name">Quentin</h4>
+                <p className="contact__team-text">Lead-Dev Front</p>
               </div>
               <div className="contact__team-items">
                 <i className="bi bi-person-circle"></i>
-                <h4>Hugo</h4>
-                <p>Scrum Master</p>
+                <h4 className="contact__team-name">Hugo</h4>
+                <p className="contact__team-text">Scrum Master</p>
               </div>
             </div>
         </div>

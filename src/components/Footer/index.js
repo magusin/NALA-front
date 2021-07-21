@@ -6,8 +6,8 @@ import Logo from '../../assets/logo_footer.png';
 const Footer = () => (
   <div className="block">
     <div className="footer">
-      <div>
-        <img src={Logo} alt="Logo Nala" className="footer__logo"/>
+      <div className="footer__container">
+        <img src={Logo} alt="Logo Nala" className="footer__container-logo"/>
       </div>
       <div className="footer__link">
       <ul className="footer__link-group">

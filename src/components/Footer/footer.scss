@@ -9,8 +9,12 @@
   flex-direction: row;
   padding: 1em;
 
-  &__logo{
-    max-width: 12.5em;
+  &__container{
+    background-color: #fff;
+    border-radius: 50%;
+    &-logo{
+      max-width: 6em;
+    }
   }
 
   &__link{
