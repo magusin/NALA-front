@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Carousel from 'src/components/Carousel';
-import { carouselNext, carouselPrevious, } from '../../actions';
+import { carouselNext, carouselPrevious, } from 'src/actions/carousel';
 
 const mapStateToProps = (state, ownProps) => ({
   carousel: state.carousel.carousel,

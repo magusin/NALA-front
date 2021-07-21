@@ -1,4 +1,4 @@
-import { CAROUSEL_NEXT, CAROUSEL_PREVIOUS } from "../actions";
+import { CAROUSEL_NEXT, CAROUSEL_PREVIOUS } from "src/actions/carousel";
 
 const initialState = {
   carouselButton: '',
