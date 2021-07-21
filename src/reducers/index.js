@@ -1,12 +1,9 @@
-  
-const initialState = {
-};
+import { combineReducers } from "redux";
 
-const reducer = (state = initialState, action = {}) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
+import connexionForm from "./connexionForm";
 
-export default reducer;
+const rootReducer = combineReducers({
+  connexionForm: connexionForm,
+});
+
+export default rootReducer;
