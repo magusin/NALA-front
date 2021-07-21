@@ -1,0 +1,126 @@
+.contact{
+  margin-top: 2em;
+  &__title{
+    padding: .5em;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+
+    background-color: #3f6372;
+    color: #fff;
+  }
+  
+
+  &__form{
+    &-input{
+    border: none;
+    border-bottom : 1px solid #3f6372 ;
+    border-bottom-right-radius: .5em;
+    padding: 1em;
+    width: 70%;
+    font-family: 'Voltaire';
+    }
+
+    &-input::placeholder{
+      color: #3f6372;
+      font-size: 1em;
+    }
+
+    &-input:focus-within{
+      outline : 1px solid #3f6372;
+    }
+
+    &-textarea{
+      border: none;
+      border-left: 1px solid #3f6372;
+      border-bottom: 1px solid #3f6372;
+      border-bottom-left-radius: .5em;;
+      border-bottom-right-radius: .5em;;
+
+      padding: 1em;
+      width: 70%;
+      font-family: 'Voltaire';
+    }
+
+    &-textarea::placeholder{
+      color: #3f6372;
+      font-size: 1em;
+    }
+
+    &-textarea:focus-within{
+      outline : none;
+    }
+    padding: 1em;
+    &-items{
+      margin: .5em;
+      text-align: center;
+
+    }
+    &-container{
+      text-align: center;
+    }
+
+    &-button{
+      width: 7em;
+      border: 0;
+      background-color: #3f6372;
+      color: #fff;
+      padding: .7em;
+      border-radius: .2em;
+      margin: 0.1em;
+      font-family: 'Voltaire';
+      font-size: 1em;
+    }
+    
+  }
+
+  &__team{
+    text-align: center;
+    padding: 0 1em;
+
+    &-items{
+      margin: 3em;
+
+      &-name{
+        font-size: 1.5em;
+      }
+
+      &-text{
+        font-size: 1em;
+        font-style: italic;
+      }
+    }
+  }  
+}
+
+@media screen and (min-width:767px) {
+  .contact{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+
+    &__left{
+      width: 50%;
+      border-right: 1px solid #3f6372;
+    }
+    
+    &__right{
+      width: 50%;
+    }
+
+    &__form{
+      border-bottom: none;
+      padding-top: 5em;
+    }
+
+    &__team{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &-items{
+        width: 25%;
+      }
+    }
+  }
+}
