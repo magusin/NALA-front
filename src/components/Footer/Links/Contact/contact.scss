@@ -80,6 +80,7 @@
     
     &-avatar{
       width: 4em;
+      border-radius: 50%;
     }
 
     &-items{
@@ -95,8 +96,23 @@
       font-style: italic;
     }
   }
-  }
+}
 
+.carmen{
+  background-color: #f0f;
+}
+.emmanuel{
+  background-color: #3f6372;
+}
+.melissa{
+  background-color: #f0f;
+}
+.quentin{
+  background-color: #FF4A57;
+}
+.hugo{
+  background-color: #1888ff;
+}
 @media screen and (min-width:767px) {
   .contact{
     margin-top: 2em;
