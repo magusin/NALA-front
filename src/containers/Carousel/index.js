@@ -4,10 +4,10 @@ import Carousel from 'src/components/Carousel';
 import { carouselNext, carouselPrevious, } from '../../actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  carousel: state.carousel,
+  carousel: state.carousel.carousel,
   category: ownProps.category,
   number: ownProps.number,  
-  list: state.list,
+  list: state.carousel.list,
 });
 
 
