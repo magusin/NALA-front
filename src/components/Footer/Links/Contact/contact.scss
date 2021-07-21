@@ -77,21 +77,25 @@
   &__team{
     text-align: center;
     padding: 0 1em;
+    
+    &-avatar{
+      width: 4em;
+    }
 
     &-items{
       margin: 3em;
 
-      &-name{
-        font-size: 1.5em;
-      }
-
-      &-text{
-        font-size: 1em;
-        font-style: italic;
-      }
+    }  
+    &-name{
+      font-size: 1.5em;
     }
-  }  
-}
+  
+    &-text{
+      font-size: 1em;
+      font-style: italic;
+    }
+  }
+  }
 
 @media screen and (min-width:767px) {
   .contact{

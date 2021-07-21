@@ -19,4 +19,16 @@
       width: 60vh;
     }
   }
+
+  &__button{
+    width: 7em;
+    border: 0;
+    background-color: #3f6372;
+    color: #fff;
+    padding: .7em;
+    border-radius: .2em;
+    margin: 0.1em;
+    font-family: 'Voltaire';
+    font-size: 1em;
+  }
 }
