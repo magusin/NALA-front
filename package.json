@@ -1,5 +1,5 @@
 {
-  "name": "recette",
+  "name": "nala",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
@@ -58,7 +58,7 @@
   },
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:O-clock-Sheherazade/ReactE04-recette-jMoirenc.git",
-  "author": "jMoirenc <julien.moirenc@oclock.io>",
+  "repository": "git@github.com:O-clock-Sheherazade/nos-amis-les-animaux.git",
+  "author": "nosamislesanimaux.nala@gmail.com",
   "license": "MIT"
 }
