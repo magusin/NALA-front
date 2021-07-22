@@ -4,11 +4,8 @@ root = true
 
 [*]
 end_of_line = lf
-<<<<<<< HEAD
-insert_final_newline = true
-=======
+
 insert_final_newline = false
->>>>>>> HJ
 
 [*.html]
 indent_style = tab

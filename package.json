@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "recette",
-=======
   "name": "nala",
->>>>>>> HJ
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
@@ -53,26 +49,20 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
-<<<<<<< HEAD
-    "redux": "^4.1.0"
-  },
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:O-clock-Sheherazade/ReactE04-recette-jMoirenc.git",
-  "author": "jMoirenc <julien.moirenc@oclock.io>",
-=======
+    "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
+    "react-select": "^4.3.1",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9"
   },
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:O-clock-Sheherazade/nos-amis-les-animaux.git",
-  "author": "magusin <fanatsy4@gmail.com>",
->>>>>>> HJ
+  "author": "nosamislesanimaux.nala@gmail.com",
   "license": "MIT"
 }

@@ -1,0 +1,83 @@
+@use 'src/styles/vars';
+
+.nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  
+  &__button{
+    width: 7em;
+    border: 0;
+    background-color: vars.$light-background-color;
+    color: #fff;
+    padding: .7em;
+    border-radius: .2em;
+    margin: 0.1em;
+    font-family: 'Voltaire';
+    font-size: 1em;
+  }
+
+  &__button:hover{
+    background-color: #2C3A49;
+  }
+
+  &__select{
+    display: none;
+  }
+
+  &__search::placeholder{
+    color: vars.$light-background-color;
+
+  }
+
+  &__search{
+    max-width: 12.5em;
+    padding: 1em;
+    border: none;
+    font-family: 'Voltaire';
+    
+  
+    &-button{
+      padding: .7em;
+      border: none;
+      background-color: white;
+      
+    }
+  }
+
+  &__form{
+    border: none;
+    border-bottom : 1px solid vars.$light-background-color;
+    border-radius: .5em;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .nav{
+    &__button{
+      display: none;
+    }
+
+    &__select{
+      display:block;
+      padding: .9em;
+      margin-right: 1em;
+      border-radius: .2em;
+      background-color: #fff;
+      border: none;
+      border: 1px solid vars.$light-background-color;
+      color: vars.$light-background-color;
+
+      &-option{
+        border-color: vars.$light-background-color 1px solid;
+        color : vars.$light-background-color;
+      }
+    }
+  }
+  
+}
+
+.bi-search{
+  color: vars.$light-background-color;
+}

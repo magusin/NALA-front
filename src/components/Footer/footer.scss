@@ -1,0 +1,56 @@
+@use 'src/styles/vars';
+
+.block{
+  background-color: vars.$light-background-color;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  padding: 1em;
+
+  &__container{
+    background-color: #fff;
+    border-radius: 50%;
+    &-logo{
+      max-width: 6em;
+    }
+  }
+
+  &__link{
+    text-align: center;
+    color: vars.$light-color-light;
+    font-size: 1.5em;
+
+    &-text{
+      font-size: .8em;
+      padding: 2em;
+    }
+    &-text:hover{
+    color:vars.$light-color-hover;
+    text-decoration: underline;
+    }
+  }
+
+  &__copy{
+    text-align: center;
+    font-size: 1em;
+    padding-bottom: 1em;
+    color: vars.$light-color-light;
+  }
+
+  
+  @media screen and (min-width:767px) {
+    .footer{
+      &__link{
+        &-group{
+        display: flex;
+        flex-direction: row;
+        color : vars.$light-color-light;
+        }
+      }
+    }
+  }
+}

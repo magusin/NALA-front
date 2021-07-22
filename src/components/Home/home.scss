@@ -1,8 +1,19 @@
-.home {
-  
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: rgb(20, 17, 17);
-  font-size: 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Voltaire&display=swap');
+
+.home{
+  h2{
+    display:inline-block;
+    font-family: 'Voltaire', sans-serif;
+    font-size:1.5rem;
+    background: linear-gradient( to right, #5548ed, #15a8fb);
+    padding: 1.5rem 0.5rem 0.6rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
+
+  a.title:hover{
+    letter-spacing: 0.5px;
+    transition: .5s;
+  }
 }

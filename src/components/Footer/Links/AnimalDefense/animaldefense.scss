@@ -1,0 +1,23 @@
+@use 'src/styles/vars';
+
+.animaldefense{
+  text-align: center;
+  margin-top: 2em;
+
+  &__title{
+    font-size: 2em;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    background-color: vars.$light-background-color;
+    color: #fff;
+    padding: .5em;
+  }
+
+  &__text{
+    height: 50vh;
+    padding: 1% 25%;
+    font-size: 1.50em;
+    margin-bottom: 1em;
+  }
+}

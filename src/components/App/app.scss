@@ -1,0 +1,7 @@
+@use 'src/styles/vars';
+@import url('https://fonts.googleapis.com/css2?family=Voltaire&display=swap');
+
+
+body {
+  font-family: vars.$font-title;
+}
