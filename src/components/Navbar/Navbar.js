@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
 
-const Navbar = ({
 
-}) => {
+const Navbar = () => {
   //isOpenMenu : true or false
     //changeMenu
       // close mobile menu => false
@@ -18,6 +16,7 @@ const Navbar = ({
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
 
   return (
     <>
@@ -35,7 +34,9 @@ const Navbar = ({
               Profil
             </Link>
           </li>
+
           <li className='nav-item'    
+
           >
             <Link
               to='/notifications'
@@ -69,7 +70,5 @@ const Navbar = ({
     </>
   );
 }
-
-
 
 export default Navbar;
