@@ -1,6 +1,9 @@
 // == Import npm
 import React from 'react';
 
+// Import
+import Home from 'src/containers/Home';
+
 // == Import
 import './app.scss';
 import Nav from '../Nav'
@@ -18,6 +21,7 @@ const App = () => (
     <Router>
       <Nav />
       <Error />
+      <Home/>
       <Switch>
         <Route path='/protection-animale' component={AnimalDefense} />
         <Route path='/contact' component={Contact} />
