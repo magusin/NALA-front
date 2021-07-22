@@ -1,3 +1,4 @@
+@use 'src/styles/vars';
 .error{
   margin-top: 2em;
   &__container{
@@ -7,7 +8,7 @@
     &-title{
       font-size: 6em;
       text-transform: uppercase;
-      color: #3f6372;
+      color: vars.$light-background-color;
     }
     &-bis{
       margin-top: 1em;
@@ -18,7 +19,7 @@
       font-size: 2em;
       text-transform: uppercase;
       line-height: 1.5em;
-      color: #3f6372;
+      color: vars.$light-background-color;
     }
 
     &-link{
@@ -28,7 +29,7 @@
       text-decoration: underline;
       font-weight: bold;
       line-height: 1.5em;
-      color: #3f6372;
+      color: vars.$light-background-color;
     }
   }
 
