@@ -1,31 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Picture from '../Picture';
 
 // components
 import Carousel from 'src/containers/Carousel';
 
-import './home.scss';
+import './page.scss';
 
-
-const Home = (
+const Page = (
   {carousel}
 ) => (
-  <div className="home">
+  <div className="page">
     {carousel.map((carousel) =>{
       
       return(
       <div key={carousel.category}>
-        <a href="#" className="title"><h2>{carousel.name} :</h2></a>
+        <h2>{carousel.name} :</h2>
         <Carousel category={carousel.category} number={carousel.page}/>
       </div>
       )
     })}
-    <Picture/>
   </div>
 );
 
-Home.protoTypes = {
+Page.protoTypes = {
   carousel: PropTypes.arrayOf(
     PropTypes.shape({
       category: PropTypes.string.isRequired,
@@ -36,4 +33,4 @@ Home.protoTypes = {
   category: PropTypes.number.isRequired,
 };
 
-export default Home;
+export default Page;
