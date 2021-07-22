@@ -6,3 +6,4 @@ import reducer from 'src/reducers';
 const store = createStore(reducer, devToolsEnhancer());
 
 export default store;
+
