@@ -33,15 +33,15 @@
     text-decoration: underline;
     }
   }
-
-  &__copy{
-    text-align: center;
-    font-size: 1em;
-    padding-bottom: 1em;
-    color: vars.$light-color-light;
+  &__box{
+      &-copy{
+        border-top: 1px dotted vars.$light-color-light;
+        text-align: center;
+        font-size: 1em;
+        padding: .5em 0;
+        color: vars.$light-color-light;
+      }
   }
-
-  
   @media screen and (min-width:767px) {
     .footer{
       &__link{
