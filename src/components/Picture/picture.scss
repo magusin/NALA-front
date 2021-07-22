@@ -1,0 +1,54 @@
+.picture{
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  background: #ffffffbd;
+
+  button{
+    border: none;
+    background: none;
+    float: right;
+    font-size: 2rem;
+  }
+
+  &-top, &-bottom{
+    width:100%;
+    padding: 0.8rem 1rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position:absolute
+  }
+
+  &-top{
+    top:0;
+
+    &-title{
+
+    }
+  }
+
+  &-img {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin: auto;
+    padding: 4rem 1rem;
+    width: 100%;
+
+    img{
+      max-height: 100%;
+      max-width: 100%;
+      box-shadow: 0 0 1rem #949494eb;
+    }
+  }
+
+  &-bottom{
+    bottom:0;
+    display:flex;
+  }
+}

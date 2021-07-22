@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Picture from '../Picture';
 
 // components
 import Carousel from 'src/containers/Carousel';
 
 import './home.scss';
+
 
 const Home = (
   {carousel}
@@ -19,6 +21,7 @@ const Home = (
       </div>
       )
     })}
+    <Picture/>
   </div>
 );
 
