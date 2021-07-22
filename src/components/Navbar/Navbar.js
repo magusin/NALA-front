@@ -1,29 +1,40 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
-import Dropdown from './Dropdown';
+import Dropdown from 'src/containers/Navbar/Dropdown';
 
-function Navbar() {
+const Navbar = ({
+  handleDisplayDropdown,
+  handleNotDisplayDropdown,
+  dropdownSelect,
+}) => {
+  //isOpenMenu : true or false
+    //changeMenu
+      // close mobile menu => false
+      //click menu => true
+  //isOpenDropdown : true or false
+    // changeDropdown
+      //pour passer isOpen en true ou false
   const [click, setClick] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
   const onMouseEnter = () => {
-    if (window.innerWidth < 767) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
+    if (window.innerWidth > 767) {
+       {handleDisplayDropdown()}
+    }else{
+      {handleNotDisplayDropdown()}
     }
   };
 
   const onMouseLeave = () => {
     if (window.innerWidth < 767) {
-      setDropdown(false);
+      {handleNotDisplayDropdown()}
     } else {
-      setDropdown(false);
+      {handleNotDisplayDropdown()}
     }
   };
 
@@ -45,7 +56,7 @@ function Navbar() {
           </li>
           <li className='nav-item'
           onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
+          onMouseLeave={onMouseLeave}    
           >
             <Link
               to='/notifications'
@@ -54,7 +65,7 @@ function Navbar() {
             >
               Notification
             </Link>
-            {dropdown && <Dropdown />}
+            {dropdownSelect && <Dropdown/>}
           </li>
           <li className='nav-item'>
             <Link
@@ -79,6 +90,12 @@ function Navbar() {
       </nav>
     </>
   );
+}
+
+Navbar.propTypes = {
+  handleDisplayDropdown: PropTypes.func.isRequired,
+  handleNotDisplayDropdown: PropTypes.func.isRequired,
+  dropdownSelect: PropTypes.bool.isRequired,
 }
 
 export default Navbar;

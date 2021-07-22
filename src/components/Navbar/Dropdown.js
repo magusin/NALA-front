@@ -3,7 +3,10 @@ import { MenuNotifications } from './MenuNotifications';
 import './Dropdown.scss';
 import { Link } from 'react-router-dom';
 
-function Dropdown() {
+function Dropdown({
+  changeDropdown,
+  dropdownOpen,
+}) {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -11,8 +14,8 @@ function Dropdown() {
   return (
     <>
       <ul
-        onClick={handleClick}
-        className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}
+        onClick={() => changeDropdown()}
+        className={dropdownOpen ? 'dropdown-menu clicked' : 'dropdown-menu'}
       >
         {MenuNotifications.map((item, index) => {
           return (
@@ -20,7 +23,7 @@ function Dropdown() {
               <Link
                 className={item.cName}
                 to={item.path}
-                onClick={() => setClick(false)}
+                onClick={() =>{changeDropdown()}}
               >
                 {item.title}
               </Link>
@@ -33,3 +36,5 @@ function Dropdown() {
 }
 
 export default Dropdown;
+
+//une fonction => dropdownSelect: !state.dropdownSelect

@@ -22,6 +22,7 @@ const reducer = (state = initialState, action = {}) => {
         connexionSelect: false,
         inscriptionSelect: true,
       };
+      
     default:
       return state;
   }
