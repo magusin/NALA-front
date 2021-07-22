@@ -17,6 +17,9 @@
   position:relative;
   height: max-content;
   min-height: 232px;
+  width: 100%;
+  overflow: hidden;
+  
   &-nav{
     &-left, &-right{
       font-size: 3rem;
