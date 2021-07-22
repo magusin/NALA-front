@@ -1,5 +1,7 @@
+@use 'src/styles/vars';
+
 .block{
-  background-color: #3f6372;
+  background-color: vars.$light-background-color;
 }
 
 .footer {
@@ -15,7 +17,7 @@
 
   &__link{
     text-align: center;
-    color: #fff;
+    color: vars.$light-color-light;
     font-size: 1.5em;
 
     &-text{
@@ -23,7 +25,7 @@
       padding: 2em;
     }
     &-text:hover{
-    color:#14a9e9;
+    color:vars.$light-color-hover;
     text-decoration: underline;
     }
   }
@@ -32,7 +34,7 @@
     text-align: center;
     font-size: 1em;
     padding-bottom: 1em;
-    color: #fff;
+    color: vars.$light-color-light;
   }
 
   
@@ -42,7 +44,7 @@
         &-group{
         display: flex;
         flex-direction: row;
-        color : #fff;
+        color : vars.$light-color-light;
         }
       }
     }

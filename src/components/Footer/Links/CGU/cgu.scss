@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .cgu{
   margin-top: 2em;
   &__title{
@@ -5,7 +7,7 @@
     margin-bottom: 1.5em;
     font-weight: bold;
     text-align: center;
-    background-color: #3f6372;
+    background-color: vars.$light-background-color;
     color: #fff;
     padding: .5em;
   }
