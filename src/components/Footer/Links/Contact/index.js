@@ -1,5 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CarmenAvatar from 'src/assets/carmen.png';
+import EmmanuelAvatar from 'src/assets/emmanuel.png';
+import MelissaAvatar from 'src/assets/mélissa.png';
+import QuentinAvatar from 'src/assets/quentin.png';
+import HugoAvatar from 'src/assets/hugo.png';
 
 import './contact.scss';
 
@@ -92,29 +97,33 @@ const Contact = ({
         <div className="contact__right">
           <h3 className="contact__title">L'équipe</h3>
             <div className="contact__team">
+
               <div className="contact__team-items">
-                <i className="bi bi-person-circle"></i>
+                <img src={CarmenAvatar} alt="carmen" className="contact__team-avatar carmen" />
                 <h4 className="contact__team-name">Carmen</h4>
                 <p className="contact__team-text">Product Owner & Git Master</p>
               </div>
+
               <div className="contact__team-items">
-                <i className="bi bi-person-circle"></i>
+              <img src={EmmanuelAvatar} alt="emmanuel" className="contact__team-avatar emmanuel" />
                 <h4 className="contact__team-name">Emmanuel</h4>
                 <p className="contact__team-text">Lead-Dev Back</p>
               </div>
           
               <div className="contact__team-items">
-                <i className="bi bi-person-circle" ></i>
-                <h4 className="contact__team-name">Mélissa</h4>
+                <img src={MelissaAvatar} alt="melissa" className="contact__team-avatar melissa" />
+                <h4 className="contact__team-name ">Mélissa</h4>
                 <p className="contact__team-text">Git Master</p>
               </div>
+
               <div className="contact__team-items">
-                <i className="bi bi-person-circle"></i>
+                <img src={QuentinAvatar} alt="quentin" className="contact__team-avatar quentin" />
                 <h4 className="contact__team-name">Quentin</h4>
                 <p className="contact__team-text">Lead-Dev Front</p>
               </div>
+
               <div className="contact__team-items">
-                <i className="bi bi-person-circle"></i>
+                <img src={HugoAvatar} alt="hugo" className="contact__team-avatar hugo" />
                 <h4 className="contact__team-name">Hugo</h4>
                 <p className="contact__team-text">Scrum Master</p>
               </div>

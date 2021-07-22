@@ -16,9 +16,10 @@ const Footer = () => (
         <li className="footer__link-text"> <Link to="/mentions-legales">Mentions Légales</Link></li>
         <li className="footer__link-text"> <Link to="/cgu">CGU</Link></li>
       </ul>
-  </div>
     </div>
-    <p className="footer__copy">NALA - 2021 &copy;</p>
+  </div>
+  <div className="footer__box"><p className="footer__box-copy">NALA - 2021 &copy;</p></div>
+    
   </div>
 );
 

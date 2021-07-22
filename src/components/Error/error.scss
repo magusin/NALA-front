@@ -1,0 +1,55 @@
+.error{
+  margin-top: 2em;
+  &__container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &-title{
+      font-size: 6em;
+      text-transform: uppercase;
+      color: #3f6372;
+    }
+    &-bis{
+      margin-top: 1em;
+    }
+
+    &-text{
+      text-align: center;
+      font-size: 2em;
+      text-transform: uppercase;
+      line-height: 1.5em;
+      color: #3f6372;
+    }
+
+    &-link{
+      text-align: center;
+      font-size: 2em;
+      text-transform: uppercase;
+      text-decoration: underline;
+      font-weight: bold;
+      line-height: 1.5em;
+      color: #3f6372;
+    }
+  }
+
+  &__case{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2em;
+
+    &-img{
+      width: 19.5em
+    }
+  }
+}
+
+@media screen and (min-width:767px) {
+  .error{
+    &__case{
+      &-img{
+        width: 40em;
+      }
+    }
+  }
+}
