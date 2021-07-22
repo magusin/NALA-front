@@ -15,18 +15,6 @@
   }
 }
 
-@keyframes nextCard{
-  to{
-    transform: translate(250%);
-    opacity:0;
-  }
-}
-@keyframes previousCard{
-  to{
-    transform: translate(-250%);
-    opacity:0;
-  }
-}
   //Initial Elements position
 
 .carousel-card{
@@ -42,10 +30,12 @@
   &.next{  
     opacity: 0;
     transform: translate(250%);
+    animation:hideCard;
+    animation-delay: 1s;
   }
   &.previous{
     opacity:0;
-    transform: translate(-250%);   
+    transform: translate(-250%);
   }
   &.selected{
     animation: seeCard 1s;
