@@ -1,3 +1,4 @@
+@use 'src/styles/vars';
 
 .nav{
   display: flex;
@@ -8,7 +9,7 @@
   &__button{
     width: 7em;
     border: 0;
-    background-color: #3f6372;
+    background-color: vars.$light-background-color;
     color: #fff;
     padding: .7em;
     border-radius: .2em;
@@ -26,7 +27,7 @@
   }
 
   &__search::placeholder{
-    color: #3f6372;
+    color: vars.$light-background-color;
 
   }
 
@@ -47,7 +48,7 @@
 
   &__form{
     border: none;
-    border-bottom : 1px solid #3f6372 ;
+    border-bottom : 1px solid vars.$light-background-color;
     border-radius: .5em;
   }
 }
@@ -65,13 +66,12 @@
       border-radius: .2em;
       background-color: #fff;
       border: none;
-      border: 1px solid #3f6372 ;
-      color: #3f6372;
+      border: 1px solid vars.$light-background-color;
+      color: vars.$light-background-color;
 
       &-option{
-        padding: 2em;
-        border-color: #3f6372 1px solid;
-        color : #3f6372;
+        border-color: vars.$light-background-color 1px solid;
+        color : vars.$light-background-color;
       }
     }
   }
@@ -79,5 +79,5 @@
 }
 
 .bi-search{
-  color: #3f6372
+  color: vars.$light-background-color;
 }
