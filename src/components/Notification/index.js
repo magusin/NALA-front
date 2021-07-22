@@ -4,7 +4,7 @@ import './notification.scss';
 export default function Notification() {
   return (
     <>
-      <h1 className='notification'>Notification</h1>
+      <h1 className='notification'>Vos Notifications</h1>
     </>
   );
 }

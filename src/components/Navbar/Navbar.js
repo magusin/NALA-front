@@ -1,31 +1,23 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
-import Dropdown from './Dropdown';
 
-function Navbar() {
+const Navbar = ({
+
+}) => {
+  //isOpenMenu : true or false
+    //changeMenu
+      // close mobile menu => false
+      //click menu => true
+  //isOpenDropdown : true or false
+    // changeDropdown
+      //pour passer isOpen en true ou false
   const [click, setClick] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-
-  const onMouseEnter = () => {
-    if (window.innerWidth < 767) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
-    }
-  };
-
-  const onMouseLeave = () => {
-    if (window.innerWidth < 767) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
-  };
 
   return (
     <>
@@ -43,9 +35,7 @@ function Navbar() {
               Profil
             </Link>
           </li>
-          <li className='nav-item'
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
+          <li className='nav-item'    
           >
             <Link
               to='/notifications'
@@ -54,7 +44,6 @@ function Navbar() {
             >
               Notification
             </Link>
-            {dropdown && <Dropdown />}
           </li>
           <li className='nav-item'>
             <Link
@@ -80,5 +69,7 @@ function Navbar() {
     </>
   );
 }
+
+
 
 export default Navbar;
