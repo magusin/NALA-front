@@ -1,0 +1,101 @@
+.profil {
+  color: rgb(20, 17, 17);
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  padding-top: 0.5em;
+  padding-bottom: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  border: 2px solid;
+  margin: 2em;
+  height: 20vh;
+
+&-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1em;
+& img {
+  border-radius: 50%;
+  max-width: 140px;
+  align-items: center;
+}
+& input {
+  height: 60%;
+}}
+&-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em;
+  align-content: center;
+} 
+}
+
+button {
+  color: white;
+  background-color: rgba(0, 102, 255, 0.808);
+  border-radius: 5px;
+  border: none;
+  padding: 0.5em;
+}
+
+
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  height: 20vh;
+  margin: 2em;
+  justify-content: space-around;
+}
+
+.poste {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+& img {
+  width: 30%;
+  margin: 1em;
+}
+}
+
+@media screen and (max-width: 767px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: 2px solid;
+    margin: 1em;
+    height: 35vh;
+  &-3 {
+    display: flex;
+    flex-direction: row;
+    & input {
+      padding-left: 1em;
+      margin-left: 1em;
+      
+      width: 10vh;
+      height: 100%;
+      align-items: center;
+    }
+    & button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 1em;
+      align-content: center;
+    }
+  }
+}
+}
+
+

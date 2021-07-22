@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+
 // == Import : store
 import store from 'src/store';
 
@@ -20,6 +21,6 @@ const rootReactElement = (
 
 const target = document.getElementById('root');
 
-render(rootReactElement, target);
 
+render(rootReactElement, target);
 
