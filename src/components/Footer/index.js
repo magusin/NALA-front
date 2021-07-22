@@ -6,8 +6,8 @@ import Logo from '../../assets/logo_footer.png';
 const Footer = () => (
   <div className="block">
     <div className="footer">
-      <div>
-        <img src={Logo} alt="Logo Nala" className="footer__logo"/>
+      <div className="footer__container">
+        <img src={Logo} alt="Logo Nala" className="footer__container-logo"/>
       </div>
       <div className="footer__link">
       <ul className="footer__link-group">
@@ -16,9 +16,10 @@ const Footer = () => (
         <li className="footer__link-text"> <Link to="/mentions-legales">Mentions Légales</Link></li>
         <li className="footer__link-text"> <Link to="/cgu">CGU</Link></li>
       </ul>
-  </div>
     </div>
-    <p className="footer__copy">NALA - 2021 &copy;</p>
+  </div>
+  <div className="footer__box"><p className="footer__box-copy">NALA - 2021 &copy;</p></div>
+    
   </div>
 );
 

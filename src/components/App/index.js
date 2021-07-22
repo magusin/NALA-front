@@ -6,6 +6,7 @@ import './app.scss';
 import Nav from '../Nav'
 import Footer from '../Footer';
 import Contact from 'src/containers/Contact';
+import Error from '../Error';
 import CGU from '../Footer/Links/CGU';
 import LegaleMentions from '../Footer/Links/LegalesMentions';
 import AnimalDefense from '../Footer/Links/AnimalDefense';
@@ -16,6 +17,7 @@ const App = () => (
   <div className="app">
     <Router>
       <Nav />
+      <Error />
       <Switch>
         <Route path='/protection-animale' component={AnimalDefense} />
         <Route path='/contact' component={Contact} />

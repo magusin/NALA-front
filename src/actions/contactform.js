@@ -1,13 +1,3 @@
-export const NEW_SEARCH = 'NEW SEARCH'
-export const newSearch = () => ({
-  type: NEW_SEARCH,
-});
-export const SET_NEW_SEARCH = 'SET_NEW_SEARCH';
-export const setNewSearch = (newSearch) => ({
-  type: SET_NEW_SEARCH,
-  newSearch,
-})
-
 export const NEW_FIRST_NAME = 'NEW_FIRST_NAME'
 export const newFirstName = () => ({
   type: NEW_FIRST_NAME,

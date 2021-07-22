@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 
 import SearchBar from '../../components/Nav/SearchBar';
-import { newSearch, setNewSearch } from '../../actions';
+import { newSearch, setNewSearch } from '../../actions/searchbar';
 
 const mapStateToprops = (state) => ({
-  newSearch: state.newSearch,
+  newSearch: state.searchbar.newSearch,
 });
 
 const mapDispatchToProps = (dispatch) => ({

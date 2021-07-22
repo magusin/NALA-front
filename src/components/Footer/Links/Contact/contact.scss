@@ -14,12 +14,25 @@
   
 
   &__form{
+    &-input{
+    border: none;
+    border-bottom : 1px solid #3f6372 ;
+    border-bottom-right-radius: .5em;
     padding: 1em;
-    &-items{
-      margin: .5em;
-      text-align: center;
+    width: 70%;
+    font-family: 'Voltaire';
+    }
 
-      input{
+    &-input::placeholder{
+      color: #3f6372;
+      font-size: 1em;
+    }
+
+    &-input:focus-within{
+      outline : 1px solid #3f6372;
+    }
+
+    &-textarea{
       border: none;
       border-bottom : 1px solid vars.$light-background-color;
       border-bottom-right-radius: .5em;
@@ -44,19 +57,16 @@
         border-bottom-left-radius: .5em;;
         border-bottom-right-radius: .5em;;
 
-        padding: 1em;
-        width: 70%;
-        font-family: 'Voltaire';
-      }
+    &-textarea::placeholder{
+      color: #3f6372;
+      font-size: 1em;
+    }
 
       textarea::placeholder{
         color: vars.$light-background-color;
         font-size: 1em;
       }
 
-      textarea:focus-within{
-        outline : none;
-      }
     }
     &-container{
       text-align: center;
@@ -79,22 +89,42 @@
   &__team{
     text-align: center;
     padding: 0 1em;
+    
+    &-avatar{
+      width: 4em;
+      border-radius: 50%;
+    }
 
     &-items{
       margin: 3em;
 
-      h4{
-        font-size: 1.5em;
-      }
-
-      p{
-        font-size: 1em;
-        font-style: italic;
-      }
+    }  
+    &-name{
+      font-size: 1.5em;
     }
-  }  
+  
+    &-text{
+      font-size: 1em;
+      font-style: italic;
+    }
+  }
 }
 
+.carmen{
+  background-color: #f0f;
+}
+.emmanuel{
+  background-color: #3f6372;
+}
+.melissa{
+  background-color: #311B92;
+}
+.quentin{
+  background-color: #FF4A57;
+}
+.hugo{
+  background-color: #1888ff;
+}
 @media screen and (min-width:767px) {
   .contact{
     margin-top: 2em;

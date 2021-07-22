@@ -69,15 +69,10 @@
       border: 1px solid vars.$light-background-color;
       color: vars.$light-background-color;
 
-
       &-option{
         border-color: vars.$light-background-color 1px solid;
         color : vars.$light-background-color;
       }
-    }
-
-    &__select-option:hover{
-      background-color: none;
     }
   }
   
