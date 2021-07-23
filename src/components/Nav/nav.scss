@@ -1,5 +1,8 @@
 @use 'src/styles/vars';
 
+
+
+
 .nav{
   display: flex;
   justify-content: center;
@@ -61,7 +64,9 @@
 
     &__select{
       display:block;
-      padding: .9em;
+      text-align: center;
+      width: 7em;
+      padding: 1em;
       margin-right: 1em;
       border-radius: .2em;
       background-color: #fff;
@@ -69,11 +74,42 @@
       border: 1px solid vars.$light-background-color;
       color: vars.$light-background-color;
 
-      &-option{
-        border-color: vars.$light-background-color 1px solid;
-        color : vars.$light-background-color;
+      &-content{
+        text-align: center;
+        z-index:1000;
+        display: none;
+        position: absolute;
+        width: 100%;
+        border: 1px solid vars.$light-background-color;
+        border-radius: .5em;
+        background-color: #fff;
+        margin-left: -2.6em;
+        margin-top: 1em;
+      }
+
+      
+      &-link{
+        align-items: center;
+        font-size: 1em;
+        margin-bottom: 1em;
+      }
+      &-link:hover{
+        background-color: vars.$light-background-color;
+        color: #fff;
+        border-radius: .5em;
+        padding: .5em;
       }
     }
+
+    &__select:hover &__select-content {
+      display: flex;
+      margin-bottom:1em ;
+      flex-direction: column;
+      padding: 1em;
+      max-width: 10em;
+      overflow-y: none;
+    }
+
   }
   
 }
