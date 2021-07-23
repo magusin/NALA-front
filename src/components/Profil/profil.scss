@@ -7,8 +7,42 @@
   font-size: 2rem;
   text-align: center;
   }
-
-  button {
+  &__section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    border: 2px solid;
+    margin: 2em;
+    height: 20vh;
+    &-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 1em;
+      & i{
+        font-size:7.5rem;
+        color: vars.$light-background-color;
+      }
+      & input {
+        height: 60%;
+      }
+    }
+    &-text-2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 1em;
+      align-content: center;
+    }
+    &-bis {
+      display: flex;
+      flex-direction: row;
+      height: 20vh;
+      margin: 2em;
+      justify-content: space-around;
+    }
+  }
+  &__button {
     color: white;
     background-color: rgba(0, 102, 255, 0.808);
     border-radius: 5px;
@@ -16,72 +50,15 @@
     padding: 0.5em;
   }
 
-  h2 {
-    font-size: 1.5rem;
-    padding-top: 0.5em;
-    padding-bottom: 0.5rem;
-    text-align: center;
-  }
-
-  &-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    border: 2px solid;
-    margin: 2em;
-    height: 20vh;
-  
-    &-1 {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin: 1em;
-      & i{
-        font-size:9.5rem;
-        color: vars.$light-background-color;
-      }
-      & input {
-        height: 60%;
-      }
-    }
-
-    &-2 {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin: 1em;
-      align-content: center;
-    } 
-  }
-  
-  &-flex {
-    display: flex;
-    flex-direction: row;
-    height: 20vh;
-    margin: 2em;
-    justify-content: space-around;
-  }
-
-  .poste {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    & img {
-      width: 30%;
-      margin: 1em;
-    }
-  }
-  
   @media screen and (max-width: 767px) {
-    &-grid {
+    &__section {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         border: 2px solid;
         margin: 1em;
         height: 35vh;
-      &-3 {
+      &-text-3 {
         display: flex;
         flex-direction: row;
         & input {
