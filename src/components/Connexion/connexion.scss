@@ -1,9 +1,10 @@
+@use 'src/styles/vars';
 .connexion {
   margin-bottom: 1em;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: rgb(20, 17, 17);
+  color: vars.$light-background-color;
   font-size: 2rem;
 }
 
@@ -13,7 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #7aacef;
+  background-color: #fff;
 }
 
 .container {
@@ -21,29 +22,14 @@
   width: 420px;
   min-height: 490px;
   height:  auto;
-  background-color: #f0f6fb;
+  background-color: vars.$light-background-color;
   padding: 15px 25px;
   border-radius: 10px;
   font-size: 18px;
   font-family: "Quicksand", sans-serif;
 }
 
-.logo {
-  position: absolute;
-  top: 2%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  box-shadow: 0 5px 5px #ccc;
-  font-size: 1.8em;
-  background-color: #6ba1f9;
-  color: #f0f6fb;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .tab-body {
   position: relative;
@@ -51,8 +37,7 @@
   padding: 15% 5%;
   margin-top: 20%;
   background-color: #fff;
-  color: #82ade6de;
-  box-shadow: 0px 5px 10px #7c8395;
+  color: vars.$light-background-color;
   border-radius: 30px;
   font-size: 1rem;
 }
@@ -68,7 +53,7 @@
 .row {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #82ade6de;
+  border-bottom: 1px solid vars.$light-background-color;
   padding: 1.8% 0;
   margin: 20px 0;
 }
@@ -77,11 +62,11 @@
   width: 90%;
   border: none;
   outline: none;
-  color: #82ade6de;
+  color: vars.$light-background-color;
   font-weight: 550;
 }
 .input::placeholder {
-  color: #82ade6ad;
+  color: vars.$light-background-color;
 }
 
 .link {
@@ -89,7 +74,7 @@
   font-size: 0.8em;
   width: 100%;
   text-decoration: none;
-  color: #2b384f;
+  color: vars.$light-background-color;
   text-align: right;
 }
 .link:hover {
@@ -104,8 +89,8 @@
   width: 120px;
   height: 45px;
   border-radius: 50px;
-  background-color: #6ba1f9;
-  border: none;
+  background-color: vars.$light-background-color;
+  border: 1px solid #fff;
   outline: none;
   color: #fff;
   cursor: pointer;
@@ -126,7 +111,7 @@ butt.tab-link.active {
 
 button.tab-link{
   text-decoration: none;
-  color: #6ba1f9ee;
+  color: #fff;
   margin: 0 3%;
   background: none;
   border:none;

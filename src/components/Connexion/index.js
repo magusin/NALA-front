@@ -23,7 +23,7 @@ const Connexion = ({
   return (
     <div className="general">
       <h1 className={inscriptionSelect ? 'connexion active' : 'connexion'}> Inscription </h1>
-      <h1 className={connexionSelect ? 'connexion active' : 'connexion'}> Connection </h1>
+      <h1 className={connexionSelect ? 'connexion active' : 'connexion'}> Connexion </h1>
       <div className="container">
         <div className="tab-top" >
           <button className="tab-link active" 
@@ -108,7 +108,7 @@ const Connexion = ({
             </div>
             <button
               className="btn"
-              type="button"
+              type="submit"
             >
               Inscription
             </button>
