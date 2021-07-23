@@ -30,7 +30,6 @@
   text-align: center;
   width: 59vw;
   justify-content: end;
-  margin-right: 2rem;
 }
 
 .nav-item {
@@ -67,28 +66,27 @@
 
   .navbar{
     position: sticky;
-    top : 0px
+    top : 0px;
   }
 
   .nav-menu {
     transition: all 0.5s ease;
     display: none;
     flex-direction: column;
-    width: 110%;
-    height: 55vh;
+    width: 100%;
     position: absolute;
     top: 3rem;
-    right: -115%;
+    right: -100%;
     opacity: 1;
   }
 
   .nav-menu.active {
     background: vars.$light-background-color;
-    right: -8%;
+    right: 0;
     opacity: 1;
     transition: all 0.5s ease;
     display: flex;
-    z-index: 1;
+    z-index: 99;
   }
 
   .nav-links {
