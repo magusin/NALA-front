@@ -2,7 +2,7 @@ import React from 'react';
 
 import './nav.scss';
 import Buttons from './Buttons'
-import Select from './Select'
+import Selects from './Selects'
 import SearchBar from 'src/containers/SearchBar'
 
 
@@ -10,7 +10,7 @@ import SearchBar from 'src/containers/SearchBar'
 const Nav = () => (
   <div className="nav">
     <Buttons />
-    <Select />
+    <Selects />
     <SearchBar />
   </div>
 );
