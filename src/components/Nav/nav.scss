@@ -78,7 +78,7 @@
         text-align: center;
         z-index:1000;
         display: none;
-        position: absolute;
+        position: fixed;
         width: 100%;
         border: 1px solid vars.$light-background-color;
         border-radius: .5em;
@@ -86,12 +86,11 @@
         margin-left: -2.6em;
         margin-top: 1em;
       }
-
-      
       &-link{
         align-items: center;
         font-size: 1em;
-        margin-bottom: 1em;
+        margin-bottom: .5em;
+        padding: .5em;
       }
       &-link:hover{
         background-color: vars.$light-background-color;
@@ -103,10 +102,9 @@
 
     &__select:hover &__select-content {
       display: flex;
-      margin-bottom:1em ;
       flex-direction: column;
-      padding: 1em;
-      max-width: 10em;
+      padding: .5em;
+      width: 10em;
       overflow-y: none;
     }
 

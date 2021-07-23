@@ -62,11 +62,13 @@
 @media screen and (max-width: 767px) {
   .NavbarItems {
     position: relative;
+    z-index:5000;
   }
 
   .navbar{
     position: sticky;
     top : 0px;
+
   }
 
   .nav-menu {
@@ -78,6 +80,7 @@
     top: 3rem;
     right: -100%;
     opacity: 1;
+    
   }
 
   .nav-menu.active {
