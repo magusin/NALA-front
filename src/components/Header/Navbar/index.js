@@ -23,10 +23,10 @@ const Navbar = () => {
       <nav className='navbar'>
         
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-        <i className="fas fa-user-circle fa"> Bonjour "pseudo"</i>
+        <i className="bi bi-person-circle"></i> Bonjour "pseudo"
         </Link>
         <div className='menu-icon' onClick={handleClick}>
-          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+          <i className={click ? 'bi bi-x' : 'bi bi-list'}></i>
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>

@@ -1,5 +1,7 @@
-.profil {
+@use 'src/styles/vars';
 
+.profil {
+  margin-top: 2em;
   &-title{
   color: rgb(20, 17, 17);
   font-size: 2rem;
@@ -34,10 +36,9 @@
       flex-direction: column;
       justify-content: space-between;
       margin: 1em;
-      & img {
-        border-radius: 50%;
-        max-width: 140px;
-        align-items: center;
+      & i{
+        font-size:9.5rem;
+        color: vars.$light-background-color;
       }
       & input {
         height: 60%;

@@ -10,7 +10,7 @@ export default function Profil() {
       <h1 className="profil-title">Profil</h1>
       <section className= "profil-grid">
           <div className="profil-grid-1">
-            <img height="130" src='https://react.semantic-ui.com/images/wireframe/square-image.png' />
+            <i className="bi bi-person-circle"></i>
           </div>
           <div className="profil-grid-1">
             <p>Pseudo</p>
@@ -39,7 +39,7 @@ export default function Profil() {
       </section>
     <h2>Mes postes</h2> 
     <section className="poste">
-      <Card/>
+      
     </section>
   </div>
   );

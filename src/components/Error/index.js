@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Img404 from '../../assets/404.png'
 import './error.scss';
@@ -10,7 +11,7 @@ const Error = () => (
       <div className="error__container-bis">
         <p className="error__container-text">Il n'y a rien à voir ici !</p>
         <p className="error__container-text">Pour retourner à l'accueil</p>
-        <a href="/" className="error__container-link"><p>C'est par là !</p></a>
+        <Link to="/" className="error__container-link"><p>C'est par là !</p></Link>
       </div>
     </div>
     

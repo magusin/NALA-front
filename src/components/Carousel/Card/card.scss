@@ -31,14 +31,14 @@
     opacity: 0;
     transform: translate(250%);
     animation:hideCard;
-    animation-delay: 1s;
+    animation-delay: 0.75s;
   }
   &.previous{
     opacity:0;
     transform: translate(-250%);
   }
   &.selected{
-    animation: seeCard 1s;
+    animation: seeCard 0.75s;
     animation-fill-mode: both; 
   }
 
