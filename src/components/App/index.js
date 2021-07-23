@@ -20,24 +20,27 @@ import './app.scss';
 
 
 // == Composant
-const App = () => (
-  <div className="app">
-    <Router>
-    <Header/>
+const App = () => {
 
-      <Nav />
-      <Home />
-      <Error />
-      <Switch>
-        <Route path='/protection-animale' component={AnimalDefense} />
-        <Route path='/contact' component={Contact} />
-        <Route path='/mentions-legales' component={LegaleMentions} />
-        <Route path='/cgu' component={CGU} />
-      </Switch>
-      <Footer />
-    </Router>  
+  return(
+  <div className="app">
+
+    <Header/>
+    <Nav />
+    <Switch>
+      <Route path="/" exact component={Home}/>
+      <Route path='/protection-animale' component={AnimalDefense} />
+      <Route path='/contact' component={Contact} />
+      <Route path='/mentions-legales' component={LegaleMentions} />
+      <Route path='/cgu' component={CGU} />
+      <Route path='/protection-animale' component={AnimalDefense} />
+      <Route component={Error}/>
+    </Switch> 
+    <Footer /> 
+
   </div>
-);
+  )
+};
 
 // == Export
 export default App;

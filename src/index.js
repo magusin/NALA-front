@@ -14,9 +14,11 @@ import App from 'src/components/App';
 
 // == Render
 const rootReactElement = (
-  <Provider store={store}>
-    <App />
-  </Provider>
+  <Router>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </Router>
 );
 
 const target = document.getElementById('root');
