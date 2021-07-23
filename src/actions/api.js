@@ -17,12 +17,6 @@ export const fetchCategoriesFromApi = () => ({
   type: FETCH_CATEGORIES_FROM_API,  
 });
 
-export const SAVE_CATEGORIES = 'SAVE_CATEGORIES';
-
-export const saveCategories = (data) => ({
-  type: SAVE_CATEGORIES, 
-  data:data 
-});
 
 
 

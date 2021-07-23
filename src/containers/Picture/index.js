@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 
 import Picture from 'src/components/Picture';
 import { fetchPostWithIdFromApi } from '../../actions/api';
 
 
 const mapStateToProps = (state, ownProps) => ({
-
+  isReady: state.picture.isReady,
+  picture: state.picture.picture,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -15,6 +15,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   }
 });
 
-const pictureConnectToTheStore = connect(mapStateToProps, mapDispatchToProps)(Picture);
-
-export default withRouter(pictureConnectToTheStore);
+export default connect(mapStateToProps, mapDispatchToProps)(Picture);

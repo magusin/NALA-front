@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from 'src/containers/Home';
 import Connexion from 'src/containers/Connexion';
 import Picture from 'src/containers/Picture';
+import Categories from 'src/containers/Categories';
 
 // == Import components
 import Contact from 'src/containers/Contact';
@@ -15,7 +16,6 @@ import Error from 'src/components/Error';
 import CGU from 'src/components/Footer/Links/CGU';
 import LegaleMentions from 'src/components/Footer/Links/LegalesMentions';
 import AnimalDefense from 'src/components/Footer/Links/AnimalDefense';
-import Categories from 'src/components/Categories';
 import TopLove from 'src/components/TopLove';
 import Profil from 'src/components/Profil';
 import Aime from 'src/components/Aime';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import './categories.scss';
@@ -6,10 +6,11 @@ import './categories.scss';
 const Categories = ({
   fetchCategories,
 }) => {
-  // useEffect(
-  //   fetchCategories,
-  //   [],
-  // );
+  
+  useEffect(
+    fetchCategories,
+    [],
+  );
 
   return(
     <div className="categories">

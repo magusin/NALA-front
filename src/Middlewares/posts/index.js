@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-import { FETCH_CATEGORIES_FROM_API, FETCH_TOPLOVE_FROM_API, FETCH_POST_WITH_ID_FROM_API, saveCategories } from '../../actions/api';
+import { FETCH_CATEGORIES_FROM_API, FETCH_TOPLOVE_FROM_API, FETCH_POST_WITH_ID_FROM_API } from '../../actions/api';
+import { saveCategories, savePostWithId } from '../../actions/saveData'
 
 const axiosInstance = axios.create(
   {
@@ -11,12 +12,12 @@ const axiosInstance = axios.create(
 const postsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_CATEGORIES_FROM_API: {
-      console.log(action.id);
       axiosInstance
       .get('/categories')
       .then(
         (response) => {
-          store.dispatch(saveCategories(response.data.topLove));
+          console.log(response);
+          store.dispatch(saveCategories(response.data.categories));
         },
       );
      
@@ -44,7 +45,7 @@ const postsMiddleware = (store) => (next) => (action) => {
       .then(
         (response) => {
           console.log(response);
-          // store.dispatch(savetopLove(response.data.topLove));
+          store.dispatch(savePostWithId(response.data));
         },
       );
       next(action);

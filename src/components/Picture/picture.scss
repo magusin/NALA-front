@@ -40,15 +40,56 @@
     width: 100%;
 
     img{
-      max-height: 100%;
-      max-width: 100%;
+      max-width: 60%;
       box-shadow: 0 0 1rem #949494eb;
     }
   }
 
-  &-bottom{
+  &__bottom{
+    margin:1rem;
     bottom:0;
-    display:flex;
+    flex-flow: row wrap;
+    &-links{
+      width:100%;
+      display:flex;
+      justify-content: space-evenly;
+    }
+    &-comments{
+      min-width: 320px;
+
+      form{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 1rem 0;
+        button{
+          width:max-content;
+          background-color: #17154c;
+          border: 0;
+          border-radius: .2em;
+          color: #fff;
+          font-family: Voltaire;
+          font-size: 1em;
+          margin: .1em;
+          padding: .5em;
+        }
+
+        button:hover{
+          background-color: #2c3a49;
+        }
+
+        textarea{
+          font-family: Arial, Helvetica, sans-serif;
+          width:75%;
+          min-height: 4rem;
+        }
+      }
+
+      &-section{
+        border-top: 1px solid #17154c ;
+        padding: 1rem 0;
+      }
+    }
   }
 
   i{
