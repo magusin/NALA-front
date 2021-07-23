@@ -1,5 +1,7 @@
+@use 'src/styles/vars';
+
 .navbar {
-  background: linear-gradient(90deg, rgb(102, 101, 101) 0%, rgb(88, 78, 78) 100%);
+  background: vars.$light-background-color;
   height: 3rem;
   display: flex;
   justify-content: center;
@@ -45,7 +47,7 @@
 }
 
 .nav-links:hover {
-  background-color: #1888ff;
+  background-color: vars.$light-color-hover;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }
