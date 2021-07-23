@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Import containers
 import Home from 'src/containers/Home';
+import Connexion from 'src/containers/Connexion';
+import Picture from 'src/containers/Picture';
 
 // == Import components
-
 import Contact from 'src/containers/Contact';
 import Nav from 'src/components/Nav';
 import Header from 'src/components/Header';
@@ -16,7 +17,6 @@ import LegaleMentions from 'src/components/Footer/Links/LegalesMentions';
 import AnimalDefense from 'src/components/Footer/Links/AnimalDefense';
 import Categories from 'src/components/Categories';
 import TopLove from 'src/components/TopLove';
-import Connexion from 'src/containers/Connexion';
 import Profil from 'src/components/Profil';
 import Aime from 'src/components/Aime';
 import Notification from 'src/components/Notification';
@@ -41,6 +41,7 @@ const App = () => {
       <Route path='/profil' component={Profil} />
       <Route path='/notifications' component={Notification} />
       <Route path='/tags' component={Aime} />
+      <Route path='/post/:id' component={Picture} />
       <Route path='/protection-animale' component={AnimalDefense} />
       <Route path='/contact' component={Contact} />
       <Route path='/mentions-legales' component={LegaleMentions} />

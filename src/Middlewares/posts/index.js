@@ -1,14 +1,58 @@
-import {  } from 'src/actions';
+import axios from 'axios';
 
-const posts = (store) => (next) => (action) => {
+import { FETCH_CATEGORIES_FROM_API, FETCH_TOPLOVE_FROM_API, FETCH_POST_WITH_ID_FROM_API, saveCategories } from '../../actions/api';
+
+const axiosInstance = axios.create(
+  {
+    baseURL: 'http://ec2-54-197-127-233.compute-1.amazonaws.com/api/v1',
+  },
+);
+
+const postsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
-    case :
-      
+    case FETCH_CATEGORIES_FROM_API: {
+      console.log(action.id);
+      axiosInstance
+      .get('/categories')
+      .then(
+        (response) => {
+          store.dispatch(saveCategories(response.data.topLove));
+        },
+      );
+     
       next(action);
       break;
+    }; 
+    case FETCH_TOPLOVE_FROM_API: {
+      
+      axiosInstance
+      .get('/toplove')
+      .then(
+        (response) => {
+          console.log(response);
+          // store.dispatch(savetopLove(response.data.topLove));
+        },
+      );
+     
+      next(action);
+      break;
+    }; 
+    case FETCH_POST_WITH_ID_FROM_API: {
+      console.log(action.id);
+      axiosInstance
+      .get(`/post/${action.id}`)
+      .then(
+        (response) => {
+          console.log(response);
+          // store.dispatch(savetopLove(response.data.topLove));
+        },
+      );
+      next(action);
+      break;
+    }
     default:
       next(action);
   }
 };
 
-export default posts;
+export default postsMiddleware;
