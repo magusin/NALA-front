@@ -78,7 +78,7 @@
         text-align: center;
         z-index:1000;
         display: none;
-        position: fixed;
+        position:absolute;
         width: 100%;
         border: 1px solid vars.$light-background-color;
         border-radius: .5em;
