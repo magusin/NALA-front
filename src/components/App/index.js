@@ -14,6 +14,12 @@ import Error from 'src/components/Error';
 import CGU from 'src/components/Footer/Links/CGU';
 import LegaleMentions from 'src/components/Footer/Links/LegalesMentions';
 import AnimalDefense from 'src/components/Footer/Links/AnimalDefense';
+import Categories from 'src/components/Categories';
+import TopLove from 'src/components/TopLove';
+import Connexion from 'src/containers/Connexion';
+import Profil from 'src/components/Profil';
+import Aime from 'src/components/Aime';
+import Notification from 'src/components/Notification';
 
 // == Import asset and css
 import './app.scss';
@@ -29,6 +35,12 @@ const App = () => {
     <Nav />
     <Switch>
       <Route path="/" exact component={Home}/>
+      <Route path="/categories" exact component={Categories}/>
+      <Route path="/toplove" exact component={TopLove}/>
+      <Route path='/connexion' component={Connexion} />
+      <Route path='/profil' component={Profil} />
+      <Route path='/notifications' component={Notification} />
+      <Route path='/tags' component={Aime} />
       <Route path='/protection-animale' component={AnimalDefense} />
       <Route path='/contact' component={Contact} />
       <Route path='/mentions-legales' component={LegaleMentions} />
