@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import Card from 'src/components/Carousel/Card';
+import { fetchPostWithIdFromApi } from 'src/actions/api';
 
 const mapStateToProps = (state, ownProps) => ({
   picture: ownProps.picture,
