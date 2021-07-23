@@ -30,6 +30,7 @@
   text-align: center;
   width: 59vw;
   justify-content: end;
+  
 }
 
 .nav-item {
@@ -63,8 +64,9 @@
   .NavbarItems {
     position: relative;
   }
-
+  
   .navbar{
+    z-index: 9999;
     position: sticky;
     top: 0;
   }
@@ -78,6 +80,7 @@
     top: 3rem;
     right: -100%;
     opacity: 1;
+   
     
   }
 
@@ -87,7 +90,7 @@
     opacity: 1;
     transition: all 0.5s ease;
     display: flex;
-    z-index: 99;
+
   }
 
   .nav-links {
