@@ -79,6 +79,36 @@
       }
     }
   }
+
+  @media screen and (max-width: 530px) {
+    &__section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        border: 2px solid;
+        margin: 0.5em;
+        height: 40vh;
+      &-text-3 {
+        display: flex;
+        flex-direction: row;
+        & input {
+          padding-left: 1em;
+          margin-left: 1em;
+          
+          width: 10vh;
+          height: 100%;
+          align-items: center;
+        }
+        & button {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin: 1em;
+          align-content: center;
+        }
+      }
+    }
+  }
 }
 
 

@@ -10,53 +10,53 @@ const Connexion = ({
 }) => {
   
   return (
-    <div className="general">
-      <h1 className={inscriptionSelect ? 'connexion active' : 'connexion'}> Inscription </h1>
-      <h1 className={connexionSelect ? 'connexion active' : 'connexion'}> Connection </h1>
-      <div className="container">
-        <div className="tab-top" >
-          <button className="tab-link active" 
+    <div className="connexion">
+      <h1 className={inscriptionSelect ? 'connexion__title active' : 'connexion__title'}> Inscription </h1>
+      <h1 className={connexionSelect ? 'connexion__title active' : 'connexion__title'}> Connection </h1>
+      <div className="connexion__container">
+        <div className="connexion__container_top" >
+          <button className="connexion__container_top-link active" 
                   data-ref="connexion" 
                   href="#" 
                   onClick={() => (handleSelectConnexion())}>Connexion</button>
-          <button className="tab-link" 
+          <button className="connexion__container_top-link" 
                   data-ref="inscription" 
                   href="#" 
                   onClick={() => (handleSelectInscription())}>Inscription</button>
         </div>
 
-        <div className="tab-body">
+        <div className="connexion__container_body">
 
-          <form className={connexionSelect ? 'form active' : 'form'} action="">
-            <div className="row">
+          <form className={connexionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} action="">
+            <div className="connexion__container_body-row">
             <i className="far fa-envelope"></i>
               <input type="email" className="input" placeholder="Adresse Mail"/>
             </div>
-            <div className="row">
+            <div className="connexion__container_body-row">
               <i className="fas fa-lock"></i>
               <input placeholder="Mot de Passe" type="password" className="input"></input>
             </div>
             <a href="#" className="link">Mot de passe oublié ?</a>
-            <button className="btn" type="button">Connexion</button>
+            <button className="connexion__btn" type="button">Connexion</button>
           </form>
           
-          <form className={inscriptionSelect ? 'form active' : 'form'} action="">
-            <div className="row">
+          <form className={inscriptionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} action="">
+            <div className="connexion__container_body-row">
               <i className="far fa-envelope"></i>
               <input type="email" className="input" placeholder="Adresse Mail"/>
             </div>
-            <div className="row">
+            <div className="connexion__container_body-row">
               <i className="far fa-user"></i>
               <input type="text" className="input" placeholder="Pseudo"/>
             </div>
-            <div className="row">
+            <div className="connexion__container_body-row">
               <i className="fas fa-lock"></i>
               <input type="password" className="input" placeholder="Mot de passe"/>
             </div>
-            <div className="row">
+            <div className="connexion__container_body-row">
               <div>captcha à faire une fois le domaine fait</div>
             </div>
-            <button className="btn" type="button">Inscription</button>
+            <button className="connexion__btn" type="button">Inscription</button>
           </form>
         </div>
 
@@ -75,5 +75,3 @@ Connexion.propTypes = {
 }
 
 export default Connexion;
-
-
