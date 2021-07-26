@@ -9,11 +9,6 @@ const Selects = ({
   categoriesLoaded,
   categories
 }) => { 
-
-  useEffect(
-    fetchCategories,
-    [],
-  );
   
   return(
 
@@ -25,7 +20,11 @@ const Selects = ({
             <Link to="/" className="nav__select-link">Accueil</Link>
             <Link to="/toplove" className="nav__select-link">Top-Love</Link>
             {categories.map((category) => (
-              <Link key={category.id} to={`/categories/${category.id}`} className="nav__select-link">{category.name}</Link>
+              category.map((type) => (
+                <>
+                  <Link key={'category' + type.id} to={`/categories/${type.id}`} className="nav__select-link">{type.name}</Link>
+                </>
+              ))
             ))}            
           </div>
         )}

@@ -39,7 +39,7 @@ return(
   <div className={cardNextPrevious(page, cardId, buttonEffect) + ' ' + cardSelected(page, cardId)}>
     <Link to={`/post/${cardId}`} >
       <div className="carousel-card-img" 
-         style={{backgroundImage:`url(${picture})`}}>
+         style={{backgroundImage:`url(data:image/png;base64,${picture})`}}>
         <div className="carousel-card-img-effect"></div>
       </div>
     </Link>
