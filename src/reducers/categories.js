@@ -1,7 +1,8 @@
-import { SAVE_CATEGORIES } from "../actions/saveData";
+import { SAVE_CATEGORIES, SAVE_TOPLOVE } from "../actions/saveData";
 
 const initialState = {
   categories: [],
+  topLove:[],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -10,6 +11,11 @@ const reducer = (state = initialState, action = {}) => {
       return{
         ...state,
         categories: action.data,
+      };
+    case SAVE_TOPLOVE:
+      return{
+        ...state,
+        topLove: action.data,
       }
     default:
       return state;

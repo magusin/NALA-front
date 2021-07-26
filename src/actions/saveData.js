@@ -11,3 +11,10 @@ export const savePostWithId = (data) => ({
   type: SAVE_POST_WITH_ID,
   data:data,
 });
+
+export const SAVE_TOPLOVE = 'SAVE_TOPLOVE';
+
+export const saveTopLove = () => ({
+  type: SAVE_TOPLOVE,
+  data: data,  
+});

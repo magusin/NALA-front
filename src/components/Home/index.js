@@ -12,10 +12,10 @@ const Home = (
   fetchTopLove}
 ) => 
 {
-  // useEffect(
-  //   fetchTopLove,
-  //   [],
-  // );
+  useEffect(
+    fetchTopLove,
+    [],
+  );
 
   return(
     <div className="home">
