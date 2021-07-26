@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 
-import Categories from 'src/components/Categories';
+import Selects from 'src/components/Nav/Selects';
 import { fetchCategoriesFromApi } from '../../actions/api';
-
 
 const mapStateToProps = (state, ownProps) => ({
   categories : state.categories.categories,
@@ -15,4 +14,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Categories);
+export default connect(mapStateToProps, mapDispatchToProps)(Selects);

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './nav.scss';
 import Buttons from './Buttons'
-import Selects from './Selects'
+import Selects from 'src/containers/Nav/Selects'
 import SearchBar from 'src/containers/SearchBar'
 
 

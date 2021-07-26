@@ -17,7 +17,7 @@ const postsMiddleware = (store) => (next) => (action) => {
       .then(
         (response) => {
           if(response.status == 200){
-            console.log(response);
+                      console.log(response);
             store.dispatch(saveLastPosts(response.data));
           }
         },
@@ -30,9 +30,8 @@ const postsMiddleware = (store) => (next) => (action) => {
       .get('/categories')
       .then(
         (response) => {
-          console.log(response);
           if(response.status == 200){
-            store.dispatch(saveCategories(response.data.categories));
+            store.dispatch(saveCategories(response.data));
           }
         },
       );
