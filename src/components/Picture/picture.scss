@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .picture{
   width: 100%;
   background: #ffffffbd;
@@ -23,7 +25,7 @@
     &-title{
       display:inline-block;
       font-size:1.5rem;
-      background: linear-gradient( to right, #5548ed, #15a8fb);
+      background: vars.$light-backdround-gradient;
       padding: 1.5rem 0.5rem 0.6rem;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;   
@@ -64,10 +66,10 @@
         margin: 1rem 0;
         button{
           width:max-content;
-          background-color: #17154c;
+          background-color: vars.$light-background-color;
           border: 0;
           border-radius: .2em;
-          color: #fff;
+          color: vars.$light-background;
           font-family: Voltaire;
           font-size: 1em;
           margin: .1em;
@@ -86,13 +88,13 @@
       }
 
       &-section{
-        border-top: 1px solid #17154c ;
+        border-top: 1px solid vars.$light-background-color ;
         padding: 1rem 0;
       }
     }
   }
 
   i{
-    color: #c53b3bc0;
+    color: vars.$light-link-color;
   }
 }

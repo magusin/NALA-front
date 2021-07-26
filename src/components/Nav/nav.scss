@@ -13,7 +13,7 @@
     width: 7em;
     border: 0;
     background-color: vars.$light-background-color;
-    color: #fff;
+    color: vars.$light-background;
     padding: .7em;
     border-radius: .2em;
     margin: 0.1em;
@@ -69,7 +69,7 @@
       padding: 1em;
       margin-right: 1em;
       border-radius: .2em;
-      background-color: #fff;
+      background-color: vars.$light-background;
       border: none;
       border: 1px solid vars.$light-background-color;
       color: vars.$light-background-color;
@@ -82,7 +82,7 @@
         width: 100%;
         border: 1px solid vars.$light-background-color;
         border-radius: .5em;
-        background-color: #fff;
+        background-color: vars.$light-background;
         margin-left: -2.6em;
         margin-top: 1em;
       }
@@ -94,7 +94,7 @@
       }
       &-link:hover{
         background-color: vars.$light-background-color;
-        color: #fff;
+        color: vars.$light-background;
         border-radius: .5em;
         padding: .5em;
       }

@@ -12,7 +12,7 @@
   padding: 1em;
 
   &__container{
-    background-color: #fff;
+    background-color: vars.$light-background;
     border-radius: 50%;
     &-logo{
       max-width: 6em;

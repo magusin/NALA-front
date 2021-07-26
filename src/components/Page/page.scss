@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Voltaire&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Voltaire&display=swap");
+@use 'src/styles/vars';
 
-.page{
-  h2{
-    display:inline-block;
-    font-family: 'Voltaire', sans-serif;
-    font-size:1.5rem;
-    background: linear-gradient( to right, #5548ed, #15a8fb);
+.page {
+  h2 {
+    display: inline-block;
+    font-family: "Voltaire", sans-serif;
+    font-size: 1.5rem;
+    background: vars.$light-backdround-gradient;
     padding: 1.5rem 0.5rem 0.6rem;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
   }
 }
