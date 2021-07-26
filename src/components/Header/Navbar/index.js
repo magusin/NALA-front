@@ -19,37 +19,37 @@ const Navbar = () => {
 
 
   return (
-    <>
-      <nav className='navbar'>
+    
+      <nav className="navbar">
         
-        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+        <Link to='/' className="navbar__logo" onClick={closeMobileMenu}>
         <i className="bi bi-person-circle"></i> Bonjour "pseudo"
         </Link>
-        <div className='menu-icon' onClick={handleClick}>
+        <div className="navbar__icon" onClick={handleClick}>
           <i className={click ? 'bi bi-x' : 'bi bi-list'}></i>
         </div>
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className='nav-item'>
-            <Link to='/profil' className='nav-links' onClick={closeMobileMenu}>
+        <ul className={click ? "navbar__menu active" : "navbar__menu"}>
+          <li className="navbar__item">
+            <Link to='/profil' className="navbar__links" onClick={closeMobileMenu}>
               Profil
             </Link>
           </li>
 
-          <li className='nav-item'    
+          <li className="navbar__item"    
 
           >
             <Link
               to='/notifications'
-              className='nav-links'
+              className="navbar__links"
               onClick={closeMobileMenu}
             >
               Notification
             </Link>
           </li>
-          <li className='nav-item'>
+          <li className="navbar__item">
             <Link
               to='/tags'
-              className='nav-links'
+              className="navbar__links"
               onClick={closeMobileMenu}
             >
               Mes "J'aime"
@@ -58,7 +58,7 @@ const Navbar = () => {
           <li>
             <Link
               to='/connexion'
-              className='nav-links-mobile'
+              className="navbar__links-mobile"
               onClick={closeMobileMenu}
             >
               Déconnexion
@@ -67,7 +67,7 @@ const Navbar = () => {
         </ul>
         <Button />
       </nav>
-    </>
+    
   );
 }
 
