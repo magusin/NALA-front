@@ -27,7 +27,7 @@ return(
 
       <button 
         className="carousel-nav-right" 
-        disabled={number == 10 ? true : false} 
+        disabled={number == list.length ? true : false} 
         onClick={() => (handleNext( category ))}>
 
           <i className="bi bi-chevron-compact-right"></i>

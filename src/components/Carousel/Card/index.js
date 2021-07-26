@@ -1,6 +1,8 @@
-import React from 'react';
-import PropTypes, { string } from 'prop-types';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import './card.scss';
+
 
 const Card = ({
   cardId,
@@ -35,10 +37,12 @@ const Card = ({
 
 return(
   <div className={cardNextPrevious(page, cardId, buttonEffect) + ' ' + cardSelected(page, cardId)}>
-    <div className="carousel-card-img" 
-         style={{backgroundImage:'url('+picture+')'}}>
-      <div className="carousel-card-img-effect"></div>
-    </div>
+    <Link to={`/post/${cardId}`} >
+      <div className="carousel-card-img" 
+         style={{backgroundImage:`url(${picture})`}}>
+        <div className="carousel-card-img-effect"></div>
+      </div>
+    </Link>
     <div className="carousel-card-title">
       <span>{title}</span>
     </div>

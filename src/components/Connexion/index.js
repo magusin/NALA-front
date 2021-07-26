@@ -8,6 +8,17 @@ const Connexion = ({
   handleSelectInscription,
   connexionSelect,
   inscriptionSelect,
+  newConnexionEmail,
+  setNewConnexionEmail,
+  newConnexionPassword,
+  setNewConnexionPassword,
+  newSubscriptionEmail,
+  setNewSubscriptionEmail,
+  newSubscriptionPseudo,
+  setNewSubscriptionPseudo,
+  newSubscriptionPassword,
+  setNewSubscriptionPassword,
+
 }) => {
   
   return (
@@ -28,14 +39,28 @@ const Connexion = ({
 
         <div className="connexion__container_body">
 
-          <form className={connexionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} action="">
+          <form 
+          className={connexionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} 
+          onSubmit={(evt) => {evt.preventDefault()}}
+          action="">
             <div className="connexion__container_body-row">
             <i class="bi bi-envelope"></i>
-              <input type="email" className="input" placeholder="Adresse Mail"/>
+              <input 
+              type="email" 
+              className="input" 
+              placeholder="Adresse Mail"
+              value={newConnexionEmail}
+              onChange={(evt) => setNewConnexionEmail(evt.target.value)}
+              />
             </div>
             <div className="connexion__container_body-row">
             <i class="bi bi-lock"></i>
-              <input placeholder="Mot de Passe" type="password" className="input"></input>
+              <input placeholder="Mot de Passe" 
+              type="password" 
+              className="input"
+              value={newConnexionPassword}
+              onChange={(evt) => setNewConnexionPassword(evt.target.value)}
+              />
             </div>
             <a href="#" className="link">Mot de passe oublié ?</a>
             <button className="connexion__btn" type="button">Connexion</button>
@@ -44,20 +69,38 @@ const Connexion = ({
           <form className={inscriptionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} action="">
             <div className="connexion__container_body-row">
             <i class="bi bi-envelope"></i>
-              <input type="email" className="input" placeholder="Adresse Mail"/>
+              <input 
+              type="email" 
+              className="input" 
+              placeholder="Adresse Mail"
+              value={newSubscriptionEmail}
+              onChange={(evt) => setNewSubscriptionEmail(evt.target.value)}
+              />
             </div>
             <div className="connexion__container_body-row">
             <i class="bi bi-person-square"></i>
-              <input type="text" className="input" placeholder="Pseudo"/>
+              <input 
+              type="text" 
+              className="input" 
+              placeholder="Pseudo"
+              value={newSubscriptionPseudo}
+              onChange={(evt) => setNewSubscriptionPseudo(evt.target.value)}
+              />
             </div>
             <div className="connexion__container_body-row">
             <i class="bi bi-lock"></i>
-              <input type="password" className="input" placeholder="Mot de passe"/>
+              <input 
+              type="password" 
+              className="input" 
+              placeholder="Mot de passe"
+              value={newSubscriptionPassword}
+              onChange={(evt) => setNewSubscriptionPassword(evt.target.value)}
+              />
             </div>
             <div className="connexion__container_body-row">
               <div>captcha à faire une fois le domaine fait</div>
             </div>
-            <button className="connexion__btn" type="button">Inscription</button>
+            <button className="connexion__btn" type="submit">Inscription</button>
           </form>
         </div>
 
