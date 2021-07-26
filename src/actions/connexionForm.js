@@ -32,37 +32,37 @@ export const setNewConnexionPassword = (newConnexionPassword) => ({
   newConnexionPassword
 });
 
-export const NEW_SUBSCRIPTION_EMAIL = 'NEW_SUBSCRIPTION_EMAIL';
-export const newSubscriptionEmail = () => ({
-  type: NEW_SUBSCRIPTION_EMAIL,
+export const NEW_REGISTER_EMAIL = 'NEW_REGISTER_EMAIL';
+export const newRegisterEmail = () => ({
+  type: NEW_REGISTER_EMAIL,
 });
 
-export const SET_NEW_SUBSCRIPTION_EMAIL = 'SET_NEW_SUBSCRIPTION_EMAIL';
-export const setNewSubscriptionEmail = (newSubscriptionEmail) => ({
-  type: SET_NEW_SUBSCRIPTION_EMAIL,
-  newSubscriptionEmail,
+export const SET_NEW_REGISTER_EMAIL = 'SET_NEW_REGISTER_EMAIL';
+export const setNewRegisterEmail = (newRegisterEmail) => ({
+  type: SET_NEW_REGISTER_EMAIL,
+  newRegisterEmail,
 });
 
-export const NEW_SUBSCRIPTION_PSEUDO = 'NEW_SUBSCRIPTION_PSEUDO';
-export const newSubscriptionPseudo = () => ({
-  type: NEW_SUBSCRIPTION_PSEUDO,
+export const NEW_REGISTER_PSEUDO = 'NEW_REGISTER_PSEUDO';
+export const newRegisterPseudo = () => ({
+  type: NEW_REGISTER_PSEUDO,
 })
 
-export const SET_NEW_SUBSCRIPTION_PSEUDO = 'SET_NEW_SUBSCRIPTION_PSEUDO';
-export const setNewSubscriptionPseudo = (newSubscriptionPseudo) => ({
-  type: SET_NEW_SUBSCRIPTION_PSEUDO,
-  newSubscriptionPseudo
+export const SET_NEW_REGISTER_PSEUDO = 'SET_NEW_REGISTER_PSEUDO';
+export const setNewRegisterPseudo = (newRegisterPseudo) => ({
+  type: SET_NEW_REGISTER_PSEUDO,
+  newRegisterPseudo
 });
 
-export const NEW_SUBSCRIPTION_PASSWORD = 'NEW_SUBSCRIPTION_PASSWORD';
-export const newSubscriptionPassword = () => ({
-  type: NEW_SUBSCRIPTION_PASSWORD,
+export const NEW_REGISTER_PASSWORD = 'NEW_REGISTER_PASSWORD';
+export const newRegisterPassword = () => ({
+  type: NEW_REGISTER_PASSWORD,
 });
 
-export const SET_NEW_SUBSCRIPTION_PASSWORD = 'SET_NEW_SUBSCRIPTION_PASSWORD';
-export const setNewSubscriptionPassword = (newSubscriptionPassword) => ({
-  type: SET_NEW_SUBSCRIPTION_PASSWORD,
-  newSubscriptionPassword,
+export const SET_NEW_REGISTER_PASSWORD = 'SET_NEW_REGISTER_PASSWORD';
+export const setNewRegisterPassword = (newRegisterPassword) => ({
+  type: SET_NEW_REGISTER_PASSWORD,
+  newRegisterPassword,
 });
 
 

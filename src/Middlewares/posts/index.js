@@ -20,7 +20,6 @@ const postsMiddleware = (store) => (next) => (action) => {
           store.dispatch(saveCategories(response.data.categories));
         },
       );
-     
       next(action);
       break;
     }; 
@@ -34,7 +33,6 @@ const postsMiddleware = (store) => (next) => (action) => {
           // store.dispatch(savetopLove(response.data.topLove));
         },
       );
-     
       next(action);
       break;
     }; 
