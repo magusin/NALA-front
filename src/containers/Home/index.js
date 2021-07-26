@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Home from 'src/components/Home';
-import { fetchTopLoveFromApi } from 'src/actions/api';
+import { fetchTopLoveFromApi, fetchLastPostFromApi } from '../../actions/api';
 
 
 const mapStateToProps = (state, ownProps) => ({
@@ -11,6 +11,9 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchTopLove: () => {
     dispatch(fetchTopLoveFromApi());
+  },
+  fetchLastPosts: () => {
+    dispatch(fetchLastPostFromApi());
   },
 });
 

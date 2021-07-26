@@ -17,6 +17,13 @@ export const fetchCategoriesFromApi = () => ({
   type: FETCH_CATEGORIES_FROM_API,  
 });
 
+export const FETCH_LAST_POST_FROM_API = 'FETCH_LAST_POST_FROM_API';
+
+export const fetchLastPostFromApi = () => ({
+  type: FETCH_LAST_POST_FROM_API,
+});
+
+
 
 
 

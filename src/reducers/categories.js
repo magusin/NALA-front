@@ -1,8 +1,9 @@
-import { SAVE_CATEGORIES, SAVE_TOPLOVE } from "../actions/saveData";
+import { SAVE_CATEGORIES, SAVE_LAST_POSTS, SAVE_TOPLOVE } from "../actions/saveData";
 
 const initialState = {
   categories: [],
   topLove:[],
+  lastPosts:'',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -16,7 +17,12 @@ const reducer = (state = initialState, action = {}) => {
       return{
         ...state,
         topLove: action.data,
-      }
+      };
+    case SAVE_LAST_POSTS:
+      return{
+        ...state,
+        lastPosts: action.data,
+      };
     default:
       return state;
   }

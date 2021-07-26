@@ -9,11 +9,18 @@ import './home.scss';
 
 const Home = (
   {carousel,
-  fetchTopLove}
+  fetchTopLove,
+  fetchLastPosts,
+  }
 ) => 
 {
   useEffect(
     fetchTopLove,
+    [],
+  );
+
+  useEffect(
+    fetchLastPosts,
     [],
   );
 
@@ -34,6 +41,7 @@ const Home = (
 
 Home.protoTypes = {
   fetchTopLove:PropTypes.func.isRequired,
+  fetchLastPosts:PropTypes.func.isRequired,
   carousel: PropTypes.arrayOf(
     PropTypes.shape({
       category: PropTypes.string.isRequired,
