@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './connexion.scss';
 
+
 const Connexion = ({
   handleSelectConnexion,
   handleSelectInscription,
@@ -29,11 +30,11 @@ const Connexion = ({
 
           <form className={connexionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} action="">
             <div className="connexion__container_body-row">
-            <i className="far fa-envelope"></i>
+            <i class="bi bi-envelope"></i>
               <input type="email" className="input" placeholder="Adresse Mail"/>
             </div>
             <div className="connexion__container_body-row">
-              <i className="fas fa-lock"></i>
+            <i class="bi bi-lock"></i>
               <input placeholder="Mot de Passe" type="password" className="input"></input>
             </div>
             <a href="#" className="link">Mot de passe oublié ?</a>
@@ -42,15 +43,15 @@ const Connexion = ({
           
           <form className={inscriptionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} action="">
             <div className="connexion__container_body-row">
-              <i className="far fa-envelope"></i>
+            <i class="bi bi-envelope"></i>
               <input type="email" className="input" placeholder="Adresse Mail"/>
             </div>
             <div className="connexion__container_body-row">
-              <i className="far fa-user"></i>
+            <i class="bi bi-person-square"></i>
               <input type="text" className="input" placeholder="Pseudo"/>
             </div>
             <div className="connexion__container_body-row">
-              <i className="fas fa-lock"></i>
+            <i class="bi bi-lock"></i>
               <input type="password" className="input" placeholder="Mot de passe"/>
             </div>
             <div className="connexion__container_body-row">
