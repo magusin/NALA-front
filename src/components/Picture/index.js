@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
-import Comment from 'src/components/Picture/Comment';
+import Comment from 'src/containers/Picture/Comment';
 
 import './picture.scss';
 import Loading from '../Loading';
@@ -11,6 +11,10 @@ const Picture = ({
   fetchPostWithId, 
   isReady,
   picture,
+  displayComments,
+  changeDisplay,
+  isLogged,
+  comments,
 }) => {
 
   useEffect(
@@ -56,17 +60,24 @@ const Picture = ({
       <div className="picture__bottom">
         <div className="picture__bottom-links">
           <button><i className="bi bi-heart-fill"></i></button>
-          <button><i className="bi bi-chat-left-text-fill"></i></button>
+          <button onClick={() =>(changeDisplay())}><i className="bi bi-chat-left-text-fill"></i></button>
         </div>
 
-        <div className="picture__bottom-comments">
-          <form className="picture__bottom-comments-add">
-            <textarea></textarea>
-            <button>Poster</button>
-          </form>
+        <div className={displayComments ? "picture__bottom-comments active" : "picture__bottom-comments"}>
+          {isLogged &&
+            <form className="picture__bottom-comments-add">
+              <textarea></textarea>
+              <button>Poster</button>
+            </form>
+          }
+          {displayComments &&
+
           <div className="picture__bottom-comments-section">
-            <Comment/>
-          </div>          
+            {comments.map((comment) => (
+            <Comment key={comment.id} user={comment.user} description={comment.description} createdAt={comment.createdAt}/>
+            ))}
+          </div> 
+          }         
         </div>
 
       </div>
@@ -77,6 +88,7 @@ const Picture = ({
 };
 
 Picture.protoTypes = {
+  displayComments: PropTypes.bool.isRequired,
   fetchPostWithId: PropTypes.func.isRequired,
   isReady: PropTypes.bool.isRequired,
   picture: PropTypes.shape({

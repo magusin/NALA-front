@@ -5,6 +5,8 @@ import searchbar from './searchbar';
 import contactform from './contactform';
 import categories from './categories';
 import picture from './picture';
+import comment from './comment';
+import user from './user';
 
 const rootReducer = combineReducers({
   carousel: carousel,
@@ -13,6 +15,8 @@ const rootReducer = combineReducers({
   connexionForm: connexionForm,
   categories: categories,
   picture: picture,
+  comment: comment,
+  user: user,
 });
 
 export default rootReducer;

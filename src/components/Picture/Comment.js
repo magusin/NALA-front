@@ -2,18 +2,30 @@ import React from 'react';
 
 import './comment.scss';
 
-const Comment = (
-  
-) => (
-  <div className="comment">
-    <div className="comment-title">Titre</div>
-    <div className="comment__meta">Par
-      <div className="comment__meta-author"> RageuxDu75 </div> le 
-      <div className="comment__meta-date">jour/mois/année</div>
-    </div>
+const Comment = ({
+  displayComments,
+  user,
+  description,
+  createdAt,
+}) => {
 
-    <div className="comment-post">Screugneugneu</div>
-  </div>
-);
+  return(
+    <>
+      {displayComments && 
+        (
+          <div className="comment">
+            <div className="comment__meta">Par
+              <div className="comment__meta-author">{comments.user.nickname}</div> le 
+              <div className="comment__meta-date">{comments.createdAt}</div>
+            </div>
+      
+            <div className="comment-post">{comments.description}</div>
+          </div>
+        )
+      }
+
+    </>
+  )
+};
 
 export default Comment;
