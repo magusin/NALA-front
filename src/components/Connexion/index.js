@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './connexion.scss';
 
@@ -12,19 +12,26 @@ const Connexion = ({
   setNewConnexionEmail,
   newConnexionPassword,
   setNewConnexionPassword,
-  newSubscriptionEmail,
-  setNewSubscriptionEmail,
-  newSubscriptionPseudo,
-  setNewSubscriptionPseudo,
-  newSubscriptionPassword,
-  setNewSubscriptionPassword,
+  newRegisterEmail,
+  setNewRegisterEmail,
+  newRegisterPseudo,
+  setNewRegisterPseudo,
+  newRegisterPassword,
+  setNewRegisterPassword,
+  manageSubmit,
 
 }) => {
-  
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    console.log('je veux me connecter');
+
+    manageSubmit();
+  };
+
   return (
     <div className="connexion">
       <h1 className={inscriptionSelect ? 'connexion__title active' : 'connexion__title'}> Inscription </h1>
-      <h1 className={connexionSelect ? 'connexion__title active' : 'connexion__title'}> Connection </h1>
+      <h1 className={connexionSelect ? 'connexion__title active' : 'connexion__title'}> Connexion </h1>
       <div className="connexion__container">
         <div className="connexion__container_top" >
           <button className="connexion__container_top-link active" 
@@ -41,20 +48,19 @@ const Connexion = ({
 
           <form 
           className={connexionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} 
-          onSubmit={(evt) => {evt.preventDefault()}}
-          action="">
+          onSubmit={handleSubmit}>
             <div className="connexion__container_body-row">
-            <i class="bi bi-envelope"></i>
+            <i className="bi bi-envelope"></i>
               <input 
               type="email" 
               className="input" 
               placeholder="Adresse Mail"
               value={newConnexionEmail}
               onChange={(evt) => setNewConnexionEmail(evt.target.value)}
-              />
+            />
             </div>
             <div className="connexion__container_body-row">
-            <i class="bi bi-lock"></i>
+            <i className="bi bi-lock"></i>
               <input placeholder="Mot de Passe" 
               type="password" 
               className="input"
@@ -63,38 +69,38 @@ const Connexion = ({
               />
             </div>
             <a href="#" className="link">Mot de passe oublié ?</a>
-            <button className="connexion__btn" type="button">Connexion</button>
+            <button className="connexion__btn" type="submit">Connexion</button>
           </form>
           
-          <form className={inscriptionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} action="">
+          <form className={inscriptionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} onSubmit={handleSubmit}>
             <div className="connexion__container_body-row">
-            <i class="bi bi-envelope"></i>
+            <i className="bi bi-envelope"></i>
               <input 
               type="email" 
               className="input" 
               placeholder="Adresse Mail"
-              value={newSubscriptionEmail}
-              onChange={(evt) => setNewSubscriptionEmail(evt.target.value)}
+              value={newRegisterEmail}
+              onChange={(evt) => setNewRegisterEmail(evt.target.value)}
               />
             </div>
             <div className="connexion__container_body-row">
-            <i class="bi bi-person-square"></i>
+            <i className="bi bi-person-square"></i>
               <input 
               type="text" 
               className="input" 
               placeholder="Pseudo"
-              value={newSubscriptionPseudo}
-              onChange={(evt) => setNewSubscriptionPseudo(evt.target.value)}
+              value={newRegisterPseudo}
+              onChange={(evt) => setNewRegisterPseudo(evt.target.value)}
               />
             </div>
             <div className="connexion__container_body-row">
-            <i class="bi bi-lock"></i>
+            <i className="bi bi-lock"></i>
               <input 
               type="password" 
               className="input" 
               placeholder="Mot de passe"
-              value={newSubscriptionPassword}
-              onChange={(evt) => setNewSubscriptionPassword(evt.target.value)}
+              value={newRegisterPassword}
+              onChange={(evt) => setNewRegisterPassword(evt.target.value)}
               />
             </div>
             <div className="connexion__container_body-row">
@@ -116,6 +122,7 @@ Connexion.propTypes = {
   handleSelectInscription: PropTypes.func.isRequired,
   connexionSelect: PropTypes.bool.isRequired,
   inscriptionSelect: PropTypes.bool.isRequired,
+  manageSubmit: PropTypes.func.isRequired,
 }
 
 export default Connexion;
