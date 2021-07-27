@@ -14,7 +14,6 @@ const Picture = ({
   displayComments,
   changeDisplay,
   isLogged,
-  commentIsReady,
 }) => {
 
   useEffect(
@@ -55,7 +54,6 @@ const Picture = ({
               <button>Poster</button>
             </form>
           }
-          {console.log(picture.comment)}
           {displayComments &&(
             <div className="picture__bottom-comments-section">
               {picture.comment.map((comment) => (
@@ -73,7 +71,6 @@ const Picture = ({
 };
 
 Picture.protoTypes = {
-  displayComments: PropTypes.bool.isRequired,
   fetchPostWithId: PropTypes.func.isRequired,
   isReady: PropTypes.bool.isRequired,
   picture: PropTypes.shape({
@@ -86,6 +83,9 @@ Picture.protoTypes = {
       nickname: PropTypes.string.isRequired,
     }),
   }),
+  displayComments: PropTypes.bool.isRequired,
+  changeDisplay: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 }
 
 export default Picture;

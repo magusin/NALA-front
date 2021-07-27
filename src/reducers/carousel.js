@@ -2,7 +2,7 @@ import { CAROUSEL_NEXT, CAROUSEL_PREVIOUS } from "src/actions/carousel";
 
 const initialState = {
   carouselButton: '',
-  pages:[],
+  pages: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -34,30 +34,37 @@ const reducer = (state = initialState, action = {}) => {
     case CAROUSEL_NEXT :
 
       let next = action.page+1;
-
-      if(typeof state.pages == 'undefined'){
-        action.newPage = [{
+      console.log(typeof state.pages)
+      if(typeof state.pages != 'object'){
+        console.log('je crée');
+        action.newPage = {
           id: action.category,
           page: next,
-        }];
+        };
         return{
           ...state,
-          pages: action.newPage,
+          pages: [action.newPage],
         }
       }else{
+        console.log('je modifie');
         action.newPage = state.pages.map(
-          page => {
-            console.log(page.id);
-            if(page.id == action.category){
-              page.page = next;
+          selectedPage => {
+            console.log('ma page :' + selectedPage);
+            if(selectedPage.id == action.category){
+              console.log('si je la trouve');
+              selectedPage.page = next;
             }else{
-              page = {
+              console.log('sinon je la crée');
+              selectedPage = {
                 id: action.category,
                 page: next,
               }
             }
           }
         ); 
+        
+
+        console.log('mon résultat', action.newPage)
         return {
           ... state,
           pages : action.newPages,
