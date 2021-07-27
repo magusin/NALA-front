@@ -14,27 +14,12 @@ const Picture = ({
   displayComments,
   changeDisplay,
   isLogged,
-  comments,
+  commentIsReady,
 }) => {
 
   useEffect(
     fetchPostWithId,
     [],
-  );
-
-  // useLocation nous renvoi la location courante (l'url en gros)
-  // notre composant sera rendu à nouveau dès que la location change
-  const location = useLocation();
-
-  // Hook pour remettre le scroll tout en haut à chaque rechargement de la page
-  useEffect(
-    () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    },
-    [location],
   );
 
   if(!isReady){
@@ -70,14 +55,14 @@ const Picture = ({
               <button>Poster</button>
             </form>
           }
-          {displayComments &&
-
-          <div className="picture__bottom-comments-section">
-            {comments.map((comment) => (
-            <Comment key={comment.id} user={comment.user} description={comment.description} createdAt={comment.createdAt}/>
-            ))}
-          </div> 
-          }         
+          {console.log(picture.comment)}
+          {displayComments &&(
+            <div className="picture__bottom-comments-section">
+              {picture.comment.map((comment) => (
+              <Comment key={comment.id} description={comment.description} createdAt={comment.createdAt}/>
+              ))}
+            </div> 
+          )}      
         </div>
 
       </div>

@@ -12,4 +12,5 @@ export const carouselNext = (category, page) => ({
   type: CAROUSEL_NEXT,
   category: category,
   page:page,
+  newPage:'',
 });

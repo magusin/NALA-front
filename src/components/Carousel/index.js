@@ -19,7 +19,7 @@ const Carousel = (
 
     console.log(pages)
 
-    // const element = pages.find(page => page.id == categoryId);
+    const element = pages.find(myPage => myPage.id == categoryId);
 
     // console.log(element);
   }

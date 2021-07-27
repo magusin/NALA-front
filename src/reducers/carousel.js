@@ -3,68 +3,67 @@ import { CAROUSEL_NEXT, CAROUSEL_PREVIOUS } from "src/actions/carousel";
 const initialState = {
   carouselButton: '',
   pages:[],
-  nextNewPages: '',
-  nextNewpage:'',
-  previousNewPages: '',
-  previousNewpage:'',
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case CAROUSEL_PREVIOUS :
 
-      let element = state.pages.find(type =>type.id == action.category);
-      console.log(element)
-      if(isset(element)){
-        console.log('in')
-      }
       let previous = action.page-1;
 
-      const previousNewpage = {
+      newPages = state.pages.map(
+        page => {
+          if(page.find(type =>type.id == action.category)){
+            page.page = previous;
+          }else{
+            page = {
               id: action.category,
               page: previous,
-      }      
-
-      const previousNewPages = [...state.pages, previousNewpage];
+            }
+          }
+        }
+      );
+      
+      console.log(newPages);
 
       return {
         ... state,
-        pages : previousNewPages,
+        pages : newPages,
       }
 
     case CAROUSEL_NEXT :
-      let element2 = state.pages.find(type =>type.id == action.category);
 
-      console.log(element2)
+      let next = action.page+1;
 
-      if(typeof element2 !== 'undefined'){
-
-        element2.page = element2.page+1;
-
-        console.log('in' + element2.id + "page" + element2.page)
-
-        state.nextNewPages = [...state.pages, element2];
-
-      }else if(typeof element2 == 'undefined'){
-
-        let next = action.page+1;
-
-        state.nextNewpage = {
+      if(typeof state.pages == 'undefined'){
+        action.newPage = [{
           id: action.category,
           page: next,
+        }];
+        return{
+          ...state,
+          pages: action.newPage,
         }
-  
-        state.nextNewPages = [...state.pages, state.nextNewpage];
-      }
-
+      }else{
+        action.newPage = state.pages.map(
+          page => {
+            console.log(page.id);
+            if(page.id == action.category){
+              page.page = next;
+            }else{
+              page = {
+                id: action.category,
+                page: next,
+              }
+            }
+          }
+        ); 
         return {
           ... state,
-          pages : state.nextNewPages,
-          nextNewpage:'',
-          nextNewPages:'',
-        }
-      
-
+          pages : action.newPages,
+        }       
+      };
+ 
     default:
       return state;
   }

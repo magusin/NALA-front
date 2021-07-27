@@ -41,6 +41,14 @@ export const registerUser = (id) => ({
   id,
 });
 
+export const FETCH_COMMENTS_WITH_ID_FROM_API = 'FETCH_COMMENTS_WITH_ID_FROM_API';
+
+export const fetchCommentsWithIdFromApi = (postId) => ({
+  type: FETCH_COMMENTS_WITH_ID_FROM_API,
+  postId: id,
+});
+
+
 
 
 
