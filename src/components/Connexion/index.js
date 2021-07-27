@@ -57,7 +57,7 @@ const Connexion = ({
               placeholder="Adresse Mail"
               value={newConnexionEmail}
               onChange={(evt) => setNewConnexionEmail(evt.target.value)}
-              />
+            />
             </div>
             <div className="connexion__container_body-row">
             <i className="bi bi-lock"></i>
