@@ -6,6 +6,7 @@ import Home from 'src/containers/Home';
 import Connexion from 'src/containers/Connexion';
 import Picture from 'src/containers/Picture';
 import Categories from 'src/containers/Categories';
+import TopLove from 'src/containers/TopLove';
 
 // == Import components
 import Contact from 'src/containers/Contact';
@@ -16,7 +17,6 @@ import Error from 'src/components/Error';
 import CGU from 'src/components/Footer/Links/CGU';
 import LegaleMentions from 'src/components/Footer/Links/LegalesMentions';
 import AnimalDefense from 'src/components/Footer/Links/AnimalDefense';
-import TopLove from 'src/components/TopLove';
 import Profil from 'src/components/Profil';
 import Aime from 'src/components/Aime';
 import Notification from 'src/components/Notification';

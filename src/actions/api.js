@@ -17,6 +17,12 @@ export const fetchCategoriesFromApi = () => ({
   type: FETCH_CATEGORIES_FROM_API,  
 });
 
+export const FETCH_LAST_POST_FROM_API = 'FETCH_LAST_POST_FROM_API';
+
+export const fetchLastPostFromApi = () => ({
+  type: FETCH_LAST_POST_FROM_API,
+});
+
 export const CONNECT_USER = 'CONNECT_USER';
 export const connectUser = (id) => ({
   type: CONNECT_USER,
@@ -33,6 +39,7 @@ export const registerUser = (id) => ({
   type: REGISTER_USER,
   id,
 });
+
 
 
 

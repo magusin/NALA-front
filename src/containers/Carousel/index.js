@@ -4,20 +4,17 @@ import Carousel from 'src/components/Carousel';
 import { carouselNext, carouselPrevious, } from 'src/actions/carousel';
 
 const mapStateToProps = (state, ownProps) => ({
-  carousel: state.carousel.carousel,
-  category: ownProps.category,
-  number: ownProps.number,  
-  list: state.carousel.list,
+  pages: state.pages,
 });
 
 
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  handlePrevious: function (category) {
-    dispatch(carouselPrevious(category))
+  handlePrevious: function (category, page) {
+    dispatch(carouselPrevious(category, page))
   },
-  handleNext: function (category) {
-    dispatch(carouselNext(category))
+  handleNext: function (category, page) {
+    dispatch(carouselNext(category, page))
   },
 });
 
