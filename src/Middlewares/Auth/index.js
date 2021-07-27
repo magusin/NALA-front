@@ -15,8 +15,8 @@ const authMiddleware = (store) => (next) => (action) => {
     const { newConnexionEmail, newConnexionPassword} = store.getState();
       axiosInstance
       .post(`/connexion`, {
-        email: 'arnaud@test.fr',
-        password: 'arnaud',
+        newConnexionarnauEmail,
+        newConnexionPassword,
       })
       .then(
         (response) => {

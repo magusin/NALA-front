@@ -14,26 +14,24 @@ const registerMiddleware = (store) => (next) => (action) => {
     case REGISTER_USER: {
       const { newRegisterEmail, newRegisterPseudo, newRegisterPassword } = store.getState();
       axiosInstance
-      .post(`/utlisateurs/${action.id}`, {
+      .post(`/utilisateurs`, {
         newRegisterEmail,
         newRegisterPseudo,
         newRegisterPassword,
-      })
-      .then(
-        (reponse) => {
-          console.log(reponse);
-          store.dispatch(saveUser(reponse.data.register))
+      },
+      ).then(
+        (response) => {
+          console.log(response);
+          //store.dispatch(saveUser(response.data))
         },
-      ).catch(
-        (error) => {
-          console.log('error', error);
-        },
-      );
+        );
+        next(action);
       break
     };
     default:
       next(action);
   }
 };
+
 
 export default registerMiddleware;

@@ -58,7 +58,11 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 
   manageSubmit: () => {
-    dispatch(connectUser(), registerUser());
+    dispatch(connectUser());
+  },
+
+  manageSubmit: () => {
+    dispatch(registerUser());
   },
 });
 

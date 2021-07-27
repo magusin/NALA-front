@@ -23,7 +23,6 @@ const Connexion = ({
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log('je veux me connecter');
 
     manageSubmit();
   };
@@ -40,7 +39,7 @@ const Connexion = ({
                   onClick={() => (handleSelectConnexion())}>Connexion</button>
           <button className="connexion__container_top-link" 
                   data-ref="inscription" 
-                  href="#" 
+                  href="#"
                   onClick={() => (handleSelectInscription())}>Inscription</button>
         </div>
 

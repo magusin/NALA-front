@@ -18,20 +18,19 @@ export const fetchCategoriesFromApi = () => ({
 });
 
 export const CONNECT_USER = 'CONNECT_USER';
-export const connectUser = (id) => ({
+export const connectUser = () => ({
   type: CONNECT_USER,
-  id,
 });
 
 export const SAVE_USER = 'SAVE_USER';
-export const saveUser = () => ({
+export const saveUser = (data) => ({
   type: SAVE_USER,
+  data,
 });
 
 export const REGISTER_USER = 'REGISTER_USER';
-export const registerUser = (id) => ({
+export const registerUser = () => ({
   type: REGISTER_USER,
-  id,
 });
 
 
