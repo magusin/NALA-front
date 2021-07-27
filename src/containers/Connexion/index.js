@@ -6,24 +6,27 @@ import {
     setNewConnexionEmail,
     newConnexionPassword,
     setNewConnexionPassword,
-    newSubscriptionEmail,
-    setNewSubscriptionEmail,
-    newSubscriptionPseudo,
-    setNewSubscriptionPseudo,
-    newSubscriptionPassword,
-    setNewSubscriptionPassword,
+    newRegisterEmail,
+    setNewRegisterEmail,
+    newRegisterPseudo,
+    setNewRegisterPseudo,
+    newRegisterPassword,
+    setNewRegisterPassword,
 } from 'src/actions/connexionForm';
 
+import { connectUser, RegisterUser } from 'src/actions/api';
+
 import Connexion from 'src/components/Connexion';
+import { registerUser } from '../../actions/api';
 
 const mapStateToProps = (state, ownProps) => ({
   connexionSelect: state.connexionForm.connexionSelect,
   inscriptionSelect: state.connexionForm.inscriptionSelect,
   newConnexionEmail: state.connexionForm.newConnexionEmail,
   newConnexionPassword: state.connexionForm.newConnexionPassword,
-  newSubscriptionEmail: state.connexionForm.newSubscriptionEmail,
-  newSubscriptionPseudo: state.connexionForm.newSubscriptionPseudo,
-  newSubscriptionPassword: state.connexionForm.newSubscriptionPassword,
+  newRegisterEmail: state.connexionForm.newRegisterEmail,
+  newRegisterPseudo: state.connexionForm.newRegisterPseudo,
+  newRegisterPassword: state.connexionForm.newRegisterPassword,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -42,16 +45,20 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(setNewConnexionPassword(newConnexionPassword))
   },
 
-  setNewSubscriptionEmail: (newSubscriptionEmail) => {
-    dispatch(setNewSubscriptionEmail(newSubscriptionEmail))
+  setNewRegisterEmail: (newRegisterEmail) => {
+    dispatch(setNewRegisterEmail(newRegisterEmail))
   },
   
-  setNewSubscriptionPseudo: (newSubscriptionPseudo) => {
-    dispatch(setNewSubscriptionPseudo(newSubscriptionPseudo))
+  setNewRegisterPseudo: (newRegisterPseudo) => {
+    dispatch(setNewRegisterPseudo(newRegisterPseudo))
   },
 
-  setNewSubscriptionPassword: (newSubscriptionPassword) => {
-    dispatch(setNewSubscriptionPassword(newSubscriptionPassword))
+  setNewRegisterPassword: (newRegisterPassword) => {
+    dispatch(setNewRegisterPassword(newRegisterPassword))
+  },
+
+  manageSubmit: () => {
+    dispatch(connectUser(), registerUser());
   },
 });
 
