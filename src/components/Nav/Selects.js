@@ -19,13 +19,16 @@ const Selects = ({
           <div className="nav__select-content">
             <Link to="/" className="nav__select-link">Accueil</Link>
             <Link to="/toplove" className="nav__select-link">Top-Love</Link>
-            {categories.map((category) => (
-              category.map((type) => (
-                <>
-                  <Link key={'category' + type.id} to={`/categories/${type.id}`} className="nav__select-link">{type.name}</Link>
-                </>
-              ))
-            ))}            
+            {categories.map((category) => {
+              {console.log(categories)}
+              <div key={category.index}>
+                {category.map((type) => (
+                  
+                    <Link key={'category' + type.id} to={`/categories/${type.id}`} className="nav__select-link">{type.name}</Link>
+                
+                ))}
+             </div>
+            })}            
           </div>
         )}
     </div>
