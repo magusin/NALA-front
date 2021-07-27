@@ -50,7 +50,7 @@ const Connexion = ({
           className={connexionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} 
           onSubmit={handleSubmit}>
             <div className="connexion__container_body-row">
-            <i class="bi bi-envelope"></i>
+            <i className="bi bi-envelope"></i>
               <input 
               type="email" 
               className="input" 
@@ -60,7 +60,7 @@ const Connexion = ({
               />
             </div>
             <div className="connexion__container_body-row">
-            <i class="bi bi-lock"></i>
+            <i className="bi bi-lock"></i>
               <input placeholder="Mot de Passe" 
               type="password" 
               className="input"
@@ -69,12 +69,12 @@ const Connexion = ({
               />
             </div>
             <a href="#" className="link">Mot de passe oublié ?</a>
-            <button className="connexion__btn" type="button">Connexion</button>
+            <button className="connexion__btn" type="submit">Connexion</button>
           </form>
           
           <form className={inscriptionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} onSubmit={handleSubmit}>
             <div className="connexion__container_body-row">
-            <i class="bi bi-envelope"></i>
+            <i className="bi bi-envelope"></i>
               <input 
               type="email" 
               className="input" 
@@ -84,7 +84,7 @@ const Connexion = ({
               />
             </div>
             <div className="connexion__container_body-row">
-            <i class="bi bi-person-square"></i>
+            <i className="bi bi-person-square"></i>
               <input 
               type="text" 
               className="input" 
@@ -94,7 +94,7 @@ const Connexion = ({
               />
             </div>
             <div className="connexion__container_body-row">
-            <i class="bi bi-lock"></i>
+            <i className="bi bi-lock"></i>
               <input 
               type="password" 
               className="input" 
