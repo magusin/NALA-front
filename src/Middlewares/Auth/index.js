@@ -12,11 +12,11 @@ const axiosInstance = axios.create(
 const authMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case CONNECT_USER: {
-    const { newConnexionEmail, newConnexionPassword} = store.getState();
+    const { newConnexionEmail, newConnexionPassword} = store.getState().connexionForm;
       axiosInstance
       .post(`/connexion`, {
-        newConnexionarnauEmail,
-        newConnexionPassword,
+        emial : newConnexionEmail,
+        passsword : newConnexionPassword,
       })
       .then(
         (response) => {
