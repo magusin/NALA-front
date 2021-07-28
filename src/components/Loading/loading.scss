@@ -29,7 +29,7 @@
 
 .loading {
   animation: fade .75s infinite alternate;
-  color: #17154c;
+  color: vars.$light-background-color;
   font-size: 2em;
   margin: 3rem auto;
   position: relative;
