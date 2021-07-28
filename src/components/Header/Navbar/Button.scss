@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 :root {
   --primary: #1888ff;
 }
@@ -8,12 +10,12 @@
   outline: none;
   border: none;
   font-size: 18px;
-  color: #fff;
+  color: vars.$light-background;
   cursor: pointer;
   background-color: var(--primary);
   &:hover {
     background-color: transparent;
-    color: #fff;
+    color: vars.$light-background;
     border-radius: 4px;
     transition: all 0.3s ease-out;
   }

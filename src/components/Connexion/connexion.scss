@@ -1,3 +1,4 @@
+@use 'src/styles/vars';
 .connexion {
   padding: 2rem;
   display: flex;
@@ -16,7 +17,7 @@
     background-color: #6ba1f9;
     border: none;
     outline: none;
-    color: #fff;
+    color: vars.$light-background;
     cursor: pointer;
   }
   &__title {
@@ -64,7 +65,7 @@
       height: auto;
       padding: 15% 5%;
       margin-top: 20%;
-      background-color: #fff;
+      background-color: vars.$light-background;
       color: #82ade6de;
       box-shadow: 0px 5px 10px #7c8395;
       border-radius: 30px;

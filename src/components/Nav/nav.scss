@@ -1,5 +1,8 @@
 @use 'src/styles/vars';
 
+
+
+
 .nav{
   display: flex;
   justify-content: center;
@@ -10,7 +13,7 @@
     width: 7em;
     border: 0;
     background-color: vars.$light-background-color;
-    color: #fff;
+    color: vars.$light-background;
     padding: .7em;
     border-radius: .2em;
     margin: 0.1em;
@@ -61,23 +64,85 @@
 
     &__select{
       display:block;
-      padding: .9em;
+      text-align: center;
+      width: 7em;
+      padding: 1em;
       margin-right: 1em;
       border-radius: .2em;
-      background-color: #fff;
+      background-color: vars.$light-background;
       border: none;
       border: 1px solid vars.$light-background-color;
       color: vars.$light-background-color;
 
-      &-option{
-        border-color: vars.$light-background-color 1px solid;
-        color : vars.$light-background-color;
+      &-content{
+        text-align: center;
+        z-index:1000;
+        display: none;
+        position:absolute;
+        width: 100%;
+        border: 1px solid vars.$light-background-color;
+        border-radius: .5em;
+        background-color: vars.$light-background;
+        margin-left: -2.6em;
+        margin-top: 1em;
+      }
+      &-link{
+        align-items: center;
+        font-size: 1em;
+        margin-bottom: .5em;
+        padding: .5em;
+      }
+      &-link:hover{
+        background-color: vars.$light-background-color;
+        color: vars.$light-background;
+        border-radius: .5em;
+        padding: .5em;
       }
     }
+
+    &__select:hover &__select-content {
+      display: flex;
+      flex-direction: column;
+      padding: .5em;
+      width: 10em;
+      overflow-y: none;
+      -webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: scale-up-ver-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+
   }
   
 }
 
 .bi-search{
   color: vars.$light-background-color;
+}
+
+@-webkit-keyframes scale-up-ver-top {
+  0% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+  }
+}
+@keyframes scale-up-ver-top {
+  0% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+  }
 }
