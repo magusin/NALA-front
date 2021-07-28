@@ -5,7 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #7aacef;
+  background-color:#fff;
+
   &__btn {
     position: absolute;
     left: 50%;
@@ -14,18 +15,19 @@
     width: 120px;
     height: 45px;
     border-radius: 50px;
-    background-color: #6ba1f9;
-    border: none;
+    border: 1px solid #fff;
+    background-color: vars.$light-background-color;
     outline: none;
     color: vars.$light-background;
     cursor: pointer;
   }
+
   &__title {
     margin-bottom: 1em;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    color: rgb(20, 17, 17);
+    color: vars.$light-background-color;
     font-size: 2rem;
     display: none;
     &.active{
@@ -37,11 +39,12 @@
     width: 420px;
     min-height: 490px;
     height:  auto;
-    background-color: #f0f6fb;
+    background-color: vars.$light-background-color;
     padding: 15px 25px;
     border-radius: 10px;
     font-size: 18px;
     font-family: "Quicksand", sans-serif;
+
     &_top {
       position: absolute;
       top: 5%;
@@ -49,9 +52,10 @@
       transform: translate(-50%, 0);
       height: 30px;
       display: flex;
+
       &-link{
         text-decoration: none;
-        color: #6ba1f9ee;
+        color: #fff;
         margin: 0 3%;
         background: none;
         border:none;
@@ -60,44 +64,49 @@
         }
       }
     }
+
     &_body {
       position: relative;
       height: auto;
       padding: 15% 5%;
       margin-top: 20%;
-      background-color: vars.$light-background;
-      color: #82ade6de;
-      box-shadow: 0px 5px 10px #7c8395;
+      background-color: #fff;
+      color: vars.$light-background-color;
       border-radius: 30px;
       font-size: 1rem;
+
       &-form {
         display:none;
         &.active {
           display:block;
         }
       }
+
       &-row {
         display: flex;
         justify-content: space-between;
-        border-bottom: 1px solid #82ade6de;
+        border-bottom: 1px solid vars.$light-background-color;
         padding: 1.8% 0;
         margin: 20px 0;
+
         & .input {
           width: 90%;
           border: none;
           outline: none;
-          color: #82ade6de;
+          color: vars.$light-background-color;
           font-weight: 550;
+
           &::placeholder {
-            color: #82ade6ad;
+            color: vars.$light-background-color;
           }
         }
+
         & .link {
           display: inline-block;
           font-size: 0.8em;
           width: 100%;
           text-decoration: none;
-          color: #2b384f;
+          color: vars.$light-background-color;
           text-align: right;
           &:hover {
             text-decoration: underline;
@@ -106,11 +115,14 @@
       }
     }
   }
+
   @media screen and (max-width: 520px) {
+
     &__container {
       width: 80%;
       min-width: 380px;
       min-height: 490px;
+
       &_body {
         width: 100%;
         padding: 15% 5%;
