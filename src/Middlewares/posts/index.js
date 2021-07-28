@@ -17,7 +17,6 @@ const postsMiddleware = (store) => (next) => (action) => {
       .then(
         (response) => {
           if(response.status == 200){
-                      console.log(response);
             store.dispatch(saveLastPosts(response.data));
           }
         },
