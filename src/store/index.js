@@ -6,11 +6,12 @@ import postsMiddleware from 'src/Middlewares/posts';
 
 import reducer from 'src/reducers';
 import authMiddleware from '../Middlewares/Auth';
+import registerMiddleware from '../Middlewares/Register';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const enhancers = composeEnhancers(
-  applyMiddleware(postsMiddleware, authMiddleware),
+  applyMiddleware(postsMiddleware, authMiddleware, registerMiddleware),
 );
 
 const store = createStore(reducer, enhancers);

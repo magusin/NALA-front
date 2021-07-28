@@ -1,4 +1,4 @@
-import { SAVE_USER } from "../actions/api";
+import { SAVE_USER } from "../actions/saveData";
 import {
   SELECT_INSCRIPTION_FORM,
   SELECT_CONNEXION_FORM,
@@ -63,7 +63,7 @@ const reducer = (state = initialState, action = {}) => {
     case NEW_REGISTER_EMAIL:
       return {
         ...state,
-        newRegisterEmail: action.newRegisterEmail,
+        newRegfisterEmail: action.newRegisterEmail,
       }
     case SET_NEW_CONNEXION_PASSWORD:
       return {

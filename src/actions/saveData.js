@@ -12,6 +12,11 @@ export const savePostWithId = (data) => ({
   data:data,
 });
 
+export const SAVE_USER = 'SAVE_USER';
+export const saveUser = (data) => ({
+  type: SAVE_USER,
+  data,
+});
 export const SAVE_TOPLOVE = 'SAVE_TOPLOVE';
 
 export const saveTopLove = (data) => ({
