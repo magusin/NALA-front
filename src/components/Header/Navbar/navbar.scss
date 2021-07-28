@@ -7,6 +7,8 @@
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  z-index: 9999;
+
   &__logo {
     color: vars.$light-background;
     justify-self: start;
@@ -15,9 +17,11 @@
     text-decoration: none;
     font-size: 1.5rem;
   }
+
   &__icon {
     display: none;
   }
+
   &__menu {
     display: grid;
     grid-template-columns: repeat(5, auto);
@@ -27,25 +31,30 @@
     width: 59vw;
     justify-content: end;
   }
+
   &__item {
     display: flex;
     align-items: center;
     height: 80px;
   }
+
   &__links {
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
+
     &:hover {
       color: vars.$light-color-hover;
       text-decoration: underline;
       border-radius: 4px;
       transition: all 0.2s ease-out;
     }
+
     &-mobile {
       display: none;
     }
   }
+
   i{
     color: vars.$light-background;
   }
@@ -53,12 +62,14 @@
   @media screen and (max-width: 767px) {
     position : sticky;
     top : 0px;
+
     &__logo {
       position: absolute;
       top: 0;
       left: -2.5em;
       transform: translate(25%, 50%);
     }
+
     &__icon {
       display: block;
       position: absolute;
@@ -68,6 +79,7 @@
       font-size: 1.8rem;
       cursor: pointer;
     }
+
     &__menu {
       transition: all 0.5s ease;
       display: none;
@@ -77,6 +89,7 @@
       top: 3rem;
       right: -100%;
       opacity: 1;
+
       &.active {
         background: vars.$light-background-color;
         right: 0;
@@ -86,15 +99,18 @@
         z-index: 99;
       }
     }
+
     &__links {
       text-align: center;
       padding: 2rem;
       width: 100%;
       display: table;
+
       &:hover {
         color: vars.$light-color-hover;
         border-radius: 0;
       }
+
       &-mobile {
         display: block;
         text-align: center;
@@ -106,6 +122,7 @@
         text-decoration: none;
         color: vars.$light-background;
         font-size: 1.5rem;
+
         &:hover {
           background: vars.$light-background;
           color: #1888ff;

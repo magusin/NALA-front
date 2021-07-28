@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import { FETCH_CATEGORIES_FROM_API, FETCH_TOPLOVE_FROM_API, FETCH_POST_WITH_ID_FROM_API } from '../../actions/api';
-import { saveCategories, savePostWithId } from '../../actions/saveData'
+import { FETCH_CATEGORIES_FROM_API, FETCH_TOPLOVE_FROM_API, FETCH_POST_WITH_ID_FROM_API, FETCH_LAST_POST_FROM_API } from '../../actions/api';
+import { saveCategories, saveLastPosts, savePostWithId, saveTopLove } from '../../actions/saveData'
 
 const axiosInstance = axios.create(
   {
@@ -11,41 +11,56 @@ const axiosInstance = axios.create(
 
 const postsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
+    case FETCH_LAST_POST_FROM_API :{
+      axiosInstance
+      .get('/post/last10')
+      .then(
+        (response) => {
+          if(response.status == 200){
+                      console.log(response);
+            store.dispatch(saveLastPosts(response.data));
+          }
+        },
+      );
+      next(action);
+      break;
+    }
     case FETCH_CATEGORIES_FROM_API: {
       axiosInstance
       .get('/categories')
       .then(
         (response) => {
-          console.log(response);
-          store.dispatch(saveCategories(response.data.categories));
+          if(response.status == 200){
+            store.dispatch(saveCategories(response.data));
+          }
         },
       );
-     
       next(action);
       break;
     }; 
     case FETCH_TOPLOVE_FROM_API: {
       
       axiosInstance
-      .get('/toplove')
+      .get('post/toplove')
       .then(
         (response) => {
-          console.log(response);
-          // store.dispatch(savetopLove(response.data.topLove));
+          if(response.status == 200){
+            store.dispatch(saveTopLove(response.data.topLove));
+          }
         },
       );
-     
       next(action);
       break;
     }; 
     case FETCH_POST_WITH_ID_FROM_API: {
-      console.log(action.id);
       axiosInstance
       .get(`/post/${action.id}`)
       .then(
         (response) => {
           console.log(response);
-          store.dispatch(savePostWithId(response.data));
+          if(response.status == 200){
+            store.dispatch(savePostWithId(response.data));
+          }
         },
       );
       next(action);

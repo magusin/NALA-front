@@ -6,58 +6,76 @@ import './carousel.scss';
 
 const Carousel = (
   {
-    category,
-    number,
-    handleNext,
-    handlePrevious,
+    categoryId,
     list,
+    handleNext,
+    handlePrevious,    
+    pages,
+    page
   }
 ) =>{
-return(
-  <div className="carousel">
-    <div className="carousel-nav">
-      <button 
-        className="carousel-nav-left" 
-        disabled={number == 1 ? true : false} 
-        onClick={() => (handlePrevious( category ))}>
 
-          <i className="bi bi-chevron-compact-left"></i>
+  if(typeof pages !== 'undefined'){
 
-      </button>
+    console.log(pages)
 
-      <button 
-        className="carousel-nav-right" 
-        disabled={number == list.length ? true : false} 
-        onClick={() => (handleNext( category ))}>
+    // const element = pages.find(page => page.id == categoryId);
 
-          <i className="bi bi-chevron-compact-right"></i>
+    // console.log(element);
+  }
+  
 
-      </button>
+  
 
+  return(
+    <div className="carousel">
+      <div className="carousel-nav">
+        <button 
+          className="carousel-nav-left" 
+          disabled={page == 1 ? true : false} 
+          onClick={() => (handlePrevious( categoryId, page ))}>
+
+            <i className="bi bi-chevron-compact-left"></i>
+
+        </button>
+
+        <button 
+          className="carousel-nav-right" 
+          disabled={page == list.length ? true : false} 
+          onClick={() => (handleNext( categoryId, page ))}>
+
+            <i className="bi bi-chevron-compact-right"></i>
+
+        </button>
+
+      </div>
+      <div className="carousel-sliders">     
+          {list.map((card) =>{
+          return(
+            <Card cardId={card.id} key={"category" + categoryId + "_card" + card.id} picture={card.pictureBase64} title={card.title} page={page}/>
+          )
+        })}
+      </div>
     </div>
-    <div className="carousel-sliders">     
-        {list.map((card) =>{
-        return(
-          <Card cardId={card.id} key={card.id} picture={card.url} title={card.title} page={number}/>
-        )
-      })}
-    </div>
-  </div>
 
-)};
+  )
+};
 
 Carousel.protoTypes = {
-  category: PropTypes.string.isRequired,
-  number: PropTypes.number.isRequired,
+  categoryId: PropTypes.number.isRequired,
   handlePrevious: PropTypes.func.isRequired,
   handleNext: PropTypes.func.isRequired,
-  list: PropTypes.arrayOf(
-    PropTypes.shape({
-      url: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      id: PropTypes.number.isRequired
-    }).isRequired,
-  ).isRequired,
+  // list: PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     picture: PropTypes.string.isRequired,
+  //     title: PropTypes.string.isRequired,
+  //     id: PropTypes.number.isRequired
+  //   }).isRequired,
+  // ).isRequired,
 };
+
+Carousel.defaultProps = {
+  page : 1,
+}
 
 export default Carousel;

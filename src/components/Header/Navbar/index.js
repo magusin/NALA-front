@@ -61,7 +61,7 @@ const Navbar = () => {
               className="navbar__links-mobile"
               onClick={closeMobileMenu}
             >
-              Déconnexion
+              Inscription/Connexion
             </Link>
           </li>
         </ul>

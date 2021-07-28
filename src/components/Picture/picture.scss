@@ -58,7 +58,10 @@
     }
     &-comments{
       min-width: 320px;
-
+      display:none;
+      &.active{
+        display:block;
+      }
       form{
         display: flex;
         align-items: center;

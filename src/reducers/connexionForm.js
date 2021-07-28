@@ -1,3 +1,4 @@
+import { SAVE_USER } from "../actions/api";
 import {
   SELECT_INSCRIPTION_FORM,
   SELECT_CONNEXION_FORM,
@@ -5,12 +6,12 @@ import {
   SET_NEW_CONNEXION_EMAIL,
   NEW_CONNEXION_PASSWORD,
   SET_NEW_CONNEXION_PASSWORD,
-  NEW_SUBSCRIPTION_EMAIL,
-  SET_NEW_SUBSCRIPTION_EMAIL,
-  NEW_SUBSCRIPTION_PSEUDO,
-  SET_NEW_SUBSCRIPTION_PSEUDO,
-  NEW_SUBSCRIPTION_PASSWORD,
-  SET_NEW_SUBSCRIPTION_PASSWORD,
+  NEW_REGISTER_EMAIL,
+  SET_NEW_REGISTER_EMAIL,
+  NEW_REGISTER_PSEUDO,
+  SET_NEW_REGISTER_PSEUDO,
+  NEW_REGISTER_PASSWORD,
+  SET_NEW_REGISTER_PASSWORD,
 } from "../actions/connexionForm";
 
 const initialState = {
@@ -18,42 +19,51 @@ const initialState = {
   inscriptionSelect: false,
   newConnexionEmail: '',
   newConnexionPassword: '',
-  newSubscriptionEmail: '',
-  newSubscriptionPseudo: '',
-  newSubscriptionPassword: '',
+  newRegisterEmail: '',
+  newRegisterPseudo: '',
+  newRegisterPassword: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case SET_NEW_SUBSCRIPTION_PASSWORD:
+    case SAVE_USER:
       return {
         ...state,
-        newSubscriptionPassword: action.newSubscriptionPassword
+        newConnexionEmail: '',
+        newConnexionPassword: '',
+        newRegisterEmail: '',
+        newRegisterPseudo: '',
+        newRegisterPassword: '',
       }
-    case NEW_SUBSCRIPTION_PASSWORD:
+    case SET_NEW_REGISTER_PASSWORD:
       return {
         ...state,
-        newSubscriptionPassword: action.newSubscriptionPassword,
+        newRegisterPassword: action.newRegisterPassword
       }
-    case SET_NEW_SUBSCRIPTION_PSEUDO:
+    case NEW_REGISTER_PASSWORD:
       return {
         ...state,
-        newSubscriptionPseudo: action.newSubscriptionPseudo,
+        newRegisterPassword: action.newRegisterPassword,
       }
-    case NEW_SUBSCRIPTION_PSEUDO:
+    case SET_NEW_REGISTER_PSEUDO:
+      return {
+        ...state,
+        newRegisterPseudo: action.newRegisterPseudo,
+      }
+    case NEW_REGISTER_PSEUDO:
       return{
         ...state,
-        newSubscriptionPseudo: action.newSubscriptionPseudo,
+        newRegisterPseudo: action.newRegisterPseudo,
       }
-    case SET_NEW_SUBSCRIPTION_EMAIL:
+    case SET_NEW_REGISTER_EMAIL:
       return {
         ...state,
-        newSubscriptionEmail: action.newSubscriptionEmail,
+        newRegisterEmail: action.newRegisterEmail,
       }
-    case NEW_SUBSCRIPTION_EMAIL:
+    case NEW_REGISTER_EMAIL:
       return {
         ...state,
-        newSubscriptionEmail: action.newSubscriptionEmail,
+        newRegisterEmail: action.newRegisterEmail,
       }
     case SET_NEW_CONNEXION_PASSWORD:
       return {

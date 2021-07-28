@@ -5,3 +5,10 @@
 body {
   font-family: vars.$font-title;
 }
+
+.app{
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
