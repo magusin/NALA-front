@@ -1,0 +1,16 @@
+.categories{
+  &__content{
+  display: flex;
+  flex-flow: column wrap;
+    
+    h1{
+      text-transform: capitalize;
+      padding: 0 1rem;
+    }
+    a h1:hover{
+      letter-spacing: .5px;
+      -webkit-transition: .5s;
+      transition: .5s;
+    }
+  }
+}

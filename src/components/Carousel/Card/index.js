@@ -1,25 +1,22 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './card.scss';
 
 
 const Card = ({
+  cardPage,
   cardId,
   picture,
   title,
   page,
-  buttonEffect,
+  isLogged,
 }) => {
 
-  let cardNextPrevious = (page, cardId, buttonEffect) =>{
+  let cardNextPrevious = (page, cardId) =>{
       if(page < cardId){
         return 'carousel-card next';
       }else if(page > cardId){
-        return 'carousel-card previous';
-      }else if(buttonEffect == "next"){
-        return 'carousel-card next';
-      }else if(buttonEffect == "previous"){
         return 'carousel-card previous';
       }else{
         return 'carousel-card';
@@ -36,7 +33,7 @@ const Card = ({
   }
 
 return(
-  <div className={cardNextPrevious(page, cardId, buttonEffect) + ' ' + cardSelected(page, cardId)}>
+  <div className={cardNextPrevious(page, cardPage) + ' ' + cardSelected(page, cardPage)}>
     <Link to={`/post/${cardId}`} >
       <div className="carousel-card-img" 
          style={{backgroundImage:`url(data:image/png;base64,${picture})`}}>
@@ -46,10 +43,13 @@ return(
     <div className="carousel-card-title">
       <span>{title}</span>
     </div>
+
+{isLogged &&
     <div className="carousel-card-links">
         <div className="carousel-card-links--like unselected"><i className="bi bi-heart-fill"></i></div>
         <div className="carousel-card-links--comment unselected"><i className="bi bi-chat-left-text-fill"></i></div>
     </div>
+}
   </div>
 )};
 
@@ -58,7 +58,7 @@ Card.protoTypes = {
   title: PropTypes.string.isRequired,
   cardId: PropTypes.number.isRequired,
   page: PropTypes.number.isRequired,
-  buttonEffect: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 export default Card;

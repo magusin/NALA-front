@@ -3,7 +3,19 @@
 
 
 body {
-  font-family: vars.$font-title;
+  font-family: vars.$font-basic;
+
+  h1, h2, button, button a, a{
+    font-family: vars.$font-title;
+  }
+
+  h1{
+    display:inline-block;
+    font-size:1.5rem;
+    background: vars.$light-backdround-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .app{
