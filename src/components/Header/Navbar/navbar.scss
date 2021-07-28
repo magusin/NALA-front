@@ -10,7 +10,7 @@
   z-index: 9999;
 
   &__logo {
-    color: #fff;
+    color: vars.$light-background;
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
@@ -56,7 +56,7 @@
   }
 
   i{
-    color: #fff;
+    color: vars.$light-background;
   }
 
   @media screen and (max-width: 767px) {
@@ -120,11 +120,11 @@
         width: 80%;
         background: #1888ff;
         text-decoration: none;
-        color: #fff;
+        color: vars.$light-background;
         font-size: 1.5rem;
 
         &:hover {
-          background: #fff;
+          background: vars.$light-background;
           color: #1888ff;
           transition: 250ms;
         }

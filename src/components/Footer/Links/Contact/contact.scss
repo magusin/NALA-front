@@ -9,7 +9,7 @@
     text-align: center;
 
     background-color: vars.$light-background-color;
-    color: #fff;
+    color: vars.$light-background;
   }
   
 
@@ -66,7 +66,7 @@
       width: 7em;
       border: 0;
       background-color: vars.$light-background-color;
-      color: #fff;
+      color: vars.$light-background;
       padding: .7em;
       border-radius: .2em;
       margin: 0.1em;
@@ -104,7 +104,7 @@
   background-color: #f0f;
 }
 .emmanuel{
-  background-color: #3f6372;
+  background-color: vars.$dark-background-color;
 }
 .melissa{
   background-color: #311B92;
