@@ -28,8 +28,7 @@ const Selects = ({
             {categories.map((category, index) => {
               return(
                 <div key={index} className="nav__select-link">
-                  {category.map((type) => {
-                    {console.log(type)}             
+                  {category.map((type) => {          
                     return(
                       <Link key={'category' + type.id} to={`/categories/${type.id}`}>{type.name}</Link>
                     )

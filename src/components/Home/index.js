@@ -19,19 +19,19 @@ const Home = ({
 ) => 
 {
 
-  if(!topLoveLoaded){
+
     useEffect(
       fetchTopLove,
       [],
     );
-  }
 
-  if(!lastPostsLoaded){
+
+
     useEffect(
       fetchLastPosts,
       [],
     );
-  }
+
 
   return(
     <div className="home">      

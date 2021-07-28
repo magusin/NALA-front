@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
   title: ownProps.title,
   cardId: ownProps.cardId,
   page: ownProps.page,
+  isLogged: state.user.isLogged,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
