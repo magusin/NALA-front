@@ -5,6 +5,7 @@ import { CONNECT_USER } from '../../actions/api';
 const axiosInstance = axios.create(
   {
     baseURL: 'http://ec2-54-197-127-233.compute-1.amazonaws.com/api',
+    
   },
 );
 
@@ -22,7 +23,8 @@ const authMiddleware = (store) => (next) => (action) => {
       .then(
          (response) => {
            console.log(response);
-        //   store.dispatch(saveUser(response.data.connexion))
+           store.dispatch(saveUser(response.data.token))
+           localStorage.setItem('myToken', response.data.token);
          },
       );
         next(action)
