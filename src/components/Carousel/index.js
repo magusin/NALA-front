@@ -37,9 +37,9 @@ const Carousel = (
 
       </div>
       <div className="carousel-sliders">     
-          {list.map((card) =>{
+          {list.map((card, index) =>{
           return(
-            <Card cardId={card.id} key={"category" + categoryId + "_card" + card.id} picture={card.pictureBase64} title={card.title} page={page}/>
+            <Card cardPage={index+1} cardId={card.id} key={"category" + categoryId + "_card" + card.id} picture={card.pictureBase64} title={card.title} page={page}/>
           )
         })}
       </div>
