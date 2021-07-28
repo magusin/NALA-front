@@ -1,6 +1,6 @@
 import axios from 'axios';
-import {  } from 'src/actions';
-import { REGISTER_USER, saveUser } from '../../actions/api';
+import { saveUser } from '../../actions/saveData';
+import { REGISTER_USER } from '../../actions/api';
 
 
 const axiosInstance = axios.create(
@@ -12,28 +12,26 @@ const axiosInstance = axios.create(
 const registerMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case REGISTER_USER: {
-      const { newRegisterEmail, newRegisterPseudo, newRegisterPassword } = store.getState();
+      const { newRegisterEmail, newRegisterPseudo, newRegisterPassword } = store.getState().connexionForm;
       axiosInstance
-      .post(`/utlisateurs/${action.id}`, {
-        newRegisterEmail,
-        newRegisterPseudo,
-        newRegisterPassword,
-      })
-      .then(
-        (reponse) => {
-          console.log(reponse);
-          store.dispatch(saveUser(reponse.data.register))
-        },
-      ).catch(
-        (error) => {
-          console.log('error', error);
+      .post(`/utilisateurs`, {
+        email : newRegisterEmail,
+        nickname : newRegisterPseudo,
+        password : newRegisterPassword,
+      },
+      ).then(
+        (response) => {
+          console.log(response);
+          store.dispatch(saveUser(response.data.register))
         },
       );
+        next(action);
       break
     };
     default:
       next(action);
   }
 };
+
 
 export default registerMiddleware;
