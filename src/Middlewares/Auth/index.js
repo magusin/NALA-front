@@ -4,7 +4,7 @@ import { CONNECT_USER } from '../../actions/api';
 
 const axiosInstance = axios.create(
   {
-    baseURL: 'http://ec2-54-197-127-233.compute-1.amazonaws.com/api/v1',
+    baseURL: 'http://ec2-54-197-127-233.compute-1.amazonaws.com/api',
   },
 );
 
@@ -14,18 +14,19 @@ const authMiddleware = (store) => (next) => (action) => {
     const { newConnexionEmail, newConnexionPassword} = store.getState().connexionForm;
       axiosInstance
       .post(`/login_check`, {
-        email : newConnexionEmail,
-        passsword : newConnexionPassword,
-      })
-      .then(
+        username : newConnexionEmail,
+        password : newConnexionPassword,
+      },
+      ).then(
         (response) => {
           console.log(response);
-          store.dispatch(saveUser(response.data.connexion))
+          store.dispatch(saveUser(response.data));
         },
       );
         next(action)
       break;
     };
+      
     default:
       next(action);
   }

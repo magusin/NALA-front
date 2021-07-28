@@ -2,7 +2,6 @@ import axios from 'axios';
 import { saveUser } from '../../actions/saveData';
 import { REGISTER_USER } from '../../actions/api';
 
-
 const axiosInstance = axios.create(
   {
     baseURL: 'http://ec2-54-197-127-233.compute-1.amazonaws.com/api/v1',
