@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
-import Comment from 'src/components/Picture/Comment';
+import Comment from 'src/containers/Picture/Comment';
 
 import './picture.scss';
 import Loading from '../Loading';
@@ -11,26 +11,14 @@ const Picture = ({
   fetchPostWithId, 
   isReady,
   picture,
+  displayComments,
+  changeDisplay,
+  isLogged,
 }) => {
 
   useEffect(
     fetchPostWithId,
     [],
-  );
-
-  // useLocation nous renvoi la location courante (l'url en gros)
-  // notre composant sera rendu à nouveau dès que la location change
-  const location = useLocation();
-
-  // Hook pour remettre le scroll tout en haut à chaque rechargement de la page
-  useEffect(
-    () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    },
-    [location],
   );
 
   if(!isReady){
@@ -56,17 +44,23 @@ const Picture = ({
       <div className="picture__bottom">
         <div className="picture__bottom-links">
           <button><i className="bi bi-heart-fill"></i></button>
-          <button><i className="bi bi-chat-left-text-fill"></i></button>
+          <button onClick={() =>(changeDisplay())}><i className="bi bi-chat-left-text-fill"></i></button>
         </div>
 
-        <div className="picture__bottom-comments">
-          <form className="picture__bottom-comments-add">
-            <textarea></textarea>
-            <button>Poster</button>
-          </form>
-          <div className="picture__bottom-comments-section">
-            <Comment/>
-          </div>          
+        <div className={displayComments ? "picture__bottom-comments active" : "picture__bottom-comments"}>
+          {isLogged &&
+            <form className="picture__bottom-comments-add">
+              <textarea></textarea>
+              <button>Poster</button>
+            </form>
+          }
+          {displayComments &&(
+            <div className="picture__bottom-comments-section">
+              {picture.comment.map((comment) => (
+              <Comment key={comment.id} description={comment.description} createdAt={comment.createdAt}/>
+              ))}
+            </div> 
+          )}      
         </div>
 
       </div>
@@ -89,6 +83,9 @@ Picture.protoTypes = {
       nickname: PropTypes.string.isRequired,
     }),
   }),
+  displayComments: PropTypes.bool.isRequired,
+  changeDisplay: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 }
 
 export default Picture;

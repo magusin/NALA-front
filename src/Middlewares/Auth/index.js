@@ -21,7 +21,6 @@ const authMiddleware = (store) => (next) => (action) => {
         (response) => {
           console.log(response);
           store.dispatch(saveUser(response.data.connexion))
-          api.defaults.headers.common.Authorization = `bearer ${response.data.token}`
         },
       );
         next(action)
