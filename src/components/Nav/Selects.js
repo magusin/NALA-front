@@ -7,11 +7,17 @@ import './nav.scss';
 const Selects = ({
   fetchCategories,
   categoriesLoaded,
-  categories
+  categories,
 }) => { 
   
-  return(
+    useEffect(
+      fetchCategories,
+      [],
+    );
 
+
+
+  return(
   <>
     <div className="nav__select">
       <span className="nav__menu">Menu &nbsp;<i className="bi bi-chevron-down"></i> </span>
@@ -19,21 +25,23 @@ const Selects = ({
           <div className="nav__select-content">
             <Link to="/" className="nav__select-link">Accueil</Link>
             <Link to="/toplove" className="nav__select-link">Top-Love</Link>
-            {categories.map((category) => {
-              {console.log(categories)}
-              <div key={category.index}>
-                {category.map((type) => (
-                  
-                    <Link key={'category' + type.id} to={`/categories/${type.id}`} className="nav__select-link">{type.name}</Link>
-                
-                ))}
-             </div>
+            {categories.map((category, index) => {
+              return(
+                <div key={index} className="nav__select-link">
+                  {category.map((type) => {
+                    {console.log(type)}             
+                    return(
+                      <Link key={'category' + type.id} to={`/categories/${type.id}`}>{type.name}</Link>
+                    )
+                  })}
+              </div>
+             )
             })}            
           </div>
         )}
     </div>
   </>
-);
+  );
 };
 
 Selects.protoTypes = {
