@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 // components
-import Carousel from 'src/containers/Carousel';
+import Carousel from 'src/components/Carousel';
 import Loading from 'src/components/Loading';
 
 import './home.scss';

@@ -26,3 +26,11 @@ export const saveLastPosts = (data) => ({
   data : data,
 });
 
+export const SAVE_COMMENTS_WITH_POST_ID = 'SAVE_COMMENTS_WITH_POST_ID';
+
+export const saveCommentsWithPostId = (data) => ({
+  type: SAVE_COMMENTS_WITH_POST_ID,
+  data: data,
+});
+
+
