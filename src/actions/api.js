@@ -22,12 +22,6 @@ export const connectUser = () => ({
   type: CONNECT_USER,
 });
 
-export const SAVE_USER = 'SAVE_USER';
-export const saveUser = (data) => ({
-  type: SAVE_USER,
-  data,
-});
-
 export const REGISTER_USER = 'REGISTER_USER';
 export const registerUser = () => ({
   type: REGISTER_USER,

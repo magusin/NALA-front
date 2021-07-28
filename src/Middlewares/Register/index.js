@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { REGISTER_USER, saveUser } from '../../actions/api';
+import { saveUser } from '../../actions/saveData';
+import { REGISTER_USER } from '../../actions/api';
 
 
 const axiosInstance = axios.create(
@@ -21,7 +22,7 @@ const registerMiddleware = (store) => (next) => (action) => {
       ).then(
         (response) => {
           console.log(response);
-          store.dispatch(saveUser(response.data))
+          store.dispatch(saveUser(response.data.register))
         },
       );
         next(action);

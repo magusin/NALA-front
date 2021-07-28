@@ -18,14 +18,21 @@ const Connexion = ({
   setNewRegisterPseudo,
   newRegisterPassword,
   setNewRegisterPassword,
-  manageSubmit,
+  manageSubmitRegister,
+  manageSubmitConnexion,
 
 }) => {
-  const handleSubmit = (evt) => {
+  const handleSubmitRegister = (evt) => {
     evt.preventDefault();
 
-    manageSubmit();
+    manageSubmitRegister();
   };
+
+  const handleSubmitConnexion = (evt) => {
+    evt.preventDefault();
+    
+    manageSubmitConnexion();
+  }
 
   return (
     <div className="connexion">
@@ -47,7 +54,7 @@ const Connexion = ({
 
           <form 
           className={connexionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} 
-          onSubmit={handleSubmit}>
+          onSubmit={handleSubmitConnexion}>
             <div className="connexion__container_body-row">
             <i className="bi bi-envelope"></i>
               <input 
@@ -71,7 +78,7 @@ const Connexion = ({
             <button className="connexion__btn" type="submit">Connexion</button>
           </form>
           
-          <form className={inscriptionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} onSubmit={handleSubmit}>
+          <form className={inscriptionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} onSubmit={handleSubmitRegister}>
             <div className="connexion__container_body-row">
             <i className="bi bi-envelope"></i>
               <input 
@@ -121,7 +128,8 @@ Connexion.propTypes = {
   handleSelectInscription: PropTypes.func.isRequired,
   connexionSelect: PropTypes.bool.isRequired,
   inscriptionSelect: PropTypes.bool.isRequired,
-  manageSubmit: PropTypes.func.isRequired,
+  manageSubmitConnexion: PropTypes.func.isRequired,
+  manageSubmitRegister: PropTypes.func.isRequired,
 }
 
 export default Connexion;

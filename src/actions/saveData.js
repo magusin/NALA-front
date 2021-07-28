@@ -11,3 +11,9 @@ export const savePostWithId = (data) => ({
   type: SAVE_POST_WITH_ID,
   data:data,
 });
+
+export const SAVE_USER = 'SAVE_USER';
+export const saveUser = (data) => ({
+  type: SAVE_USER,
+  data,
+});

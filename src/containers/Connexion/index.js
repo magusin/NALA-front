@@ -14,10 +14,8 @@ import {
     setNewRegisterPassword,
 } from 'src/actions/connexionForm';
 
-import { connectUser, RegisterUser } from 'src/actions/api';
-
+import { connectUser, registerUser } from 'src/actions/api';
 import Connexion from 'src/components/Connexion';
-import { registerUser } from '../../actions/api';
 
 const mapStateToProps = (state, ownProps) => ({
   connexionSelect: state.connexionForm.connexionSelect,
@@ -57,11 +55,11 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(setNewRegisterPassword(newRegisterPassword))
   },
 
-  manageSubmit: () => {
+  manageSubmitConnexion: () => {
     dispatch(connectUser());
   },
 
-  manageSubmit: () => {
+  manageSubmitRegister: () => {
     dispatch(registerUser());
   },
 });
