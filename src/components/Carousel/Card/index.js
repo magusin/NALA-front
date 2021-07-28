@@ -5,6 +5,7 @@ import './card.scss';
 
 
 const Card = ({
+  cardPage,
   cardId,
   picture,
   title,
@@ -22,9 +23,6 @@ const Card = ({
       }
   }
 
-  console.log('page', page)
-  console.log(cardId)
-
   let cardSelected = (page, cardId) =>{
     if(page == cardId){
           return 'selected'
@@ -35,7 +33,7 @@ const Card = ({
   }
 
 return(
-  <div className={cardNextPrevious(page, cardId) + ' ' + cardSelected(page, cardId)}>
+  <div className={cardNextPrevious(page, cardPage) + ' ' + cardSelected(page, cardPage)}>
     <Link to={`/post/${cardId}`} >
       <div className="carousel-card-img" 
          style={{backgroundImage:`url(data:image/png;base64,${picture})`}}>

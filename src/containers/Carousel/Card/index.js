@@ -6,6 +6,7 @@ const mapStateToProps = (state, ownProps) => ({
   picture: ownProps.picture,
   title: ownProps.title,
   cardId: ownProps.cardId,
+  cardPage: ownProps.cardPage,
   page: ownProps.page,
   isLogged: state.user.isLogged,
 });
