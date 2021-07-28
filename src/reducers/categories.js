@@ -12,7 +12,7 @@ const initialState = {
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_CATEGORIES:
-      console.log('categories : ', action.data)
+      console.log('in');
       return{
         ...state,
         categories: action.data,

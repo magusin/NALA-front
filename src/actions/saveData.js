@@ -12,6 +12,11 @@ export const savePostWithId = (data) => ({
   data:data,
 });
 
+export const SAVE_USER = 'SAVE_USER';
+export const saveUser = (data) => ({
+  type: SAVE_USER,
+  data,
+});
 export const SAVE_TOPLOVE = 'SAVE_TOPLOVE';
 
 export const saveTopLove = (data) => ({
@@ -25,4 +30,12 @@ export const saveLastPosts = (data) => ({
   type: SAVE_LAST_POSTS,
   data : data,
 });
+
+export const SAVE_COMMENTS_WITH_POST_ID = 'SAVE_COMMENTS_WITH_POST_ID';
+
+export const saveCommentsWithPostId = (data) => ({
+  type: SAVE_COMMENTS_WITH_POST_ID,
+  data: data,
+});
+
 
