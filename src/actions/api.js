@@ -41,6 +41,13 @@ export const fetchCommentsWithIdFromApi = (postId) => ({
   postId: id,
 });
 
+export const FETCH_CATEGORY_FROM_API = 'FETCH_CATEGORY_FROM_API';
+
+export const fetchCategoryFromApi = (catId) => ({
+  type: FETCH_CATEGORY_FROM_API, 
+  id:catId, 
+});
+
 
 
 

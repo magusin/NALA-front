@@ -65,6 +65,18 @@ export const setNewRegisterPassword = (newRegisterPassword) => ({
   newRegisterPassword,
 });
 
+export const CHANGE_CONNEXION_FORM_FOR_REGISTER = 'CHANGE_CONNEXION_FORM_FOR_REGISTER';
+
+export const changeConnexionFormForRegister = () => ({
+  type: CHANGE_CONNEXION_FORM_FOR_REGISTER, 
+});
+
+export const CHANGE_CONNEXION_FORM_FOR_CONNEXION = 'CHANGE_CONNEXION_FORM_FOR_CONNEXION';
+
+export const changeConnexionFormForConnexion = () => ({
+  type: CHANGE_CONNEXION_FORM_FOR_CONNEXION,
+  
+});
 export const SAVE_TOKEN = 'SAVE_TOKEN';
 
 export const saveToken = (token) => ({

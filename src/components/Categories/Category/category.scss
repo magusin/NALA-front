@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Voltaire&display=swap");
 @use 'src/styles/vars';
+@import url("https://fonts.googleapis.com/css2?family=Voltaire&display=swap");
 
-.page {
+.category {
   h2 {
     display: inline-block;
     font-family: "Voltaire", sans-serif;
@@ -10,5 +10,11 @@
     padding: 1.5rem 0.5rem 0.6rem;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  &__container{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
   }
 }

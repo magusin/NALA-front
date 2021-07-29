@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import { FETCH_CATEGORIES_FROM_API, FETCH_TOPLOVE_FROM_API, FETCH_POST_WITH_ID_FROM_API, FETCH_LAST_POST_FROM_API } from '../../actions/api';
-import { saveCategories, saveLastPosts, savePostWithId, saveTopLove } from '../../actions/saveData'
+import { FETCH_CATEGORIES_FROM_API, FETCH_TOPLOVE_FROM_API, FETCH_POST_WITH_ID_FROM_API, FETCH_LAST_POST_FROM_API, FETCH_CATEGORY_FROM_API } from '../../actions/api';
+import { saveCategories, saveCategoryWithId, saveLastPosts, savePostWithId, saveTopLove } from '../../actions/saveData'
 
 const axiosInstance = axios.create(
   {
@@ -17,7 +17,6 @@ const postsMiddleware = (store) => (next) => (action) => {
       .then(
         (response) => {
           if(response.status == 200){
-                      console.log(response);
             store.dispatch(saveLastPosts(response.data));
           }
         },
@@ -61,6 +60,19 @@ const postsMiddleware = (store) => (next) => (action) => {
             store.dispatch(savePostWithId(response.data));
           }
         },
+      );
+      next(action);
+      break;
+    };
+    case FETCH_CATEGORY_FROM_API: {
+      axiosInstance
+      .get(`/categories/${action.id}`)
+      .then(
+        (response) => {
+          if(response.status == 200){
+            store.dispatch(saveCategoryWithId(response.data));
+          }
+        }, 
       );
       next(action);
       break;

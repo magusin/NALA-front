@@ -41,11 +41,11 @@ const Connexion = ({
       <h1 className={connexionSelect ? 'connexion__title active' : 'connexion__title'}> Connexion </h1>
       <div className="connexion__container">
         <div className="connexion__container_top" >
-          <button className="connexion__container_top-link active" 
+          <button className={connexionSelect ? 'connexion__container_top-link active' : 'connexion__container_top-link'} 
                   data-ref="connexion" 
                   href="#" 
                   onClick={() => (handleSelectConnexion())}>Connexion</button>
-          <button className="connexion__container_top-link" 
+          <button className={inscriptionSelect ? 'connexion__container_top-link active' : 'connexion__container_top-link'} 
                   data-ref="inscription" 
                   href="#"
                   onClick={() => (handleSelectInscription())}>Inscription</button>

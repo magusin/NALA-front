@@ -43,7 +43,9 @@ const Picture = ({
 
       <div className="picture__bottom">
         <div className="picture__bottom-links">
-          <button><i className="bi bi-heart-fill"></i></button>
+          {isLogged &&
+            <button><i className="bi bi-heart-fill"></i></button>
+          }
           <button onClick={() =>(changeDisplay())}><i className="bi bi-chat-left-text-fill"></i></button>
         </div>
 
