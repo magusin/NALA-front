@@ -20,6 +20,7 @@ import AnimalDefense from 'src/components/Footer/Links/AnimalDefense';
 import Profil from 'src/components/Profil';
 import Aime from 'src/components/Aime';
 import Notification from 'src/components/Notification';
+import Category from 'src/containers/Categories/Category';
 
 // == Import asset and css
 import './app.scss';
@@ -36,7 +37,8 @@ const App = () => {
     <Switch>
       <Route path="/" exact component={Home}/>
       <Route path="/categories" exact component={Categories}/>
-      <Route path="/toplove" exact component={TopLove}/>
+      <Route path='/categories/:id' component={Category} />
+      <Route path="/toplove" component={TopLove}/>
       <Route path='/connexion' component={Connexion} />
       <Route path='/profil' component={Profil} />
       <Route path='/notifications' component={Notification} />
@@ -45,7 +47,7 @@ const App = () => {
       <Route path='/protection-animale' component={AnimalDefense} />
       <Route path='/contact' component={Contact} />
       <Route path='/mentions-legales' component={LegaleMentions} />
-      <Route path='/cgu' component={CGU} />
+      <Route path='/cgu' exact component={CGU} />
       <Route path='/protection-animale' component={AnimalDefense} />
       <Route component={Error}/>
     </Switch> 

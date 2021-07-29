@@ -69,8 +69,7 @@ const Navbar = ({
             </li>
           </ul>
         </>
-      }
-      
+      }      
         <Button isLogged={isLogged}/>
       </nav>
     

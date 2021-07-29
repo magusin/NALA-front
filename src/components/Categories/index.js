@@ -13,7 +13,7 @@ const Categories = ({
 }) => {
 
   if(!categoriesLoaded){
-      useEffect(
+    useEffect(
       fetchCategories,
       [],
     );

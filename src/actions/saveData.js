@@ -38,4 +38,12 @@ export const saveCommentsWithPostId = (data) => ({
   data: data,
 });
 
+export const SAVE_CATEGORY_WITH_ID = 'SAVE_CATEGORY_WITH_ID';
+
+export const saveCategoryWithId = (data) => ({
+  type: SAVE_CATEGORY_WITH_ID,
+  data: data,
+});
+
+
 
