@@ -4,6 +4,8 @@ import Category from 'src/components/Categories/Category';
 import { fetchCategoryFromApi } from '../../../actions/api';
 
 const mapStateToProps = (state, ownProps) => ({
+  category: state.categories.category,
+  categoryLoaded: state.categories.categoryLoaded,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
