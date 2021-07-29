@@ -38,13 +38,13 @@ const Home = ({
 
 {((lastPostsLoaded && lastPosts != undefined) &&         
         <div>
-          <a href="#" className="title"><h1>Les dernières publications</h1></a>
+          <a href="#" className="home__title"><h1>Les dernières publications</h1></a>
           <Carousel list={lastPosts} categoryId={'lastPosts'}/>
         </div>
 )}
 {((topLoveLoaded && topLove != undefined) &&         
         <div>
-          <a href="#" className="title"><h2>Nos coups de Coeur</h2></a>
+          <a href="#" className="home__title"><h2>Nos coups de Coeur</h2></a>
           <Carousel list={topLove} categoryId={'topLove'}/>
         </div>
 )}

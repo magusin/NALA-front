@@ -93,6 +93,37 @@
       font-style: italic;
     }
   }
+  @media screen and (min-width:767px) {
+      margin-top: 2em;
+      display: flex;
+      flex-direction: row;
+      &__left{
+        width: 50%;
+        border-right: 1px solid vars.$light-background-color;
+      }
+      
+      &__right{
+        width: 50%;
+      }
+  
+      &__form{
+        border-bottom: none;
+        padding-top: 5em;
+        &-button {
+          margin-bottom: 2em;
+        }
+      }
+  
+      &__team{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+  
+        &-items{
+          width: 25%;
+        }
+      }
+  }
 }
 
 .carmen{
@@ -109,41 +140,4 @@
 }
 .hugo{
   background-color: #1888ff;
-}
-@media screen and (min-width:767px) {
-  .contact{
-    margin-top: 2em;
-    display: flex;
-    flex-direction: row;
-    &__title{
-      
-      
-    }
-    &__left{
-      width: 50%;
-      border-right: 1px solid vars.$light-background-color;
-    }
-    
-    &__right{
-      width: 50%;
-    }
-
-    &__form{
-      border-bottom: none;
-      padding-top: 5em;
-      &-button {
-        margin-bottom: 2em;
-      }
-    }
-
-    &__team{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      &-items{
-        width: 25%;
-      }
-    }
-  }
 }
