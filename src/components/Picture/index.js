@@ -58,9 +58,13 @@ const Picture = ({
           }
           {displayComments &&(
             <div className="picture__bottom-comments-section">
+
               {picture.comment.map((comment) => (
-              <Comment key={comment.id} description={comment.description} createdAt={comment.createdAt}/>
+                <Comment key={comment.id} description={comment.description} createdAt={comment.createdAt}/>
               ))}
+              { (picture.comment == null || picture.comment == '' || picture.comment == undefined) && 
+                <div>Soyez le premier à laisser un commentaire ! <i className="bi bi-emoji-wink-fill"></i></div>
+              }
             </div> 
           )}      
         </div>

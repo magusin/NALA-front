@@ -9,13 +9,6 @@ const Navbar = ({
   changeConnexionFormToConnexion,
   changeConnexionFormToRegister,
 }) => {
-  //isOpenMenu : true or false
-    //changeMenu
-      // close mobile menu => false
-      //click menu => true
-  //isOpenDropdown : true or false
-    // changeDropdown
-      //pour passer isOpen en true ou false
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
