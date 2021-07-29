@@ -83,7 +83,11 @@ export const saveToken = (token) => ({
   type: SAVE_TOKEN,
   token,
 });
-;
+
+export const LOGOUT_USER = 'LOGOUT_USER';
+export const logoutUser = () => ({
+  type: LOGOUT_USER,
+});
 
 
 

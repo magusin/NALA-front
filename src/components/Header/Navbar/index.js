@@ -17,6 +17,7 @@ const Navbar = ({
     // changeDropdown
       //pour passer isOpen en true ou false
   const [click, setClick] = useState(false);
+  
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -35,7 +36,7 @@ const Navbar = ({
     
       <nav className="navbar">
       {isLogged &&
-        <>    
+        <>
           <Link to='/' className="navbar__logo" onClick={closeMobileMenu}>
           <i className="bi bi-person-circle"></i> Bonjour "pseudo"
           </Link>
@@ -81,7 +82,7 @@ const Navbar = ({
           </ul>
         </>
       }
-      { !isLogged &&
+      {!isLogged &&
         <>
           <div className="navbar__icon" onClick={handleClick}>
               <i className={click ? 'bi bi-x' : 'bi bi-list'}></i>

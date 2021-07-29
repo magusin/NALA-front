@@ -1,7 +1,8 @@
-import { SAVE_TOKEN} from '../actions/connexionForm';
+import { SAVE_TOKEN, LOGOUT_USER } from '../actions/connexionForm';
 
 const initialState = {
-  isLogged: false,
+  logged: false,
+  username: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -9,10 +10,10 @@ const reducer = (state = initialState, action = {}) => {
     case SAVE_TOKEN: {
       return {
         ...state,
-        token : action.token,
+        token: action.token,
+        logged: true,
       }
     }
-
     default:
       return state;
   }
