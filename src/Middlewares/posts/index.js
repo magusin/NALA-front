@@ -57,7 +57,6 @@ const postsMiddleware = (store) => (next) => (action) => {
       .get(`/post/${action.id}`)
       .then(
         (response) => {
-          console.log(response);
           if(response.status == 200){
             store.dispatch(savePostWithId(response.data));
           }

@@ -18,17 +18,19 @@ const Home = ({
   }
 ) => 
 {
-  useEffect(
-    fetchTopLove,
-    [],
-  );
 
-  useEffect(
-    fetchLastPosts,
-    [],
-  );
 
-  console.log(topLove);
+    useEffect(
+      fetchTopLove,
+      [],
+    );
+
+
+
+    useEffect(
+      fetchLastPosts,
+      [],
+    );
 
 
   return(

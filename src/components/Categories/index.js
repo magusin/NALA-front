@@ -23,20 +23,23 @@ const Categories = ({
   return(
     <div className="categories">
         {categoriesLoaded && (
-          <div className="nav__select-content">
+          <div className="categories__content">
             <Link to="/"><h1>Accueil</h1></Link>
             <Link to="/toplove"><h1>Top-Love</h1></Link>
-            {categories.map((category, index) => (
-              <div key={index}>
-              {category.map((type) => (
-                <>
-                  <Link key={index + type.id} to={`/categories/${type.id}`}><h1>{type.name}</h1></Link>
-                  <span>{type.description}</span>
+            {categories.map((category, index) => {
+              return(              
+              <div key={'cat' + index}>
+              {category.map((type) => 
+              {
+              return(
+                <div key={index + type.id}>
+                  <Link to={`/categories/${type.id}`}><h1>{type.name}</h1></Link>
                   <Carousel list={type.posts} categoryId={type.id}/>
-                </>
-              ))}
+                </div>
+              )
+              })}
               </div>         
-            ))}            
+            )})}            
           </div>
         )}
     </div>
