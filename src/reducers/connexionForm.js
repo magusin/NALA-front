@@ -12,6 +12,8 @@ import {
   SET_NEW_REGISTER_PSEUDO,
   NEW_REGISTER_PASSWORD,
   SET_NEW_REGISTER_PASSWORD,
+  CHANGE_CONNEXION_FORM_FOR_CONNEXION,
+  CHANGE_CONNEXION_FORM_FOR_REGISTER,
 } from "../actions/connexionForm";
 
 const initialState = {
@@ -97,7 +99,19 @@ const reducer = (state = initialState, action = {}) => {
         connexionSelect: false,
         inscriptionSelect: true,
       };
-      
+    case CHANGE_CONNEXION_FORM_FOR_CONNEXION:
+      return {
+        ...state,
+        connexionSelect: true,
+        inscriptionSelect: false,
+      };
+      case CHANGE_CONNEXION_FORM_FOR_REGISTER:
+        return {
+          ...state,
+          connexionSelect: false,
+          inscriptionSelect: true,
+        };
+    
     default:
       return state;
   }
