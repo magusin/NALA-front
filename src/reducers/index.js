@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import connexionForm from "./connexionForm";
+import connexionForm from './connexionForm';
 import searchbar from './searchbar';
 import contactform from './contactform';
 import categories from './categories';

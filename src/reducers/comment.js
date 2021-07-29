@@ -1,30 +1,30 @@
-import { WRITE_NEW_COMMENT } from "../actions/comment";
-import { saveCommentsWithPostId, SAVE_COMMENTS_WITH_POST_ID, SAVE_NEW_COMMENT } from "../actions/saveData";
+import { WRITE_NEW_COMMENT } from '../actions/comment';
+import { saveCommentsWithPostId, SAVE_COMMENTS_WITH_POST_ID, SAVE_NEW_COMMENT } from '../actions/saveData';
 
 const initialState = {
   comments: [],
   commentIsReady: false,
-  newComment:'',
+  newComment: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_COMMENTS_WITH_POST_ID:
 
-      return{
+      return {
         ...state,
         comments: action.data,
-      }
+      };
     case WRITE_NEW_COMMENT:
-      return{
+      return {
         ...state,
         newComment: action.text,
-      }
+      };
     case SAVE_NEW_COMMENT:
-      return{
+      return {
         ...state,
-        comments:[...state.comments, action.data],
-      }
+        comments: [...state.comments, action.data],
+      };
     default:
       return state;
   }

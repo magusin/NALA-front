@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Button from 'src/containers/Header/Navbar/Button';
 import { Link } from 'react-router-dom';
 import './navbar.scss';
-
 
 const Navbar = ({
   isLogged,
@@ -10,44 +11,44 @@ const Navbar = ({
   changeConnexionFormToRegister,
 }) => {
   const [click, setClick] = useState(false);
-  
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  function goRegisterAndClose(){
-    setClick(false),
-    changeConnexionFormToRegister()    
-  };
+  function goRegisterAndClose() {
+    setClick(false);
+    changeConnexionFormToRegister();
+  }
 
   function goConnexionAndClose() {
-    setClick(false),
-    changeConnexionFormToConnexion()
+    setClick(false);
+    changeConnexionFormToConnexion();
   }
 
   return (
-    
-      <nav className="navbar">
-      {isLogged &&
+
+    <nav className="navbar">
+      {isLogged
+        && (
         <>
-          <Link to='/' className="navbar__logo" onClick={closeMobileMenu}>
-          <i className="bi bi-person-circle"></i> Bonjour "pseudo"
+          <Link to="/" className="navbar__logo" onClick={closeMobileMenu}>
+            <i className="bi bi-person-circle" /> Bonjour "pseudo"
           </Link>
 
           <div className="navbar__icon" onClick={handleClick}>
-            <i className={click ? 'bi bi-x' : 'bi bi-list'}></i>
+            <i className={click ? 'bi bi-x' : 'bi bi-list'} />
           </div>
 
-          <ul className={click ? "navbar__menu active" : "navbar__menu"}>
+          <ul className={click ? 'navbar__menu active' : 'navbar__menu'}>
             <li className="navbar__item">
-              <Link to='/profil' className="navbar__links" onClick={closeMobileMenu}>
+              <Link to="/profil" className="navbar__links" onClick={closeMobileMenu}>
                 Profil
               </Link>
             </li>
 
             <li className="navbar__item">
               <Link
-                to='/notifications'
+                to="/notifications"
                 className="navbar__links"
                 onClick={closeMobileMenu}
               >
@@ -56,7 +57,7 @@ const Navbar = ({
             </li>
             <li className="navbar__item">
               <Link
-                to='/tags'
+                to="/tags"
                 className="navbar__links"
                 onClick={closeMobileMenu}
               >
@@ -65,7 +66,7 @@ const Navbar = ({
             </li>
             <li>
               <Link
-                to='/deconnexion'
+                to="/deconnexion"
                 className="navbar__links-mobile"
                 onClick={closeMobileMenu}
               >
@@ -74,38 +75,44 @@ const Navbar = ({
             </li>
           </ul>
         </>
-      }
-      {!isLogged &&
+        )}
+      {!isLogged
+        && (
         <>
           <div className="navbar__icon" onClick={handleClick}>
-              <i className={click ? 'bi bi-x' : 'bi bi-list'}></i>
+            <i className={click ? 'bi bi-x' : 'bi bi-list'} />
           </div>
-          <ul className={click ? "navbar__menu active" : "navbar__menu"}>
+          <ul className={click ? 'navbar__menu active' : 'navbar__menu'}>
             <li>
-                <Link
-                  to='/connexion'
-                  className="navbar__links-mobile"
-                  onClick={() => goRegisterAndClose() }
-                >
-                  S'enregistrer
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to='/connexion'
-                  className="navbar__links-mobile"
-                  onClick={() => goConnexionAndClose() }
-                >
-                  Se connecter
-                </Link>
-              </li>
+              <Link
+                to="/connexion"
+                className="navbar__links-mobile"
+                onClick={() => goRegisterAndClose()}
+              >
+                S'enregistrer
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/connexion"
+                className="navbar__links-mobile"
+                onClick={() => goConnexionAndClose()}
+              >
+                Se connecter
+              </Link>
+            </li>
           </ul>
         </>
-      }      
-        <Button isLogged={isLogged}/>
-      </nav>
-    
+        )}
+      <Button isLogged={isLogged} />
+    </nav>
   );
-}
+};
+
+Navbar.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
+  changeConnexionFormToConnexion: PropTypes.func.isRequired,
+  changeConnexionFormToRegister: PropTypes.func.isRequired,
+};
 
 export default Navbar;

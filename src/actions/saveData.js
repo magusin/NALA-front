@@ -1,15 +1,15 @@
 export const SAVE_CATEGORIES = 'SAVE_CATEGORIES';
 
 export const saveCategories = (data) => ({
-  type: SAVE_CATEGORIES, 
-  data:data,
+  type: SAVE_CATEGORIES,
+  data: data,
 });
 
 export const SAVE_POST_WITH_ID = 'SAVE_POST_WITH_ID';
 
 export const savePostWithId = (data) => ({
   type: SAVE_POST_WITH_ID,
-  data:data,
+  data: data,
 });
 
 export const SAVE_USER_REGISTER = 'SAVE_USER';
@@ -28,14 +28,14 @@ export const SAVE_TOPLOVE = 'SAVE_TOPLOVE';
 
 export const saveTopLove = (data) => ({
   type: SAVE_TOPLOVE,
-  data: data,  
+  data: data,
 });
 
 export const SAVE_LAST_POSTS = 'SAVE_LAST_POSTS';
 
 export const saveLastPosts = (data) => ({
   type: SAVE_LAST_POSTS,
-  data : data,
+  data: data,
 });
 
 export const SAVE_COMMENTS_WITH_POST_ID = 'SAVE_COMMENTS_WITH_POST_ID';
@@ -49,7 +49,7 @@ export const SAVE_NEW_COMMENT = 'SAVE_NEW_COMMENT';
 
 export const saveNewComment = (data) => ({
   type: SAVE_NEW_COMMENT,
-  data
+  data,
 });
 
 export const SAVE_CATEGORY_WITH_ID = 'SAVE_CATEGORY_WITH_ID';
@@ -63,13 +63,11 @@ export const SAVE_LIKE_IT = 'SAVE_LIKE_IT';
 
 export const saveLikeIt = (data) => ({
   type: SAVE_LIKE_IT,
-  data
+  data,
 });
 export const REMOVE_LIKE_IT = 'REMOVE_LIKE_IT';
 
 export const removeLikeIt = (data) => ({
   type: REMOVE_LIKE_IT,
-  data
+  data,
 });
-
-

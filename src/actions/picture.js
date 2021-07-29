@@ -7,6 +7,5 @@ export const changeDisplayComments = () => ({
 export const GO_IN_BACK_RESET_PICTURE = 'GO_IN_BACK_RESET_PICTURE';
 
 export const goInBackResetPicture = () => ({
-  type: GO_IN_BACK_RESET_PICTURE ,
+  type: GO_IN_BACK_RESET_PICTURE,
 });
-

@@ -1,11 +1,9 @@
 import React from 'react';
 
 import './nav.scss';
-import Buttons from './Buttons'
-import Selects from 'src/containers/Nav/Selects'
-import SearchBar from 'src/containers/SearchBar'
-
-
+import Selects from 'src/containers/Nav/Selects';
+import SearchBar from 'src/containers/SearchBar';
+import Buttons from './Buttons';
 
 const Nav = () => (
   <div className="nav">

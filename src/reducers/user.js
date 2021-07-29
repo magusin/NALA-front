@@ -12,13 +12,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         token: action.token,
         logged: true,
-      }
+      };
     }
     default:
       return state;
   }
 };
-
-
 
 export default reducer;

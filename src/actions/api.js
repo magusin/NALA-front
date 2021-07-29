@@ -1,21 +1,22 @@
-
+/* eslint-disable no-unused-vars */
+/* eslint-disable camelcase */
 export const FETCH_TOPLOVE_FROM_API = 'FETCH_TOPLOVE_FROM_API';
 
 export const fetchTopLoveFromApi = () => ({
-  type: FETCH_TOPLOVE_FROM_API, 
+  type: FETCH_TOPLOVE_FROM_API,
 });
 
 export const FETCH_POST_WITH_ID_FROM_API = 'FETCH_POST_WITH_ID_FROM_API';
 
 export const fetchPostWithIdFromApi = (id) => ({
   type: FETCH_POST_WITH_ID_FROM_API,
-  id:id,
+  id: id,
 });
 
 export const FETCH_CATEGORIES_FROM_API = 'FETCH_CATEGORIES_FROM_API';
 
 export const fetchCategoriesFromApi = () => ({
-  type: FETCH_CATEGORIES_FROM_API,  
+  type: FETCH_CATEGORIES_FROM_API,
 });
 
 export const FETCH_LAST_POST_FROM_API = 'FETCH_LAST_POST_FROM_API';
@@ -38,41 +39,34 @@ export const FETCH_COMMENTS_WITH_ID_FROM_API = 'FETCH_COMMENTS_WITH_ID_FROM_API'
 
 export const fetchCommentsWithIdFromApi = (postId) => ({
   type: FETCH_COMMENTS_WITH_ID_FROM_API,
+  // eslint-disable-next-line no-undef
   postId: id,
 });
 
 export const FETCH_CATEGORY_FROM_API = 'FETCH_CATEGORY_FROM_API';
 
 export const fetchCategoryFromApi = (catId) => ({
-  type: FETCH_CATEGORY_FROM_API, 
-  id:catId, 
+  type: FETCH_CATEGORY_FROM_API,
+  id: catId,
 });
 
 export const SEND_NEW_COMMENT = 'SEND_NEW_COMMENT';
 
 export const sendNewComment = (post_id) => ({
   type: SEND_NEW_COMMENT,
-  post_id: post_id
+  post_id: post_id,
 });
 
 export const ADD_LIKE = 'ADD_LIKE';
 
 export const addLike = (postId) => ({
   type: ADD_LIKE,
-  postId
+  postId,
 });
 
 export const REMOVE_LIKE = 'REMOVE_LIKE';
 
 export const removeLike = (postId) => ({
   type: REMOVE_LIKE,
-  postId
+  postId,
 });
-
-
-
-
-
-
-
-

@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 
 // components
 import Carousel from 'src/components/Carousel';
-import Loading from 'src/components/Loading';
 
 import './home.scss';
-
 
 const Home = ({
   topLoveLoaded,
@@ -15,49 +13,48 @@ const Home = ({
   lastPosts,
   fetchTopLove,
   fetchLastPosts,
-  }
-) => 
-{
+}) => {
+  useEffect(
+    fetchTopLove,
+    [],
+  );
 
+  useEffect(
+    fetchLastPosts,
+    [],
+  );
 
-    useEffect(
-      fetchTopLove,
-      [],
-    );
+  return (
+    <div className="home">
 
-
-
-    useEffect(
-      fetchLastPosts,
-      [],
-    );
-
-
-  return(
-    <div className="home">      
-
-{((lastPostsLoaded && lastPosts != undefined) &&         
+      {((lastPostsLoaded && lastPosts !== undefined)
+        && (
         <div>
           <a href="#" className="title"><h2>Les dernières publications</h2></a>
-          <Carousel list={lastPosts} categoryId={'lastPosts'}/>
+          <Carousel list={lastPosts} categoryId="lastPosts" />
         </div>
+        )
 )}
-{((topLoveLoaded && topLove != undefined) &&         
+      {((topLoveLoaded && topLove !== undefined)
+        && (
         <div>
           <a href="#" className="title"><h2>Nos coups de Coeur</h2></a>
-          <Carousel list={topLove} categoryId={'topLove'}/>
+          <Carousel list={topLove} categoryId="topLove" />
         </div>
+        )
 )}
-        
-     
+
     </div>
   );
 };
 
-Home.protoTypes = {
-  fetchTopLove:PropTypes.func.isRequired,
-  fetchLastPosts:PropTypes.func.isRequired,
-
+Home.propTypes = {
+  fetchTopLove: PropTypes.func.isRequired,
+  fetchLastPosts: PropTypes.func.isRequired,
+  topLoveLoaded: PropTypes.bool.isRequired,
+  lastPostsLoaded: PropTypes.bool.isRequired,
+  // topLove: PropTypes.array.isRequired,
+  // lastPosts: PropTypes.string.isRequired,
 };
 
 export default Home;

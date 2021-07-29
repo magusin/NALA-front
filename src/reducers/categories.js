@@ -1,42 +1,44 @@
-import { SAVE_CATEGORIES, SAVE_CATEGORY_WITH_ID, SAVE_LAST_POSTS, SAVE_TOPLOVE } from "../actions/saveData";
+import {
+  SAVE_CATEGORIES, SAVE_CATEGORY_WITH_ID, SAVE_LAST_POSTS, SAVE_TOPLOVE,
+} from '../actions/saveData';
 
 const initialState = {
-  categoriesLoaded : false,
+  categoriesLoaded: false,
   categories: [],
   topLoveLoaded: false,
-  topLove:[],
+  topLove: [],
   lastPostsLoaded: false,
-  lastPosts:'',
+  lastPosts: '',
   categoryLoaded: false,
-  category : [],
+  category: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_CATEGORIES:
-      return{
+      return {
         ...state,
         categories: action.data,
-        categoriesLoaded:true,
+        categoriesLoaded: true,
       };
     case SAVE_TOPLOVE:
-      return{
+      return {
         ...state,
         topLove: action.data,
         topLoveLoaded: true,
       };
     case SAVE_LAST_POSTS:
-      return{
+      return {
         ...state,
         lastPosts: action.data,
         lastPostsLoaded: true,
       };
     case SAVE_CATEGORY_WITH_ID:
-      return{
+      return {
         ...state,
         category: action.data,
-        categoryLoaded:true,
-      }
+        categoryLoaded: true,
+      };
     default:
       return state;
   }

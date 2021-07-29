@@ -6,30 +6,30 @@ import { LOGOUT_USER } from '../../actions/connexionForm';
 const axiosInstance = axios.create(
   {
     baseURL: 'http://ec2-54-197-127-233.compute-1.amazonaws.com/api',
-    
+
   },
 );
 
 const authMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case CONNECT_USER: {
-    const { newConnexionEmail, newConnexionPassword} = store.getState().connexionForm;
+      const { newConnexionEmail, newConnexionPassword } = store.getState().connexionForm;
       axiosInstance
-      .post(`/login_check`, {
-        username : newConnexionEmail,
-        password : newConnexionPassword,
-        
-      })
-      .then(
+        .post('/login_check', {
+          username: newConnexionEmail,
+          password: newConnexionPassword,
+
+        })
+        .then(
           (response) => {
             console.log(response);
-            store.dispatch(saveUserConnect(response.data.token))
+            store.dispatch(saveUserConnect(response.data.token));
             localStorage.setItem('myToken', response.data.token);
           },
-      );
-        next(action)
-      break; 
-    };
+        );
+      next(action);
+      break;
+    }
     case LOGOUT_USER:
       localStorage.removeItem('myToken');
       next(action);

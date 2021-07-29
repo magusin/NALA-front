@@ -1,4 +1,4 @@
-import { NEW_SEARCH, SET_NEW_SEARCH} from '../actions/searchbar';
+import { NEW_SEARCH, SET_NEW_SEARCH } from '../actions/searchbar';
 
 const initialState = {
   newSearch: '',
@@ -10,13 +10,13 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         newSearch: action.newSearch,
-      }
+      };
     }
     case SET_NEW_SEARCH: {
       return {
         ...state,
         newSearch: action.newSearch,
-      }
+      };
     }
     default:
       return state;

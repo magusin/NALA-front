@@ -1,4 +1,4 @@
-import { SAVE_USER_CONNECT, SAVE_USER_REGISTER } from "../actions/saveData";
+import { SAVE_USER_CONNECT, SAVE_USER_REGISTER } from '../actions/saveData';
 import {
   SELECT_INSCRIPTION_FORM,
   SELECT_CONNEXION_FORM,
@@ -15,7 +15,7 @@ import {
   CHANGE_CONNEXION_FORM_FOR_CONNEXION,
   CHANGE_CONNEXION_FORM_FOR_REGISTER,
   LOGOUT_USER,
-} from "../actions/connexionForm";
+} from '../actions/connexionForm';
 
 const initialState = {
   connexionSelect: true,
@@ -40,64 +40,64 @@ const reducer = (state = initialState, action = {}) => {
         newRegisterEmail: '',
         newRegisterPseudo: '',
         newRegisterPassword: '',
-      }
+      };
     case SAVE_USER_CONNECT:
       return {
         ...state,
         newConnexionEmail: '',
         newConnexionPassword: '',
         logged: true,
-      }
+      };
     case SET_NEW_REGISTER_PASSWORD:
       return {
         ...state,
-        newRegisterPassword: action.newRegisterPassword
-      }
+        newRegisterPassword: action.newRegisterPassword,
+      };
     case NEW_REGISTER_PASSWORD:
       return {
         ...state,
         newRegisterPassword: action.newRegisterPassword,
-      }
+      };
     case SET_NEW_REGISTER_PSEUDO:
       return {
         ...state,
         newRegisterPseudo: action.newRegisterPseudo,
-      }
+      };
     case NEW_REGISTER_PSEUDO:
-      return{
+      return {
         ...state,
         newRegisterPseudo: action.newRegisterPseudo,
-      }
+      };
     case SET_NEW_REGISTER_EMAIL:
       return {
         ...state,
         newRegisterEmail: action.newRegisterEmail,
-      }
+      };
     case NEW_REGISTER_EMAIL:
       return {
         ...state,
         newRegfisterEmail: action.newRegisterEmail,
-      }
+      };
     case SET_NEW_CONNEXION_PASSWORD:
       return {
         ...state,
         newConnexionPassword: action.newConnexionPassword,
-      }
+      };
     case NEW_CONNEXION_PASSWORD:
       return {
         ...state,
-        newConnexionPassword: action.newConnexionPassword
-      }
+        newConnexionPassword: action.newConnexionPassword,
+      };
     case SET_NEW_CONNEXION_EMAIL:
       return {
         ...state,
         newConnexionEmail: action.newConnexionEmail,
-      }
+      };
     case NEW_CONNEXION_EMAIL:
       return {
         ...state,
         newConnexionEmail: action.newConnexionEmail,
-      }
+      };
     case SELECT_CONNEXION_FORM:
       return {
         ...state,
@@ -116,13 +116,13 @@ const reducer = (state = initialState, action = {}) => {
         connexionSelect: true,
         inscriptionSelect: false,
       };
-      case CHANGE_CONNEXION_FORM_FOR_REGISTER:
-        return {
-          ...state,
-          connexionSelect: false,
-          inscriptionSelect: true,
-        };
-    
+    case CHANGE_CONNEXION_FORM_FOR_REGISTER:
+      return {
+        ...state,
+        connexionSelect: false,
+        inscriptionSelect: true,
+      };
+
     default:
       return state;
   }

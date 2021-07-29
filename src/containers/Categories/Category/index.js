@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchCategory: function () {
-    dispatch(fetchCategoryFromApi(ownProps.match.params.id))
+    dispatch(fetchCategoryFromApi(ownProps.match.params.id));
   },
 });
 

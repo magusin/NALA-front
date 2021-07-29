@@ -9,10 +9,10 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   changeConnexionFormToRegister: () => {
-    dispatch(changeConnexionFormForRegister())
+    dispatch(changeConnexionFormForRegister());
   },
   changeConnexionFormToConnexion: () => {
-    dispatch(changeConnexionFormForConnexion())
+    dispatch(changeConnexionFormForConnexion());
   },
 });
 

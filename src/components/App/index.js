@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // Import containers
 import Home from 'src/containers/Home';
@@ -25,50 +26,48 @@ import Category from 'src/containers/Categories/Category';
 // == Import asset and css
 import './app.scss';
 
-
 // == Composant
-const App = 
-  ({submitToken, isLogged}) => {
-
-    useEffect(
-      () => {
+const App = ({ submitToken, isLogged }) => {
+  useEffect(
+    () => {
       // Local Storage
-      const token = localStorage.getItem('myToken')
-      submitToken(token)
-        
-      
-    }, []
-    );
+      const token = localStorage.getItem('myToken');
+      submitToken(token);
+    }, [],
+  );
 
-  return(
-  <div className="app">
+  return (
+    <div className="app">
 
-    <Header/>
-    <Nav />
-    <Switch>
-      <Route path="/" exact component={Home}/>
-      <Route path="/categories" exact component={Categories}/>
-      <Route path='/categories/:id' component={Category} />
-      <Route path="/toplove" component={TopLove}/>
-      <Route path='/connexion' component={Connexion} />
-      {isLogged && <Route path='/profil' component={Profil} />}
-      {isLogged && <Route path='/notifications' component={Notification} />}
-      {isLogged && <Route path='/tags' component={Aime} />}
-      <Route path='/post/:id' component={Picture} />
-      <Route path='/protection-animale' component={AnimalDefense} />
-      <Route path='/contact' component={Contact} />
-      <Route path='/mentions-legales' component={LegaleMentions} />
-      <Route path='/cgu' exact component={CGU} />
-      <Route path='/protection-animale' component={AnimalDefense} />
-      <Route component={Error}/>
-    </Switch> 
-    <Footer /> 
+      <Header />
+      <Nav />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/categories" exact component={Categories} />
+        <Route path="/categories/:id" component={Category} />
+        <Route path="/toplove" component={TopLove} />
+        <Route path="/connexion" component={Connexion} />
+        {isLogged && <Route path="/profil" component={Profil} />}
+        {isLogged && <Route path="/notifications" component={Notification} />}
+        {isLogged && <Route path="/tags" component={Aime} />}
+        <Route path="/post/:id" component={Picture} />
+        <Route path="/protection-animale" component={AnimalDefense} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/mentions-legales" component={LegaleMentions} />
+        <Route path="/cgu" exact component={CGU} />
+        <Route path="/protection-animale" component={AnimalDefense} />
+        <Route component={Error} />
+      </Switch>
+      <Footer />
 
-  </div>
-  )
+    </div>
+  );
+};
+
+App.propTypes = {
+  submitToken: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 // == Export
 export default App;
-
-
