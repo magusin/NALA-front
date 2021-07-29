@@ -62,6 +62,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   manageSubmitRegister: () => {
     dispatch(registerUser());
   },
+
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Connexion);

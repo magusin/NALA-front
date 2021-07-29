@@ -1,6 +1,8 @@
 
 import { createStore, applyMiddleware, compose } from 'redux';
 import postsMiddleware from 'src/Middlewares/posts';
+import authMiddleware from '../Middlewares/Auth';
+import registerMiddleware from '../Middlewares/Register';
 
 //import apiMiddleware from 'src/middlewares/api';
 
