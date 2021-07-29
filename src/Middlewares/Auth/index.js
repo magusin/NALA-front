@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { saveUser } from '../../actions/saveData';
+import { saveUserConnect } from '../../actions/saveData';
 import { CONNECT_USER } from '../../actions/api';
 
 const axiosInstance = axios.create(
@@ -23,7 +23,7 @@ const authMiddleware = (store) => (next) => (action) => {
       .then(
           (response) => {
             console.log(response);
-            store.dispatch(saveUser(response.data.token))
+            store.dispatch(saveUserConnect(response.data.token))
             localStorage.setItem('myToken', response.data.token);
           },
       );

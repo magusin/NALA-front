@@ -1,4 +1,4 @@
-import { SAVE_USER } from "../actions/saveData";
+import { SAVE_USER_CONNECT, SAVE_USER_REGISTER } from "../actions/saveData";
 import {
   SELECT_INSCRIPTION_FORM,
   SELECT_CONNEXION_FORM,
@@ -24,18 +24,23 @@ const initialState = {
   newRegisterEmail: '',
   newRegisterPseudo: '',
   newRegisterPassword: '',
+  logged: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case SAVE_USER:
+    case SAVE_USER_REGISTER:
+      return {
+        newRegisterEmail: '',
+        newRegisterPseudo: '',
+        newRegisterPassword: '',
+      }
+    case SAVE_USER_CONNECT:
       return {
         ...state,
         newConnexionEmail: '',
         newConnexionPassword: '',
-        newRegisterEmail: '',
-        newRegisterPseudo: '',
-        newRegisterPassword: '',
+        logged: true,
       }
     case SET_NEW_REGISTER_PASSWORD:
       return {

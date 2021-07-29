@@ -25,6 +25,7 @@ const mapStateToProps = (state, ownProps) => ({
   newRegisterEmail: state.connexionForm.newRegisterEmail,
   newRegisterPseudo: state.connexionForm.newRegisterPseudo,
   newRegisterPassword: state.connexionForm.newRegisterPassword,
+  isLogged: state.connexionForm.logged,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -62,6 +63,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   manageSubmitRegister: () => {
     dispatch(registerUser());
   },
+
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Connexion);
