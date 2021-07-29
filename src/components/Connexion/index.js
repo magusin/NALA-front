@@ -20,6 +20,7 @@ const Connexion = ({
   setNewRegisterPassword,
   manageSubmitRegister,
   manageSubmitConnexion,
+  token,
 
 }) => {
   const handleSubmitRegister = (evt) => {

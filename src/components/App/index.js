@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Import containers
@@ -27,7 +27,18 @@ import './app.scss';
 
 
 // == Composant
-const App = () => {
+const App = 
+  ({submitToken}) => {
+
+    useEffect(
+      () => {
+      // Local Storage
+      const token = localStorage.getItem('myToken')
+      submitToken(token)
+        
+      
+    }, []
+    );
 
   return(
   <div className="app">

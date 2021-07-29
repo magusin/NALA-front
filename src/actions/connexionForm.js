@@ -77,6 +77,14 @@ export const changeConnexionFormForConnexion = () => ({
   type: CHANGE_CONNEXION_FORM_FOR_CONNEXION,
   
 });
+export const SAVE_TOKEN = 'SAVE_TOKEN';
+
+export const saveToken = (token) => ({
+  type: SAVE_TOKEN,
+  token,
+});
+;
+
 
 
 
