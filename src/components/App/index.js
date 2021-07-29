@@ -28,7 +28,7 @@ import './app.scss';
 
 // == Composant
 const App = 
-  ({submitToken}) => {
+  ({submitToken, isLogged}) => {
 
     useEffect(
       () => {
@@ -51,9 +51,9 @@ const App =
       <Route path='/categories/:id' component={Category} />
       <Route path="/toplove" component={TopLove}/>
       <Route path='/connexion' component={Connexion} />
-      <Route path='/profil' component={Profil} />
-      <Route path='/notifications' component={Notification} />
-      <Route path='/tags' component={Aime} />
+      {isLogged && <Route path='/profil' component={Profil} />}
+      {isLogged && <Route path='/notifications' component={Notification} />}
+      {isLogged && <Route path='/tags' component={Aime} />}
       <Route path='/post/:id' component={Picture} />
       <Route path='/protection-animale' component={AnimalDefense} />
       <Route path='/contact' component={Contact} />
