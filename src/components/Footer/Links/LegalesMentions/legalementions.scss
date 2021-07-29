@@ -3,6 +3,7 @@
 .legalementions{
   margin-top: 2em;
   &__title{
+    display: flex;
     &__title-sub {
       font-size: 1.5em;
       font-weight: bold;

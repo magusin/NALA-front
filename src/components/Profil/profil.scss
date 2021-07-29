@@ -1,11 +1,13 @@
 @use 'src/styles/vars';
 
 .profil {
-  margin-top: 2em;
-  &-title{
-  font-size: 2rem;
-  text-align: center;
+  &-title {
+    margin-bottom: 1em;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
+  margin-top: 2em;
   &__section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;

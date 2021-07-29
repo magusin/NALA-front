@@ -1,9 +1,11 @@
 .notification {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   margin-bottom: 1em;
   font-size: 2rem;
   padding: 2rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 

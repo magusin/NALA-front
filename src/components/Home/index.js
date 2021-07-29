@@ -38,7 +38,7 @@ const Home = ({
 
 {((lastPostsLoaded && lastPosts != undefined) &&         
         <div>
-          <a href="#" className="title"><h2>Les dernières publications</h2></a>
+          <a href="#" className="title"><h1>Les dernières publications</h1></a>
           <Carousel list={lastPosts} categoryId={'lastPosts'}/>
         </div>
 )}

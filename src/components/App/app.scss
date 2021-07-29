@@ -9,14 +9,24 @@ body {
     font-family: vars.$font-title;
   }
 
-  h1{
+  h1, h2, h3{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-transform: capitalize;
     font-weight: bold;
     text-align: center;
-    font-size:1.5rem;
-    background-color: vars.$light-background-color;
-    color: vars.$light-background;
+    font-size: 2rem;
+    background: vars.$light-backdround-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    margin: 0 auto;
+    flex-direction: column;
     padding: .5em;
     margin-bottom: 1.5em;
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
   }
 }
 
@@ -25,4 +35,29 @@ body {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+}
+
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }

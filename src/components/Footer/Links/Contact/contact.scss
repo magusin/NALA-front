@@ -2,17 +2,12 @@
 
 .contact{
   margin-top: 2em;
+ 
   &__title{
-    padding: .5em;
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-
-    background-color: vars.$light-background-color;
-    color: vars.$light-background;
+    margin-left: calc(50%-2em);
+    margin-right: calc(50%-2em);
+    
   }
-  
-
   &__form{
     &-input{
     border: none;
@@ -120,7 +115,10 @@
     margin-top: 2em;
     display: flex;
     flex-direction: row;
-
+    &__title{
+      
+      
+    }
     &__left{
       width: 50%;
       border-right: 1px solid vars.$light-background-color;
@@ -133,6 +131,9 @@
     &__form{
       border-bottom: none;
       padding-top: 5em;
+      &-button {
+        margin-bottom: 2em;
+      }
     }
 
     &__team{

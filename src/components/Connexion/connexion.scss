@@ -23,11 +23,6 @@
   }
 
   &__title {
-    margin-bottom: 1em;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-size: 2rem;
     display: none;
     &.active{
       display:block;
