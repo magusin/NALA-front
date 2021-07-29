@@ -6,6 +6,8 @@ import './navbar.scss';
 
 const Navbar = ({
   isLogged,
+  changeConnexionFormToConnexion,
+  changeConnexionFormToRegister,
 }) => {
   //isOpenMenu : true or false
     //changeMenu
@@ -19,6 +21,15 @@ const Navbar = ({
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
+  function goRegisterAndClose(){
+    setClick(false),
+    changeConnexionFormToRegister()    
+  };
+
+  function goConnexionAndClose() {
+    setClick(false),
+    changeConnexionFormToConnexion()
+  }
 
   return (
     
@@ -78,11 +89,20 @@ const Navbar = ({
           <ul className={click ? "navbar__menu active" : "navbar__menu"}>
             <li>
                 <Link
-                  to='/deconnexion'
+                  to='/connexion'
                   className="navbar__links-mobile"
-                  onClick={closeMobileMenu}
+                  onClick={() => goRegisterAndClose() }
                 >
-                  <Button/>
+                  S'enregistrer
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to='/connexion'
+                  className="navbar__links-mobile"
+                  onClick={() => goConnexionAndClose() }
+                >
+                  Se connecter
                 </Link>
               </li>
           </ul>
