@@ -1,5 +1,7 @@
 import { SAVE_POST_WITH_ID } from "src/actions/saveData.js";
+import { REMOVE_LIKE } from "../actions/api";
 import { CHANGE_DISPLAY_COMMENTS, GO_IN_BACK_RESET_PICTURE } from "../actions/picture";
+import { SAVE_LIKE_IT } from "../actions/saveData";
 
 const initialState = {
   picture:[],
@@ -26,6 +28,15 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         picture: [],
         isReady: false,
+        displayComments: false,
+      }
+    case SAVE_LIKE_IT:
+      return{
+        ...state,
+      }
+    case REMOVE_LIKE:
+      return{
+        ...state,
       }
     default:
       return state;

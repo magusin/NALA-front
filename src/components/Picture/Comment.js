@@ -3,6 +3,7 @@ import React from 'react';
 import './comment.scss';
 
 const Comment = ({
+  nickname,
   description,
   createdAt,
 }) => {
@@ -11,7 +12,7 @@ const Comment = ({
 
           <div className="comment">
             <div className="comment__meta">Par
-              <div className="comment__meta-author">Hugo le Caliméro</div> le 
+              <div className="comment__meta-author">{nickname}</div> le 
               <div className="comment__meta-date">{createdAt}</div>
             </div>
       

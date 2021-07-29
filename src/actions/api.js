@@ -48,6 +48,30 @@ export const fetchCategoryFromApi = (catId) => ({
   id:catId, 
 });
 
+export const SEND_NEW_COMMENT = 'SEND_NEW_COMMENT';
+
+export const sendNewComment = (post_id) => ({
+  type: SEND_NEW_COMMENT,
+  post_id: post_id
+});
+
+export const ADD_LIKE = 'ADD_LIKE';
+
+export const addLike = (postId) => ({
+  type: ADD_LIKE,
+  postId
+});
+
+export const REMOVE_LIKE = 'REMOVE_LIKE';
+
+export const removeLike = (postId) => ({
+  type: REMOVE_LIKE,
+  postId
+});
+
+
+
+
 
 
 

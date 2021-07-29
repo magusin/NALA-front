@@ -1,17 +1,22 @@
 import { connect } from 'react-redux';
 
 import Picture from 'src/components/Picture';
-import { fetchCommentsWithIdFromApi, fetchPostWithIdFromApi } from '../../actions/api';
+import { addLike, fetchCommentsWithIdFromApi, fetchPostWithIdFromApi, removeLike, sendNewComment } from '../../actions/api';
+import { writeNewComment } from '../../actions/comment';
 import { changeDisplayComments, goInBackResetPicture } from '../../actions/picture';
 
 const mapStateToProps = (state, ownProps) => ({
+  userId: state.user.userId,
+  isLogged: state.user.isLogged,
+
   isReady: state.picture.isReady,
   picture: state.picture.picture,
+  pageId : ownProps.match.params.id,
+
   displayComments: state.picture.displayComments,
-  isLogged: state.user.isLogged,
   comments: state.comment.comments,
   commentIsReady: state.comment.commentIsReady,
-  pageId : ownProps.match.params.id,
+  newComment: state.comment.newComment,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -26,6 +31,19 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   resetPicture: () => {
     dispatch(goInBackResetPicture())
+  },
+  manageSubmitComment: (post_id) => {
+    console.log('container go')
+    dispatch(sendNewComment(post_id))
+  },
+  changeNewComment: (text) => {
+    dispatch(writeNewComment(text))
+  },
+  addUserLike: (post_id) => {
+    dispatch(addLike(post_id))
+  },
+  removeUserLike: (post_id) => {
+    dispatch(removeLike(post_id))
   },
 });
 

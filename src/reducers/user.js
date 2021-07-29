@@ -1,7 +1,8 @@
 import { SAVE_TOKEN} from '../actions/connexionForm';
 
 const initialState = {
-  isLogged: false,
+  isLogged: true,
+  userId: 4,
 };
 
 const reducer = (state = initialState, action = {}) => {

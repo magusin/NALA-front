@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import { FETCH_CATEGORIES_FROM_API, FETCH_TOPLOVE_FROM_API, FETCH_POST_WITH_ID_FROM_API, FETCH_LAST_POST_FROM_API, FETCH_CATEGORY_FROM_API } from '../../actions/api';
-import { saveCategories, saveCategoryWithId, saveLastPosts, savePostWithId, saveTopLove } from '../../actions/saveData'
+import { FETCH_CATEGORIES_FROM_API, FETCH_TOPLOVE_FROM_API, FETCH_POST_WITH_ID_FROM_API, FETCH_LAST_POST_FROM_API, FETCH_CATEGORY_FROM_API, ADD_LIKE, REMOVE_LIKE } from '../../actions/api';
+import { saveCategories, saveCategoryWithId, saveLastPosts, saveLikeIt, savePostWithId, saveTopLove } from '../../actions/saveData'
 
 const axiosInstance = axios.create(
   {
@@ -71,6 +71,37 @@ const postsMiddleware = (store) => (next) => (action) => {
         (response) => {
           if(response.status == 200){
             store.dispatch(saveCategoryWithId(response.data));
+          }
+        }, 
+      );
+      next(action);
+      break;
+    }
+    case ADD_LIKE: {
+
+      const { userId }  = store.getState().user;
+      console.log(action.postId, userId)
+      axiosInstance
+      .put(`/post/${action.postId}/like/${userId}`)
+      .then(
+        (response) => {
+          if(response.status == 200){
+            store.dispatch(saveLikeIt(response.data));
+          }
+        }, 
+      );
+      next(action);
+      break;
+    }
+    case REMOVE_LIKE: {
+      const {userId}  = store.getState().user;
+      console.log(action.postId, userId)
+      axiosInstance
+      .put(`/post/${action.postId}/like/${userId}`)
+      .then(
+        (response) => {
+          if(response.status == 200){
+            store.dispatch(removeLikeIt(response.data));
           }
         }, 
       );

@@ -38,6 +38,13 @@ export const saveCommentsWithPostId = (data) => ({
   data: data,
 });
 
+export const SAVE_NEW_COMMENT = 'SAVE_NEW_COMMENT';
+
+export const saveNewComment = (data) => ({
+  type: SAVE_NEW_COMMENT,
+  data
+});
+
 export const SAVE_CATEGORY_WITH_ID = 'SAVE_CATEGORY_WITH_ID';
 
 export const saveCategoryWithId = (data) => ({
@@ -45,5 +52,17 @@ export const saveCategoryWithId = (data) => ({
   data: data,
 });
 
+export const SAVE_LIKE_IT = 'SAVE_LIKE_IT';
+
+export const saveLikeIt = (data) => ({
+  type: SAVE_LIKE_IT,
+  data
+});
+export const REMOVE_LIKE_IT = 'REMOVE_LIKE_IT';
+
+export const removeLikeIt = (data) => ({
+  type: REMOVE_LIKE_IT,
+  data
+});
 
 
