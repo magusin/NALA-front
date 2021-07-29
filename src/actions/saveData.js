@@ -52,5 +52,3 @@ export const saveCategoryWithId = (data) => ({
   data: data,
 });
 
-
-

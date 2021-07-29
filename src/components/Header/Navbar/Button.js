@@ -3,6 +3,7 @@ import './Button.scss';
 import { Link } from 'react-router-dom';
 
 const Button = ({
+  handleLogout,
   isLogged,
   changeConnexionFormToConnexion,
   changeConnexionFormToRegister,
@@ -10,8 +11,12 @@ const Button = ({
   return (
     <>
       {isLogged &&
-        <Link to='/connexion'>
-          <button className='button-button'>Déconnexion</button>
+        <Link to='/'>
+          <button 
+          className='button-button'
+          onClick={handleLogout}
+          >Déconnexion
+          </button>
         </Link>
       }
 

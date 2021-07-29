@@ -14,6 +14,7 @@ import {
   SET_NEW_REGISTER_PASSWORD,
   CHANGE_CONNEXION_FORM_FOR_CONNEXION,
   CHANGE_CONNEXION_FORM_FOR_REGISTER,
+  LOGOUT_USER,
 } from "../actions/connexionForm";
 
 const initialState = {
@@ -29,6 +30,11 @@ const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case LOGOUT_USER:
+      return {
+        ...state,
+        logged: false,
+      };
     case SAVE_USER_REGISTER:
       return {
         newRegisterEmail: '',
