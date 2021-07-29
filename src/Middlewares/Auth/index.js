@@ -5,7 +5,6 @@ import { CONNECT_USER } from '../../actions/api';
 const axiosInstance = axios.create(
   {
     baseURL: 'http://ec2-54-197-127-233.compute-1.amazonaws.com/api',
-    
   },
 );
 
@@ -18,7 +17,6 @@ const authMiddleware = (store) => (next) => (action) => {
       .post(`/login_check`, {
         username : newConnexionEmail,
         password : newConnexionPassword,
-        
       })
       .then(
          (response) => {

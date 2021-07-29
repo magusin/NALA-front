@@ -3,13 +3,6 @@
 .cgu{
   margin-top: 2em;
   &__title{
-    font-size: 2em;
-    margin-bottom: 1.5em;
-    font-weight: bold;
-    text-align: center;
-    background-color: vars.$light-background-color;
-    color: vars.$light-background;
-    padding: .5em;
     &-sub {
       font-size: 1.5em;
       font-weight: bold;
