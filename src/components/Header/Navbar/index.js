@@ -69,6 +69,24 @@ const Navbar = ({
             </li>
           </ul>
         </>
+      }
+      { !isLogged &&
+        <>
+          <div className="navbar__icon" onClick={handleClick}>
+              <i className={click ? 'bi bi-x' : 'bi bi-list'}></i>
+          </div>
+          <ul className={click ? "navbar__menu active" : "navbar__menu"}>
+            <li>
+                <Link
+                  to='/deconnexion'
+                  className="navbar__links-mobile"
+                  onClick={closeMobileMenu}
+                >
+                  <Button/>
+                </Link>
+              </li>
+          </ul>
+        </>
       }      
         <Button isLogged={isLogged}/>
       </nav>

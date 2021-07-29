@@ -7,7 +7,8 @@ const initialState = {
   topLove:[],
   lastPostsLoaded: false,
   lastPosts:'',
-  category : []
+  categoryLoaded: false,
+  category : [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -34,6 +35,7 @@ const reducer = (state = initialState, action = {}) => {
       return{
         ...state,
         category: action.data,
+        categoryLoaded:true,
       }
     default:
       return state;
