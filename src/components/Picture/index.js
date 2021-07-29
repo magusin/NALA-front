@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useLocation } from 'react-router-dom';
 
 import Comment from 'src/containers/Picture/Comment';
+import { Link } from 'react-router-dom';
 
 import './picture.scss';
 import Loading from '../Loading';
@@ -14,6 +14,8 @@ const Picture = ({
   displayComments,
   changeDisplay,
   isLogged,
+  resetPicture,
+  pageId,
 }) => {
 
   useEffect(
@@ -21,7 +23,7 @@ const Picture = ({
     [],
   );
 
-  if(!isReady){
+  if(!isReady || picture.id != pageId){
     return (
       <div className="picture">
         <Loading/>
@@ -34,7 +36,9 @@ const Picture = ({
 
       <div className="picture-top">
         <div className="picture-top-title">{picture.title}</div>
-        <button className="picture-top-close">X</button>
+        <Link to='/categories'>
+          <button className="picture-top-close" onClick={() => resetPicture()}>Retour aux catégories <i class="bi bi-box-arrow-in-right"></i></button>
+        </Link>
       </div>
 
       <div className="picture-img">
@@ -77,6 +81,7 @@ const Picture = ({
 };
 
 Picture.protoTypes = {
+  resetPicture: PropTypes.func.isRequired,
   fetchPostWithId: PropTypes.func.isRequired,
   isReady: PropTypes.bool.isRequired,
   picture: PropTypes.shape({

@@ -9,6 +9,10 @@
     background: none;
     float: right;
     font-size: 2rem;
+
+    &.picture-top-close{
+      font-size: 1.25rem;
+    }
   }
 
   &-top, &-bottom{
@@ -93,6 +97,10 @@
       &-section{
         border-top: 1px solid vars.$light-background-color ;
         padding: 1rem 0;
+
+        .bi-emoji-wink-fill{
+          color:vars.$light-background-color;
+        }
       }
     }
   }

@@ -1,5 +1,5 @@
 import { SAVE_POST_WITH_ID } from "src/actions/saveData.js";
-import { CHANGE_DISPLAY_COMMENTS } from "../actions/picture";
+import { CHANGE_DISPLAY_COMMENTS, GO_IN_BACK_RESET_PICTURE } from "../actions/picture";
 
 const initialState = {
   picture:[],
@@ -20,6 +20,12 @@ const reducer = (state = initialState, action = {}) => {
       return{
         ...state,
         displayComments: !state.displayComments,
+      }
+    case GO_IN_BACK_RESET_PICTURE:
+      return{
+        ...state,
+        picture: [],
+        isReady: false,
       }
     default:
       return state;

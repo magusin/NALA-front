@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import Picture from 'src/components/Picture';
 import { fetchCommentsWithIdFromApi, fetchPostWithIdFromApi } from '../../actions/api';
-import { changeDisplayComments } from '../../actions/picture';
+import { changeDisplayComments, goInBackResetPicture } from '../../actions/picture';
 
 const mapStateToProps = (state, ownProps) => ({
   isReady: state.picture.isReady,
@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
   isLogged: state.user.isLogged,
   comments: state.comment.comments,
   commentIsReady: state.comment.commentIsReady,
+  pageId : ownProps.match.params.id,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -22,6 +23,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   changeDisplay: () => {
     dispatch(changeDisplayComments())
+  },
+  resetPicture: () => {
+    dispatch(goInBackResetPicture())
   },
 });
 
