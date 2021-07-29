@@ -3,17 +3,11 @@
 
 
 .home{
-  h2{
-    display:inline-block;
-    font-family: 'Voltaire', sans-serif;
-    font-size:1.5rem;
-    background: vars.$light-backdround-gradient;
-    padding: 1.5rem 0.5rem 0.6rem;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  &__title {
+    margin-left: calc(50%-351.44px/2);
+    margin-right: calc(50%-351.44px/2);
   }
-
-  a.title:hover{
+  &:hover{
     letter-spacing: 0.5px;
     transition: .5s;
   }

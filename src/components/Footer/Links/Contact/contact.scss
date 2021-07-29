@@ -2,17 +2,12 @@
 
 .contact{
   margin-top: 2em;
+ 
   &__title{
-    padding: .5em;
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-
-    background-color: vars.$light-background-color;
-    color: vars.$light-background;
+    margin-left: calc(50%-2em);
+    margin-right: calc(50%-2em);
+    
   }
-  
-
   &__form{
     &-input{
     border: none;
@@ -76,6 +71,7 @@
     
   }
 
+
   &__team{
     text-align: center;
     padding: 0 1em;
@@ -99,6 +95,42 @@
     }
   }
 }
+  @media screen and (min-width:767px) {
+    .contact{
+      margin-top: 2em;
+      display: flex;
+      flex-direction: row;
+      
+      &__left{
+        width: 50%;
+        border-right: 1px solid vars.$light-background-color;
+        margin-bottom: 5em;
+      }
+      
+      &__right{
+        margin-top: 2em;
+        width: 50%;
+      }
+  
+      &__form{
+        border-bottom: none;
+        padding-top: 5em;
+        &-button {
+          margin-bottom: 2em;
+        }
+      }
+  
+      &__team{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+  
+        &-items{
+          width: 25%;
+        }
+      }
+  }
+}
 
 .carmen{
   background-color: #f0f;
@@ -114,35 +146,4 @@
 }
 .hugo{
   background-color: #1888ff;
-}
-@media screen and (min-width:767px) {
-  .contact{
-    margin-top: 2em;
-    display: flex;
-    flex-direction: row;
-
-    &__left{
-      width: 50%;
-      border-right: 1px solid vars.$light-background-color;
-    }
-    
-    &__right{
-      width: 50%;
-    }
-
-    &__form{
-      border-bottom: none;
-      padding-top: 5em;
-    }
-
-    &__team{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      &-items{
-        width: 25%;
-      }
-    }
-  }
 }

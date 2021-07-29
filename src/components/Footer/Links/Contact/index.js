@@ -104,7 +104,7 @@ const Contact = ({
     </div>
     {/* TEAM CARD */}
     <div className="contact__right">
-      <h3 className="contact__title">L'équipe</h3>
+      <h2 className="contact__title">L'équipe</h2>
       <div className="contact__team">
 
         <div className="contact__team-items">
