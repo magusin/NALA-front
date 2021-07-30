@@ -18,7 +18,7 @@ import Error from 'src/components/Error';
 import CGU from 'src/components/Footer/Links/CGU';
 import LegaleMentions from 'src/components/Footer/Links/LegalesMentions';
 import AnimalDefense from 'src/components/Footer/Links/AnimalDefense';
-import Profil from 'src/components/Profil';
+import Profil from 'src/containers/Profil';
 import Aime from 'src/components/Aime';
 import Notification from 'src/components/Notification';
 import Category from 'src/containers/Categories/Category';

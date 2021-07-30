@@ -6,6 +6,7 @@ import categories from './categories';
 import picture from './picture';
 import comment from './comment';
 import user from './user';
+import profil from './profil';
 
 const rootReducer = combineReducers({
   searchbar: searchbar,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   picture: picture,
   comment: comment,
   user: user,
+  profil: profil,
 });
 
 export default rootReducer;
