@@ -4,7 +4,7 @@ import Button from 'src/components/Header/Navbar/Button';
 import { changeConnexionFormForConnexion, changeConnexionFormForRegister, logoutUser } from '../../../actions/connexionForm';
 
 const mapStateToProps = (state, ownProps) => ({
-  isLogged: state.connexionForm.logged,
+  isLogged: state.user.logged,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

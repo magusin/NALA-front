@@ -19,9 +19,9 @@ export const saveUserRegister = (data) => ({
 });
 
 export const SAVE_USER_CONNECT = 'SAVE_USER_CONNECT';
-export const saveUserConnect = (data) => ({
+export const saveUserConnect = (token) => ({
   type: SAVE_USER_CONNECT,
-  data,
+  token,
 });
 
 export const SAVE_TOPLOVE = 'SAVE_TOPLOVE';

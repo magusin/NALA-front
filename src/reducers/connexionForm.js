@@ -30,11 +30,6 @@ const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case LOGOUT_USER:
-      return {
-        ...state,
-        logged: false,
-      };
     case SAVE_USER_REGISTER:
       return {
         newRegisterEmail: '',
@@ -46,7 +41,6 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         newConnexionEmail: '',
         newConnexionPassword: '',
-        logged: true,
       };
     case SET_NEW_REGISTER_PASSWORD:
       return {
