@@ -9,7 +9,7 @@ import { changeDisplayComments, goInBackResetPicture } from '../../actions/pictu
 
 const mapStateToProps = (state, ownProps) => ({
   userId: state.user.userId,
-  isLogged: state.user.isLogged,
+  isLogged: state.user.logged,
 
   isReady: state.picture.isReady,
   picture: state.picture.picture,

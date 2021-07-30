@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './connexion.scss';
 
@@ -20,6 +21,7 @@ const Connexion = ({
   setNewRegisterPassword,
   manageSubmitRegister,
   manageSubmitConnexion,
+  isLogged,
 
 }) => {
   const handleSubmitRegister = (evt) => {
@@ -38,6 +40,14 @@ const Connexion = ({
     <div className="connexion">
       <h1 className={inscriptionSelect ? 'connexion__title active' : 'connexion__title'}> Inscription </h1>
       <h1 className={connexionSelect ? 'connexion__title active' : 'connexion__title'}> Connexion </h1>
+      {isLogged &&
+        <div className="connexion__container">
+          <div className="connexion__container_body">
+            Vous êtes connectés.
+            <Redirect to="/"/>
+          </div>
+        </div>
+      }
       <div className="connexion__container">
         <div className="connexion__container_top">
           <button
