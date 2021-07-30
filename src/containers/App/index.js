@@ -3,7 +3,7 @@ import { saveToken } from 'src/actions/connexionForm';
 import App from 'src/components/App';
 
 const mapStateToProps = (state, ownProps) => ({
-  isLogged: state.connexionForm.logged,
+  isLogged: state.user.logged,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
