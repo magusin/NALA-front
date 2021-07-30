@@ -26,6 +26,7 @@ const mapStateToProps = (state, ownProps) => ({
   newRegisterEmail: state.connexionForm.newRegisterEmail,
   newRegisterPseudo: state.connexionForm.newRegisterPseudo,
   newRegisterPassword: state.connexionForm.newRegisterPassword,
+  isLogged: state.user.logged,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
