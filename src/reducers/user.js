@@ -5,6 +5,7 @@ const initialState = {
   logged: false,
   username: '',
   token: null,
+  userId: 26,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -14,6 +15,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         logged: true,
         token: action.token,
+        userId: 26,
       };
     case LOGOUT_USER:
       return {

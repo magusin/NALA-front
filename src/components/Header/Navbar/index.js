@@ -32,7 +32,7 @@ const Navbar = ({
         && (
         <>
           <Link to="/" className="navbar__logo" onClick={closeMobileMenu}>
-            <i className="bi bi-person-circle" /> Bonjour "pseudo"
+            <i className="bi bi-person-circle" />&nbsp; Bonjour Quentin
           </Link>
 
           <div className="navbar__icon" onClick={handleClick}>
