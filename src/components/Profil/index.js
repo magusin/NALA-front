@@ -14,9 +14,9 @@ const Profil = ({
     <h1 className="profil__title">Profil</h1>
     <div className="profil__section">
       <div className="profil__section-text">
-        <p>Pseudo :</p>
-        <p>Nom : </p>
-        <p>Prénom : </p>
+        <p>Pseudo : {profilPseudo}</p>
+        <p>Nom : {profilName}</p>
+        <p>Prénom : {profilFirstname}</p>
       </div>
       <div className="profil__section-update">
         <form
@@ -54,7 +54,7 @@ const Profil = ({
           </div>
           <button
             className="profil__section-button"
-            type="button"
+            type="submit"
           >
             Modifier
           </button>

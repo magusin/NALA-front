@@ -14,7 +14,7 @@
       flex-direction: row;
       justify-content: space-between;
       border: 1px solid vars.$light-background-color;
-      padding: 1em;
+      padding: 2em;
       border-radius: 10px;
       text-align: center;
       
@@ -65,7 +65,15 @@
         text-align: center;
       }
     }
-  
+    @media screen and (min-width:767px) {
+      &__section{
+        justify-content: space-around;
+
+        &-input{
+          width: 150%;
+        }
+      }
+    }
 }
 
 
