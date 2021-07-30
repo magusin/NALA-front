@@ -39,14 +39,15 @@ const Connexion = ({
     <div className="connexion">
       <h1 className={inscriptionSelect ? 'connexion__title active' : 'connexion__title'}> Inscription </h1>
       <h1 className={connexionSelect ? 'connexion__title active' : 'connexion__title'}> Connexion </h1>
-      {isLogged &&
+      {isLogged
+        && (
         <div className="connexion__container">
           <div className="connexion__container_body">
             Vous êtes connectés.
-            <Redirect to="/"/>
+            <Redirect to="/" />
           </div>
         </div>
-      }
+        )}
       <div className="connexion__container">
         <div className="connexion__container_top">
           <button
