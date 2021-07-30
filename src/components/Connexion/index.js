@@ -37,8 +37,8 @@ const Connexion = ({
 
   return (
     <div className="connexion">
-      <h1 className={inscriptionSelect ? 'connexion__title active' : 'connexion__title'}> Inscription </h1>
-      <h1 className={connexionSelect ? 'connexion__title active' : 'connexion__title'}> Connexion </h1>
+      <h2 className={inscriptionSelect ? 'connexion__title active' : 'connexion__title'}> Inscription </h2>
+      <h2 className={connexionSelect ? 'connexion__title active' : 'connexion__title'}> Connexion </h2>
       {isLogged
         && (
         <div className="connexion__container">
@@ -158,6 +158,7 @@ Connexion.propTypes = {
   setNewRegisterPseudo: PropTypes.func.isRequired,
   newRegisterPassword: PropTypes.string.isRequired,
   setNewRegisterPassword: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 export default Connexion;

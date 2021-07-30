@@ -1,116 +1,81 @@
 @use 'src/styles/vars';
 
 .profil {
-  &-title {
+  margin-top: 1em;
+  &__title {
     margin-bottom: 1em;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
   }
-  margin-top: 2em;
-  &__section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    border: 2px solid;
-    margin: 2em;
-    height: 20vh;
-    &-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin: 1em;
-      & i{
-        font-size:7.5rem;
-        color: vars.$light-background-color;
-      }
-      & input {
-        height: 60%;
-      }
-    }
-    &-text-2 {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin: 1em;
-      align-content: center;
-    }
-    &-bis {
+    &__section {
+      margin: 0em 2em;
       display: flex;
       flex-direction: row;
-      height: 20vh;
-      margin: 2em;
-      justify-content: space-around;
-    }
-  }
-  &__button {
-    color: white;
-    background-color: rgba(0, 102, 255, 0.808);
-    border-radius: 5px;
-    border: none;
-    padding: 0.5em;
-  }
-
-  @media screen and (max-width: 767px) {
-    &__section {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        border: 2px solid;
-        margin: 1em;
-        height: 35vh;
-      &-text-3 {
+      justify-content: space-between;
+      border: 1px solid vars.$light-background-color;
+      padding: 2em;
+      border-radius: 10px;
+      text-align: center;
+      
+      &-text{
         display: flex;
-        flex-direction: row;
-        & input {
-          padding-left: 1em;
-          margin-left: 1em;
-          
-          width: 10vh;
-          height: 100%;
-          align-items: center;
-        }
-        & button {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          margin: 1em;
-          align-content: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      &-text p{
+        color: vars.$light-background-color;;
+        padding: .5em;
+        font-family: 'Voltaire';
+        text-align: left;
+      }
+
+      &-input{
+        margin-top: 1em;
+        border: none;
+        border-bottom : 1px solid vars.$light-background-color ;
+        border-bottom-right-radius: .5em;
+        padding: .5em;
+        font-family: 'Voltaire';
+      }
+
+      &-input::placeholder{
+        color: vars.$light-background-color;
+        font-size: 1em;
+      }
+  
+      &-input:focus-within{
+        outline : 1px solid vars.$light-background-color;
+      }
+
+      &-button{
+        width: 7em;
+        border: 0;
+        background-color: vars.$light-background-color;
+        color: vars.$light-background;
+        padding: .7em;
+        border-radius: .2em;
+        margin-top: .5em;
+        font-family: 'Voltaire';
+        font-size: 1em;
+      }
+
+      &-post{
+        text-align: center;
+      }
+    }
+    @media screen and (min-width:767px) {
+      &__section{
+        justify-content: space-around;
+
+        &-input{
+          width: 150%;
         }
       }
     }
-  }
-
-  @media screen and (max-width: 530px) {
-    &__section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        border: 2px solid;
-        margin: 0.5em;
-        height: 40vh;
-      &-text-3 {
-        display: flex;
-        flex-direction: row;
-        & input {
-          padding-left: 1em;
-          margin-left: 1em;
-          
-          width: 10vh;
-          height: 100%;
-          align-items: center;
-        }
-        & button {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          margin: 1em;
-          align-content: center;
-        }
-      }
-    }
-  }
 }
+
 
 
 
