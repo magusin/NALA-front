@@ -53,8 +53,9 @@ const postsMiddleware = (store) => (next) => (action) => {
         .get('post/toplove')
         .then(
           (response) => {
+            console.log(response)
             if (response.status === 200) {
-              store.dispatch(saveTopLove(response.data.topLove));
+              store.dispatch(saveTopLove(response.data));
             }
           },
         );

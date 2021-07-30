@@ -8,27 +8,29 @@ import './picture.scss';
 import Loading from '../Loading';
 
 const Picture = ({
+  isLogged,
+  userId,
+
   fetchPostWithId,
   isReady,
   picture,
-  displayComments,
-  changeDisplay,
-  isLogged,
   resetPicture,
   pageId,
+
+  displayComments,
+  changeDisplay,
   manageSubmitComment,
   changeNewComment,
   newComment,
+  commentIsReady,
+
   addUserLike,
   removeUserLike,
-  userId,
 }) => {
   useEffect(
     fetchPostWithId,
     [],
   );
-
-  console.log(picture);
 
   function changeLike() {
     if (picture.userLike.find((likes) => likes.id === userId)) {
@@ -118,7 +120,7 @@ const Picture = ({
                   createdAt={comment.createdAt}
                 />
               ))}
-              { (picture.comment == null || picture.comment === '' || picture.comment === undefined)
+              { (picture.comment == null || picture.comment === '' || picture.comment === undefined || picture.comment.length == 0)
                 && <div>Soyez le premier à laisser un commentaire ! <i className="bi bi-emoji-wink-fill" /></div>}
             </div>
           )}

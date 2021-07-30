@@ -7,13 +7,22 @@ import Loading from 'src/components/Loading';
 const Category = ({
   fetchCategory,
   category,
-  categoryLoaded
+  categoryLoaded,
+  pageId,
 }) => {
 
   useEffect(
     fetchCategory,
     [],
   );
+
+  if ( category.id != pageId) {
+    return (
+      <div className="picture">
+        <Loading />
+      </div>
+    );
+  }
 
     const posts = category.posts;
     console.log(category)

@@ -5,6 +5,7 @@ import { changeConnexionFormForConnexion, changeConnexionFormForRegister } from 
 
 const mapStateToProps = (state, ownProps) => ({
   isLogged: state.user.logged,
+  nickname: state.user.nickname,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

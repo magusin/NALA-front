@@ -7,6 +7,8 @@ import './navbar.scss';
 
 const Navbar = ({
   isLogged,
+  nickname,
+
   changeConnexionFormToConnexion,
   changeConnexionFormToRegister,
 }) => {
@@ -32,7 +34,7 @@ const Navbar = ({
         && (
         <>
           <Link to="/" className="navbar__logo" onClick={closeMobileMenu}>
-            <i className="bi bi-person-circle" /> Bonjour "pseudo"
+            <i className="bi bi-person-circle" /> Bonjour {nickname}
           </Link>
 
           <div className="navbar__icon" onClick={handleClick}>

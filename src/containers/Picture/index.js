@@ -35,7 +35,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(goInBackResetPicture());
   },
   manageSubmitComment: (post_id) => {
-    console.log('container go');
     dispatch(sendNewComment(post_id));
   },
   changeNewComment: (text) => {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { FETCH_COMMENTS_WITH_ID_FROM_API, SEND_NEW_COMMENT } from '../../actions/api';
+import { fetchPostWithIdFromApi, FETCH_COMMENTS_WITH_ID_FROM_API, SEND_NEW_COMMENT } from '../../actions/api';
 import { saveCommentsWithPostId, saveNewComment } from '../../actions/saveData';
 
 const axiosInstance = axios.create(
@@ -28,7 +28,7 @@ const commentsMiddleware = (store) => (next) => (action) => {
     case SEND_NEW_COMMENT: {
       const { userId } = store.getState().user;
       const { newComment } = store.getState().comment;
-      console.log('middleware');
+
       axiosInstance
         .post('/commentaires', {
           description: newComment,
@@ -38,9 +38,8 @@ const commentsMiddleware = (store) => (next) => (action) => {
         })
         .then(
           (response) => {
-            if (response.status === 200) {
-              console.log(response);
-              store.dispatch(saveNewComment(response.data));
+            if (response.status === 201) {
+              store.dispatch(fetchPostWithIdFromApi(action.post_id));
             }
           },
         );
