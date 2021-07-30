@@ -7,8 +7,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  submitToken: function (token) {
-    dispatch(saveToken(token));
+  submitToken: function (token, nickname, id) {
+    dispatch(saveToken(token, nickname, id));
   },
 });
 

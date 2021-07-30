@@ -35,14 +35,14 @@ const Home = ({
         </div>
         )
 )}
-      {((topLoveLoaded && topLove !== undefined)
+      {/* {((topLoveLoaded && topLove !== undefined)
         && (
         <div>
           <a href="#" className="home__title"><h2>Nos coups de Coeur</h2></a>
           <Carousel list={topLove} categoryId={'topLove'}/>
         </div>
         )
-)}
+)} */}
 
     </div>
   );

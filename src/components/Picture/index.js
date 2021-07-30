@@ -27,6 +27,9 @@ const Picture = ({
   addUserLike,
   removeUserLike,
 }) => {
+
+console.log(picture)
+
   useEffect(
     fetchPostWithId,
     [],
@@ -135,15 +138,15 @@ Picture.propTypes = {
   fetchPostWithId: PropTypes.func.isRequired,
   isReady: PropTypes.bool.isRequired,
   picture: PropTypes.shape({
-    pictureBase64: PropTypes.string.isRequired,
-    picture: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    user: PropTypes.shape({
+      pictureBase64: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
-      nickname: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      user: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        nickname: PropTypes.string.isRequired,
+      }).isRequired,
     }).isRequired,
-  }).isRequired,
   displayComments: PropTypes.bool.isRequired,
   changeDisplay: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,

@@ -56,8 +56,8 @@ Carousel.propTypes = {
       title: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
     }).isRequired,
-  ).isRequired,
-  // categoryId: PropTypes.number.isRequired,
+  ),
+  categoryId: PropTypes.number.isRequired,
 };
 
 export default Carousel;

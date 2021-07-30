@@ -32,7 +32,9 @@ const App = ({ submitToken, isLogged }) => {
     () => {
       // Local Storage
       const token = localStorage.getItem('myToken');
-      submitToken(token);
+      const nickname = localStorage.getItem('nickname');
+      const id = localStorage.getItem('id');
+      submitToken(token, nickname, id);
     }, [],
   );
 

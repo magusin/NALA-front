@@ -80,9 +80,11 @@ export const changeConnexionFormForConnexion = () => ({
 });
 export const SAVE_TOKEN = 'SAVE_TOKEN';
 
-export const saveToken = (token) => ({
+export const saveToken = (token, nickname, id) => ({
   type: SAVE_TOKEN,
   token,
+  nickname,
+  id
 });
 
 export const LOGOUT_USER = 'LOGOUT_USER';

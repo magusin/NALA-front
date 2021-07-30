@@ -29,6 +29,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         token: action.token,
+        userId: action.id,
+        nickname: action.nickname,
         logged: !!action.token,
       };
     }

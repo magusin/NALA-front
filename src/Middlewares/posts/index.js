@@ -90,7 +90,7 @@ const postsMiddleware = (store) => (next) => (action) => {
     }
     case ADD_LIKE: {
       const { userId } = store.getState().user;
-      console.log('in');
+      console.log('in', userId, action.postId);
       axiosInstance
         .put(`/post/${action.postId}/like/${userId}`)
         .then(
@@ -105,9 +105,9 @@ const postsMiddleware = (store) => (next) => (action) => {
     }
     case REMOVE_LIKE: {
       const { userId } = store.getState().user;
-      console.log('in');
+      console.log('in', userId, action.postId);
       axiosInstance
-        .patch(`/post/${action.postId}/like/${userId}`)
+        .patch(`/post/${action.postId}/removelike/${userId}`)
         .then(
           (response) => {
             if (response.status === 200) {
