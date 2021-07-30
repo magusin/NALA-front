@@ -4,7 +4,7 @@ import Navbar from 'src/components/Header/Navbar';
 import { changeConnexionFormForConnexion, changeConnexionFormForRegister } from '../../../actions/connexionForm';
 
 const mapStateToProps = (state, ownProps) => ({
-  isLogged: state.connexionForm.logged,
+  isLogged: state.user.logged,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
