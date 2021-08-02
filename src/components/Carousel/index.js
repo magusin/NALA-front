@@ -30,7 +30,7 @@ const Carousel = (
           <button
             type="button"
             className="carousel-nav-right"
-            disabled={page === list.length}
+            disabled={page === list.length || list.length == 0}
             onClick={() => setPage(page + 1)}
           >
 

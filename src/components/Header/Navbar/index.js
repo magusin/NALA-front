@@ -49,7 +49,7 @@ const Navbar = ({
               </Link>
             </li>
 
-            <li className="navbar__item">
+            {/* <li className="navbar__item">
               <Link
                 to="/notifications"
                 className="navbar__links"
@@ -57,7 +57,7 @@ const Navbar = ({
               >
                 Notification
               </Link>
-            </li>
+            </li> 
             <li className="navbar__item">
               <Link
                 to="/tags"
@@ -66,7 +66,7 @@ const Navbar = ({
               >
                 Mes "J'aime"
               </Link>
-            </li>
+            </li>*/}
             <li>
               <Link
                 to="/"

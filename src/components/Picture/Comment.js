@@ -22,7 +22,7 @@ const Comment = ({
 Comment.propTypes = {
   nickname: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  createdAt: PropTypes.number.isRequired,
+  createdAt: PropTypes.string.isRequired,
 };
 
 export default Comment;

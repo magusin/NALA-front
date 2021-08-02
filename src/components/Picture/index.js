@@ -36,13 +36,15 @@ console.log(picture)
   );
 
   function changeLike() {
-    if (picture.userLike.find((likes) => likes.id === userId)) {
+    if (picture.userLike.find((likes) => likes.id == userId)) {
       console.log('remove');
-      addUserLike(picture.id);
+      removeUserLike(picture.id);
     }
     else {
       console.log('add');
-      removeUserLike(picture.id);
+      addUserLike(picture.id);
+
+
     }
   }
 
