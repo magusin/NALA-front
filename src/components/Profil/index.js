@@ -10,10 +10,17 @@ const Profil = ({
   profilFirstname,
   newProfilFirstname,
   manageSubmit,
+  nickname,
+  lastname,
+  firstname,
+  email,
+  profilEmail,
+  newProfilEmail,
+  profilPassword,
+  newProfilPassword,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-
     manageSubmit();
   };
   return (
@@ -21,9 +28,10 @@ const Profil = ({
       <h1 className="profil__title">Profil</h1>
       <div className="profil__section">
         <div className="profil__section-text">
-          <p>Pseudo : {profilPseudo}</p>
-          <p>Nom : {profilName}</p>
-          <p>Prénom : {profilFirstname}</p>
+          <p>Pseudo : {nickname}</p>
+          <p>Nom : {lastname}</p>
+          <p>Prénom : {firstname}</p>
+          <p>Email : {email}</p>
         </div>
         <div className="profil__section-update">
           <form
@@ -37,6 +45,24 @@ const Profil = ({
                 placeholder="Pseudo"
                 value={profilPseudo}
                 onChange={(evt) => newProfilPseudo(evt.target.value)}
+              />
+            </div>
+            <div>
+              <input
+                className="profil__section-input"
+                type="email"
+                placeholder="Email"
+                value={profilEmail}
+                onChange={(evt) => newProfilEmail(evt.target.value)}
+              />
+            </div>
+            <div>
+              <input
+                className="profil__section-input"
+                type="password"
+                placeholder="Mot de passe"
+                value={profilPassword}
+                onChange={(evt) => newProfilPassword(evt.target.value)}
               />
             </div>
             <div>

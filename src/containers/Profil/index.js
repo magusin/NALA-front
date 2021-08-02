@@ -10,12 +10,23 @@ import {
   profilFirstname,
   newProfilFirstname,
   updateProfil,
+  profilEmail,
+  newProfilEmail,
+  profilPassword,
+  newProfilPassword,
 } from '../../actions/profil';
 
 const mapStateToProps = (state, ownProps) => ({
+  email: state.user.email,
+  firstname: state.user.firstname,
+  lastname: state.user.lastname,
+  nickname: state.user.nickname,
+  password: state.user.password,
   profilPseudo: state.profil.profilPseudo,
   profilName: state.profil.profilName,
   profilFirstname: state.profil.profilFirstname,
+  profilEmail: state.profil.email,
+  profilPassword: state.profil.profilPassword
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -29,6 +40,14 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
   newProfilFirstname: (profilFirstname) => {
     dispatch(newProfilFirstname(profilFirstname));
+  },
+
+  newProfilEmail: (profilEmail) => {
+    dispatch(newProfilEmail(profilEmail));
+  },
+
+  newProfilPassword: (profilPassword) => {
+    dispatch(newProfilPassword(profilPassword));
   },
 
   manageSubmit: () => {

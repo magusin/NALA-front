@@ -50,15 +50,16 @@
       }
 
       &-button{
-        width: 7em;
+        width: 8em;
         border: 0;
         background-color: vars.$light-background-color;
         color: vars.$light-background;
         padding: .7em;
         border-radius: .2em;
-        margin-top: .5em;
+        margin-top: 1em;
         font-family: 'Voltaire';
         font-size: 1em;
+
       }
 
       &-post{

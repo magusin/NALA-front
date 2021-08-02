@@ -12,7 +12,13 @@ import profilMiddleware from '../Middlewares/Profil';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const enhancers = composeEnhancers(
-  applyMiddleware(postsMiddleware, authMiddleware, registerMiddleware, commentsMiddleware, profilMiddleware),
+  applyMiddleware(
+    postsMiddleware,
+    authMiddleware,
+    registerMiddleware,
+    commentsMiddleware,
+    profilMiddleware,
+  ),
 );
 
 const store = createStore(reducer, enhancers);

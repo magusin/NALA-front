@@ -6,12 +6,16 @@ const initialState = {
   nickname: '',
   token: null,
   userId: '',
+  email: '',
+  firstname: '',
+  lastname: '',
+  password: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_USER_CONNECT:
-      console.log(action.nickname)
+      console.log(action.nickname);
       return {
         ...state,
         logged: true,
@@ -32,6 +36,10 @@ const reducer = (state = initialState, action = {}) => {
         userId: action.id,
         nickname: action.nickname,
         logged: !!action.token,
+        email: action.email,
+        lastname: action.lastname,
+        firstname: action.firstname,
+        password: action.password,
       };
     }
     default:

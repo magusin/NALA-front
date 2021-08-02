@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { UPDATE_PROFIL } from '../../actions/profil';
+import { saveUserConnect } from '../../actions/saveData';
+import { updateProfil, UPDATE_PROFIL, UPDATED_PROFIL } from '../../actions/profil';
 
 const axiosInstance = axios.create(
   {
@@ -11,20 +12,44 @@ const profilMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case UPDATE_PROFIL: {
       const { userId } = store.getState().user;
-      const { profilPseudo, profilFirstname, profilName } = store.getState().profil;
+      const {
+        profilPseudo,
+        profilFirstname,
+        profilName,
+        profilEmail,
+        profilPassword,
+      } = store.getState().profil;
       axiosInstance
-        .patch(`/utlisateurs/${userId}`, {
+        .patch(`/utilisateurs/${userId}`, {
           nickname: profilPseudo,
           firstname: profilFirstname,
           lastname: profilName,
-        }).then(
+          email: profilEmail,
+          password: profilPassword,
+        })
+        .then(
           (response) => {
             console.log(response);
           },
         );
-    }
       next(action);
       break;
+    }
+    case UPDATED_PROFIL: {
+      const { userId } = store.getState().user;
+      axiosInstance
+        .get(`/utilisateurs/${userId}`)
+        .then(
+          (response) => {
+            console.log(response);
+            if (response.status === 200) {
+              store.dispatch(saveUserConnect(response.data));
+            }
+          },
+        );
+      next(action);
+      break;
+    }
     default:
       next(action);
   }
