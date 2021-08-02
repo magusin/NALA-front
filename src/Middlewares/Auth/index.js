@@ -20,7 +20,11 @@ const authMiddleware = (store) => (next) => (action) => {
         })
         .then(
           (response) => {
-            store.dispatch(saveUserConnect(response.data.token, response.data.data.user.nickname, response.data.data.user.id));
+            store.dispatch(saveUserConnect(
+              response.data.token,
+              response.data.data.user.nickname,
+              response.data.data.user.id,
+            ));
             localStorage.setItem('myToken', response.data.token);
             localStorage.setItem('id', response.data.data.user.id);
             localStorage.setItem('nickname', response.data.data.user.nickname);
