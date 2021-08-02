@@ -21,6 +21,7 @@ const authMiddleware = (store) => (next) => (action) => {
         .then(
           (response) => {
             store.dispatch(saveUserConnect(
+              console.log(response),
               response.data.token,
               response.data.data.user.nickname,
               response.data.data.user.id,

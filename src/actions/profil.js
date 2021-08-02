@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 export const PROFIL_PSEUDO = 'PROFIL_PSEUDO';
 export const profilPseudo = () => ({
   type: PROFIL_PSEUDO,
@@ -29,4 +30,18 @@ export const NEW_PROFIL_FIRSTNAME = 'NEW_PROFIL_FIRSTNAME';
 export const newProfilFirstname = (profilFirstname) => ({
   type: NEW_PROFIL_FIRSTNAME,
   profilFirstname,
+});
+
+export const UPDATE_PROFIL = 'UPDATE_PROFIL';
+export const updateProfil = (
+  id,
+  nickname,
+  lastname,
+  firstname,
+) => ({
+  type: UPDATE_PROFIL,
+  id,
+  nickname,
+  lastname,
+  firstname,
 });

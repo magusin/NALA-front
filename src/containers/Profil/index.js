@@ -9,6 +9,7 @@ import {
   newProfilName,
   profilFirstname,
   newProfilFirstname,
+  updateProfil,
 } from '../../actions/profil';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -19,15 +20,19 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   newProfilPseudo: (profilPseudo) => {
-    dispatch(newProfilPseudo(profilPseudo))
+    dispatch(newProfilPseudo(profilPseudo));
   },
 
   newProfilName: (profilName) => {
-    dispatch(newProfilName(profilName))
+    dispatch(newProfilName(profilName));
   },
 
   newProfilFirstname: (profilFirstname) => {
-    dispatch(newProfilFirstname(profilFirstname))
+    dispatch(newProfilFirstname(profilFirstname));
+  },
+
+  manageSubmit: () => {
+    dispatch(updateProfil());
   },
 });
 
