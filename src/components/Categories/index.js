@@ -24,8 +24,8 @@ const Categories = ({
     <div className="categories">
         {categoriesLoaded && (
           <div className="categories__content">
-            <Link to="/"><h1>Accueil</h1></Link>
-            <Link to="/toplove"><h1>Top-Love</h1></Link>
+            <Link to="/"><h2>Accueil</h2></Link>
+            <Link to="/toplove"><h2>Top-Love</h2></Link>
             {categories.map((category, index) => {
               return(              
               <div key={'cat' + index}>
@@ -33,7 +33,7 @@ const Categories = ({
               {
               return(
                 <div key={index + type.id}>
-                  <Link to={`/categories/${type.id}`}><h1>{type.name}</h1></Link>
+                  <Link to={`/categories/${type.id}`}><h2>{type.name}</h2></Link>
                   <Carousel list={type.posts} categoryId={type.id}/>
                 </div>
               )
