@@ -104,9 +104,10 @@ const Profil = ({
           accept="image/png, image/jpeg"
         />
       </div>
-    <h2 className="profil__title">Mes postes</h2>
-    <AddPost/>
+      <h2 className="profil__title">Mes postes</h2>
+      <AddPost />
     </div>
-);
+  );
+};
 
 export default Profil;
