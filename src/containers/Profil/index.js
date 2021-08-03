@@ -26,7 +26,7 @@ const mapStateToProps = (state, ownProps) => ({
   profilName: state.profil.profilName,
   profilFirstname: state.profil.profilFirstname,
   profilEmail: state.profil.email,
-  profilPassword: state.profil.profilPassword
+  profilPassword: state.profil.profilPassword,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

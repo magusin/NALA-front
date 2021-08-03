@@ -5,7 +5,7 @@ const initialState = {
   logged: false,
   nickname: '',
   token: null,
-  userId: '',
+  userId: null,
   email: '',
   firstname: '',
   lastname: '',

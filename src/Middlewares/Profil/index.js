@@ -42,9 +42,6 @@ const profilMiddleware = (store) => (next) => (action) => {
         .then(
           (response) => {
             console.log(response);
-            if (response.status === 200) {
-              store.dispatch(saveUserConnect(response.data));
-            }
           },
         );
       next(action);
