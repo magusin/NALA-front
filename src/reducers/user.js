@@ -1,7 +1,8 @@
 import { SAVE_TOKEN, LOGOUT_USER } from '../actions/connexionForm';
-import { SAVE_USER_CONNECT } from '../actions/saveData';
+import { SAVE_USER_CONNECT, SAVE_USER_POSTS } from '../actions/saveData';
 
 const initialState = {
+  userPosts:null,
   logged: false,
   nickname: '',
   token: null,
@@ -17,6 +18,11 @@ const reducer = (state = initialState, action = {}) => {
         token: action.token,
         userId: action.id,
         nickname: action.nickname,
+      };
+    case SAVE_USER_POSTS:
+      return {
+        ...state,
+        userPosts: action.data,
       };
     case LOGOUT_USER:
       return {

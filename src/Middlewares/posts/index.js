@@ -10,11 +10,14 @@ import {
   ADD_LIKE,
   REMOVE_LIKE,
   FETCH_NEW_POST_FROM_API,
+  FETCH_USER_POSTS_FROM_API,
+  FETCH_DELETE_POST,
+  fetchUserPostsFromApi,
 } from '../../actions/api';
 import { initialisationFields } from '../../actions/post';
 
 import {
-  saveCategories, saveCategoryWithId, saveLastPosts, saveLikeIt, savePostWithId, saveTopLove,
+  saveCategories, saveCategoryWithId, saveLastPosts, saveLikeIt, savePostWithId, saveTopLove, saveUserPosts,
 } from '../../actions/saveData';
 
 const axiosInstance = axios.create(
@@ -151,7 +154,32 @@ const postsMiddleware = (store) => (next) => (action) => {
         );
       next(action);
       break;
-    }
+    };
+    case FETCH_DELETE_POST: {
+      axiosInstance
+        .delete(`/api/v1/post/${action.id}`)
+        .then(
+          (response) => {
+            console.log(response)
+            store.dispatch(fetchUserPostsFromApi())
+          },
+        );
+      next(action);
+      break;
+    };
+    case FETCH_USER_POSTS_FROM_API: {
+      const { userId } = store.getState().user;
+      axiosInstance
+        .get(`/utilisateurs/${userId}/post`)
+        .then(
+          (response) => {
+            console.log(response)
+            store.dispatch(saveUserPosts(response.data))
+          },
+        );
+      next(action);
+      break;
+    };
     case REMOVE_LIKE: {
       const { userId } = store.getState().user;
       console.log('in', userId, action.postId);
@@ -166,7 +194,7 @@ const postsMiddleware = (store) => (next) => (action) => {
         );
       next(action);
       break;
-    }
+    };
     default:
       next(action);
   }

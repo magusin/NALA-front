@@ -63,6 +63,14 @@ export const saveUserConnect = (token, nickname, id) => ({
   id,
 });
 
+export const SAVE_USER_POSTS = 'SAVE_USER_POSTS';
+
+export const saveUserPosts = (data) => ({
+  type: SAVE_USER_POSTS,
+  data
+});
+
+
 export const SAVE_USER_REGISTER = 'SAVE_USER';
 
 export const saveUserRegister = (data) => ({

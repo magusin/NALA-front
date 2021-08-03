@@ -84,4 +84,20 @@ export const fetchNewPostFromApi = () => ({
   type: FETCH_NEW_POST_FROM_API,
 });
 
+export const FETCH_DELETE_POST = 'FETCH_DELETE_POST';
+
+export const fetchDeletePost = (id) => ({
+  type: FETCH_DELETE_POST,
+  id
+});
+
+export const FETCH_USER_POSTS_FROM_API = 'FETCH_USER_POSTS_FROM_API';
+
+export const fetchUserPostsFromApi = () => ({
+  type: FETCH_USER_POSTS_FROM_API,
+  
+});
+
+
+
 
