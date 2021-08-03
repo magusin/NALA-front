@@ -34,7 +34,11 @@ const App = ({ submitToken, isLogged }) => {
       const token = localStorage.getItem('myToken');
       const nickname = localStorage.getItem('nickname');
       const id = localStorage.getItem('id');
-      submitToken(token, nickname, id);
+      const email = localStorage.getItem('email');
+      const firstname = localStorage.getItem('firstname');
+      const lastname = localStorage.getItem('lastname');
+      const password = localStorage.getItem('password');
+      submitToken(token, nickname, id, email, firstname, lastname, password);
     }, [],
   );
 
