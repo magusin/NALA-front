@@ -108,5 +108,5 @@ const Profil = ({
     <AddPost/>
     </div>
 );
-
+  }
 export default Profil;
