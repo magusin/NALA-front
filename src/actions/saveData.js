@@ -59,7 +59,7 @@ export const SAVE_USER_CONNECT = 'SAVE_USER_CONNECT';
 export const saveUserConnect = (token, nickname, id) => ({
   type: SAVE_USER_CONNECT,
   token,
-  nickname, 
+  nickname,
   id,
 });
 
@@ -69,6 +69,3 @@ export const saveUserRegister = (data) => ({
   type: SAVE_USER_REGISTER,
   data,
 });
-
-
-

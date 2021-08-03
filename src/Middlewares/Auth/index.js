@@ -24,10 +24,18 @@ const authMiddleware = (store) => (next) => (action) => {
               response.data.token,
               response.data.data.user.nickname,
               response.data.data.user.id,
+              response.data.data.user.email,
+              response.data.data.user.firstname,
+              response.data.data.user.lastname,
+              response.data.data.user.password,
             ));
             localStorage.setItem('myToken', response.data.token);
             localStorage.setItem('id', response.data.data.user.id);
             localStorage.setItem('nickname', response.data.data.user.nickname);
+            localStorage.setItem('email', response.data.data.user.email);
+            localStorage.setItem('firstname', response.data.data.user.firstname);
+            localStorage.setItem('lastname', response.data.data.user.lastname);
+            localStorage.setItem('password', response.data.data.user.password);
           },
         );
       next(action);

@@ -5,7 +5,11 @@ const initialState = {
   logged: false,
   nickname: '',
   token: null,
-  userId: '',
+  userId: null,
+  email: '',
+  firstname: '',
+  lastname: '',
+  password: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -31,6 +35,10 @@ const reducer = (state = initialState, action = {}) => {
         userId: action.id,
         nickname: action.nickname,
         logged: !!action.token,
+        email: action.email,
+        lastname: action.lastname,
+        firstname: action.firstname,
+        password: action.password,
       };
     }
     default:
