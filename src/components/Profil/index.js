@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useEffect } from 'react';
 import './profil.scss';
 import AddPost from 'src/containers/Profil/AddPost';
 import List from 'src/containers/Profil/List';
@@ -20,7 +20,18 @@ const Profil = ({
   newProfilEmail,
   profilPassword,
   newProfilPassword,
+  categories,
+  categoriesLoaded,
+  fetchCategories,
 }) => {
+
+  if(!categoriesLoaded){
+    useEffect(
+      fetchCategories,
+      []
+    )
+  }
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     manageSubmit();
@@ -94,21 +105,10 @@ const Profil = ({
           </form>
         </div>
       </div>
-      <h2 className="profil__title">Mes postes</h2>
-      <div className="profil__section-post">
-        <input
-          className="profil__section-input"
-          type="file"
-          placeholder="Poster une photo"
-          id="post"
-          name="post"
-          accept="image/png, image/jpeg"
-        />
-      </div>
       <h2 className="profil__title">Ajouter une nouvelle image</h2>
-      <AddPost/>
+      <AddPost categories={categories}/>
       <h2 className="profil__title">Mes postes</h2>
-      <List/>
+      <List categories={categories}/>
     </div>
   );
 }

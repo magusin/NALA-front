@@ -5,6 +5,8 @@ import { fetchUserPostsFromApi } from '../../../actions/api';
 
 const mapStateToProps = (state, ownProps) => ({
   userPosts: state.user.userPosts,
+  userPostsLoaded: state.user.userPostsLoaded,
+  categories: ownProps.categories,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

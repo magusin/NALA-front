@@ -13,11 +13,13 @@ import {
   FETCH_USER_POSTS_FROM_API,
   FETCH_DELETE_POST,
   fetchUserPostsFromApi,
+  EDIT_POST_FROM_API,
+  fetchPostWithIdFromApi,
 } from '../../actions/api';
 import { initialisationFields } from '../../actions/post';
 
 import {
-  saveCategories, saveCategoryWithId, saveLastPosts, saveLikeIt, savePostWithId, saveTopLove, saveUserPosts,
+  saveCategories, saveCategoryWithId, saveLastPosts, savePostWithId, saveTopLove, saveUserPosts,
 } from '../../actions/saveData';
 
 const axiosInstance = axios.create(
@@ -139,7 +141,7 @@ const postsMiddleware = (store) => (next) => (action) => {
       }); 
       next(action);
       break; 
-    }
+    };
     case ADD_LIKE: {
       const { userId } = store.getState().user;
       console.log('in', userId, action.postId);
@@ -147,13 +149,33 @@ const postsMiddleware = (store) => (next) => (action) => {
         .put(`/post/${action.postId}/like/${userId}`)
         .then(
           (response) => {
-            if (response.status === 200) {
-              store.dispatch(saveLikeIt(response.data));
+            console.log(response)
+            if (response.status === 201) {
+              store.dispatch(fetchPostWithIdFromApi(action.postId));
             }
           },
         );
       next(action);
       break;
+    };
+    case EDIT_POST_FROM_API:{
+      const { title } = store.getState().post;
+      const { categorySelected } = store.getState().post;
+
+        axiosInstance
+        .patch(`/post/${action.id}`, {          
+          title: title,
+          category: categorySelected,
+        })
+        .then(
+          (response) => {
+            console.log(response)
+            // PENSER A ACTUALISER LA PAGE DE POSTS !!!!
+          },
+        );
+ 
+      next(action);
+      break; 
     };
     case FETCH_DELETE_POST: {
       axiosInstance
@@ -170,7 +192,7 @@ const postsMiddleware = (store) => (next) => (action) => {
     case FETCH_USER_POSTS_FROM_API: {
       const { userId } = store.getState().user;
       axiosInstance
-        .get(`/utilisateurs/${userId}/post`)
+        .get(`/utilisateurs/${userId}`)
         .then(
           (response) => {
             console.log(response)
@@ -187,8 +209,8 @@ const postsMiddleware = (store) => (next) => (action) => {
         .patch(`/post/${action.postId}/removelike/${userId}`)
         .then(
           (response) => {
-            if (response.status === 200) {
-              store.dispatch(removeLikeIt(response.data));
+            if (response.status === 201) {
+              store.dispatch(fetchPostWithIdFromApi(action.postId));
             }
           },
         );

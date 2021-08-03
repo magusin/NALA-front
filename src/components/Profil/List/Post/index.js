@@ -7,17 +7,18 @@ const Post = ({
   cardId,
   picture,
   title,
-  fetchDeletePost,
+  deletePost,
+  editPost,
+  changePost,
+  categories,
 }) => {
 
   const [selectedEdit, setSelectedEdit] = useState(false);
   const [selectedDelete, setSelectedDelete] = useState(false);
 
   function selectedEditMode(){
-    console.log('in')
     setSelectedEdit(true);
     setSelectedDelete(false);
-    console.log(selectedEdit, selectedDelete)
   }
 
   function selectedDeleteMode(){
@@ -27,6 +28,7 @@ const Post = ({
 
     function manageSubmit(evt){
     evt.preventDefault();
+    changePost();
     }
 
 return(
@@ -42,15 +44,15 @@ return(
     </div>
 
     <div className="post-links">
-        <div className={selectedEdit ? "post-links--edit selected" : "post-links--edit"} onClick={() => selectedEditMode()}><i className="bi bi-pencil-square"></i></div>
-        <div className={selectedDelete ? "post-links--delete selected" : "post-links--delete"} onClick={() => selectedDeleteMode(cardId)}><i className="bi bi-x-circle-fill"></i></div>
-        <div className={selectedEdit ? "post-links__container--edit selected" : "post-links__container--edit"}>
-          <h2>Edition du post</h2>
+      <div className={selectedEdit ? "post-links--edit selected" : "post-links--edit"} onClick={() => selectedEditMode()}><i className="bi bi-pencil-square"></i></div>
+      <div className={selectedDelete ? "post-links--delete selected" : "post-links--delete"} onClick={() => selectedDeleteMode(cardId)}><i className="bi bi-x-circle-fill"></i></div>
+      <div className={selectedEdit ? "post-links__container--edit selected" : "post-links__container--edit"}>
+        <h2>Edition du post</h2>
 
-          <form 
-            className="post__section-post"
-            onSubmit={(evt) => manageSubmit(evt)}
-          >
+        <form 
+          className="post__section-post"
+          onSubmit={(evt) => manageSubmit(evt)}
+        >
           <div className="post__section-post-field">
             <label 
               name="title">
@@ -58,47 +60,48 @@ return(
             </label>
             <input 
               name="title"
-              id="title"
+              id="editTitle"
               type="text" 
               minLength="5" 
               maxLength="255"
-              required
-              />
+              onChange={(evt) => handleChangeTitle(evt.target.value)}
+            />
           </div>
-      {/* <div className="post__section-post-field">
-        <label
-          name="category">Catégorie :
-          <select onChange={(evt) => handleChangeCategory(evt.target.value)}>
-            {categories.map((category, index) => (
-              <>
-                {category.map((type) => (
-                  <option key={index + type.id} value={type.id}>{type.name}</option>
+          <div className="post__section-post-field">
+            <label
+              name="category">Catégorie :
+              <select onChange={(evt) => handleChangeCategory(evt.target.value)}>
+                {categories.map((category, index) => (
+                  <>
+                    {category.map((type) => (
+                      <option key={index + type.id} value={type.id}>{type.name}</option>
+                    ))}
+                  </>
                 ))}
-              </>
-            ))}
-          </select>
-        </label>
-      </div> */}
-      <button
-        className="post__section-button"
-      >
-        Envoyer
-      </button>
-    </form>
+              </select>
+            </label>
+          </div>
+          <button
+            className="post__section-button"
+            onClick={() => editPost(cardId)}
+          >
+            Modifier
+          </button>
+        </form>
 
-        </div>
-        <div className={selectedDelete ? "post-links__container--delete selected" : "post-links__container--delete"}>
-            <h2 className="alert">Voulez-vous vraiment supprimer ce post ?</h2>
-            <button
-              onClick={() => fetchDeletePost(cardId)}>
-              Oui
-            </button> 
-            <button 
-              onClick={() => setSelectedDelete(false)}
-            >
-              Non
-            </button>
-        </div>
+      </div>
+      <div className={selectedDelete ? "post-links__container--delete selected" : "post-links__container--delete"}>
+          <h2 className="alert">Voulez-vous vraiment supprimer ce post ?</h2>
+          <button
+            onClick={() => deletePost(cardId)}>
+            Oui
+          </button> 
+          <button 
+            onClick={() => setSelectedDelete(false)}
+          >
+            Non
+          </button>
+      </div>
     </div>
   </div>
 )};

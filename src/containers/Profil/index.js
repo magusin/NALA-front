@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import Profil from 'src/components/Profil';
+import { fetchCategoriesFromApi } from '../../actions/api';
 
 import {
   profilPseudo,
@@ -27,9 +28,15 @@ const mapStateToProps = (state, ownProps) => ({
   profilFirstname: state.profil.profilFirstname,
   profilEmail: state.profil.email,
   profilPassword: state.profil.profilPassword,
+  categories: state.categories.categories,
+  categoriesLoaded: state.categories.categoriesLoaded,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
+  fetchCategories: function () {
+    dispatch(fetchCategoriesFromApi());
+  },
+
   newProfilPseudo: (profilPseudo) => {
     dispatch(newProfilPseudo(profilPseudo));
   },

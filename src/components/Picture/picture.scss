@@ -59,6 +59,10 @@
       width:100%;
       display:flex;
       justify-content: space-evenly;
+
+      i.selected{
+        color: red;
+      }
     }
     &-comments{
       min-width: 320px;

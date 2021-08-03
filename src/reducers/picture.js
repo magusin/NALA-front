@@ -1,5 +1,4 @@
-import { SAVE_POST_WITH_ID, SAVE_LIKE_IT } from 'src/actions/saveData';
-import { REMOVE_LIKE } from '../actions/api';
+import { SAVE_POST_WITH_ID} from 'src/actions/saveData';
 import { CHANGE_DISPLAY_COMMENTS, GO_IN_BACK_RESET_PICTURE } from '../actions/picture';
 
 
@@ -30,14 +29,6 @@ const reducer = (state = initialState, action = {}) => {
         picture: [],
         isReady: false,
         displayComments: false,
-      };
-    case SAVE_LIKE_IT:
-      return {
-        ...state,
-      };
-    case REMOVE_LIKE:
-      return {
-        ...state,
       };
     default:
       return state;

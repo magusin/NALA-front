@@ -26,25 +26,11 @@ export const saveLastPosts = (data) => ({
   data: data,
 });
 
-export const SAVE_LIKE_IT = 'SAVE_LIKE_IT';
-
-export const saveLikeIt = (data) => ({
-  type: SAVE_LIKE_IT,
-  data,
-});
-
 export const SAVE_POST_WITH_ID = 'SAVE_POST_WITH_ID';
 
 export const savePostWithId = (data) => ({
   type: SAVE_POST_WITH_ID,
   data: data,
-});
-
-export const REMOVE_LIKE_IT = 'REMOVE_LIKE_IT';
-
-export const removeLikeIt = (token) => ({
-  type: REMOVE_LIKE_IT,
-  token,
 });
 
 export const SAVE_TOPLOVE = 'SAVE_TOPLOVE';

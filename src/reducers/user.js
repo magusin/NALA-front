@@ -3,6 +3,7 @@ import { SAVE_USER_CONNECT, SAVE_USER_POSTS } from '../actions/saveData';
 
 const initialState = {
   userPosts:null,
+  userPostsLoaded: false,
   logged: false,
   nickname: '',
   token: null,
@@ -27,6 +28,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         userPosts: action.data,
+        userPostsLoaded: true,
       };
     case LOGOUT_USER:
       return {
