@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import './profil.scss';
+import AddPost from 'src/containers/Profil/AddPost';
 
 const Profil = ({
   profilPseudo,
@@ -62,16 +63,7 @@ const Profil = ({
       </div>
     </div>
     <h2 className="profil__title">Mes postes</h2>
-    <div className="profil__section-post">
-      <input
-        className="profil__section-input"
-        type="file"
-        placeholder="Poster une photo"
-        id="post"
-        name="post"
-        accept="image/png, image/jpeg"
-      />
-    </div>
+    <AddPost/>
   </div>
 );
 

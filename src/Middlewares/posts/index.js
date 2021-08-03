@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Redirect } from 'react-router';
 
 import {
   FETCH_CATEGORIES_FROM_API,
@@ -8,6 +9,7 @@ import {
   FETCH_CATEGORY_FROM_API,
   ADD_LIKE,
   REMOVE_LIKE,
+  FETCH_NEW_POST_FROM_API,
 } from '../../actions/api';
 
 import {
@@ -87,6 +89,52 @@ const postsMiddleware = (store) => (next) => (action) => {
         );
       next(action);
       break;
+    }
+    case FETCH_NEW_POST_FROM_API:{
+      const { addPicture } = store.getState().picture;
+      const { title } = store.getState().post;
+      const { userId } = store.getState().user;
+      const { categorySelected } = store.getState().post;
+
+      function getBase64 (file, callback) {
+        const reader = new FileReader();
+        reader.addEventListener('load', () => callback(reader.result));
+        reader.readAsDataURL(file);
+      }
+      
+      let newPicture = '';
+      
+      getBase64(addPicture, (result) => {
+
+        newPicture = result;
+
+        let user_Id = parseInt(userId);
+
+        console.log('base64', newPicture);
+        console.log(title);
+        console.log(user_Id);
+        console.log(categorySelected);
+
+        axiosInstance
+        .post(`/post/`, {
+          picture: newPicture,
+          title: title,
+          display: true,
+          user: user_Id,
+          category: categorySelected,
+          pictureBase64: newPicture,
+        })
+        .then(
+          (response) => {
+            console.log(response)
+            // if(response.status === 201){
+            //   <Redirect to="/profil"/>
+            // }
+          },
+        );
+      }); 
+      next(action);
+      break; 
     }
     case ADD_LIKE: {
       const { userId } = store.getState().user;

@@ -25,7 +25,7 @@ const Category = ({
   }
 
     const posts = category.posts;
-    console.log(category)
+    console.log(category.post)
 
   return(
   <div className="category">
@@ -35,7 +35,7 @@ const Category = ({
       <div className="category__container">
         {posts.map((card, index) =>{
             return(
-              <CatCard cardId={card.id} key={category.id + card.id} picture={card.pictureBase64} title={card.title}/>
+              <CatCard cardId={card.id} key={category.id + card.id} picture={card.picture} title={card.title}/>
             )
         })}
       </div>

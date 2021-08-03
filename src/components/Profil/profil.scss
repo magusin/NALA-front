@@ -63,6 +63,16 @@
 
       &-post{
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-flow: row wrap;
+        margin: 1rem;
+        &-field{
+          min-width: 230px;
+          width: 25%;
+          margin:1rem;
+        }
       }
     }
     @media screen and (min-width:767px) {

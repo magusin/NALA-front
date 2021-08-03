@@ -70,3 +70,18 @@ export const removeLike = (postId) => ({
   type: REMOVE_LIKE,
   postId,
 });
+
+export const UPLOAD_NEW_PICTURE = 'UPLOAD_NEW_PICTURE';
+
+export const uploadNewPicture = () => ({
+  type: UPLOAD_NEW_PICTURE,
+  
+});
+
+export const FETCH_NEW_POST_FROM_API = 'FETCH_NEW_POST_FROM_API';
+
+export const fetchNewPostFromApi = () => ({
+  type: FETCH_NEW_POST_FROM_API,
+});
+
+

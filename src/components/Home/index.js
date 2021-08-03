@@ -30,19 +30,19 @@ const Home = ({
       {((lastPostsLoaded && lastPosts !== undefined)
         && (
         <div>
-          <a href="#" className="home__title"><h1>Les dernières publications</h1></a>
+          <h1>Nos 10 dernières publications</h1>
           <Carousel list={lastPosts} categoryId={'lastPosts'}/>
         </div>
         )
 )}
-      {/* {((topLoveLoaded && topLove !== undefined)
+      {((topLoveLoaded && topLove !== undefined)
         && (
         <div>
-          <a href="#" className="home__title"><h2>Nos coups de Coeur</h2></a>
+          <a href="#" className="home__title"><h2>TopLove</h2></a>
           <Carousel list={topLove} categoryId={'topLove'}/>
         </div>
         )
-)} */}
+)}
 
     </div>
   );

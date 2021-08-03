@@ -11,7 +11,6 @@ const initialState = {
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_USER_CONNECT:
-      console.log(action.nickname)
       return {
         ...state,
         logged: true,

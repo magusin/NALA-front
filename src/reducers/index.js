@@ -7,6 +7,7 @@ import picture from './picture';
 import comment from './comment';
 import user from './user';
 import profil from './profil';
+import post from './post';
 
 const rootReducer = combineReducers({
   searchbar: searchbar,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   comment: comment,
   user: user,
   profil: profil,
+  post: post,
 });
 
 export default rootReducer;

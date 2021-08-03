@@ -79,7 +79,7 @@ console.log(picture)
       </div>
 
       <div className="picture-img">
-        <img src={`data:${picture.picture};base64,${picture.pictureBase64}`} alt="" />
+        <img src={`http://ec2-54-197-127-233.compute-1.amazonaws.com/uploads/pictures/${picture.picture}`} alt="" />
       </div>
 
       <div className="picture__bottom">
