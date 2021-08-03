@@ -19,4 +19,12 @@ export const changeTitle = (title) => ({
   title
 });
 
+export const INITIALISATION_FIELDS = 'INITIALISATION_FIELDS';
+
+export const initialisationFields = () => ({
+  type: INITIALISATION_FIELDS,
+  
+});
+
+
 

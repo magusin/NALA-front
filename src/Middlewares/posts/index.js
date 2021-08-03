@@ -11,6 +11,7 @@ import {
   REMOVE_LIKE,
   FETCH_NEW_POST_FROM_API,
 } from '../../actions/api';
+import { initialisationFields } from '../../actions/post';
 
 import {
   saveCategories, saveCategoryWithId, saveLastPosts, saveLikeIt, savePostWithId, saveTopLove,
@@ -126,10 +127,10 @@ const postsMiddleware = (store) => (next) => (action) => {
         })
         .then(
           (response) => {
-            console.log(response)
-            // if(response.status === 201){
-            //   <Redirect to="/profil"/>
-            // }
+            if(response.status === 201){
+              store.dispatch(initialisationFields());
+              <Redirect to="/profil"/>
+            }
           },
         );
       }); 

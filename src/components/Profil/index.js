@@ -2,6 +2,7 @@
 import React from 'react';
 import './profil.scss';
 import AddPost from 'src/containers/Profil/AddPost';
+import List from 'src/containers/Profil/List';
 
 const Profil = ({
   profilPseudo,
@@ -62,8 +63,10 @@ const Profil = ({
         </form>
       </div>
     </div>
-    <h2 className="profil__title">Mes postes</h2>
+    <h2 className="profil__title">Ajouter une nouvelle image</h2>
     <AddPost/>
+    <h2 className="profil__title">Mes postes</h2>
+    <List/>
   </div>
 );
 
