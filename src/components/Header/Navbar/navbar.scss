@@ -116,10 +116,10 @@
     top : 0px;
 
     &__logo {
-      position: absolute;
-      top: 0;
-      left: -2.5em;
-      transform: translate(25%, 50%);
+      display: flex;
+      margin-left: 0%;
+     
+      justify-content: left;
     }
 
     &__icon {
