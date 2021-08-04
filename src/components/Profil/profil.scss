@@ -2,6 +2,22 @@
 
 .profil {
   margin-top: 1em;
+  text-align: center;
+
+  &-notification{
+    background-color: vars.$light-background;
+    margin-bottom: .5em;
+    .info-delete{
+      color: orangered;
+    }
+    .info-edit{
+      color:green;
+    }
+    .info-error{
+      color:red;
+    }
+  }
+
   &__title {
     margin-bottom: 1em;
     background-position: center;

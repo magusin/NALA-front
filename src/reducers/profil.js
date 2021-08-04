@@ -1,3 +1,4 @@
+import { UPLOAD_NOTIFICATION_MESSAGE } from '../actions/post';
 import {
   NEW_PROFIL_EMAIL,
   NEW_PROFIL_FIRSTNAME,
@@ -12,6 +13,7 @@ const initialState = {
   profilFirstname: '',
   profilEmail: '',
   profilPassword: '',
+  notification: null,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -41,6 +43,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         profilFirstname: action.profilFirstname,
       };
+      case UPLOAD_NOTIFICATION_MESSAGE:
+        return{
+          ...state,
+          notification: action.status,
+        };
     default:
       return state;
   }

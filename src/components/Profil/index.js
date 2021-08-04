@@ -23,6 +23,7 @@ const Profil = ({
   categories,
   categoriesLoaded,
   fetchCategories,
+  notification,
 }) => {
 
   if(!categoriesLoaded){
@@ -40,6 +41,14 @@ const Profil = ({
     <div className="profil">
       <h1 className="profil__title">Profil</h1>
       <div className="profil__section">
+      <div className="profil-notification">
+    {notification == 200 &&
+      <span className="info-edit"><i class="bi bi-check-circle-fill"></i>&nbsp; Le profil à bien été modifié, les changements seront effectifs à la prochaine connexion</span>
+    }
+    {notification == "Error" &&
+      <span className="info-error"><i className="bi bi-x-circle-fill"></i> Une erreur est survenue</span>
+    }
+    </div>
         <div className="profil__section-text">
           <p>Pseudo : {nickname}</p>
           <p>Nom : {lastname}</p>

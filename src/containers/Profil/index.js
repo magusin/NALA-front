@@ -30,6 +30,7 @@ const mapStateToProps = (state, ownProps) => ({
   profilPassword: state.profil.profilPassword,
   categories: state.categories.categories,
   categoriesLoaded: state.categories.categoriesLoaded,
+  notification: state.profil.notification,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
