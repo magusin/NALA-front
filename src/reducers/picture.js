@@ -1,24 +1,17 @@
-import { SAVE_POST_WITH_ID, SAVE_LIKE_IT } from 'src/actions/saveData';
-import { REMOVE_LIKE } from '../actions/api';
+import { SAVE_POST_WITH_ID} from 'src/actions/saveData';
 import { CHANGE_DISPLAY_COMMENTS, GO_IN_BACK_RESET_PICTURE } from '../actions/picture';
-import { ADD_NEW_PICTURE } from '../actions/post';
+
 
 const initialState = {
   picture: [],
   isReady: false,
   OpenComment: false,
   displayComments: false,
-  addPicture: null,
+
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case ADD_NEW_PICTURE:{
-      return {
-        ...state,
-        addPicture: action.newPicture,
-      };
-    };
     case SAVE_POST_WITH_ID:
       return {
         ...state,
@@ -36,14 +29,6 @@ const reducer = (state = initialState, action = {}) => {
         picture: [],
         isReady: false,
         displayComments: false,
-      };
-    case SAVE_LIKE_IT:
-      return {
-        ...state,
-      };
-    case REMOVE_LIKE:
-      return {
-        ...state,
       };
     default:
       return state;

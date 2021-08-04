@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 
 import AddPost from 'src/components/Profil/AddPost';
-import { fetchCategoriesFromApi, fetchNewPostFromApi, uploadNewPicture } from '../../../actions/api';
+import { fetchNewPostFromApi, uploadNewPicture } from '../../../actions/api';
 import { addNewPicture, changeCategory, changeTitle } from '../../../actions/post';
 
 const mapStateToProps = (state, ownProps) => ({
-  categories: state.categories.categories,
-  categoriesLoaded: state.categories.categoriesLoaded,
+  categories: ownProps.categories,
+  categoriesLoaded: ownProps.categoriesLoaded,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -19,11 +19,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   handleChangeCategory: function (categoryId) {
     dispatch(changeCategory(categoryId));
   },
-  handleChangeTitle: function (categoryId) {
-    dispatch(changeTitle(categoryId));
-  },
-  fetchCategories: function () {
-    dispatch(fetchCategoriesFromApi());
+  handleChangeTitle: function (title) {
+    dispatch(changeTitle(title));
   },
   fetchNewPost: function () {
     dispatch(fetchNewPostFromApi());

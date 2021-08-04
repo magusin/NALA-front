@@ -1,10 +1,9 @@
 import { SEND_NEW_COMMENT } from '../actions/api';
-import { WRITE_NEW_COMMENT } from '../actions/comment';
+import { RESET_COMMENT_FIELDS, WRITE_NEW_COMMENT } from '../actions/comment';
 import { saveCommentsWithPostId, SAVE_COMMENTS_WITH_POST_ID, SAVE_NEW_COMMENT } from '../actions/saveData';
 
 const initialState = {
   comments: [],
-  commentIsReady: false,
   newComment: '',
 };
 
@@ -15,7 +14,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         comments: action.data,
       };
-
+    case RESET_COMMENT_FIELDS:
+      return {
+        ...state,
+        newComment: '',
+      };
     case WRITE_NEW_COMMENT:
       return {
         ...state,

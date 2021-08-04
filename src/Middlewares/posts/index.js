@@ -1,3 +1,4 @@
+import React from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router';
 
@@ -10,10 +11,16 @@ import {
   ADD_LIKE,
   REMOVE_LIKE,
   FETCH_NEW_POST_FROM_API,
+  FETCH_USER_POSTS_FROM_API,
+  FETCH_DELETE_POST,
+  fetchUserPostsFromApi,
+  EDIT_POST_FROM_API,
+  fetchPostWithIdFromApi,
 } from '../../actions/api';
+import { initialisationFields, uploadNotificationMessage } from '../../actions/post';
 
 import {
-  saveCategories, saveCategoryWithId, saveLastPosts, saveLikeIt, savePostWithId, saveTopLove,
+  saveCategories, saveCategoryWithId, saveLastPosts, savePostWithId, saveTopLove, saveUserPosts,
 } from '../../actions/saveData';
 
 const axiosInstance = axios.create(
@@ -55,7 +62,6 @@ const postsMiddleware = (store) => (next) => (action) => {
         .get('post/toplove')
         .then(
           (response) => {
-            console.log(response)
             if (response.status === 200) {
               store.dispatch(saveTopLove(response.data));
             }
@@ -91,7 +97,7 @@ const postsMiddleware = (store) => (next) => (action) => {
       break;
     }
     case FETCH_NEW_POST_FROM_API:{
-      const { addPicture } = store.getState().picture;
+      const { addPicture } = store.getState().post;
       const { title } = store.getState().post;
       const { userId } = store.getState().user;
       const { categorySelected } = store.getState().post;
@@ -110,11 +116,6 @@ const postsMiddleware = (store) => (next) => (action) => {
 
         let user_Id = parseInt(userId);
 
-        console.log('base64', newPicture);
-        console.log(title);
-        console.log(user_Id);
-        console.log(categorySelected);
-
         axiosInstance
         .post(`/post/`, {
           picture: newPicture,
@@ -126,31 +127,82 @@ const postsMiddleware = (store) => (next) => (action) => {
         })
         .then(
           (response) => {
-            console.log(response)
-            // if(response.status === 201){
-            //   <Redirect to="/profil"/>
-            // }
+            if(response.status === 201){
+              store.dispatch(initialisationFields());
+              <Redirect to="/profil"/>
+            }
           },
         );
       }); 
       next(action);
       break; 
-    }
+    };
     case ADD_LIKE: {
       const { userId } = store.getState().user;
-      console.log('in', userId, action.postId);
       axiosInstance
         .put(`/post/${action.postId}/like/${userId}`)
         .then(
           (response) => {
-            if (response.status === 200) {
-              store.dispatch(saveLikeIt(response.data));
+            if (response.status === 201) {
+              store.dispatch(fetchPostWithIdFromApi(action.postId));
             }
           },
         );
       next(action);
       break;
-    }
+    };
+    case EDIT_POST_FROM_API:{
+      const { title } = store.getState().post;
+      const { categorySelected } = store.getState().post;
+
+        axiosInstance
+        .patch(`/post/${action.id}`, {          
+          title: title,
+          category: categorySelected,
+        })
+        .then(
+          (response) => {
+            store.dispatch(
+              uploadNotificationMessage(response.status), 
+              initialisationFields()
+            );
+          },
+        )
+        .catch((error) => {
+          store.dispatch(uploadNotificationMessage(error.name))
+        });
+ 
+      next(action);
+      break; 
+    };
+    case FETCH_DELETE_POST: {
+      axiosInstance
+        .delete(`/post/${action.id}`)
+        .then(
+          (response) => {
+            store.dispatch(uploadNotificationMessage(response.status));
+            store.dispatch(fetchUserPostsFromApi());
+          },
+        )
+        .catch((error) => {
+          store.dispatch(uploadNotificationMessage(error.name))
+        });
+      next(action);
+      break;
+    };
+    case FETCH_USER_POSTS_FROM_API: {
+      const { userId } = store.getState().user;
+      axiosInstance
+        .get(`/utilisateurs/${userId}`)
+        .then(
+          (response) => {
+            console.log(response)
+            store.dispatch(saveUserPosts(response.data))
+          },
+        );
+      next(action);
+      break;
+    };
     case REMOVE_LIKE: {
       const { userId } = store.getState().user;
       console.log('in', userId, action.postId);
@@ -158,14 +210,14 @@ const postsMiddleware = (store) => (next) => (action) => {
         .patch(`/post/${action.postId}/removelike/${userId}`)
         .then(
           (response) => {
-            if (response.status === 200) {
-              store.dispatch(removeLikeIt(response.data));
+            if (response.status === 201) {
+              store.dispatch(fetchPostWithIdFromApi(action.postId));
             }
           },
         );
       next(action);
       break;
-    }
+    };
     default:
       next(action);
   }

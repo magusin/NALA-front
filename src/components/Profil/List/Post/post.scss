@@ -1,0 +1,125 @@
+@use 'src/styles/vars';
+  //Initial Elements position
+
+.post{
+  border-radius: 7% 7% 0 0;
+  height: 200px;
+  min-width: 200px;
+  text-align: center;
+  width: 15%;
+  margin: 1rem;
+  position:relative;
+
+  &__section-post-field {
+    margin: 0 0.5rem;
+    
+    label{
+      font-family: Voltaire;
+      font-size: 1rem;
+      margin: .6rem 0;
+      display: block;
+    }
+    
+    input{
+      border: none;
+      border-bottom: 1px solid #17154c;
+      border-bottom-right-radius: .5em;
+      font-family: Voltaire;
+      padding: .5em;
+    }
+  }
+
+  &-img{
+    border-radius: 7% 7% 0 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    &-effect{
+      border-radius: 7% 7% 0 0;
+      height:100%;
+      background: radial-gradient(transparent, 70%, #adadad);
+    }
+  }
+  &-title{
+    background: #1717178a;
+    color: vars.$light-background;
+    bottom: 0;
+    font-size: .8rem;
+    position: absolute;
+    width: 100%;
+    padding:0.3rem;
+  }
+
+  &-links{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - .8rem);
+    justify-content: space-around;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.3rem;
+    transition:0.5s;
+    background-color: #ffffffa8;
+    height: calc(100% - 1.4rem);
+    
+    &--delete{
+      color: red;
+      opacity:0.6;
+    }
+    &--edit{
+      color: blue;
+      opacity:0.6;
+    }
+
+    &--delete:hover, &--edit:hover, &--delete.selected, &--edit.selected{
+      opacity:1;
+      transition:0.5s;
+    }
+
+    &__container--edit, &__container--delete{
+      background-color: vars.$light-background;
+      border: 1px solid vars.$light-background-color;
+      border-radius: 5%;
+      margin-left: 2rem;
+      width: fit-content;
+      min-width: 160px;
+      position: absolute;
+      right: 32px;
+      top: 0;
+      z-index: 2;
+      display:none;
+      box-shadow: 0 0 5px vars.$light-color-dark;
+
+      button{
+        background-color: vars.$light-background-color;
+        color: vars.$light-background;
+        border: 0;
+        border-radius: .2em;
+        font-family: Voltaire;
+        font-size: 0.8rem;
+        margin: 0 .5rem 0.5rem .5rem;
+        padding: .5em;
+      }
+
+      h2{
+        display:inline-block;
+        font-size: 1.2rem;
+
+        &.alert{
+          background: linear-gradient( to bottom, #ff4848, #fc0606);
+          -webkit-background-clip: text;
+        }
+      }
+    }
+
+    &__container--edit.selected, &__container--delete.selected{
+      display:flex;
+      flex-flow: column wrap;
+    }
+
+  }
+
+}
