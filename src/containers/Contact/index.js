@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Contact from 'src/components/Footer/Links/Contact';
-import  {
+import {
   newFirstName,
   setNewFirstName,
   newEmail,
@@ -10,7 +10,7 @@ import  {
   setNewSubject,
   newMessage,
   setNewMessage,
-  } from '../../actions/contactform';
+} from '../../actions/contactform';
 
 const mapStateToProps = (state, ownProps) => ({
   newFirstName: state.contactform.newFirstName,
@@ -21,17 +21,17 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   setNewFirstName: (newFirstName) => {
-    dispatch(setNewFirstName(newFirstName))
+    dispatch(setNewFirstName(newFirstName));
   },
   setNewEmail: (newEmail) => {
-    dispatch(setNewEmail(newEmail))
+    dispatch(setNewEmail(newEmail));
   },
   setNewSubject: (newSubject) => {
-    dispatch(setNewSubject(newSubject))
+    dispatch(setNewSubject(newSubject));
   },
   setNewMessage: (newMessage) => {
-    dispatch(setNewMessage(newMessage))
-  }
+    dispatch(setNewMessage(newMessage));
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact);

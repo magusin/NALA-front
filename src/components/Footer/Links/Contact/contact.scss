@@ -71,6 +71,7 @@
     
   }
 
+
   &__team{
     text-align: center;
     padding: 0 1em;
@@ -93,16 +94,21 @@
       font-style: italic;
     }
   }
+}
   @media screen and (min-width:767px) {
+    .contact{
       margin-top: 2em;
       display: flex;
       flex-direction: row;
+      
       &__left{
         width: 50%;
         border-right: 1px solid vars.$light-background-color;
+        margin-bottom: 5em;
       }
       
       &__right{
+        margin-top: 2em;
         width: 50%;
       }
   

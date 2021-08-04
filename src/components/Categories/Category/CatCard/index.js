@@ -14,7 +14,7 @@ return(
   <div className="catCard">
     <Link to={`/post/${cardId}`} >
       <div className="catCard-img" 
-         style={{backgroundImage:`url(data:image/png;base64,${picture})`}}>
+         style={{backgroundImage:`url(http://ec2-54-197-127-233.compute-1.amazonaws.com/uploads/pictures/${picture})`}}>
         <div className="catCard-img-effect"></div>
       </div>
     </Link>

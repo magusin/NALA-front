@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import { connect } from 'react-redux';
 
 import SearchBar from '../../components/Nav/SearchBar';

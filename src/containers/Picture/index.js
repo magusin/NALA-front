@@ -1,27 +1,50 @@
 import { connect } from 'react-redux';
 
 import Picture from 'src/components/Picture';
-import { fetchCommentsWithIdFromApi, fetchPostWithIdFromApi } from '../../actions/api';
-import { changeDisplayComments } from '../../actions/picture';
+import {
+  addLike, fetchCommentsWithIdFromApi, fetchPostWithIdFromApi, removeLike, sendNewComment,
+} from '../../actions/api';
+import { writeNewComment } from '../../actions/comment';
+import { changeDisplayComments, goInBackResetPicture } from '../../actions/picture';
 
 const mapStateToProps = (state, ownProps) => ({
+  userId: state.user.userId,
+  isLogged: state.user.logged,
+
   isReady: state.picture.isReady,
   picture: state.picture.picture,
+  pageId: ownProps.match.params.id,
+
   displayComments: state.picture.displayComments,
-  isLogged: state.user.isLogged,
   comments: state.comment.comments,
   commentIsReady: state.comment.commentIsReady,
+  newComment: state.comment.newComment,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchPostWithId: () => {
-    dispatch(fetchPostWithIdFromApi(ownProps.match.params.id))
+    dispatch(fetchPostWithIdFromApi(ownProps.match.params.id));
   },
   fetchCommentsFromApi: () => {
-    dispatch(fetchCommentsWithIdFromApi(ownProps.match.params.id))
+    dispatch(fetchCommentsWithIdFromApi(ownProps.match.params.id));
   },
   changeDisplay: () => {
-    dispatch(changeDisplayComments())
+    dispatch(changeDisplayComments());
+  },
+  resetPicture: () => {
+    dispatch(goInBackResetPicture());
+  },
+  manageSubmitComment: (post_id) => {
+    dispatch(sendNewComment(post_id));
+  },
+  changeNewComment: (text) => {
+    dispatch(writeNewComment(text));
+  },
+  addUserLike: (post_id) => {
+    dispatch(addLike(post_id));
+  },
+  removeUserLike: (post_id) => {
+    dispatch(removeLike(post_id));
   },
 });
 

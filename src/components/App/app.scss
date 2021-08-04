@@ -10,23 +10,19 @@ body {
   }
 
   h1, h2, h3{
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     text-transform: capitalize;
     font-weight: bold;
-    text-align: center;
     font-size: 2rem;
     background: vars.$light-backdround-gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline-block;
-    margin: 0 auto;
-    flex-direction: column;
+    display: block;
     padding: .5em;
-    margin-bottom: 1.5em;
+    margin-bottom: .5em;
+    margin-top: .5em;
     -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    text-align: center;
   }
 }
 

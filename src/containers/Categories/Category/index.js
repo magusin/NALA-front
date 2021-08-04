@@ -6,11 +6,12 @@ import { fetchCategoryFromApi } from '../../../actions/api';
 const mapStateToProps = (state, ownProps) => ({
   category: state.categories.category,
   categoryLoaded: state.categories.categoryLoaded,
+  pageId: ownProps.match.params.id,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchCategory: function () {
-    dispatch(fetchCategoryFromApi(ownProps.match.params.id))
+    dispatch(fetchCategoryFromApi(ownProps.match.params.id));
   },
 });
 

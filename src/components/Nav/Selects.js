@@ -8,44 +8,39 @@ const Selects = ({
   fetchCategories,
   categoriesLoaded,
   categories,
-}) => { 
-  
-    useEffect(
-      fetchCategories,
-      [],
-    );
+}) => {
+  useEffect(
+    fetchCategories,
+    [],
+  );
 
-
-
-  return(
-  <>
-    <div className="nav__select">
-      <span className="nav__menu">Menu &nbsp;<i className="bi bi-chevron-down"></i> </span>
+  return (
+    <>
+      <div className="nav__select">
+        <span className="nav__menu">Menu &nbsp;<i className="bi bi-chevron-down" /> </span>
         {categoriesLoaded && (
-          <div className="nav__select-content">
-            <Link to="/" className="nav__select-link">Accueil</Link>
-            <Link to="/toplove" className="nav__select-link">Top-Love</Link>
-            {categories.map((category, index) => {
-              return(
-                <div key={index} className="nav__select-link">
-                  {category.map((type) => {          
-                    return(
-                      <Link key={'category' + type.id} to={`/categories/${type.id}`}>{type.name}</Link>
-                    )
-                  })}
-              </div>
-             )
-            })}            
-          </div>
+        <div className="nav__select-content">
+          <Link to="/" className="nav__select-link">Accueil</Link>
+          <Link to="/toplove" className="nav__select-link">Top-Love</Link>
+          {categories.map((category, index) => (
+            <div key={index} className="nav__select-link">
+              {category.map((type) => (
+                <Link key={`category${type.id}`} to={`/categories/${type.id}`}>{type.name}</Link>
+              ))}
+            </div>
+          ))}
+        </div>
         )}
-    </div>
-  </>
+      </div>
+    </>
   );
 };
 
-Selects.protoTypes = {
-  fetchCategories:PropTypes.func.isRequired,
+Selects.propTypes = {
+  fetchCategories: PropTypes.func.isRequired,
   categoriesLoaded: PropTypes.bool.isRequired,
+  categories: PropTypes.array.isRequired,
+
 };
 
 export default Selects;

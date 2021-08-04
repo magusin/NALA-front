@@ -1,30 +1,26 @@
-import { saveCommentsWithPostId, SAVE_COMMENTS_WITH_POST_ID } from "../actions/saveData";
+import { SEND_NEW_COMMENT } from '../actions/api';
+import { WRITE_NEW_COMMENT } from '../actions/comment';
+import { saveCommentsWithPostId, SAVE_COMMENTS_WITH_POST_ID, SAVE_NEW_COMMENT } from '../actions/saveData';
 
 const initialState = {
-  comments: [
-  {
-    "id":1,
-    "description":"Wooow!! il est trooop joli ton chien",
-    "createdAt":"2021-07-20T07:55:20+00:00",
-    "user":{
-      "id":1,
-      "firstname":null,
-      "nickname":"Aimerick",
-      "picture":null
-    },
-  },
-],
+  comments: [],
   commentIsReady: false,
+  newComment: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_COMMENTS_WITH_POST_ID:
-
-      return{
+      return {
         ...state,
         comments: action.data,
-      }
+      };
+
+    case WRITE_NEW_COMMENT:
+      return {
+        ...state,
+        newComment: action.text,
+      };
     default:
       return state;
   }
