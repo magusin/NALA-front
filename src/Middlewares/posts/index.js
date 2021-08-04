@@ -1,3 +1,4 @@
+import React from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router';
 
@@ -61,7 +62,6 @@ const postsMiddleware = (store) => (next) => (action) => {
         .get('post/toplove')
         .then(
           (response) => {
-            console.log(response)
             if (response.status === 200) {
               store.dispatch(saveTopLove(response.data));
             }
@@ -97,7 +97,7 @@ const postsMiddleware = (store) => (next) => (action) => {
       break;
     }
     case FETCH_NEW_POST_FROM_API:{
-      const { addPicture } = store.getState().picture;
+      const { addPicture } = store.getState().post;
       const { title } = store.getState().post;
       const { userId } = store.getState().user;
       const { categorySelected } = store.getState().post;
@@ -139,7 +139,6 @@ const postsMiddleware = (store) => (next) => (action) => {
     };
     case ADD_LIKE: {
       const { userId } = store.getState().user;
-      console.log('in', userId, action.postId);
       axiosInstance
         .put(`/post/${action.postId}/like/${userId}`)
         .then(
@@ -165,7 +164,7 @@ const postsMiddleware = (store) => (next) => (action) => {
           (response) => {
             store.dispatch(
               uploadNotificationMessage(response.status), 
-              initialisationFields(),
+              initialisationFields()
             );
           },
         )
@@ -181,7 +180,6 @@ const postsMiddleware = (store) => (next) => (action) => {
         .delete(`/post/${action.id}`)
         .then(
           (response) => {
-            console.log(response);
             store.dispatch(uploadNotificationMessage(response.status));
             store.dispatch(fetchUserPostsFromApi());
           },
@@ -198,6 +196,7 @@ const postsMiddleware = (store) => (next) => (action) => {
         .get(`/utilisateurs/${userId}`)
         .then(
           (response) => {
+            console.log(response)
             store.dispatch(saveUserPosts(response.data))
           },
         );
@@ -206,6 +205,7 @@ const postsMiddleware = (store) => (next) => (action) => {
     };
     case REMOVE_LIKE: {
       const { userId } = store.getState().user;
+      console.log('in', userId, action.postId);
       axiosInstance
         .patch(`/post/${action.postId}/removelike/${userId}`)
         .then(
