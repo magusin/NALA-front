@@ -119,7 +119,7 @@ const Picture = ({
                 />
               ))}
               { (picture.comment == null || picture.comment === '' || picture.comment === undefined || picture.comment.length == 0)
-                && <div>Soyez le premier à laisser un commentaire ! <i className="bi bi-emoji-wink-fill" /></div>}
+                && <p>Soyez le premier à laisser un commentaire ! <i className="bi bi-emoji-wink-fill" /></p>}
             </div>
           )}
         </div>
