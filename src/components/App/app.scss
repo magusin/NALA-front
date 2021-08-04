@@ -69,6 +69,10 @@ body {
           color: vars.$dark-color-light;
         }
       }
+
+      textarea::placeholder{
+        color: vars.$dark-color-light;
+      }
     }
 
     .connexion, .connexion__container_body{
