@@ -38,8 +38,7 @@ const List = ({
         {userPostsLoaded && 
           <>
             <div className="category__container">
-              {list.map((card, index) =>{
-                console.log(card);
+              {list.map((card) =>{
                   return(
                     <Post cardId={card.id} key={card.id} picture={card.picture} title={card.title} categories={categories} categoryId={card.category.id}/>
                   )

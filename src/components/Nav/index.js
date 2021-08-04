@@ -9,7 +9,7 @@ const Nav = () => (
   <div className="nav">
     <Buttons />
     <Selects />
-    <SearchBar />
+    {/* <SearchBar /> */}
   </div>
 );
 

@@ -65,7 +65,6 @@ return(
               minLength="1" 
               maxLength="255"
               placeholder="Titre"
-              value={title}
               onChange={(evt) => handleChangeTitle(evt.target.value)}
             />
           </div>
@@ -98,7 +97,7 @@ return(
 
       </div>
       <div className={selectedDelete ? "post-links__container--delete selected" : "post-links__container--delete"}>
-          <h2 className="alert">Supprimer ce post ?</h2>
+          <h2 className="alert">Supprimer ?</h2>
           <button
             onClick={() => deletePost(cardId)}>
             Oui
