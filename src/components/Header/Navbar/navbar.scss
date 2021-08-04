@@ -14,9 +14,7 @@
     position: relative;
 
     &-background{
-      width: 0px;
-
-      &, &--left, &--right{
+      &--left, &--right{
         background: vars.$dark-background-color;
         height:30px;
         transition: 1s;

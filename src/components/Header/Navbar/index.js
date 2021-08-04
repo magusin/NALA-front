@@ -38,7 +38,6 @@ const Navbar = ({
     <nav className="navbar">
       <div className="navbar-slide-button" onClick={() => changeMode()}>
         <div className={darkMode ? "navbar-slide-button-background--left active" : "navbar-slide-button-background--left"}></div>
-        <div className={darkMode ? "navbar-slide-button-background active" : "navbar-slide-button-background"}></div>
         <div className={darkMode ? "navbar-slide-button-background--right active" : "navbar-slide-button-background--right"}></div>
         <div className={darkMode ? "navbar-slide-button-mode active" : "navbar-slide-button-mode"}>
         {darkMode &&
