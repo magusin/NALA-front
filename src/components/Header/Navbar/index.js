@@ -11,7 +11,7 @@ const Navbar = ({
 
   changeConnexionFormToConnexion,
   changeConnexionFormToRegister,
-  handleLogout,
+  logoutUser,
 }) => {
   const [click, setClick] = useState(false);
 
@@ -28,6 +28,10 @@ const Navbar = ({
     changeConnexionFormToConnexion();
   }
 
+  const handleDisconnect = (evt) => {
+    closeMobileMenu;
+    logoutUser;
+  };
   return (
 
     <nav className="navbar">
@@ -57,7 +61,7 @@ const Navbar = ({
               >
                 Notification
               </Link>
-            </li> 
+            </li>
             <li className="navbar__item">
               <Link
                 to="/tags"
@@ -66,12 +70,12 @@ const Navbar = ({
               >
                 Mes "J'aime"
               </Link>
-            </li>*/}
+            </li> */}
             <li>
               <Link
                 to="/"
                 className="navbar__links-mobile"
-                onClick={closeMobileMenu}
+                onClick={handleDisconnect}
               >
                 Déconnexion
               </Link>

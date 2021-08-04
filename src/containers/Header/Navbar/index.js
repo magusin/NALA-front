@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Navbar from 'src/components/Header/Navbar';
-import { changeConnexionFormForConnexion, changeConnexionFormForRegister } from '../../../actions/connexionForm';
+import { changeConnexionFormForConnexion, changeConnexionFormForRegister, logoutUser } from '../../../actions/connexionForm';
 
 const mapStateToProps = (state, ownProps) => ({
   isLogged: state.user.logged,
@@ -14,6 +14,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   changeConnexionFormToConnexion: () => {
     dispatch(changeConnexionFormForConnexion());
+  },
+
+  logoutUser: () => {
+    dispatch(logoutUser());
   },
 });
 
