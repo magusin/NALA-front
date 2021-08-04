@@ -16,7 +16,7 @@ import {
   EDIT_POST_FROM_API,
   fetchPostWithIdFromApi,
 } from '../../actions/api';
-import { initialisationFields } from '../../actions/post';
+import { initialisationFields, uploadNotificationMessage } from '../../actions/post';
 
 import {
   saveCategories, saveCategoryWithId, saveLastPosts, savePostWithId, saveTopLove, saveUserPosts,
@@ -116,11 +116,6 @@ const postsMiddleware = (store) => (next) => (action) => {
 
         let user_Id = parseInt(userId);
 
-        console.log('base64', newPicture);
-        console.log(title);
-        console.log(user_Id);
-        console.log(categorySelected);
-
         axiosInstance
         .post(`/post/`, {
           picture: newPicture,
@@ -149,7 +144,6 @@ const postsMiddleware = (store) => (next) => (action) => {
         .put(`/post/${action.postId}/like/${userId}`)
         .then(
           (response) => {
-            console.log(response)
             if (response.status === 201) {
               store.dispatch(fetchPostWithIdFromApi(action.postId));
             }
@@ -169,23 +163,32 @@ const postsMiddleware = (store) => (next) => (action) => {
         })
         .then(
           (response) => {
-            console.log(response)
-            // PENSER A ACTUALISER LA PAGE DE POSTS !!!!
+            store.dispatch(
+              uploadNotificationMessage(response.status), 
+              initialisationFields(),
+            );
           },
-        );
+        )
+        .catch((error) => {
+          store.dispatch(uploadNotificationMessage(error.name))
+        });
  
       next(action);
       break; 
     };
     case FETCH_DELETE_POST: {
       axiosInstance
-        .delete(`/api/v1/post/${action.id}`)
+        .delete(`/post/${action.id}`)
         .then(
           (response) => {
-            console.log(response)
-            store.dispatch(fetchUserPostsFromApi())
+            console.log(response);
+            store.dispatch(uploadNotificationMessage(response.status));
+            store.dispatch(fetchUserPostsFromApi());
           },
-        );
+        )
+        .catch((error) => {
+          store.dispatch(uploadNotificationMessage(error.name))
+        });
       next(action);
       break;
     };
@@ -195,7 +198,6 @@ const postsMiddleware = (store) => (next) => (action) => {
         .get(`/utilisateurs/${userId}`)
         .then(
           (response) => {
-            console.log(response)
             store.dispatch(saveUserPosts(response.data))
           },
         );
@@ -204,7 +206,6 @@ const postsMiddleware = (store) => (next) => (action) => {
     };
     case REMOVE_LIKE: {
       const { userId } = store.getState().user;
-      console.log('in', userId, action.postId);
       axiosInstance
         .patch(`/post/${action.postId}/removelike/${userId}`)
         .then(

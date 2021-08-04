@@ -7,6 +7,19 @@
   margin: 1rem;
   position:relative;
 
+  &-notification{
+    background-color: vars.$light-background;
+    .info-delete{
+      color: orangered;
+    }
+    .info-edit{
+      color:green;
+    }
+    .info-error{
+      color:red;
+    }
+  }
+
   &-img{
     height: 100%;
     width: 100%;

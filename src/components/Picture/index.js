@@ -27,8 +27,6 @@ const Picture = ({
   removeUserLike,
 }) => {
 
-console.log(picture)
-
   useEffect(
     fetchPostWithId,
     [],

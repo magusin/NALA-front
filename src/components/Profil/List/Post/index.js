@@ -9,8 +9,9 @@ const Post = ({
   title,
   deletePost,
   editPost,
-  changePost,
   categories,
+  handleChangeTitle,
+  handleChangeCategory,
 }) => {
 
   const [selectedEdit, setSelectedEdit] = useState(false);
@@ -26,10 +27,16 @@ const Post = ({
     setSelectedDelete(true);
   }
 
-    function manageSubmit(evt){
+  function manageSubmit(evt){
     evt.preventDefault();
-    changePost();
-    }
+    editPost(cardId)
+  }
+
+  function manageEdit(evt){
+    setSelectedEdit(false);
+  }
+
+  // selected={type.id == card.}
 
 return(
   <div className="post">
@@ -54,16 +61,13 @@ return(
           onSubmit={(evt) => manageSubmit(evt)}
         >
           <div className="post__section-post-field">
-            <label 
-              name="title">
-                Titre
-            </label>
             <input 
               name="title"
               id="editTitle"
               type="text" 
               minLength="5" 
               maxLength="255"
+              placeholder="Titre"
               onChange={(evt) => handleChangeTitle(evt.target.value)}
             />
           </div>
@@ -74,7 +78,7 @@ return(
                 {categories.map((category, index) => (
                   <>
                     {category.map((type) => (
-                      <option key={index + type.id} value={type.id}>{type.name}</option>
+                      <option key={index + type.id} value={type.id} >{type.name}</option>
                     ))}
                   </>
                 ))}
@@ -83,7 +87,7 @@ return(
           </div>
           <button
             className="post__section-button"
-            onClick={() => editPost(cardId)}
+            onClick={() => manageEdit()}
           >
             Modifier
           </button>

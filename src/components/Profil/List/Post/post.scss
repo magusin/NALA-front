@@ -10,7 +10,27 @@
   margin: 1rem;
   position:relative;
 
+  &__section-post-field {
+    margin: 0 0.5rem;
+    
+    label{
+      font-family: Voltaire;
+      font-size: 1rem;
+      margin: .6rem 0;
+      display: block;
+    }
+    
+    input{
+      border: none;
+      border-bottom: 1px solid #17154c;
+      border-bottom-right-radius: .5em;
+      font-family: Voltaire;
+      padding: .5em;
+    }
+  }
+
   &-img{
+    border-radius: 7% 7% 0 0;
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -61,12 +81,12 @@
       background-color: vars.$light-background;
       border: 1px solid vars.$light-background-color;
       border-radius: 5%;
-      right: -300%;
       margin-left: 2rem;
-      min-width: 300px;
+      min-width: fit-content;
       position: absolute;
-      top: 100%;
-      width: 50%;
+      right: 32px;
+      top: 0;
+      z-index: 2;
       display:none;
       box-shadow: 0 0 5px vars.$light-color-dark;
 

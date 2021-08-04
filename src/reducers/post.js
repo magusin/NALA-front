@@ -1,9 +1,11 @@
-import { CHANGE_CATEGORY, CHANGE_TITLE, INITIALISATION_FIELDS, ADD_NEW_PICTURE } from "../actions/post";
+import { bindActionCreators } from "redux";
+import { CHANGE_CATEGORY, CHANGE_TITLE, INITIALISATION_FIELDS, ADD_NEW_PICTURE, UPLOAD_NOTIFICATION_MESSAGE } from "../actions/post";
 
 const initialState = {
   categorySelected : 1,
   title: null,
   addPicture: null,
+  notification: null,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -26,14 +28,19 @@ const reducer = (state = initialState, action = {}) => {
       return{
         ...state,
         title: action.title,
-      }
+      };
     case INITIALISATION_FIELDS:
       return{
         ...state,
         categorySelected:1,
         title: null,
         addPicture: null,
-      }
+      };
+    case UPLOAD_NOTIFICATION_MESSAGE:
+      return{
+        ...state,
+        notification: action.status,
+      };
     default:
       return state;
   }
