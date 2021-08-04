@@ -13,7 +13,7 @@ const initialState = {
   firstname: '',
   lastname: '',
   password: '',
-  darkMode: true,
+  darkMode: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
