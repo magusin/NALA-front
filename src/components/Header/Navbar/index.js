@@ -41,10 +41,10 @@ const Navbar = ({
         <div className={darkMode ? "navbar-slide-button-background--right active" : "navbar-slide-button-background--right"}></div>
         <div className={darkMode ? "navbar-slide-button-mode active" : "navbar-slide-button-mode"}>
         {darkMode &&
-          <i class="bi bi-moon-stars-fill"></i>
+          <i className="bi bi-moon-stars-fill"></i>
         }
         {!darkMode &&
-          <i class="bi bi-sun-fill"></i>
+          <i className="bi bi-sun-fill"></i>
         }
         </div>
       </div>
