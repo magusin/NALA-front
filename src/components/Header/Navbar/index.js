@@ -8,7 +8,8 @@ import './navbar.scss';
 const Navbar = ({
   isLogged,
   nickname,
-
+  darkMode,
+  changeMode,
   changeConnexionFormToConnexion,
   changeConnexionFormToRegister,
   logoutUser,
@@ -35,6 +36,18 @@ const Navbar = ({
   return (
 
     <nav className="navbar">
+      <div className="navbar-slide-button" onClick={() => changeMode()}>
+        <div className={darkMode ? "navbar-slide-button-background--left active" : "navbar-slide-button-background--left"}></div>
+        <div className={darkMode ? "navbar-slide-button-background--right active" : "navbar-slide-button-background--right"}></div>
+        <div className={darkMode ? "navbar-slide-button-mode active" : "navbar-slide-button-mode"}>
+        {darkMode &&
+          <i class="bi bi-moon-stars-fill"></i>
+        }
+        {!darkMode &&
+          <i class="bi bi-sun-fill"></i>
+        }
+        </div>
+      </div>
       {isLogged
         && (
         <>

@@ -27,7 +27,11 @@ import Category from 'src/containers/Categories/Category';
 import './app.scss';
 
 // == Composant
-const App = ({ submitToken, isLogged }) => {
+const App = ({ 
+  submitToken, 
+  isLogged,
+  darkMode,
+}) => {
   useEffect(
     () => {
       // Local Storage
@@ -43,7 +47,7 @@ const App = ({ submitToken, isLogged }) => {
   );
 
   return (
-    <div className="app">
+    <div className={darkMode ? "app dark" : "app"}>
 
       <Header />
       <Nav />

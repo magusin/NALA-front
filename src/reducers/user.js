@@ -1,3 +1,4 @@
+import { CHANGE_DARK_MODE } from '../actions';
 import { SAVE_TOKEN, LOGOUT_USER } from '../actions/connexionForm';
 import { SAVE_USER_CONNECT, SAVE_USER_POSTS } from '../actions/saveData';
 
@@ -12,10 +13,16 @@ const initialState = {
   firstname: '',
   lastname: '',
   password: '',
+  darkMode: true,
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case CHANGE_DARK_MODE:
+      return{
+        ...state,
+        darkMode: !state.darkMode,
+      };
     case SAVE_USER_CONNECT:
       return {
         ...state,
@@ -48,7 +55,7 @@ const reducer = (state = initialState, action = {}) => {
         firstname: action.firstname,
         password: action.password,
       };
-    }
+    };
     default:
       return state;
   }
