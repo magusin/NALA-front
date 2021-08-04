@@ -41,7 +41,7 @@ const List = ({
               {list.map((card, index) =>{
                 console.log(card);
                   return(
-                    <Post cardId={card.id} key={card.id} picture={card.picture} title={card.title} categories={categories}/>
+                    <Post cardId={card.id} key={card.id} picture={card.picture} title={card.title} categories={categories} categoryId={card.category.id}/>
                   )
               })} 
             </div>

@@ -6,6 +6,7 @@ import { changeCategory, changeTitle } from '../../../../actions/post';
 
 const mapStateToProps = (state, ownProps) => ({
   categories: ownProps.categories,
+  categoryId:ownProps.categoryId,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

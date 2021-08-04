@@ -7,6 +7,7 @@ const Post = ({
   cardId,
   picture,
   title,
+  categoryId,
   deletePost,
   editPost,
   categories,
@@ -36,8 +37,6 @@ const Post = ({
     setSelectedEdit(false);
   }
 
-  // selected={type.id == card.}
-
 return(
   <div className="post">
     <Link to={`/post/${cardId}`} >
@@ -58,16 +57,15 @@ return(
 
         <form 
           className="post__section-post"
-          onSubmit={(evt) => manageSubmit(evt)}
         >
           <div className="post__section-post-field">
             <input 
               name="title"
-              id="editTitle"
               type="text" 
-              minLength="5" 
+              minLength="1" 
               maxLength="255"
               placeholder="Titre"
+              value={title}
               onChange={(evt) => handleChangeTitle(evt.target.value)}
             />
           </div>
@@ -78,7 +76,7 @@ return(
                 {categories.map((category, index) => (
                   <>
                     {category.map((type) => (
-                      <option key={index + type.id} value={type.id} >{type.name}</option>
+                      <option key={index + type.id} value={type.id} selected={type.id == categoryId ? true : false}>{type.name}</option>
                     ))}
                   </>
                 ))}
@@ -87,15 +85,20 @@ return(
           </div>
           <button
             className="post__section-button"
-            onClick={() => manageEdit()}
+            onClick={(evt) => manageSubmit(evt)}
           >
             Modifier
+          </button>
+          <button 
+            onClick={(evt) => evt.preventDefault() + setSelectedEdit(false)}
+          >
+            Fermer
           </button>
         </form>
 
       </div>
       <div className={selectedDelete ? "post-links__container--delete selected" : "post-links__container--delete"}>
-          <h2 className="alert">Voulez-vous vraiment supprimer ce post ?</h2>
+          <h2 className="alert">Supprimer ce post ?</h2>
           <button
             onClick={() => deletePost(cardId)}>
             Oui
