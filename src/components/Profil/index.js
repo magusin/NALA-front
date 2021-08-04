@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect } from 'react';
 import './profil.scss';
 import AddPost from 'src/containers/Profil/AddPost';
