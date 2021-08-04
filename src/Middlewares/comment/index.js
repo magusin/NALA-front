@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import { fetchPostWithIdFromApi, FETCH_COMMENTS_WITH_ID_FROM_API, SEND_NEW_COMMENT } from '../../actions/api';
+import { resetCommentFields } from '../../actions/comment';
 import { saveCommentsWithPostId, saveNewComment } from '../../actions/saveData';
 
 const axiosInstance = axios.create(
@@ -17,7 +18,6 @@ const commentsMiddleware = (store) => (next) => (action) => {
         .then(
           (response) => {
             if (response.status === 200) {
-              console.log(response);
               store.dispatch(saveCommentsWithPostId(response.data));
             }
           },
@@ -39,6 +39,7 @@ const commentsMiddleware = (store) => (next) => (action) => {
         .then(
           (response) => {
             if (response.status === 201) {
+              store.dispatch(resetCommentFields())
               store.dispatch(fetchPostWithIdFromApi(action.post_id));
             }
           },

@@ -25,7 +25,6 @@ const Category = ({
   }
 
     const posts = category.posts;
-    console.log(category.post)
 
   return(
   <div className="category">

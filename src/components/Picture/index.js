@@ -22,13 +22,10 @@ const Picture = ({
   manageSubmitComment,
   changeNewComment,
   newComment,
-  commentIsReady,
 
   addUserLike,
   removeUserLike,
 }) => {
-
-console.log(picture)
 
   useEffect(
     fetchPostWithId,
@@ -37,14 +34,10 @@ console.log(picture)
 
   function changeLike() {
     if (picture.userLike.find((likes) => likes.id == userId)) {
-      console.log('remove');
       removeUserLike(picture.id);
     }
     else {
-      console.log('add');
       addUserLike(picture.id);
-
-
     }
   }
 
@@ -90,13 +83,13 @@ console.log(picture)
               type="button"
               onClick={() => changeLike()}
             >
-              <i className="bi bi-heart-fill" />
+              <i className={picture.userLike.find((likes) => likes.id == userId) ?"bi bi-heart-fill selected" : "bi bi-heart-fill"} />
             </button>
             )}
           <button
             type="button"
             onClick={() => (changeDisplay())}>
-            <i className="bi bi-chat-left-text-fill" />
+            <i className={displayComments ? "bi bi-chat-left-text-fill selected" : "bi bi-chat-left-text-fill" } />
           </button>
         </div>
 

@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useEffect } from 'react';
 import './profil.scss';
 import AddPost from 'src/containers/Profil/AddPost';
+import List from 'src/containers/Profil/List';
 
 const Profil = ({
   profilPseudo,
@@ -19,7 +20,19 @@ const Profil = ({
   newProfilEmail,
   profilPassword,
   newProfilPassword,
+  categories,
+  categoriesLoaded,
+  fetchCategories,
+  notification,
 }) => {
+
+  if(!categoriesLoaded){
+    useEffect(
+      fetchCategories,
+      []
+    )
+  }
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     manageSubmit();
@@ -28,6 +41,14 @@ const Profil = ({
     <div className="profil">
       <h1 className="profil__title">Profil</h1>
       <div className="profil__section">
+      <div className="profil-notification">
+    {notification == 200 &&
+      <span className="info-edit"><i class="bi bi-check-circle-fill"></i>&nbsp; Le profil à bien été modifié, les changements seront effectifs à la prochaine connexion</span>
+    }
+    {notification == "Error" &&
+      <span className="info-error"><i className="bi bi-x-circle-fill"></i> Une erreur est survenue</span>
+    }
+    </div>
         <div className="profil__section-text">
           <p>Pseudo : {nickname}</p>
           <p>Nom : {lastname}</p>
@@ -93,19 +114,10 @@ const Profil = ({
           </form>
         </div>
       </div>
+      <h2 className="profil__title">Ajouter une nouvelle image</h2>
+      <AddPost categories={categories}/>
       <h2 className="profil__title">Mes postes</h2>
-      <div className="profil__section-post">
-        <input
-          className="profil__section-input"
-          type="file"
-          placeholder="Poster une photo"
-          id="post"
-          name="post"
-          accept="image/png, image/jpeg"
-        />
-      </div>
-    <h2 className="profil__title">Mes postes</h2>
-    <AddPost/>
+      <List categories={categories}/>
     </div>
 );
   }

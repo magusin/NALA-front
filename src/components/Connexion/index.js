@@ -129,9 +129,6 @@ const Connexion = ({
                 onChange={(evt) => setNewRegisterPassword(evt.target.value)}
               />
             </div>
-            <div className="connexion__container_body-row">
-              <div>captcha à faire une fois le domaine fait</div>
-            </div>
             <button className="connexion__btn" type="submit">Inscription</button>
           </form>
         </div>

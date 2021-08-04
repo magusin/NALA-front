@@ -4,8 +4,6 @@ import '../profil.scss';
 
 const AddPost = ({
   categories,
-  categoriesLoaded,
-  fetchCategories,
   fetchNewPost,
   handleChangeCategory,
   handleChangeTitle,
@@ -14,19 +12,10 @@ const AddPost = ({
 
 }) =>{ 
 
-  if(!categoriesLoaded){
-    useEffect(
-      fetchCategories,
-      []
-    )
-  }
-
   function manageSubmit(evt){
     evt.preventDefault();
     fetchNewPost()
   }
-
-  console.log(categories)
 
   return(
     <form 
