@@ -54,7 +54,7 @@ body {
         color: #15a8fb;
       }
       button:disabled{
-        color: #2c3a49;
+        color: vars.$dark-background-color;
       }
     }
     .profil, .contact, .legalementions, .cgu, .connexion{
