@@ -35,6 +35,8 @@ const reducer = (state = initialState, action = {}) => {
         newRegisterEmail: '',
         newRegisterPseudo: '',
         newRegisterPassword: '',
+        inscriptionSelect: false,
+        connexionSelect: true,
       };
     case SAVE_USER_CONNECT:
       return {
