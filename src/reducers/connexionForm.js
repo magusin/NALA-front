@@ -20,7 +20,6 @@ import {
 const initialState = {
   connexionSelect: true,
   inscriptionSelect: false,
-  inscriptionOk:false,
   newConnexionEmail: '',
   newConnexionPassword: '',
   newRegisterEmail: '',
@@ -38,7 +37,6 @@ const reducer = (state = initialState, action = {}) => {
         newRegisterPassword: '',
         inscriptionSelect: false,
         connexionSelect: true,
-        inscriptionOk:true,
       };
     case SAVE_USER_CONNECT:
       return {

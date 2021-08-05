@@ -21,6 +21,7 @@ const Connexion = ({
   manageSubmitRegister,
   manageSubmitConnexion,
   isLogged,
+  registerOk,
 
 }) => {
   const handleSubmitRegister = (evt) => {
@@ -69,10 +70,9 @@ const Connexion = ({
         </div>
 
         <div className="connexion__container_body">
-
           <form
             className={connexionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'}
-            onSubmit={() => handleSubmitConnexion()}
+            onSubmit={(evt) => handleSubmitConnexion(evt)}
           >
             <div className="connexion__container_body-row">
               <i className="bi bi-envelope" />
@@ -98,7 +98,7 @@ const Connexion = ({
             <button className="connexion__btn" type="submit">Connexion</button>
           </form>
 
-          <form className={inscriptionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} onSubmit={() => handleSubmitRegister()}>
+          <form className={inscriptionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} onSubmit={(evt) => handleSubmitRegister(evt)}>
             <div className="connexion__container_body-row">
               <i className="bi bi-envelope" />
               <input
