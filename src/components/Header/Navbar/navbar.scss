@@ -4,7 +4,6 @@
   background: vars.$light-background-color;
   height: 3rem;
   display: flex;
-  justify-content: space-around;
   align-items: center;
   font-size: 1.2rem;
   z-index: 9999;
@@ -119,7 +118,7 @@
     &__logo {
       position: absolute;
       top: 0;
-      left: -2.5em;
+      left: 1em;
       transform: translate(25%, 50%);
     }
 
