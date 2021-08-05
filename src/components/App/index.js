@@ -27,8 +27,8 @@ import Category from 'src/containers/Categories/Category';
 import './app.scss';
 
 // == Composant
-const App = ({ 
-  submitToken, 
+const App = ({
+  submitToken,
   isLogged,
   darkMode,
 }) => {

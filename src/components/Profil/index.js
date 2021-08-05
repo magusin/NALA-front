@@ -25,12 +25,11 @@ const Profil = ({
   notification,
   postNotification,
 }) => {
-
-  if(!categoriesLoaded){
+  if (!categoriesLoaded) {
     useEffect(
       fetchCategories,
-      []
-    )
+      [],
+    );
   }
 
   const handleSubmit = (evt) => {
@@ -41,14 +40,12 @@ const Profil = ({
     <div className="profil">
       <h1 className="profil__title">Profil</h1>
       <div className="profil__section">
-      <div className="profil-notification">
-    {notification == 200 &&
-      <span className="info-edit"><i className="bi bi-check-circle-fill"></i> Le profil à bien été modifié, les changements seront effectifs à la prochaine connexion</span>
-    }
-    {notification == "Error" &&
-      <span className="info-error"><i className="bi bi-x-circle-fill"></i> Une erreur est survenue</span>
-    }
-    </div>
+        <div className="profil-notification">
+          {notification === 200
+      && <span className="info-edit"><i className="bi bi-check-circle-fill" /> Le profil à bien été modifié, les changements seront effectifs à la prochaine connexion</span>}
+          {notification === 'Error'
+      && <span className="info-error"><i className="bi bi-x-circle-fill" /> Une erreur est survenue</span>}
+        </div>
         <div className="profil__section-text">
           <p>Pseudo : {nickname}</p>
           <p>Nom : {lastname}</p>
@@ -67,7 +64,8 @@ const Profil = ({
                 placeholder=" Pseudo*"
                 value={profilPseudo}
                 onChange={(evt) => newProfilPseudo(evt.target.value)}
-                required/>
+                required
+              />
             </div>
             <div>
               <input
@@ -76,7 +74,8 @@ const Profil = ({
                 placeholder=" Email*"
                 value={profilEmail}
                 onChange={(evt) => newProfilEmail(evt.target.value)}
-                required/>
+                required
+              />
             </div>
             <div>
               <input
@@ -117,27 +116,25 @@ const Profil = ({
       </div>
       <h2 className="profil__title">Ajouter une nouvelle image</h2>
       <div className="profil-notification">
-      {(postNotification == "postAdd201") &&
-        (
+        {(postNotification == 'postAdd201')
+        && (
           <span className="info-edit">
-            <i className="bi bi-check-circle-fill"></i>
+            <i className="bi bi-check-circle-fill" />
             L'ajout d'image a bien été effectué
           </span>
-        )
-      }
-      {postNotification == "postAddError" &&
-        (
+        )}
+        {postNotification == 'postAddError'
+        && (
           <span className="info-error">
-          <i className="bi bi-x-circle-fill"></i> 
-          Une erreur est survenue
-        </span>
-        )
-      }
+            <i className="bi bi-x-circle-fill" />
+            Une erreur est survenue
+          </span>
+        )}
       </div>
-      <AddPost categories={categories}/>
+      <AddPost categories={categories} />
       <h2 className="profil__title">Mes postes</h2>
-      <List categories={categories}/>
+      <List categories={categories} />
     </div>
-);
-  }
+  );
+};
 export default Profil;
