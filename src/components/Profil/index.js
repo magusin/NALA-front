@@ -50,8 +50,8 @@ const Profil = ({
     </div>
         <div className="profil__section-text">
           <p>Pseudo : {nickname}</p>
-          <p>Nom : {lastname}</p>
-          <p>Prénom : {firstname}</p>
+          <p>Nom : {lastname === "null" ? '' :  `${lastname}`}</p>
+          <p>Prénom : {firstname === "null" ? '' :  `${firstname}`}</p>
           <p>Email : {email}</p>
         </div>
         <div className="profil__section-update">

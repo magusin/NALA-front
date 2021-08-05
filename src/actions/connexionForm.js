@@ -88,6 +88,7 @@ export const saveToken = (
   firstname,
   lastname,
   password,
+  screenMode,
 ) => ({
   type: SAVE_TOKEN,
   token,
@@ -97,6 +98,7 @@ export const saveToken = (
   firstname,
   lastname,
   password,
+  screenMode,
 });
 
 export const LOGOUT_USER = 'LOGOUT_USER';
