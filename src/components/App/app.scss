@@ -50,15 +50,17 @@ body {
       &__select{
       background-color: vars.$dark-background;
       color: #fff;
+      border-color: vars.$dark-color-border;
+      
       
       &-link{
         color:#fff;
       }
 
       &-content{
-        background-color: vars.$dark-background;
+      border-color: vars.$dark-color-border;
+      background-color: vars.$dark-background;
       }
-
     }
 
     }
@@ -77,13 +79,30 @@ body {
       p, label, h4, a, .comment{
         color: vars.$dark-color-light;
       }
+      &__section{
+        border-color: vars.$dark-color-border;
+      }
+      &__container{
+        &_body{
+          &-row{
+          border-bottom: 1px solid vars.$dark-color-border;
+          }
+        }
+      }
+      
       input{
         color: vars.$dark-color-light;
         background-color: vars.$dark-background;
+        border-color: vars.$dark-color-border;
 
         &::placeholder{
           color: vars.$dark-color-light;
         }
+      }
+
+      textarea{
+        border-color: vars.$dark-color-border;
+        
       }
 
       textarea::placeholder{
