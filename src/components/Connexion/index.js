@@ -21,7 +21,6 @@ const Connexion = ({
   manageSubmitRegister,
   manageSubmitConnexion,
   isLogged,
-  registerOk,
 
 }) => {
   const handleSubmitRegister = (evt) => {

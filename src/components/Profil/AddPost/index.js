@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 
 import '../profil.scss';
 
 const AddPost = ({
+  title,
+  picture,
   categories,
   fetchNewPost,
   handleChangeCategory,
@@ -11,10 +13,14 @@ const AddPost = ({
   fileUploadHandler,
 
 }) => {
+
   function manageSubmit(evt) {
     evt.preventDefault();
+    setAddPost(true);
     fetchNewPost();
   }
+
+  const [addPost, setAddPost] = useState(false);
 
   return (
     <form
@@ -66,7 +72,8 @@ const AddPost = ({
       </div>
       <button
         className="profil__section-button"
-        onClick={() => fileUploadHandler()}
+        type="submit"
+        disabled={addPost ? true : false}
       >Envoyer
       </button>
     </form>
