@@ -32,12 +32,10 @@ const Post = ({
 
   function manageSubmit(evt){
     evt.preventDefault();
+    setSelectedEdit(false);
     editPost(cardId)
   }
 
-  function manageEdit(evt){
-    setSelectedEdit(false);
-  }
 
 return(
   <div className="post">

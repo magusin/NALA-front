@@ -40,12 +40,14 @@ const Profil = ({
     <div className="profil">
       <h1 className="profil__title">Profil</h1>
       <div className="profil__section">
-        <div className="profil-notification">
-          {notification === 200
-      && <span className="info-edit"><i className="bi bi-check-circle-fill" /> Le profil à bien été modifié, les changements seront effectifs à la prochaine connexion</span>}
-          {notification === 'Error'
-      && <span className="info-error"><i className="bi bi-x-circle-fill" /> Une erreur est survenue</span>}
-        </div>
+      <div className={notification != null ? "profil-notification active" : "profil-notification"}>
+    {notification == 200 &&
+      <span className="info-edit"><i className="bi bi-check-circle-fill"></i> Le profil à bien été modifié, les changements seront effectifs à la prochaine connexion</span>
+    }
+    {notification == "Error" &&
+      <span className="info-error"><i className="bi bi-x-circle-fill"></i> Une erreur est survenue</span>
+    }
+    </div>
         <div className="profil__section-text">
           <p>Pseudo : {nickname}</p>
           <p>Nom : {lastname}</p>
@@ -115,9 +117,9 @@ const Profil = ({
         </div>
       </div>
       <h2 className="profil__title">Ajouter une nouvelle image</h2>
-      <div className="profil-notification">
-        {(postNotification == 'postAdd201')
-        && (
+      <div className={postNotification != null ? "profil-notification active" : "profil-notification"}>
+      {(postNotification == "postAdd201") &&
+        (
           <span className="info-edit">
             <i className="bi bi-check-circle-fill" />
             L'ajout d'image a bien été effectué

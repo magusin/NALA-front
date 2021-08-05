@@ -24,12 +24,12 @@ const List = ({
 
     return(
       <div className="list">
-        <div className="list-notification">
+        <div className={notification != null ? "list-notification active" : "list-notification"}>
           {notification == 201 &&
-            <span className="info-edit"><i class="bi bi-check-circle-fill"></i>&nbsp; L'image à bien été modifié</span>
+            <span className="info-edit"><i className="bi bi-check-circle-fill"></i>&nbsp; L'image à bien été modifié</span>
           }
           {notification == 204 &&
-            <span className="info-delete"><i class="bi bi-check-circle-fill"></i>&nbsp; L'image a bien été supprimé</span>
+            <span className="info-delete"><i className="bi bi-check-circle-fill"></i>&nbsp; L'image a bien été supprimé</span>
           }
           {(notification == "Error") &&
             <span className="info-error"><i className="bi bi-x-circle-fill"></i>&nbsp; Une erreur est survenue</span>

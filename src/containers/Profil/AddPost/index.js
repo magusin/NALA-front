@@ -7,6 +7,8 @@ import { addNewPicture, changeCategory, changeTitle } from '../../../actions/pos
 const mapStateToProps = (state, ownProps) => ({
   categories: ownProps.categories,
   categoriesLoaded: ownProps.categoriesLoaded,
+  title: state.post.title,
+  picture: state.post.addPicture,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

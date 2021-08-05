@@ -3,8 +3,8 @@ import { CHANGE_CATEGORY, CHANGE_TITLE, INITIALISATION_FIELDS, ADD_NEW_PICTURE, 
 
 const initialState = {
   categorySelected : 1,
-  title: null,
-  addPicture: null,
+  title: '',
+  addPicture: '',
   notification: null,
 };
 
