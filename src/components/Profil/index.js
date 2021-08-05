@@ -63,7 +63,7 @@ const Profil = ({
               <input
                 className="profil__section-input"
                 type="text"
-                placeholder=" Pseudo"
+                placeholder=" Pseudo*"
                 value={profilPseudo}
                 onChange={(evt) => newProfilPseudo(evt.target.value)}
                 required/>
@@ -72,7 +72,7 @@ const Profil = ({
               <input
                 className="profil__section-input"
                 type="email"
-                placeholder=" Email"
+                placeholder=" Email*"
                 value={profilEmail}
                 onChange={(evt) => newProfilEmail(evt.target.value)}
                 required/>
@@ -81,10 +81,12 @@ const Profil = ({
               <input
                 className="profil__section-input"
                 type="password"
-                placeholder=" Mot de passe"
+                placeholder=" Mot de passe*"
                 value={profilPassword}
                 onChange={(evt) => newProfilPassword(evt.target.value)}
-                required/>
+                required
+                
+              />
             </div>
             <div>
               <input
