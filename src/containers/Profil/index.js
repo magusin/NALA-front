@@ -31,6 +31,7 @@ const mapStateToProps = (state, ownProps) => ({
   categories: state.categories.categories,
   categoriesLoaded: state.categories.categoriesLoaded,
   notification: state.profil.notification,
+  postNotification: state.post.notification,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

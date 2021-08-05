@@ -31,7 +31,7 @@ const List = ({
           {notification == 204 &&
             <span className="info-delete"><i class="bi bi-check-circle-fill"></i>&nbsp; L'image a bien été supprimé</span>
           }
-          {notification == "Error" &&
+          {(notification == "Error") &&
             <span className="info-error"><i className="bi bi-x-circle-fill"></i>&nbsp; Une erreur est survenue</span>
           }
         </div>

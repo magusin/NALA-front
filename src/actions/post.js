@@ -23,9 +23,10 @@ export const initialisationFields = () => ({
 });
 
 export const UPLOAD_NOTIFICATION_MESSAGE = 'UPLOAD_NOTIFICATION_MESSAGE';
-export const uploadNotificationMessage = (status) => ({
+export const uploadNotificationMessage = (status, elementNotify) => ({
   type: UPLOAD_NOTIFICATION_MESSAGE,
   status,
+  elementNotify,
 });
 
 

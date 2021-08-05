@@ -128,11 +128,16 @@ const postsMiddleware = (store) => (next) => (action) => {
         .then(
           (response) => {
             if(response.status === 201){
-              store.dispatch(initialisationFields());
-              <Redirect to="/profil"/>
+              store.dispatch(fetchUserPostsFromApi(user_Id));
+              store.dispatch(
+                uploadNotificationMessage(response.status, 'postAdd'),
+              );
             }
-          },
-        );
+          }
+        )
+          .catch((error) => {
+            store.dispatch(uploadNotificationMessage(error.name, 'postAdd'))
+          });
       }); 
       next(action);
       break; 

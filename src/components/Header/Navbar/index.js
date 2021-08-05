@@ -13,6 +13,7 @@ const Navbar = ({
   changeConnexionFormToConnexion,
   changeConnexionFormToRegister,
   logoutUser,
+  handleLogout,
 }) => {
   const [click, setClick] = useState(false);
 
@@ -88,7 +89,7 @@ const Navbar = ({
               <Link
                 to="/"
                 className="navbar__links-mobile"
-                onClick={handleDisconnect}
+                onClick={closeMobileMenu, logoutUser}
               >
                 Déconnexion
               </Link>

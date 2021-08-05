@@ -11,7 +11,7 @@
   &-slide-button{
     display:flex;
     position: relative;
-    left: 2px;
+    left:2px;
 
     &-background{
       &--left, &--right{
@@ -116,10 +116,10 @@
     top : 0px;
 
     &__logo {
-      position: absolute;
+      position: relative;
+      left:0;
       top: 0;
       left: 1em;
-      transform: translate(25%, 50%);
     }
 
     &__icon {

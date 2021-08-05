@@ -37,9 +37,20 @@ const reducer = (state = initialState, action = {}) => {
         addPicture: null,
       };
     case UPLOAD_NOTIFICATION_MESSAGE:
-      return{
-        ...state,
-        notification: action.status,
+      if(action.elementNotify == 'postAdd'){
+        return{
+          ...state,
+          notification:'postAdd'+action.status,
+          categorySelected:1,
+          title: null,
+          addPicture: null,
+        }
+      }
+      else{
+        return{
+          ...state,
+          notification: action.status,
+        };
       };
     default:
       return state;

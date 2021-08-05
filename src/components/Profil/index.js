@@ -23,6 +23,7 @@ const Profil = ({
   categoriesLoaded,
   fetchCategories,
   notification,
+  postNotification,
 }) => {
 
   if(!categoriesLoaded){
@@ -42,7 +43,7 @@ const Profil = ({
       <div className="profil__section">
       <div className="profil-notification">
     {notification == 200 &&
-      <span className="info-edit"><i class="bi bi-check-circle-fill"></i>&nbsp; Le profil à bien été modifié, les changements seront effectifs à la prochaine connexion</span>
+      <span className="info-edit"><i className="bi bi-check-circle-fill"></i> Le profil à bien été modifié, les changements seront effectifs à la prochaine connexion</span>
     }
     {notification == "Error" &&
       <span className="info-error"><i className="bi bi-x-circle-fill"></i> Une erreur est survenue</span>
@@ -63,27 +64,25 @@ const Profil = ({
               <input
                 className="profil__section-input"
                 type="text"
-                placeholder="Pseudo*"
+                placeholder=" Pseudo*"
                 value={profilPseudo}
                 onChange={(evt) => newProfilPseudo(evt.target.value)}
-                required
-              />
+                required/>
             </div>
             <div>
               <input
                 className="profil__section-input"
                 type="email"
-                placeholder="Email*"
+                placeholder=" Email*"
                 value={profilEmail}
                 onChange={(evt) => newProfilEmail(evt.target.value)}
-                required
-              />
+                required/>
             </div>
             <div>
               <input
                 className="profil__section-input"
                 type="password"
-                placeholder="Mot de passe*"
+                placeholder=" Mot de passe*"
                 value={profilPassword}
                 onChange={(evt) => newProfilPassword(evt.target.value)}
                 required
@@ -117,6 +116,24 @@ const Profil = ({
         </div>
       </div>
       <h2 className="profil__title">Ajouter une nouvelle image</h2>
+      <div className="profil-notification">
+      {(postNotification == "postAdd201") &&
+        (
+          <span className="info-edit">
+            <i className="bi bi-check-circle-fill"></i>
+            L'ajout d'image a bien été effectué
+          </span>
+        )
+      }
+      {postNotification == "postAddError" &&
+        (
+          <span className="info-error">
+          <i className="bi bi-x-circle-fill"></i> 
+          Une erreur est survenue
+        </span>
+        )
+      }
+      </div>
       <AddPost categories={categories}/>
       <h2 className="profil__title">Mes postes</h2>
       <List categories={categories}/>
