@@ -80,6 +80,9 @@ body {
         color: vars.$dark-color-border
       }
     }
+    .picture-img img{
+      box-shadow: 0 0 1rem #03030eeb;
+    }
     .profil, .contact, .legalementions, .cgu, .connexion{
       p, label, h4, a, .comment{
         color: vars.$dark-color-light;
