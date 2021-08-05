@@ -13,6 +13,7 @@
   color: vars.$light-background;
   cursor: pointer;
   background-color: var(--primary);
+  margin:0 0.5rem;
   &:hover {
     background-color: transparent;
     color: vars.$light-background;
