@@ -75,6 +75,11 @@ body {
         color: vars.$dark-background-color;
       }
     }
+    .error{
+      h1, p{
+        color: vars.$dark-color-border
+      }
+    }
     .profil, .contact, .legalementions, .cgu, .connexion{
       p, label, h4, a, .comment{
         color: vars.$dark-color-light;

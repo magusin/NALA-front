@@ -85,7 +85,6 @@ const Profil = ({
                 value={profilPassword}
                 onChange={(evt) => newProfilPassword(evt.target.value)}
                 required
-                
               />
             </div>
             <div>
