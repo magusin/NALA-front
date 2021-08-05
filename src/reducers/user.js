@@ -10,8 +10,8 @@ const initialState = {
   token: null,
   userId: null,
   email: '',
-  firstname: '',
-  lastname: '',
+  firstname: null,
+  lastname: null,
   password: '',
   darkMode: false,
 };
