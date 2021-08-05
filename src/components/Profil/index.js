@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect } from 'react';
 import './profil.scss';
 import AddPost from 'src/containers/Profil/AddPost';
@@ -119,7 +118,6 @@ const Profil = ({
       <h2 className="profil__title">Mes postes</h2>
       <List categories={categories}/>
     </div>
-  );
-}
-
+);
+  }
 export default Profil;

@@ -59,7 +59,9 @@ export const saveUserPosts = (data) => ({
 
 export const SAVE_USER_REGISTER = 'SAVE_USER';
 
-export const saveUserRegister = (data) => ({
+export const saveUserRegister = (nickname, email, password) => ({
   type: SAVE_USER_REGISTER,
-  data,
+  nickname,
+  email,
+  password,
 });

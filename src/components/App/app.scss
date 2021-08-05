@@ -46,6 +46,22 @@ body {
       color: vars.$dark-color-light;
       background-color: vars.$dark-background;
     }
+    .nav{
+      &__select{
+      background-color: vars.$dark-background;
+      color: #fff;
+      
+      &-link{
+        color:#fff;
+      }
+
+      &-content{
+        background-color: vars.$dark-background;
+      }
+
+    }
+
+    }
     .carousel{
       .carousel-card-img-effect {
         background: radial-gradient(transparent,70%,#212121);
@@ -68,6 +84,10 @@ body {
         &::placeholder{
           color: vars.$dark-color-light;
         }
+      }
+
+      textarea::placeholder{
+        color: vars.$dark-color-light;
       }
     }
 
