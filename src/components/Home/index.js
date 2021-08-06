@@ -39,7 +39,9 @@ const Home = ({
       {((topLoveLoaded && topLove !== undefined)
         && (
         <div className="home__container">
-          <Link to="/topLove" className="home__title"><h2>TopLove</h2></Link>
+          <Link to="/topLove" className="home__title">
+            <h2>TopLove</h2>
+          </Link>
           <Carousel list={topLove} categoryId={'topLove'}/>
         </div>
         )
