@@ -1,4 +1,3 @@
-/* eslint-disable no-shadow */
 import { connect } from 'react-redux';
 import {
   selectConnexionForm,
