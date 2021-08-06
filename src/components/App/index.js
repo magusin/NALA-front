@@ -27,14 +27,15 @@ import Category from 'src/containers/Categories/Category';
 import './app.scss';
 
 // == Composant
-const App = ({ 
-  submitToken, 
+const App = ({
+  submitToken,
   isLogged,
   darkMode,
 }) => {
   useEffect(
     () => {
       // Local Storage
+      const screenMode = localStorage.getItem('darkMode');
       const token = localStorage.getItem('myToken');
       const nickname = localStorage.getItem('nickname');
       const id = localStorage.getItem('id');
@@ -42,7 +43,7 @@ const App = ({
       const firstname = localStorage.getItem('firstname');
       const lastname = localStorage.getItem('lastname');
       const password = localStorage.getItem('password');
-      submitToken(token, nickname, id, email, firstname, lastname, password);
+      submitToken(token, nickname, id, email, firstname, lastname, password, screenMode);
     }, [],
   );
 

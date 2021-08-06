@@ -10,8 +10,8 @@ const initialState = {
   token: null,
   userId: null,
   email: '',
-  firstname: '',
-  lastname: '',
+  firstname: null,
+  lastname: null,
   password: '',
   darkMode: false,
 };
@@ -19,6 +19,12 @@ const initialState = {
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case CHANGE_DARK_MODE:
+      localStorage.removeItem('darkMode');
+      if(state.darkMode === true){
+        localStorage.setItem('darkMode', false);
+      }else if(state.darkMode === false){
+        localStorage.setItem('darkMode', true);
+      }
       return{
         ...state,
         darkMode: !state.darkMode,
@@ -44,6 +50,20 @@ const reducer = (state = initialState, action = {}) => {
         token: null,
       };
     case SAVE_TOKEN: {
+      if(action.screenMode === null){
+        return{
+          ...state,
+          token: action.token,
+          userId: action.id,
+          nickname: action.nickname,
+          logged: !!action.token,
+          email: action.email,
+          lastname: action.lastname,
+          firstname: action.firstname,
+          password: action.password,
+          darkMode: false,
+        }
+      }
       return {
         ...state,
         token: action.token,
@@ -54,6 +74,7 @@ const reducer = (state = initialState, action = {}) => {
         lastname: action.lastname,
         firstname: action.firstname,
         password: action.password,
+        darkMode: action.screenMode,
       };
     };
     default:

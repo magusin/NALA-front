@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 // components
 import Carousel from 'src/components/Carousel';
@@ -38,7 +39,7 @@ const Home = ({
       {((topLoveLoaded && topLove !== undefined)
         && (
         <div>
-          <a href="#" className="home__title"><h2>TopLove</h2></a>
+          <Link to="/topLove" className="home__title"><h2>TopLove</h2></Link>
           <Carousel list={topLove} categoryId={'topLove'}/>
         </div>
         )

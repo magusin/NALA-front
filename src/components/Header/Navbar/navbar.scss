@@ -116,7 +116,8 @@
     top : 0px;
 
     &__logo {
-      position: absolute;
+      position: relative;
+      left:0;
       top: 0;
       left: 1em;
     }

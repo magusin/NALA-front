@@ -9,6 +9,10 @@
 
   &-notification{
     background-color: vars.$light-background;
+    &.active{
+      animation: notification_disappear 0s both;
+      animation-delay: 5s;
+    }
     .info-delete{
       color: orangered;
     }

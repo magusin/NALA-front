@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import './post.scss';
 
@@ -11,6 +12,7 @@ const Post = ({
   deletePost,
   editPost,
   categories,
+  categorySelected,
   handleChangeTitle,
   handleChangeCategory,
 }) => {
@@ -30,12 +32,10 @@ const Post = ({
 
   function manageSubmit(evt){
     evt.preventDefault();
+    setSelectedEdit(false);
     editPost(cardId)
   }
 
-  function manageEdit(evt){
-    setSelectedEdit(false);
-  }
 
 return(
   <div className="post">

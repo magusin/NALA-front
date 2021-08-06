@@ -3,8 +3,8 @@ import { CHANGE_CATEGORY, CHANGE_TITLE, INITIALISATION_FIELDS, ADD_NEW_PICTURE, 
 
 const initialState = {
   categorySelected : 1,
-  title: null,
-  addPicture: null,
+  title: '',
+  addPicture: '',
   notification: null,
 };
 
@@ -37,9 +37,20 @@ const reducer = (state = initialState, action = {}) => {
         addPicture: null,
       };
     case UPLOAD_NOTIFICATION_MESSAGE:
-      return{
-        ...state,
-        notification: action.status,
+      if(action.elementNotify == 'postAdd'){
+        return{
+          ...state,
+          notification:'postAdd'+action.status,
+          categorySelected:1,
+          title: null,
+          addPicture: null,
+        }
+      }
+      else{
+        return{
+          ...state,
+          notification: action.status,
+        };
       };
     default:
       return state;

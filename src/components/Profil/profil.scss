@@ -1,5 +1,8 @@
 @use 'src/styles/vars';
-
+@keyframes notification_disappear {
+  from{ opacity: 1;}
+  to{opacity:0;}
+}
 .profil {
   margin-top: 1em;
   text-align: center;
@@ -7,6 +10,11 @@
   &-notification{
     background-color: vars.$light-background;
     margin-bottom: .5em;
+
+    &.active{
+      animation: notification_disappear 0s both;
+      animation-delay: 5s;
+    }
     .info-delete{
       color: orangered;
     }

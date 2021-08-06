@@ -44,8 +44,7 @@
     margin: auto;
     padding: 1rem;
     width: 100%;
-    -webkit-animation: kenburns-top 5s ease-out both;
-	        animation: kenburns-top 5s ease-out both;
+    animation: kenburns-top 2s ease-out both;
 
     img{
       max-width: 60%;
@@ -72,7 +71,7 @@
       &.active{
         display:block;
       }
-      form{
+      &-add{
         display: flex;
         align-items: center;
         justify-content: space-evenly;
