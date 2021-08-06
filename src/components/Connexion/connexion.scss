@@ -69,8 +69,16 @@
       border-radius: 30px;
       font-size: 1rem;
 
-      .info-edit{
-        color:green;
+      .notification-connexion{
+        margin-bottom: .5em;
+    
+        &.active{
+          animation: notification_disappear 0s both;
+          animation-delay: 5s;
+        }
+        .info{
+          color:#90ff94;
+        }
       }
 
       &-form {
