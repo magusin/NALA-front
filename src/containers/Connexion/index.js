@@ -13,14 +13,16 @@ import {
   setNewRegisterPseudo,
   newRegisterPassword,
   setNewRegisterPassword,
+  selectPasswordForm,
 } from 'src/actions/connexionForm';
 
-import { connectUser, registerUser } from 'src/actions/api';
+import { connectUser, registerUser, passwordUser } from 'src/actions/api';
 import Connexion from 'src/components/Connexion';
 
 const mapStateToProps = (state, ownProps) => ({
   connexionSelect: state.connexionForm.connexionSelect,
   inscriptionSelect: state.connexionForm.inscriptionSelect,
+  passwordMissSelect: state.connexionForm.passwordMissSelect,
   newConnexionEmail: state.connexionForm.newConnexionEmail,
   newConnexionPassword: state.connexionForm.newConnexionPassword,
   newRegisterEmail: state.connexionForm.newRegisterEmail,
@@ -35,6 +37,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   handleSelectInscription: function () {
     dispatch(selectInscriptionForm());
+  },
+  handleSelectPassword: function () {
+    dispatch(selectPasswordForm());
   },
 
   setNewConnexionEmail: (newConnexionEmail) => {
@@ -63,6 +68,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
   manageSubmitRegister: () => {
     dispatch(registerUser());
+  },
+
+  manageSubmitPassword: () => {
+    dispatch(passwordUser());
   },
 
 });

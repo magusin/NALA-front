@@ -6,6 +6,7 @@ import './connexion.scss';
 const Connexion = ({
   handleSelectConnexion,
   handleSelectInscription,
+  handleSelectPassword,
   connexionSelect,
   inscriptionSelect,
   newConnexionEmail,
@@ -20,7 +21,9 @@ const Connexion = ({
   setNewRegisterPassword,
   manageSubmitRegister,
   manageSubmitConnexion,
+  manageSubmitPassword,
   isLogged,
+  passwordMissSelect,
 
 }) => {
   const handleSubmitRegister = (evt) => {
@@ -35,10 +38,17 @@ const Connexion = ({
     manageSubmitConnexion();
   };
 
+  const handlePasswordConnexion = (evt) => {
+    evt.preventDefault();
+
+    manageSubmitPassword();
+  };
+
   return (
     <div className="connexion">
       <h2 className={inscriptionSelect ? 'connexion__title active' : 'connexion__title'}> Inscription </h2>
       <h2 className={connexionSelect ? 'connexion__title active' : 'connexion__title'}> Connexion </h2>
+      <h2 className={passwordMissSelect ? 'connexion__title active' : 'connexion__title'}> Mot de passe oublié </h2>
       {isLogged
         && (
         <div className="connexion__container">
@@ -93,7 +103,9 @@ const Connexion = ({
                 onChange={(evt) => setNewConnexionPassword(evt.target.value)}
               />
             </div>
-            <a href="#" className="link">Mot de passe oublié ?</a>
+            <a href="#" 
+            className="link"
+            onClick={() => (handleSelectPassword())}>Mot de passe oublié ?</a>
             <button className="connexion__btn" type="submit">Connexion</button>
           </form>
 
@@ -130,6 +142,19 @@ const Connexion = ({
             </div>
             <button className="connexion__btn" type="submit">Inscription</button>
           </form>
+          <form className={passwordMissSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} onSubmit={handleSubmitRegister}>
+            <div className="connexion__container_body-row">
+              <i className="bi bi-envelope" />
+              <input
+                type="email"
+                className="input"
+                placeholder="Adresse Mail"
+                value={newRegisterEmail}
+                onChange={(evt) => setNewRegisterEmail(evt.target.value)}
+              />
+            </div>
+            <button className="connexion__btn" type="submit">Valider</button>
+          </form>
         </div>
 
       </div>
@@ -142,8 +167,10 @@ Connexion.propTypes = {
   handleSelectInscription: PropTypes.func.isRequired,
   connexionSelect: PropTypes.bool.isRequired,
   inscriptionSelect: PropTypes.bool.isRequired,
+  passwordMissSelect: PropTypes.bool.isRequired,
   manageSubmitConnexion: PropTypes.func.isRequired,
   manageSubmitRegister: PropTypes.func.isRequired,
+  manageSubmitPassword: PropTypes.func.isRequired,
   newConnexionEmail: PropTypes.string.isRequired,
   setNewConnexionEmail: PropTypes.func.isRequired,
   newConnexionPassword: PropTypes.string.isRequired,

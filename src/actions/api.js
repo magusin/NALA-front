@@ -72,6 +72,11 @@ export const registerUser = () => ({
   type: REGISTER_USER,
 });
 
+export const PASSWORD_USER = 'PASSWORD_USER';
+export const passwordUser = () => ({
+  type: PASSWORD_USER,
+});
+
 export const REMOVE_LIKE = 'REMOVE_LIKE';
 export const removeLike = (postId) => ({
   type: REMOVE_LIKE,
