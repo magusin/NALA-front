@@ -44,6 +44,7 @@
     margin: auto;
     padding: 1rem;
     width: 100%;
+    animation: kenburns-top 2s ease-out both;
 
     img{
       max-width: 60%;
@@ -70,7 +71,7 @@
       &.active{
         display:block;
       }
-      form{
+      &-add{
         display: flex;
         align-items: center;
         justify-content: space-evenly;
@@ -113,3 +114,33 @@
     color: vars.$light-link-color;
   }
 }
+
+@-webkit-keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 14%;
+            transform-origin: 50% 14%;
+  }
+  100% {
+    -webkit-transform: scale(1.03) translateY(-15px);
+            transform: scale(1.03) translateY(-15px);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+}
+@keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 14%;
+            transform-origin: 50% 14%;
+  }
+  100% {
+    -webkit-transform: scale(1.03) translateY(-15px);
+            transform: scale(1.03) translateY(-15px);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+}
+

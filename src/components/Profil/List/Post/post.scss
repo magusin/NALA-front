@@ -62,7 +62,9 @@
     top: 0;
     padding: 0.3rem;
     transition:0.5s;
-
+    background-color: #ffffffa8;
+    height: calc(100% - 1.4rem);
+    
     &--delete{
       color: red;
       opacity:0.6;
@@ -82,7 +84,8 @@
       border: 1px solid vars.$light-background-color;
       border-radius: 5%;
       margin-left: 2rem;
-      min-width: fit-content;
+      width: fit-content;
+      min-width: 160px;
       position: absolute;
       right: 32px;
       top: 0;

@@ -5,7 +5,7 @@ $font-title:'Voltaire', sans-serif;
 // light theme
 $light-color-light: #fff;
 $light-color-dark: #000;
-$light-color-hover: #14a9e9; 
+$light-color-hover: #3e6bf2; 
 $light-background: #fff;
 $light-background-color: #17154c;
 $light-backdround-gradient:linear-gradient( to right, #5548ed, #15a8fb);
@@ -13,7 +13,8 @@ $light-link-color: #c53b3bc0;
 
 // dark theme
 $dark-color-light: #fff;
+$dark-color-border: #3e6bf2;
 $dark-color-dark: #000;
-$dark-background:#fff;
-$dark-background-color: #3f6372;
+$dark-background:#06061d;
+$dark-background-color: #2c3a49;
 $dark-backdround-gradient:linear-gradient( to right, #5548ed, #15a8fb);

@@ -1,7 +1,31 @@
 @use 'src/styles/vars';
-
+@keyframes notification_disappear {
+  from{ opacity: 1;}
+  to{opacity:0;}
+}
 .profil {
   margin-top: 1em;
+  text-align: center;
+
+  &-notification{
+    background-color: vars.$light-background;
+    margin-bottom: .5em;
+
+    &.active{
+      animation: notification_disappear 0s both;
+      animation-delay: 5s;
+    }
+    .info-delete{
+      color: orangered;
+    }
+    .info-edit{
+      color:green;
+    }
+    .info-error{
+      color:red;
+    }
+  }
+
   &__title {
     margin-bottom: 1em;
     background-position: center;
@@ -17,6 +41,12 @@
       padding: 2em 0.5em;
       border-radius: 10px;
       text-align: center;
+      &-select{
+        text-transform: capitalize;
+      }
+      &-option{
+        text-transform: capitalize;
+      }
       
       &-text{
         display: flex;

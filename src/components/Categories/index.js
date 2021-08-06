@@ -22,8 +22,6 @@ const Categories = ({
     <div className="categories">
       {categoriesLoaded && (
       <div className="categories__content">
-        <Link to="/"><h1>Accueil</h1></Link>
-        <Link to="/toplove"><h1>Top-Love</h1></Link>
         {categories.map((category, index) => (
           <div key={`cat${index}`} className="categories__content-carousel">
             {category.map((type) => (

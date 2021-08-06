@@ -8,9 +8,11 @@ import './navbar.scss';
 const Navbar = ({
   isLogged,
   nickname,
-
+  darkMode,
+  changeMode,
   changeConnexionFormToConnexion,
   changeConnexionFormToRegister,
+  logoutUser,
   handleLogout,
 }) => {
   const [click, setClick] = useState(false);
@@ -28,9 +30,25 @@ const Navbar = ({
     changeConnexionFormToConnexion();
   }
 
+  const handleDisconnect = (evt) => {
+    closeMobileMenu;
+    logoutUser;
+  };
   return (
 
     <nav className="navbar">
+      <div className="navbar-slide-button" onClick={() => changeMode()}>
+        <div className={darkMode ? "navbar-slide-button-background--left active" : "navbar-slide-button-background--left"}></div>
+        <div className={darkMode ? "navbar-slide-button-background--right active" : "navbar-slide-button-background--right"}></div>
+        <div className={darkMode ? "navbar-slide-button-mode active" : "navbar-slide-button-mode"}>
+        {darkMode &&
+          <i className="bi bi-moon-stars-fill"></i>
+        }
+        {!darkMode &&
+          <i className="bi bi-sun-fill"></i>
+        }
+        </div>
+      </div>
       {isLogged
         && (
         <>
@@ -57,7 +75,7 @@ const Navbar = ({
               >
                 Notification
               </Link>
-            </li> 
+            </li>
             <li className="navbar__item">
               <Link
                 to="/tags"
@@ -66,12 +84,12 @@ const Navbar = ({
               >
                 Mes "J'aime"
               </Link>
-            </li>*/}
+            </li> */}
             <li>
               <Link
                 to="/"
                 className="navbar__links-mobile"
-                onClick={closeMobileMenu}
+                onClick={closeMobileMenu, logoutUser}
               >
                 Déconnexion
               </Link>

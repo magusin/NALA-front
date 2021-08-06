@@ -1,14 +1,15 @@
-.categories{
-  &__content{
-  display: flex;
-  flex-flow: column wrap;
-    a h1:hover{
-      letter-spacing: .5px;
-      -webkit-transition: .5s;
-      transition: .5s;
+.categories {
+  &__content {
+    display: flex;
+    flex-flow: column wrap;
+    a h1:hover {
+      letter-spacing: 0.5px;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
     }
   }
   &__content-carousel{
     width:100%;
   }
 }
+
