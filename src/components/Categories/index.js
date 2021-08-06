@@ -25,7 +25,7 @@ const Categories = ({
         <Link to="/"><h1>Accueil</h1></Link>
         <Link to="/toplove"><h1>Top-Love</h1></Link>
         {categories.map((category, index) => (
-          <div key={`cat${index}`}>
+          <div key={`cat${index}`} className="categories__content-carousel">
             {category.map((type) => (
               <div key={index + type.id}>
                 <Link to={`/categories/${type.id}`}><h1>{type.name}</h1></Link>

@@ -29,16 +29,16 @@ const Home = ({
 
       {((lastPostsLoaded && lastPosts !== undefined)
         && (
-        <div>
-          <h1>Nos 10 dernières publications</h1>
+        <div className="home__container">
+          <h1 className="home__title">Nos 10 dernières publications</h1>
           <Carousel list={lastPosts} categoryId={'lastPosts'}/>
         </div>
         )
 )}
       {((topLoveLoaded && topLove !== undefined)
         && (
-        <div>
-          <a href="#" className="home__title"><h2>TopLove</h2></a>
+        <div className="home__container">
+          <a href="#"><h2 className="home__title">TopLove</h2></a>
           <Carousel list={topLove} categoryId={'topLove'}/>
         </div>
         )
