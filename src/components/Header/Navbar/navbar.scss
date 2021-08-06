@@ -4,10 +4,62 @@
   background: vars.$light-background-color;
   height: 3rem;
   display: flex;
-  justify-content: space-around;
   align-items: center;
   font-size: 1.2rem;
   z-index: 9999;
+  
+  &-slide-button{
+    display:flex;
+    position: relative;
+    left:2px;
+
+    &-background{
+      &--left, &--right{
+        background: vars.$dark-background-color;
+        height:30px;
+        transition: 1s;
+      }
+      &--left{
+        border-radius:50% 0 0 50%;  
+        width:30px;
+      }
+      &--right{
+        border-radius: 0 50% 50% 0;  
+        width:30px;
+      }
+
+      &.active, &--left.active, &--right.active{
+        background: #1888ff;
+        transition: 1s;
+      }
+    }
+    &-mode{
+      height: 26px;
+      position: absolute;
+      width: 30px;
+      bottom: 2px;
+      left: 2px;
+      border-radius: 50%;
+      background: vars.$dark-backdround-gradient;
+      transition:1s;
+      box-shadow: 0 0 4px inset #000;
+
+      i{
+        font-size:1rem;
+        position: absolute;
+        top:5px;
+        left:7px;
+      }
+
+    &.active{
+      transform:rotate(2turn);
+      left:28px;
+      transition: 1s;
+    }
+
+    }
+
+  }
 
   &__logo {
     color: vars.$light-background;
@@ -64,10 +116,10 @@
     top : 0px;
 
     &__logo {
-      position: absolute;
+      position: relative;
+      left:0;
       top: 0;
-      left: -2.5em;
-      transform: translate(25%, 50%);
+      left: 1em;
     }
 
     &__icon {

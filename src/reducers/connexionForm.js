@@ -14,6 +14,7 @@ import {
   SET_NEW_REGISTER_PASSWORD,
   CHANGE_CONNEXION_FORM_FOR_CONNEXION,
   CHANGE_CONNEXION_FORM_FOR_REGISTER,
+  SELECT_PASSWORD_FORM,
   LOGOUT_USER,
 } from '../actions/connexionForm';
 
@@ -26,6 +27,7 @@ const initialState = {
   newRegisterPseudo: '',
   newRegisterPassword: '',
   logged: false,
+  passwordMissSelect: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -35,6 +37,8 @@ const reducer = (state = initialState, action = {}) => {
         newRegisterEmail: '',
         newRegisterPseudo: '',
         newRegisterPassword: '',
+        inscriptionSelect: false,
+        connexionSelect: true,
       };
     case SAVE_USER_CONNECT:
       return {
@@ -97,24 +101,35 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         connexionSelect: true,
         inscriptionSelect: false,
+        passwordMissSelect: false,
       };
     case SELECT_INSCRIPTION_FORM:
       return {
         ...state,
         connexionSelect: false,
         inscriptionSelect: true,
+        passwordMissSelect: false,
       };
+      case SELECT_PASSWORD_FORM:
+        return {
+          ...state,
+          connexionSelect: false,
+          inscriptionSelect: false,
+          passwordMissSelect: true,
+        };
     case CHANGE_CONNEXION_FORM_FOR_CONNEXION:
       return {
         ...state,
         connexionSelect: true,
         inscriptionSelect: false,
+        passwordMissSelect: false,
       };
     case CHANGE_CONNEXION_FORM_FOR_REGISTER:
       return {
         ...state,
         connexionSelect: false,
         inscriptionSelect: true,
+        passwordMissSelect: false,
       };
 
     default:

@@ -30,6 +30,101 @@ body {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+
+  &.dark{
+    background-color: vars.$dark-background;
+    color: vars.$dark-color-light;
+    .picture{
+      background: none;
+
+      button{
+        color: vars.$dark-color-light;
+      }
+    }
+    textarea{
+      color: vars.$dark-color-light;
+      background-color: vars.$dark-background;
+    }
+    .nav{
+      &__select{
+      background-color: vars.$dark-background;
+      color: #fff;
+      border-color: vars.$dark-color-border;
+      
+      
+      &-link{
+        color:#fff;
+      }
+
+      &-content{
+      border-color: vars.$dark-color-border;
+      background-color: vars.$dark-background;
+      }
+    }
+
+    }
+    .carousel{
+      .carousel-card-img-effect {
+        background: radial-gradient(transparent,70%,#000102);
+      }
+      button{
+        color: #15a8fb;
+      }
+      button:disabled{
+        color: vars.$dark-background-color;
+      }
+    }
+    .error{
+      h1, p{
+        color: vars.$dark-color-border
+      }
+    }
+    .picture-img img{
+      box-shadow: 0 0 1rem #03030eeb;
+    }
+    .profil, .contact, .legalementions, .cgu, .connexion{
+      p, label, h4, a, .comment{
+        color: vars.$dark-color-light;
+      }
+      &__section{
+        border-color: vars.$dark-color-border;
+      }
+      &__container{
+        &_body{
+          &-row{
+          border-bottom: 1px solid vars.$dark-color-border;
+          }
+        }
+      }
+      
+      input{
+        color: vars.$dark-color-light;
+        background-color: vars.$dark-background;
+        border-color: vars.$dark-color-border;
+
+        &::placeholder{
+          color: vars.$dark-color-light;
+        }
+      }
+
+      textarea{
+        border-color: vars.$dark-color-border;
+        
+      }
+
+      textarea::placeholder{
+        color: vars.$dark-color-light;
+      }
+    }
+
+    .connexion, .connexion__container_body, .picture__bottom-comments-section{
+      background-color: vars.$dark-background;
+      i{
+        color: vars.$dark-color-light;
+      }
+    }
+
+  }
 }
 
 @-webkit-keyframes tracking-in-expand {

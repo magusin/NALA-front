@@ -106,7 +106,10 @@ const Picture = ({
               />
               <button type="submit">Poster</button>
             </form>
-            )}
+            )}            
+            {!isLogged &&
+            <p className="picture__bottom-comments-add">Vous devez être connecté pour pouvoir commenter et aimer les photos de nos amis ! <Link to="/connexion"><button>Se connecter</button></Link></p>
+            }
           {displayComments && (
             <div className="picture__bottom-comments-section">
 
@@ -119,7 +122,7 @@ const Picture = ({
                 />
               ))}
               { (picture.comment == null || picture.comment === '' || picture.comment === undefined || picture.comment.length == 0)
-                && <div>Soyez le premier à laisser un commentaire ! <i className="bi bi-emoji-wink-fill" /></div>}
+                && <p>Soyez le premier à laisser un commentaire ! <i className="bi bi-emoji-wink-fill" /></p>}
             </div>
           )}
         </div>

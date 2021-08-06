@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect } from 'react';
 import './profil.scss';
 import AddPost from 'src/containers/Profil/AddPost';
@@ -23,13 +22,14 @@ const Profil = ({
   categories,
   categoriesLoaded,
   fetchCategories,
+  notification,
+  postNotification,
 }) => {
-
-  if(!categoriesLoaded){
+  if (!categoriesLoaded) {
     useEffect(
       fetchCategories,
-      []
-    )
+      [],
+    );
   }
 
   const handleSubmit = (evt) => {
@@ -40,10 +40,18 @@ const Profil = ({
     <div className="profil">
       <h1 className="profil__title">Profil</h1>
       <div className="profil__section">
+      <div className={notification != null ? "profil-notification active" : "profil-notification"}>
+    {notification == 200 &&
+      <span className="info-edit"><i className="bi bi-check-circle-fill"></i> Le profil à bien été modifié, les changements seront effectifs à la prochaine connexion</span>
+    }
+    {notification == "Error" &&
+      <span className="info-error"><i className="bi bi-x-circle-fill"></i> Une erreur est survenue</span>
+    }
+    </div>
         <div className="profil__section-text">
           <p>Pseudo : {nickname}</p>
-          <p>Nom : {lastname}</p>
-          <p>Prénom : {firstname}</p>
+          <p>Nom : {lastname === "null" ? '' :  `${lastname}`}</p>
+          <p>Prénom : {firstname === "null" ? '' :  `${firstname}`}</p>
           <p>Email : {email}</p>
         </div>
         <div className="profil__section-update">
@@ -55,27 +63,30 @@ const Profil = ({
               <input
                 className="profil__section-input"
                 type="text"
-                placeholder="Pseudo"
+                placeholder=" Pseudo*"
                 value={profilPseudo}
                 onChange={(evt) => newProfilPseudo(evt.target.value)}
+                required
               />
             </div>
             <div>
               <input
                 className="profil__section-input"
                 type="email"
-                placeholder="Email"
+                placeholder=" Email*"
                 value={profilEmail}
                 onChange={(evt) => newProfilEmail(evt.target.value)}
+                required
               />
             </div>
             <div>
               <input
                 className="profil__section-input"
                 type="password"
-                placeholder="Mot de passe"
+                placeholder=" Mot de passe*"
                 value={profilPassword}
                 onChange={(evt) => newProfilPassword(evt.target.value)}
+                required
               />
             </div>
             <div>
@@ -106,11 +117,26 @@ const Profil = ({
         </div>
       </div>
       <h2 className="profil__title">Ajouter une nouvelle image</h2>
-      <AddPost categories={categories}/>
+      <div className={postNotification != null ? "profil-notification active" : "profil-notification"}>
+      {(postNotification == "postAdd201") &&
+        (
+          <span className="info-edit">
+            <i className="bi bi-check-circle-fill" />
+            L'ajout d'image a bien été effectué
+          </span>
+        )}
+        {postNotification == 'postAddError'
+        && (
+          <span className="info-error">
+            <i className="bi bi-x-circle-fill" />
+            Une erreur est survenue
+          </span>
+        )}
+      </div>
+      <AddPost categories={categories} />
       <h2 className="profil__title">Mes postes</h2>
-      <List categories={categories}/>
+      <List categories={categories} />
     </div>
   );
-}
-
+};
 export default Profil;

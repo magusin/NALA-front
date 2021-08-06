@@ -9,6 +9,11 @@ export const selectConnexionForm = () => ({
   type: SELECT_CONNEXION_FORM,
 });
 
+export const SELECT_PASSWORD_FORM = 'SELECT_PASSWORD_FORM';
+export const selectPasswordForm = () => ({
+  type: SELECT_PASSWORD_FORM,
+});
+
 // CONTROLLED INPUT
 
 export const NEW_CONNEXION_EMAIL = 'NEW_CONNEXION_EMAIL';
@@ -88,6 +93,7 @@ export const saveToken = (
   firstname,
   lastname,
   password,
+  screenMode,
 ) => ({
   type: SAVE_TOKEN,
   token,
@@ -97,6 +103,7 @@ export const saveToken = (
   firstname,
   lastname,
   password,
+  screenMode,
 });
 
 export const LOGOUT_USER = 'LOGOUT_USER';
