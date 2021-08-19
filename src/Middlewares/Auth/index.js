@@ -5,7 +5,7 @@ import { LOGOUT_USER } from '../../actions/connexionForm';
 
 const axiosInstance = axios.create(
   {
-    baseURL: 'http://ec2-54-197-127-233.compute-1.amazonaws.com/api',
+    baseURL: 'https://back.nos-amis-les-animaux.fr/api',
   },
 );
 
