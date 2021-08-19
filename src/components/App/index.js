@@ -24,6 +24,7 @@ import Notification from "src/components/Notification";
 import Category from "src/containers/Categories/Category";
 import FootPrint from "src/components/FootPrint";
 
+
 // == Import asset and css
 import "./app.scss";
 
@@ -71,6 +72,7 @@ const App = ({ submitToken, isLogged, darkMode }) => {
         <Route path="/mentions-legales" component={LegaleMentions} />
         <Route path="/cgu" exact component={CGU} />
         <Route path="/protection-animale" component={AnimalDefense} />
+        
         <Route component={Error} />
       </Switch>
       <Footer />
