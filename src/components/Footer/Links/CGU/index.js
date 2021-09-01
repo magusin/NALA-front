@@ -16,7 +16,7 @@ const CGU = () => (
     <h2 className="cgu__title-sub">ARTICLE 1 : Les mentions légales</h2>
     <p className="cgu__text">L’édition et la direction de la publication du site NALA.fr est assurée par BLANARU Carmen.</p>
     <p className="cgu__text">
-      L'hébergeur du site NALA.fr est la société Amazon Web Services, dont le siège social est situé au EMEA SARL - 92400.
+      L'hébergeur du site NALA.fr est la société O2switch, dont le siège social est situé au 224 BD GUSTAVE FLAUBERT, 63000 CLERMONT-FERRAND.
     </p>
     <h2 className="cgu__title-sub">ARTICLE 2 : Accès au site</h2>
     <p className="cgu__text">
