@@ -17,7 +17,6 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: block;
-    padding: .5em;
     margin-bottom: .5em;
     margin-top: .5em;
     -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
@@ -33,6 +32,14 @@ body {
   justify-content: space-between;
 
   &.dark{
+    .post-img-effect{
+      background: radial-gradient(transparent,70%,#000102);
+    }
+    .post-links{
+      height: calc(100% - 1.35rem);
+      background: rgba(23,23,23,.54118);
+      border-top-right-radius: 19%;
+    }
     background-color: vars.$dark-background;
     color: vars.$dark-color-light;
     .picture{
@@ -150,5 +157,21 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+div.home__container, div.categories__content, div.topLove, .legalementions, .cgu, .profil, .category{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .home__title{
+    display: inline-block
+  }
+  .profil__section{
+
+  }
+  .legalementions__textn, .cgu__text{
+    width:100%;
   }
 }

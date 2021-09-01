@@ -4,10 +4,6 @@
 
 .home{
   margin-top: 2em;
-  &__title {
-    margin-left: calc(50%-351.44px/2);
-    margin-right: calc(50%-351.44px/2);
-  }
   &:hover{
     letter-spacing: 0.5px;
     transition: .5s;
