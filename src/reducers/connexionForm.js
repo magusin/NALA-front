@@ -28,6 +28,7 @@ const initialState = {
   newRegisterPassword: '',
   logged: false,
   passwordMissSelect: false,
+  notification: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -39,6 +40,7 @@ const reducer = (state = initialState, action = {}) => {
         newRegisterPassword: '',
         inscriptionSelect: false,
         connexionSelect: true,
+        notification: true,
       };
     case SAVE_USER_CONNECT:
       return {

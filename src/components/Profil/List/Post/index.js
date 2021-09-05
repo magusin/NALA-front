@@ -41,7 +41,7 @@ return(
   <div className="post">
     <Link to={`/post/${cardId}`} >
       <div className="post-img" 
-         style={{backgroundImage:`url(http://ec2-54-197-127-233.compute-1.amazonaws.com/uploads/pictures/${picture})`}}>
+         style={{backgroundImage:`url(https://back.nos-amis-les-animaux.fr/uploads/pictures/${picture})`}}>
         <div className="post-img-effect"></div>
       </div>
     </Link>

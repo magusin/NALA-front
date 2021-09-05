@@ -5,7 +5,7 @@ import { initialisationFields, uploadNotificationMessage } from '../../actions/p
 
 const axiosInstance = axios.create(
   {
-    baseURL: 'http://ec2-54-197-127-233.compute-1.amazonaws.com/api/v1',
+    baseURL: 'https://back.nos-amis-les-animaux.fr/api/v1',
   },
 );
 

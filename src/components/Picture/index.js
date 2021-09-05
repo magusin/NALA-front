@@ -72,7 +72,7 @@ const Picture = ({
       </div>
 
       <div className="picture-img">
-        <img src={`http://ec2-54-197-127-233.compute-1.amazonaws.com/uploads/pictures/${picture.picture}`} alt="" />
+        <img src={`https://back.nos-amis-les-animaux.fr/uploads/pictures/${picture.picture}`} alt="" />
       </div>
 
       <div className="picture__bottom">
