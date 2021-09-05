@@ -36,7 +36,7 @@ const Card = ({
       <Link to={`/post/${cardId}`}>
         <div
           className="carousel-card-img"
-          style={{ backgroundImage: `url('http://ec2-54-197-127-233.compute-1.amazonaws.com/uploads/pictures/${picture}')` }}
+          style={{ backgroundImage: `url('http://back.nos-amis-les-animaux.fr/uploads/pictures/${picture}')` }}
         >
           <div className="carousel-card-img-effect" />
         </div>

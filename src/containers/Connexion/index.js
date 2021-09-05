@@ -1,4 +1,3 @@
-/* eslint-disable no-shadow */
 import { connect } from 'react-redux';
 import {
   selectConnexionForm,
@@ -29,6 +28,7 @@ const mapStateToProps = (state, ownProps) => ({
   newRegisterPseudo: state.connexionForm.newRegisterPseudo,
   newRegisterPassword: state.connexionForm.newRegisterPassword,
   isLogged: state.user.logged,
+  notification: state.connexionForm.notification,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

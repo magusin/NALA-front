@@ -24,6 +24,7 @@ const Connexion = ({
   manageSubmitPassword,
   isLogged,
   passwordMissSelect,
+  notification,
 
 }) => {
   const handleSubmitRegister = (evt) => {
@@ -79,6 +80,14 @@ const Connexion = ({
         </div>
 
         <div className="connexion__container_body">
+        <div className={notification ? "notification-connexion active" : "notification-connexion"}>
+          {notification && (
+            <span className="info">
+              <i className="bi bi-check-circle-fill"></i> 
+                Votre compte a bien été crée, vous pouvez vous connecter
+            </span>
+          )}
+        </div>
           <form
             className={connexionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'}
             onSubmit={(evt) => handleSubmitConnexion(evt)}
@@ -109,7 +118,9 @@ const Connexion = ({
             <button className="connexion__btn" type="submit">Connexion</button>
           </form>
 
-          <form className={inscriptionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} onSubmit={(evt) => handleSubmitRegister(evt)}>
+          <form 
+            className={inscriptionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} 
+            onSubmit={(evt) => handleSubmitRegister(evt)}>
             <div className="connexion__container_body-row">
               <i className="bi bi-envelope" />
               <input
@@ -142,7 +153,9 @@ const Connexion = ({
             </div>
             <button className="connexion__btn" type="submit">Inscription</button>
           </form>
-          <form className={passwordMissSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} onSubmit={handleSubmitRegister}>
+          <form 
+            className={passwordMissSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} 
+            onSubmit={(evt) => handleSubmitRegister()}>
             <div className="connexion__container_body-row">
               <i className="bi bi-envelope" />
               <input

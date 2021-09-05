@@ -9,7 +9,7 @@ const LegaleMentions = () => (
     <p className="legalementions__text">Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site : <strong>NALA.fr</strong> les informations suivantes :</p>
     <h2 className="cgu__title-sub">ARTICLE 1 : Informations légales</h2>
     <p className="legalementions__text"> <br /> La Créatrice du site est : <strong>BLANARU Carmen</strong><br />
-      L’hebergeur du site est : <strong>Amazon Web Services</strong> https://aws.amazon.com/fr/education/awseducate/ 92400 Courbevoie<br />
+      L’hebergeur du site est : <strong>O2switch</strong><br />
     </p>
     <h2 className="cgu__title-sub">ARTICLE 2 : Présentation et principe</h2>
     <p className="legalementions__text">
