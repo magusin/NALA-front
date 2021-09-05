@@ -22,7 +22,6 @@ import Profil from "src/containers/Profil";
 import Aime from "src/components/Aime";
 import Notification from "src/components/Notification";
 import Category from "src/containers/Categories/Category";
-import FootPrint from "src/components/FootPrint";
 
 
 // == Import asset and css
@@ -54,7 +53,6 @@ const App = ({ submitToken, isLogged, darkMode }) => {
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
-      <FootPrint />
       <Header />
       <Nav />
       <Switch>
