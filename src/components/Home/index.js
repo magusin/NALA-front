@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 // components
 import Carousel from 'src/components/Carousel';
+import Carousel from 'src/components/Carousel';
 
 import './home.scss';
 

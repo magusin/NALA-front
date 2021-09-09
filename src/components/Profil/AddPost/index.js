@@ -73,7 +73,7 @@ const AddPost = ({
       <button
         className="profil__section-button"
         type="submit"
-        disabled={addPost ? true : false}
+        disabled={addPost}
       >Envoyer
       </button>
     </form>
