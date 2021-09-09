@@ -41,7 +41,7 @@ const Home = ({
             )
         }
         {
-            ((lastPostsLoaded && lastPosts !== undefined) &&
+            ((lastPostsLoaded && lastPosts == undefined) &&
                 <Loading />
             )
         }
@@ -58,7 +58,7 @@ const Home = ({
             )
         }
         {
-            ((topLoveLoaded && topLove !== undefined) &&
+            ((topLoveLoaded && topLove == undefined) &&
                 <Loading />
             )
         }
