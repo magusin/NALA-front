@@ -39,6 +39,12 @@
     font-size: 18px;
     font-family: "Quicksand", sans-serif;
 
+    &_recaptcha {
+      margin-top: 2em;
+      display: flex;
+      justify-content: center;
+    }
+
     &_top {
       position: absolute;
       top: 5%;
