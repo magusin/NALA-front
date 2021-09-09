@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import ReCAPTCHA from "react-google-recaptcha";
 import PropTypes from 'prop-types';
 import './connexion.scss';
 
@@ -45,6 +46,10 @@ const Connexion = ({
     manageSubmitPassword();
   };
 
+  function onChange(value) {
+    console.log("Captcha value:", value);
+  }
+
   return (
     <div className="connexion">
       <h2 className={inscriptionSelect ? 'connexion__title active' : 'connexion__title'}> Inscription </h2>
@@ -80,17 +85,19 @@ const Connexion = ({
         </div>
 
         <div className="connexion__container_body">
-        <div className={notification ? "notification-connexion active" : "notification-connexion"}>
-          {notification && (
+          <div className={notification ? 'notification-connexion active' : 'notification-connexion'}>
+            {notification && (
             <span className="info">
-              <i className="bi bi-check-circle-fill"></i> 
-                Votre compte a bien été crée, vous pouvez vous connecter
+              <i className="bi bi-check-circle-fill" />
+              Votre compte a bien été crée, vous pouvez vous connecter
             </span>
-          )}
-        </div>
+            )}
+          </div>
           <form
             className={connexionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'}
             onSubmit={(evt) => handleSubmitConnexion(evt)}
+            type="submit"
+            method="POST"
           >
             <div className="connexion__container_body-row">
               <i className="bi bi-envelope" />
@@ -112,15 +119,25 @@ const Connexion = ({
                 onChange={(evt) => setNewConnexionPassword(evt.target.value)}
               />
             </div>
-            <a href="#" 
-            className="link"
-            onClick={() => (handleSelectPassword())}>Mot de passe oublié ?</a>
+            <a
+              href="#"
+              className="link"
+              onClick={() => (handleSelectPassword())}
+            >Mot de passe oublié ?
+            </a>
+            <div className="connexion__container_recaptcha">
+              <ReCAPTCHA
+                sitekey="6LcjZ1YcAAAAAE4ZejaOx5KP5ku69juXsbLhAsZ8"
+                onChange={onChange}
+              />
+            </div>
             <button className="connexion__btn" type="submit">Connexion</button>
           </form>
 
-          <form 
-            className={inscriptionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} 
-            onSubmit={(evt) => handleSubmitRegister(evt)}>
+          <form
+            className={inscriptionSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'}
+            onSubmit={(evt) => handleSubmitRegister(evt)}
+          >
             <div className="connexion__container_body-row">
               <i className="bi bi-envelope" />
               <input
@@ -153,9 +170,10 @@ const Connexion = ({
             </div>
             <button className="connexion__btn" type="submit">Inscription</button>
           </form>
-          <form 
-            className={passwordMissSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'} 
-            onSubmit={(evt) => handleSubmitRegister()}>
+          <form
+            className={passwordMissSelect ? 'connexion__container_body-form active' : 'connexion__container_body-form'}
+            onSubmit={(evt) => handleSubmitRegister()}
+          >
             <div className="connexion__container_body-row">
               <i className="bi bi-envelope" />
               <input
