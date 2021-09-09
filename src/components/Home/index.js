@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 // components
 import Carousel from 'src/components/Carousel';
-import Carousel from 'src/components/Carousel';
+import Loading from 'src/components/Loading';
 
 import './home.scss';
 
@@ -41,7 +41,7 @@ const Home = ({
             )
         }
         {
-            ((lastPostsLoaded && lastPosts !== undefined) &&
+            ((lastPostsLoaded == false) &&
                 <Loading />
             )
         }
@@ -58,7 +58,7 @@ const Home = ({
             )
         }
         {
-            ((topLoveLoaded && topLove !== undefined) &&
+            ((topLoveLoaded == false) &&
                 <Loading />
             )
         }

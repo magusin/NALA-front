@@ -133,7 +133,10 @@ const Profil = ({
           </span>
         )}
       </div>
+      
+      {/* Section Add Picture*/ }
       <AddPost categories={categories} />
+
       <h2 className="profil__title">Mes postes</h2>
       <List categories={categories} />
     </div>
