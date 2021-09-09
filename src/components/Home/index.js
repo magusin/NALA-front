@@ -5,7 +5,6 @@ import Loading from 'src/components/Loading';
 
 // components
 import Carousel from 'src/components/Carousel';
-import Loading from 'src/components/Loading';
 
 import './home.scss';
 

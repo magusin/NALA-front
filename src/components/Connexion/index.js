@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from 'react-google-recaptcha';
 import PropTypes from 'prop-types';
 import './connexion.scss';
 
@@ -47,7 +47,7 @@ const Connexion = ({
   };
 
   function onChange(value) {
-    console.log("Captcha value:", value);
+    console.log('Captcha value:', value);
   }
 
   return (
