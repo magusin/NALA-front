@@ -17,7 +17,7 @@ import {
   EDIT_POST_FROM_API,
   fetchPostWithIdFromApi,
 } from '../../actions/api';
-import { initialisationFields, uploadNotificationMessage } from '../../actions/post';
+import { changeButtonUpload, initialisationFields, uploadNotificationMessage } from '../../actions/post';
 
 import {
   saveCategories, saveCategoryWithId, saveLastPosts, savePostWithId, saveTopLove, saveUserPosts,
@@ -129,9 +129,10 @@ const postsMiddleware = (store) => (next) => (action) => {
           (response) => {
             if(response.status === 201){
               store.dispatch(fetchUserPostsFromApi(user_Id));
-              <Redirect to='profil'/>
               store.dispatch(initialisationFields());
+              <Redirect to='profil'/>
               store.dispatch(uploadNotificationMessage(response.status, 'postAdd'));
+              store.dispatch(changeButtonUpload());
             }
           }
         )
