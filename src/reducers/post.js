@@ -1,11 +1,12 @@
 import { bindActionCreators } from "redux";
-import { CHANGE_CATEGORY, CHANGE_TITLE, INITIALISATION_FIELDS, ADD_NEW_PICTURE, UPLOAD_NOTIFICATION_MESSAGE } from "../actions/post";
+import { CHANGE_CATEGORY, CHANGE_TITLE, INITIALISATION_FIELDS, ADD_NEW_PICTURE, UPLOAD_NOTIFICATION_MESSAGE, CHANGE_BUTTON_UPLOAD } from "../actions/post";
 
 const initialState = {
   categorySelected : 1,
   title: '',
   addPicture: '',
   notification: null,
+  buttonDisabled: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -16,6 +17,11 @@ const reducer = (state = initialState, action = {}) => {
         addPicture: action.newPicture,
       };
     };
+    case CHANGE_BUTTON_UPLOAD:
+      return{
+        ...state,
+        buttonDisabled: !state.buttonDisabled,
+      };
     case CHANGE_CATEGORY:{
 
       action.id = parseInt(action.id);

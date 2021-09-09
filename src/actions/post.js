@@ -16,6 +16,12 @@ export const changeTitle = (title) => ({
   title
 });
 
+export const CHANGE_BUTTON_UPLOAD = 'CHANGE_BUTTON_UPLOAD';
+
+export const changeButtonUpload = () => ({
+  type: CHANGE_BUTTON_UPLOAD,
+});
+
 export const INITIALISATION_FIELDS = 'INITIALISATION_FIELDS';
 export const initialisationFields = () => ({
   type: INITIALISATION_FIELDS,

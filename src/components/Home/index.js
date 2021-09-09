@@ -5,6 +5,7 @@ import Loading from 'src/components/Loading';
 
 // components
 import Carousel from 'src/components/Carousel';
+import Loading from 'src/components/Loading';
 
 import './home.scss';
 
@@ -40,9 +41,9 @@ const Home = ({
                 )
             )
         }
-      {
-            ((lastPostsLoaded && lastPosts !== undefined)
-                && <Loading />
+        {
+            ((lastPostsLoaded == false) &&
+                <Loading />
             )
         }
       {
@@ -57,9 +58,9 @@ const Home = ({
                 )
             )
         }
-      {
-            ((topLoveLoaded && topLove !== undefined)
-                && <Loading />
+        {
+            ((topLoveLoaded == false) &&
+                <Loading />
             )
         }
 
